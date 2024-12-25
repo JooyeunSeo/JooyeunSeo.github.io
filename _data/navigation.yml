@@ -1,12 +1,34 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
+  - title: "About"
+    url: /about/
+  - title: "Posts"
+    url: /year-archive/
+  - title: "Tags"
+    url: /tags/
+  - title: "Pages"
+    url: /page-archive/
+  - title: ".github.io"
+    url: https://github.com/JooyeunSeo/JooyeunSeo.github.io
+    target: _blank
+  # - title: "Collections"
   #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+
+# sidebar menu links
+docs:
+  - title: "대분류1"
+    children:
+      - title: "Samples"
+        url: /대분류1-Samples/
+        category: "Samples"
+      - title: "Test"
+        url: /대분류1-Test/
+        category: "Test"
+  - title: "대분류2"
+    children:
+      - title: "소분류1"
+        url: /
+      - title: "소분류2"
+        url: /
+      - title: "소분류3"
+        url: /

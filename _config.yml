@@ -18,7 +18,7 @@ description              : "An amazing website."
 url                      : "https://jooyeunseo.github.io"
 baseurl                  : ""
 repository               : "JooyeunSeo/JooyeunSeo.github.io" # GitHub username/repo-name
-teaser                   : "/assets/images/no_img.png"
+teaser                   : "/assets/images/default_teaser.jpg"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : # false (default)
@@ -45,20 +45,12 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-  hide                   : # true, false (default)
-search                   : true # true, false (default)
-search_full_content      : # true, false (default)
-search_provider          : # lunr (default), algolia, google
+  hide                   : # false (default)
+search                   : true # false (default)
+search_full_content      : true # false (default)
+search_provider          : lunr
 lunr:
-  search_within_pages    : # true, false (default)
-algolia:
-  application_id         : # YOUR_APPLICATION_ID
-  index_name             : # YOUR_INDEX_NAME
-  search_only_api_key    : # YOUR_SEARCH_ONLY_API_KEY
-  powered_by             : # true (default), false
-google:
-  search_engine_id       : # YOUR_SEARCH_ENGINE_ID
-  instant_search         : # false (default), true
+  search_within_pages    : false # false (default)
 
 # SEO Related
 google_site_verification :
@@ -201,7 +193,7 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Pagination with jekyll-paginate
-paginate: 5
+paginate: 8
 paginate_path: /page:num/
 
 # Pagination with jekyll-paginate-v2
@@ -282,15 +274,30 @@ compress_html:
 
 # Defaults
 defaults:
-  # _posts
+  # _posts (모든 포스트에 적용)
   - scope:
       path: ""
       type: posts
     values:
       layout: single
-      author_profile: true
-      read_time: false
-      comments: true
-      share: true
-      related: true
-  # _pages
+      author_profile: true  # 유저 프로필 표시
+      read_time: false      # (포스트 예상 읽는 시간 끔)
+      show_date: true       # 작성일 표시
+      comments: true        # 댓글 시스템 활성화
+      share: true           # 소셜미디어 공유 링크 표시
+      related: true         # 관련 게시물 표시
+      toc: true             # 목차 표시
+      toc_sticky: true      # 목차 상단 고정
+      sidebar:              # 왼쪽 사이드바 표시
+        title: "Categories"
+        nav: "docs"
+  # _pages  (모든 페이지에 적용)
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true  # 유저 프로필 표시
+      sidebar:              # 왼쪽 사이드바 표시
+        title: "Categories"
+        nav: "docs"
