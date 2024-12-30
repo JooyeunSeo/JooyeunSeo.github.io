@@ -291,6 +291,8 @@ defaults:
       sidebar:              # 왼쪽 사이드바 표시
         title: "Menu"
         nav: "docs"
+      header:               # 기본 헤더 이미지
+        image: /assets/images/defaults/header-main.png
   # _pages  (모든 페이지에 적용)
   - scope:
       path: ""

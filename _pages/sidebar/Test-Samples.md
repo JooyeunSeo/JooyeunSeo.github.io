@@ -1,5 +1,7 @@
 ---
 title: "Samples"
+header:
+  image: /assets/images/defaults/header-main.png
 layout: archive
 permalink: /Test-Samples/
 ---

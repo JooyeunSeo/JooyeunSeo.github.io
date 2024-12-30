@@ -1,5 +1,7 @@
 ---
 title: "Cheatsheet"
+header:
+  image: /assets/images/defaults/header-main.png
 layout: archive
 permalink: /Cheatsheet/
 ---
