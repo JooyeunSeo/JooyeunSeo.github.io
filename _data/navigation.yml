@@ -16,19 +16,17 @@ main:
 
 # sidebar menu links
 docs:
-  - title: "대분류1"
+  - title: "Cheatsheet"       # 치트시트(정리본) 게시판
+    url: /Cheatsheet/
+    category: Cheatsheet
+  - title: "Test"
     children:
       - title: "Samples"
-        url: /대분류1-Samples/
+        url: /Test-Samples/
         category: "Samples"
-      - title: "Test"
-        url: /대분류1-Test/
-        category: "Test"
-  - title: "대분류2"
+  - title: "A"
     children:
-      - title: "소분류1"
+      - title: "A-a"
         url: /
-      - title: "소분류2"
-        url: /
-      - title: "소분류3"
+      - title: "A-b"
         url: /

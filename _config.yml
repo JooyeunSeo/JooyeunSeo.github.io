@@ -18,7 +18,7 @@ description              : "An amazing website."
 url                      : "https://jooyeunseo.github.io"
 baseurl                  : ""
 repository               : "JooyeunSeo/JooyeunSeo.github.io" # GitHub username/repo-name
-teaser                   : "/assets/images/default_teaser.jpg"
+teaser                   : "/assets/images/defaults/default-teaser.jpg"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : # false (default)
@@ -85,7 +85,7 @@ analytics:
 # Site Author
 author:
   name             : "Jooyeun Seo"
-  avatar           : "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/defaults/bio-photo.jpg"
   bio              : "<span style='background-color:#26C18F'>벨로그</span>와 **병행**하여<br>배운 것을 기록합니다 ☕️"
   location         : "Republic of Korea"
   email            :
@@ -193,7 +193,7 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Pagination with jekyll-paginate
-paginate: 8
+paginate: 12
 paginate_path: /page:num/
 
 # Pagination with jekyll-paginate-v2
@@ -289,7 +289,7 @@ defaults:
       toc: true             # 목차 표시
       toc_sticky: true      # 목차 상단 고정
       sidebar:              # 왼쪽 사이드바 표시
-        title: "Categories"
+        title: "Menu"
         nav: "docs"
   # _pages  (모든 페이지에 적용)
   - scope:
@@ -299,5 +299,5 @@ defaults:
       layout: single
       author_profile: true  # 유저 프로필 표시
       sidebar:              # 왼쪽 사이드바 표시
-        title: "Categories"
+        title: "Menu"
         nav: "docs"

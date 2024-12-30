@@ -1,7 +1,7 @@
 ---
 title: "Samples"
 layout: archive
-permalink: /대분류1-Samples/
+permalink: /Test-Samples/
 ---
 
 {% assign category_name = "Samples" %}

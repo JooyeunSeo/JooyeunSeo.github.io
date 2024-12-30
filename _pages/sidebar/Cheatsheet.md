@@ -1,10 +1,10 @@
 ---
-title: "Test"
+title: "Cheatsheet"
 layout: archive
-permalink: /대분류1-Test/
+permalink: /Cheatsheet/
 ---
 
-{% assign category_name = "Test" %}
+{% assign category_name = "cheatsheet" %}
 
 {% assign filtered_posts = site.posts | where: "categories", category_name %}
 
