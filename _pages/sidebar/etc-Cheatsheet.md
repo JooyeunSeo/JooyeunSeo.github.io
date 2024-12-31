@@ -1,12 +1,12 @@
 ---
-title: "Samples"
+title: "Cheatsheet"
 header:
   image: /assets/images/defaults/header-main.png
 layout: archive
-permalink: /Test-Samples/
+permalink: /etc-Cheatsheet/
 ---
 
-{% assign category_name = "Samples" %}
+{% assign category_name = "Cheatsheet" %}
 
 {% assign filtered_posts = site.posts | where: "categories", category_name %}
 

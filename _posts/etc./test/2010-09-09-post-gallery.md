@@ -1,11 +1,8 @@
 ---
 title: "Post: Gallery"
 categories:
-  - Samples
-tags:
-  - gallery
-  - Post Formats
-  - tiled
+  - test
+
 gallery:
   - url: /assets/images/unsplash-gallery-image-1.jpg
     image_path: /assets/images/unsplash-gallery-image-1-th.jpg

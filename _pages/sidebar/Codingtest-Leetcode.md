@@ -1,12 +1,12 @@
 ---
-title: "Cheatsheet"
+title: "LeetCode"
 header:
   image: /assets/images/defaults/header-main.png
 layout: archive
-permalink: /Cheatsheet/
+permalink: /Codingtest-Leetcode/
 ---
 
-{% assign category_name = "cheatsheet" %}
+{% assign category_name = "Leetcode" %}
 
 {% assign filtered_posts = site.posts | where: "categories", category_name %}
 

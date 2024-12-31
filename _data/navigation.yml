@@ -16,17 +16,16 @@ main:
 
 # sidebar menu links
 docs:
-  - title: "Cheatsheet"       # 치트시트(정리본) 게시판
-    url: /Cheatsheet/
-    category: Cheatsheet
-  - title: "Test"
+  - title: "Coding Test"
     children:
-      - title: "Samples"
-        url: /Test-Samples/
-        category: "Samples"
-  - title: "A"
+      - title: "LeetCode"
+        url: /Codingtest-Leetcode/
+        category: "Leetcode"
+  - title: "etc."
     children:
-      - title: "A-a"
-        url: /
-      - title: "A-b"
-        url: /
+      - title: "Cheatsheet"  # 치트시트(정리본) 게시판
+        url: /etc-cheatsheet/
+        category: Cheatsheet
+      - title: "test"
+        url: /etc-test/
+        category: "test"

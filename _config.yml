@@ -18,7 +18,7 @@ description              : "An amazing website."
 url                      : "https://jooyeunseo.github.io"
 baseurl                  : ""
 repository               : "JooyeunSeo/JooyeunSeo.github.io" # GitHub username/repo-name
-teaser                   : "/assets/images/defaults/default-teaser.jpg"
+teaser                   : "/assets/images/defaults/default-teaser.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : # false (default)
@@ -86,7 +86,7 @@ analytics:
 author:
   name             : "Jooyeun Seo"
   avatar           : "/assets/images/defaults/bio-photo.jpg"
-  bio              : "<span style='background-color:#26C18F'>벨로그</span>와 **병행**하여<br>배운 것을 기록합니다 ☕️"
+  bio              : "☕️"
   location         : "Republic of Korea"
   email            :
   links:
