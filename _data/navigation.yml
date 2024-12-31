@@ -21,10 +21,10 @@ docs:
       - title: "LeetCode"
         url: /Codingtest-Leetcode/
         category: "Leetcode"
-  - title: "etc."
+  - title: "etc."            # 기타
     children:
-      - title: "Cheatsheet"  # 치트시트(정리본) 게시판
-        url: /etc-cheatsheet/
+      - title: "Cheatsheet"    # 치트시트(정리본) 게시판
+        url: /etc-Cheatsheet/
         category: Cheatsheet
       - title: "test"
         url: /etc-test/

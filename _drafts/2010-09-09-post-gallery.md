@@ -1,7 +1,5 @@
 ---
 title: "Post: Gallery"
-categories:
-  - test
 
 gallery:
   - url: /assets/images/unsplash-gallery-image-1.jpg
