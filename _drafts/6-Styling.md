@@ -101,15 +101,14 @@ a {
 
 `/_layouts` → `default.html`
 ```html
-    <!-- include the custom class for 'Back to top' button -->
-    <aside class="sidebar__top">
-      <a href="#site-nav">
-      <i class="fas fa-circle-arrow-up fa-3x"></i></a>  <!-- Font awesome Icon -->
-    </aside>
-
     <div id="footer" class="page__footer">
       ...
     </div>
+
+    <!-- include the custom class for 'Back to top' button -->
+    <aside class="sidebar__top">
+      <a href="#site-nav"><i class="fas fa-circle-arrow-up fa-3x"></i></a>
+    </aside>
 ```
 - 글 어느 부분에서든 한 번에 맨 위로 올라가는 버튼 추가
 - 화면 오른쪽 하단에 고정된 버튼이 나타난다.
