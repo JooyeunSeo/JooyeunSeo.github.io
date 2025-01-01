@@ -8,7 +8,7 @@ categories:
 tags:
   - Coding Test
   - Easy
-  - python
+  - Python
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

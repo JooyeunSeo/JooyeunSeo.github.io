@@ -91,7 +91,7 @@ author:
   email            :
   links:
     - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
+      icon: "fas fa-fw fa-envelope"
       url: "mailto:seojy2263@gmail.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -113,7 +113,7 @@ author:
 footer:
   links:
     - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
+      icon: "fas fa-fw fa-envelope"
       url: "mailto:seojy2263@gmail.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -289,7 +289,7 @@ defaults:
       toc: true             # 목차 표시
       toc_sticky: true      # 목차 상단 고정
       sidebar:              # 왼쪽 사이드바 표시
-        title: "Menu"
+        title: "Posts"
         nav: "docs"
       header:               # 기본 헤더 이미지
         image: /assets/images/defaults/header-main.png
@@ -301,5 +301,5 @@ defaults:
       layout: single
       author_profile: true  # 유저 프로필 표시
       sidebar:              # 왼쪽 사이드바 표시
-        title: "Menu"
+        title: "Posts"
         nav: "docs"

@@ -1,16 +1,16 @@
 # main links
 main:
-  - title: "About"
-    url: /about/
-  - title: "Posts"
-    url: /year-archive/
-  - title: "Tags"
-    url: /tags/
-  - title: "Pages"
-    url: /page-archive/
   - title: ".github.io"
     url: https://github.com/JooyeunSeo/JooyeunSeo.github.io
     target: _blank
+  - title: "ABOUT"
+    url: /about/
+  - title: "POSTS"
+    url: /year-archive/
+  - title: "TAGS"
+    url: /tags/
+  - title: "pages"
+    url: /page-archive/
   # - title: "Collections"
   #   url: /collection-archive/
 
@@ -21,11 +21,11 @@ docs:
       - title: "LeetCode"
         url: /Codingtest-Leetcode/
         category: "Leetcode"
-  - title: "etc."            # 기타
+  - title: "etc."              
     children:
-      - title: "Cheatsheet"    # 치트시트(정리본) 게시판
+      - title: "Cheatsheet"           # 치트시트
         url: /etc-Cheatsheet/
         category: Cheatsheet
-      - title: "test"
-        url: /etc-test/
-        category: "test"
+      - title: "Blog with Jekyll"     # Jekyll로 블로그 생성
+        url: /etc-Jekyll/
+        category: "Jekyll"
