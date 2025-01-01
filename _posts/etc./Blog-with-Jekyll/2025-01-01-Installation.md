@@ -11,6 +11,18 @@ tags:
   - Ruby
 ---
 
+**GitHub Pages**와 **Jekyll(지킬)**을 이용하여 무료로 블로그 호스팅하기!
+
+## Jekyll
+
+<a href="https://jekyllrb.com/" target="_blank">
+  <img src="https://jekyllrb-ko.github.io/img/octojekyll.png" width="30%" alt="Jekyll webpage Link">
+</a>
+
+- Ruby로 만든 정적 웹사이트 생성기
+- GitHub Pages도 Jekyll로 작동
+- 마크다운 파일로 작성하면 자동으로 HTML로 변환되기 때문에 HTML 문법을 잘 몰라도 쉽게 웹사이트를 꾸밀 수 있다.
+
 ## Github Pages Hosting
 
 1. GitHub Pages로 사용할 Repository 생성
@@ -23,15 +35,6 @@ tags:
        git clone (Repository URL)
        ```
 3. VS Code 등의 편집기에서 클론된 폴더를 열어서 작업 가능
-
-## Jekyll(지킬)
-
-<a href="https://jekyllrb.com/" target="_blank">
-  <img src="https://jekyllrb-ko.github.io/img/octojekyll.png" width="30%" alt="Jekyll webpage Link">
-</a>
-
-- 마크다운 파일로 작성하면 자동으로 HTML로 변환되기 때문에 쉽게 웹사이트를 꾸밀 수 있다
-- Ruby로 만든 정적 웹사이트 생성기
 
 ## Jekyll Installation (macOS)
 
@@ -145,12 +148,12 @@ end
 bundle exec jekyll serve
 ```
 - Github에 Push하기 전 로컬 서버에서 미리 실행해서 확인할 수 있다.
-- 로컬 서버 주소: http://127.0.0.1:4000/
-- 서버 정지: `ctrl` + `c`
-- **--livereload** 명령어 추가
+- **로컬 서버 주소:** <http://127.0.0.1:4000/>
+- **서버 정지:** 터미널에서 `ctrl` + `c`
+- <mark>--livereload</mark> 명령어 추가
    - 소스파일에서 변경사항이 생길 때마다 페이지 자동 새로고침
    - 예외로 `_config.yml` 파일을 변경할 경우에는 서버 정지 후 재실행 필요
-- **--drafts** 명령어 추가
+- <mark>--drafts</mark> 명령어 추가
    - `/_drafts` 안에 있는 포스트까지 함께 로컬 서버에서 확인 가능
    - 실제 웹 서버에서는 나타나지 않기 때문에 게시물을 임시 저장하는 용도로 사용
 
