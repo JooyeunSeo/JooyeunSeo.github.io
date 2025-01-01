@@ -148,7 +148,7 @@ end
 bundle exec jekyll serve
 ```
 - Github에 Push하기 전 로컬 서버에서 미리 실행해서 확인할 수 있다.
-- **로컬 서버 주소:** <http://127.0.0.1:4000/>
+- **로컬 서버 주소:** <http://localhost:4000/>
 - **서버 정지:** 터미널에서 `ctrl` + `c`
 - <mark>--livereload</mark> 명령어 추가
    - 소스파일에서 변경사항이 생길 때마다 페이지 자동 새로고침

@@ -93,7 +93,7 @@ author:
 
 ```yml
 footer:
-  links:    # Site Author와 동일
+  links:  # Site Author와 동일
 ```
 - 블로그 하단 부분 설정
 - FEED 아이콘이 표시되는 곳
@@ -101,8 +101,8 @@ footer:
 ## Outputting
 
 ```yml
-permalink: /:categories/:title/     # 게시물 및 페이지의 URL 형식 정의
-timezone: # 블로그의 시간대 설정(defaults: 해당 컴퓨터 OS의 로컬 시간)
+permalink: /:categories/:title/   # 게시물 및 페이지의 URL 형식 정의
+timezone: Asia/Seoul  # 시간대 설정(https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 ```
 
 ## Pagination
@@ -118,9 +118,9 @@ paginate_path: /page:num/   # 페이지네이션 경로 정의
 
 ### jekyll-paginate-v2
 
-jekyll-paginate보다 더 강력한 기능을 가진 플러그인
+jekyll-paginate보다 더 강력한 기능을 가진 플러그인<br><br>
 
-# YAML Front Matter Defaults
+## YAML Front Matter Defaults
 
 ```yml
 defaults:
