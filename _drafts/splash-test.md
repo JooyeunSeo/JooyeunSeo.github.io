@@ -11,7 +11,7 @@ header:
     - label: "Download"
       url: "https://github.com/mmistakes/minimal-mistakes/"
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
-excerpt: "excerpt 문구"
+excerpt: "테스트중"
 intro: 
   - excerpt: 'intro의 excerpt 문구. Centered with `type="center"`'
 feature_row:

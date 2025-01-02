@@ -1,4 +1,6 @@
 ---
+layout: single
+classes: wide
 title: "Fizz Bang Identity"
 excerpt: "Fizz Bang design system including logo mark, website design, and branding applications."
 header:

@@ -69,9 +69,11 @@ docs:
 ### Pull the Sidebar Links
 
 ```markdown
+---
 sidebar:
   title: "사이드바 제목"
   nav: docs
+---
 ```
 - 해당 YAML Front Matter를 사이드바를 활성화하려는 포스트 및 페이지에 더하기
 - 여러 페이지들에서 사용될 경우 `_config.yml`에서 디폴트값으로 설정하는 것이 더 편하다.    

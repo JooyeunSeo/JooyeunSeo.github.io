@@ -211,3 +211,43 @@ entries_layout: grid
 - 블로그 왼쪽 상단의 제목을 클릭하면 연결되는 홈페이지 레이아웃
 - `_config.yml`의 **pagination**에서 설정한 숫자만큼의 포스트들을 최신 순으로 나열
 - 프로젝트 최상단의 `index.html`에서 설정
+
+## Headers
+
+```markdown
+---
+header:
+  image: /assets/images/image-filename.jpg  <!-- /assets/images/ 경로의 이미지를 사용할 경우 -->
+  image: http://some-site.com/image.jpg     <!-- 외부에서 호스팅된 이미지 주소를 사용할 경우 -->
+
+  video:      <!-- 동영상 자체를 헤더로 사용할 경우 -->
+    id:       <!-- 동영상 링크에서 ID 부분만 작성 -->
+    provider: <!-- youtube 등 -->
+  
+  image_description: "A description of the image"               <!-- 헤더 이미지 설명 -->
+  
+  caption: "Photo credit: [**Unsplash**](https://unsplash.com)" <!-- 헤더 오른쪽 하단에 캡션 추가-->
+---
+```
+- 포스트나 페이지의 위에 full-width 사이즈로 들어가는 이미지(상단 네비게이션 바의 밑)
+- YAML Front Matter에 양식 작성
+
+### Header overlay
+
+```markdown
+title: "포스트 제목"  <!-- 헤더 위로 오버레이됨 -->
+excerpt: "요약 문구"  <!-- 헤더의 제목 밑에 표시됨 -->
+header:
+  overlay_image: 이미지 경로  <!-- 이미지를 배경으로 사용할 경우 -->
+  overlay_color: "#333"    <!-- 지정한 색상을 배경으로 사용할 경우 -->
+  
+  overlay_filter: 0.5                     <!-- 헤더에 불투명도를 조절한 검정색 필터를 오버레이 -->
+                  rgba(255, 0, 0, 0.5)    <!-- 색상과 불투명도를 동시에 조절한 필터 오버레이 -->
+                  linear-gradient(rgba(...), rgba(...))   <!-- 2색 그라데이션 필터 오버레이 --> 
+              
+  actions:         <!-- 설정한 url로 이동하는 버튼 추가(여러 개 생성 가능) -->
+    - label: "More Info"
+      url: "https://unsplash.com"
+```
+- 포스트의 title과 excerpt, 작성 날짜 등 미리보기에서 볼 수 있는 정보들을 헤더로 오버레이하는 설정
+- 불투명도는 0과 1 사이에서 조절
