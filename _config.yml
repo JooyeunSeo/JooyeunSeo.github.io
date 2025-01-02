@@ -251,6 +251,10 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+collections:  # 콜렉션 추가
+  portfolio:  # 콜렉션에 포트폴리오 추가
+    output: true
+    permalink: /:collection/:path/
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:

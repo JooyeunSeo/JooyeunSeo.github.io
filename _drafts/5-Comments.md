@@ -1,13 +1,77 @@
 ---
-excerpt: "dd"
-title: "dd"
+excerpt: "giscus로 댓글 시스템 구현하기"
+title: "Comments system by giscus"
 header:
   teaser: "https://jekyllrb.com/img/logo-2x.png"
 categories:
-  - 
+  - Jekyll
 tags:
   - Github Pages
-  - HTML
-  - Ruby
 ---
 
+## <a href="https://mmistakes.github.io/minimal-mistakes/docs/configuration/#comments" target="_blank">Comments</a>
+
+- 포스트에 댓글을 달 수 있는 기능 구현하기
+- Disqus, Discourse, Facebook Comments, Staticman v2 / v3, utterances, giscus 중 택 1
+- 아래와 같은 장점들 때문에 **giscus**를 선택했다.
+   - GitHub Discussions를 사용하여 댓글 데이터를 저장하므로 별도의 서버 불필요
+   - 사용자 추적과 광고가 없는 완전한 무료 오픈소스
+   - GitHub 계정을 통해 댓글을 작성하므로 스팸 방지 효과가 있음
+   - 사용자가 위젯의 동작, 디자인, 기능을 자유롭게 커스터마이징 가능
+   - 마크다운과 Github 이모지 지원
+   - 다국어 지원
+   - 비교적 가벼운 위젯으로 사이트 성능에 큰 영향을 끼치지 않음
+   - 댓글에 대한 답글을 달 수 있음
+
+## GitHub Repository Setting
+
+1. 공개 저장소(**public**)로 설정해야 한다(방문자들이 Discussion을 볼 수 있어야 하기 때문)
+2. `Settings` → `Features` → `Discussions` 체크
+3. 레포지토리에 Discussions 메뉴가 생기면 댓글 저장용 Discussion 생성하기
+   - `Discussion Format` → `Announcement` 선택
+   - 관리자 권한을 가진 사람만 새 Discussion을 시작할 수 있는 옵션
+4. 레포지토리로 giscus 앱 설치
+   - <a href="https://github.com/apps/giscus" target="_blank">Installation Link</a>
+   - `Only select repositories` 에서 블로그용 레포지토리를 선택 후 설치
+   - GitHub 프로필의 Settings → Applications 에서 설치 확인
+
+## giscus Setting
+
+<a href="https://giscus.app/ko" target="_blank">Setting Link</a>
+
+1. **언어:** 댓글 시스템의 언어 선택
+2. **저장소:** giscus에 연결할 저장소 이름 입력('통과했습니다! 이 저장소는 모든 조건을 만족합니다.' 문구 확인)
+3. **페이지 ↔︎ Discussions 연결:** `Discussion 제목이 페이지 경로를 포함` 선택
+4. **Discussion 카테고리:** 댓글 저장용 Discussion 선택
+5. **기능:** 기호에 맞게 특정 기능 추가하기
+6. **테마:** 블로그와 어울리는 테마 선택
+7. **giscus 사용:** 생성된 `<script>` 태그 복사하기
+
+## _config.yml
+
+```yml
+comments:
+  provider               : "giscus"
+  giscus:
+    repo_id              : data-repo-id 값
+    category_name        : data-category 값
+    category_id          : data-category-id 값
+    discussion_term      : data-mapping 값
+    reactions_enabled    : data-reactions-enabled 값
+    theme                : data-theme 값
+    strict               : data-strict 값
+    input_position       : data-input-position 값
+    emit_metadata        : data-emit-metadata 값
+    lang                 : data-lang 값
+    lazy                 : # 태그에 data-loading="lazy" 값이 있을 경우 true, 아니면 false
+```
+- 파일의 **comments:**에 `<script>` 태그의 내용을 알맞게 붙여넣기
+- 파일의 **Defaults:**에서 comments 옵션을 `true`로 변경해야 된다.     
+(<a href="https://jooyeunseo.github.io/jekyll/Configuration/#yaml-front-matter-defaults" target="_blank">YAML Front Matter Defaults</a> 설정 참조)
+
+## ⚠️
+
+- 로컬 서버에서는 댓글 기능이 사용되지 않으므로 push해야 확인 가능
+- 작성한 댓글을 블로그에서 바로 삭제 및 수정 불가능
+   - `해당 Github 페이지 레포지토리의 디스커션` → `댓글이 저장된 카테고리` → `해당 게시물` → 작성한 댓글을 수정/삭제
+   - 이 블로그의 <a href="https://github.com/JooyeunSeo/JooyeunSeo.github.io/discussions/categories/blog-comments" target="_blank">discussions</a> 페이지

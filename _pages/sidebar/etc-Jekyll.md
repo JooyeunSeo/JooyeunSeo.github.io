@@ -3,7 +3,7 @@ title: "Blog with Jekyll"
 header:
   image: /assets/images/defaults/header-main.png
 layout: archive
-permalink: /etc-Jekyll/
+permalink: /Jekyll/
 ---
 
 {% assign category_name = "Jekyll" %}

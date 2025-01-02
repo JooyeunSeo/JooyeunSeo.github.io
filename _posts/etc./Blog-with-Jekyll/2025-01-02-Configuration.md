@@ -7,8 +7,6 @@ categories:
   - Jekyll
 tags:
   - Github Pages
-  - HTML
-  - Ruby
 ---
  
 `_config.yml` 파일 수정 후 저장
@@ -114,7 +112,7 @@ paginate: 12                # 한 페이지에서 볼 수 있는 게시물의 �
 paginate_path: /page:num/   # 페이지네이션 경로 정의
 ```
 - gem jekyll-paginate 플러그인(defaults) 사용 시 설정
-- `index.html`(홈페이지) 파일에서만 작동하기 때문에 category, tag, 및 collection page 에서도 적용하려면 jekyll-paginate-v2 플러그인을 설치해야 한다.
+- `index.html`(홈페이지) 파일에서만 작동하기 때문에 category, tag, collection page에서도 적용하려면 jekyll-paginate-v2 플러그인을 설치해야 한다.
 
 ### jekyll-paginate-v2
 
@@ -167,4 +165,5 @@ defaults:
 - **Markdown processing:** kramdown 설정
 - **Sass/SCSS:** Sass/SCSS 설정
 - **Plugins:** GitHub Pages로 호스팅할 경우 사용될 플러그인을 whitelist에 지정
+- **Archives:** 아카이브 페이지의 URL 구조 정의
 - **HTML compression:** HTML 압축 설정

@@ -1,31 +1,26 @@
-# main links
 main:
-  - title: ".github.io"
-    url: https://github.com/JooyeunSeo/JooyeunSeo.github.io
-    target: _blank
-  - title: "ABOUT"
+  - title: "About"
     url: /about/
-  - title: "POSTS"
-    url: /year-archive/
-  - title: "TAGS"
+  - title: "Tags"
     url: /tags/
   - title: "pages"
     url: /page-archive/
-  # - title: "Collections"
-  #   url: /collection-archive/
+  - title: "Discussion"
+    url: https://github.com/JooyeunSeo/JooyeunSeo.github.io/discussions/categories/blog-comments
+    target: _blank
 
 # sidebar menu links
 docs:
   - title: "Coding Test"
     children:
       - title: "LeetCode"
-        url: /Codingtest-Leetcode/
+        url: /Leetcode/
         category: "Leetcode"
   - title: "etc."              
     children:
       - title: "Cheatsheet"           # 치트시트
-        url: /etc-Cheatsheet/
+        url: /Cheatsheet/
         category: Cheatsheet
       - title: "Blog with Jekyll"     # Jekyll로 블로그 생성
-        url: /etc-Jekyll/
+        url: /Jekyll/
         category: "Jekyll"

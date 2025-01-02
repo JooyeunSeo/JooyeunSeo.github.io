@@ -7,7 +7,6 @@ categories:
   - Jekyll
 tags:
   - Github Pages
-  - HTML
   - Ruby
 ---
 
