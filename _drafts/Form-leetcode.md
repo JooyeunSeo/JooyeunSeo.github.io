@@ -1,8 +1,8 @@
 ---
-excerpt: "'LeetCode-{테스트이름}' 풀이 정리"
+excerpt: "'LeetCode-테스트이름' 풀이 정리"
 title: "\0양식"
 header:
-  teaser: "/assets/images/defaults/draft-teaser.png"
+  teaser: "/assets/images/defaults/logo-LeetCode-black.png"
 categories:
   - Leetcode
 tags:
@@ -28,7 +28,10 @@ tags:
 
 **Constraints:**
 
+x<sup>n</sup>
+x<sub>n</sub>
 
+**Follow up:** 
 
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 
@@ -38,14 +41,13 @@ tags:
 
 
 
-## <i class="fa-solid fa-book-open"></i> [Editorial](https://leetcode.com/problems/{테스트이름}/editorial/) Algorithm
+## <i class="fa-solid fa-flask"></i> Other Solutions
+
+### <a href="링크" target="_blank">Editorial</a>
 
 ```python
 
 ```
-
 <i class="fa-solid fa-clock"></i> **time complexity:** O(n)         
 <i class="fa-solid fa-memory"></i> **space complexity:** O(n)        
 
-
-## <i class="fa-solid fa-flask"></i> Other Solutions

@@ -40,7 +40,7 @@ analytics:
   provider: "google-gtag" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
     tracking_id: "Your Tracking Code"
-    anonymize_ip: false # false (default)
+    anonymize_ip: false   # false (default)
 ```
 - tracking_id에 복사한 측정 ID를 넣어서 파일 수정
 - Github에 push해서 웹 서버에 반영하기
