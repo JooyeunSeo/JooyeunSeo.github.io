@@ -53,11 +53,7 @@ lunr:
   search_within_pages    : false # false (default)
 
 # SEO Related
-google_site_verification :
-bing_site_verification   :
-naver_site_verification  :
-yandex_site_verification :
-baidu_site_verification  :
+google_site_verification : EnOYENSsmtyv_O5Bwtaj8kTBAAxDQ4sjRbWJKT8tYjs
 
 # Social Sharing
 twitter:
