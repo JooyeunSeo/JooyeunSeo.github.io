@@ -123,6 +123,7 @@ footer:
 include:
   - .htaccess
   - _pages
+  - robots.txt  # robots.txt 파일 추가
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
