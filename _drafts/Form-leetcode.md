@@ -33,17 +33,21 @@ x<sub>n</sub>
 
 **Follow up:** 
 
+💡 **Hint 1:** <u><span style="color:white">hint</span></u>
+
+
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 
 ```python
 
 ```
-
+<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **0%**    
+<i class="fa-solid fa-memory"></i> Memory: **0** MB \| Beats **0%**
 
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 
-### <a href="링크" target="_blank">Editorial</a>
+### <a href="링크" target="_blank">1st</a>
 
 ```python
 

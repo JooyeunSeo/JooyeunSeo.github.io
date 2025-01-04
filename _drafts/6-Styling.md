@@ -52,7 +52,23 @@ html {
 - 전체적으로 폰트 사이즈를 축소시킴
 - 화면 크기를 여러가지로 조정하며 각 화면에 맞는 사이즈를 테스트해야 한다.
 
-## Hyperlink Underline
+## Hyperlink
+
+### Color
+
+`/_sass` → `/_minimal-mistakes` → `_variables.scss`
+```scss
+/* links */
+$link-color: mix(#000, #C197D2, 10%) !default;
+$link-color-hover: mix(#000, $link-color, 25%) !default;
+$link-color-visited: mix(#fff, $link-color, 15%) !default;
+...
+```
+- **link-color:** 하이퍼링크 기본 색상으로, 두 번째 색에 검정색을 10% 섞은 색상으로 설정되어 있다.
+- **link-color-hover:** 마우스를 링크에 올렸을 때 색상
+- **link-color-visited:** 사용자가 이미 방문한 링크의 색상
+
+### Underline
 
 `/_sass` → `/_minimal-mistakes` → `_base.scss`
 ```scss

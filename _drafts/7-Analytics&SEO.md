@@ -29,19 +29,18 @@ tags:
   - **플랫폼:** 웹
   - **웹사이트 URL:** 블로그 주소
   - **스트림 이름:** 블로그 이름
-7. 데이터 스트림 세부정보에서 **측정 ID** 복사하기   
-
-```yml
-analytics:
-  provider: "google-gtag"
-  # false (default), "google", "google-universal", "google-gtag", "custom"
-  google:
-    tracking_id: "Your Tracking Code"
-    anonymize_ip: false   # false (default)
-```
-- `_config.yml`의 analytics 부분 수정
-- tracking_id에 복사한 측정 ID를 넣어서 파일 수정
-- Github에 push해서 웹 서버에 반영하기
+7. 데이터 스트림 세부정보에서 **측정 ID** 복사하기
+8. `_config.yml`의 analytics 부분 수정
+    ```yml
+    analytics:
+      provider: "google-gtag"
+      # false (default), "google", "google-universal", "google-gtag", "custom"
+      google:
+        tracking_id: "Your Tracking Code"
+        anonymize_ip: false   # false (default)
+    ```
+    - tracking_id에 복사한 측정 ID를 넣어서 파일 수정
+    - Github에 push해서 웹 서버에 반영하기
 
 ## <a href="https://search.google.com/search-console/welcome?hl=ko&utm_source=wmx&utm_medium=deprecation-pane&utm_content=home" target="_blank">Google Search Console</a>
 
