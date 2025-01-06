@@ -28,8 +28,7 @@ tags:
 
 **Constraints:**
 
-x<sup>n</sup>
-x<sub>n</sub>
+
 
 **Follow up:** 
 
@@ -54,4 +53,7 @@ x<sub>n</sub>
 ```
 <i class="fa-solid fa-clock"></i> **time complexity:** O(n)         
 <i class="fa-solid fa-memory"></i> **space complexity:** O(n)        
+x<sup>n</sup>
+x<sub>n</sub>
 
+{: style="color: blue;"}

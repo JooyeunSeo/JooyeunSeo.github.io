@@ -9,6 +9,7 @@ tags:
   - Coding Test
   - Easy
   - Python
+  - zip()
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
