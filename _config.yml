@@ -288,6 +288,7 @@ defaults:
       share: true           # 소셜미디어 공유 링크 표시
       related: true         # 관련 게시물 표시
       toc: true             # 목차 표시
+      toc_icon: "fas fa-fw fa-bars-staggered" # 목차 아이콘
       toc_sticky: true      # 목차 상단 고정
       sidebar:              # 왼쪽 사이드바 표시
         title: "Posts"
