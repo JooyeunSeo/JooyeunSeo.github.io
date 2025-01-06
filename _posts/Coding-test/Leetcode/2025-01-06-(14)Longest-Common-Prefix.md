@@ -94,8 +94,8 @@ class Solution:
 {: style="color: blue;"} 
 
 sorted(`v`) = ['flight', 'flow', 'flower']    
-`first` = flower      
-`last` = flight
+∴ `first` = flower      
+∴ `last` = flight
 
 
 |i| first\[i] | last\[i] | compare | ans  |
@@ -107,7 +107,7 @@ sorted(`v`) = ['flight', 'flow', 'flower']
 `ans` = fl
 {: style="color: green;"} 
 
-### <a href="링크" target="_blank">1st</a>
+### <a href="https://leetcode.com/problems/longest-common-prefix/solutions/6032134/video-simply-create-prefix-between-2-words/" target="_blank">2st</a>
 
 ```python
 class Solution:

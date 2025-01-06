@@ -116,7 +116,9 @@ paginate_path: /page:num/   # 페이지네이션 경로 정의
 
 ### jekyll-paginate-v2
 
-jekyll-paginate보다 더 강력한 기능을 가진 플러그인<br><br>
+- jekyll-paginate보다 더 강력한 기능을 가진 플러그인
+- Github pages에서는 사용 불가능...
+<br><br>
 
 ## YAML Front Matter Defaults
 

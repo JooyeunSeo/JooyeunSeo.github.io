@@ -52,7 +52,17 @@ tags:
 
 ```
 <i class="fa-solid fa-clock"></i> **time complexity:** O(n)         
-<i class="fa-solid fa-memory"></i> **space complexity:** O(n)        
+<i class="fa-solid fa-memory"></i> **space complexity:** O(n)   
+
+### <a href="링크" target="_blank">2nd</a>
+
+```python
+
+```
+<i class="fa-solid fa-clock"></i> **time complexity:** O(n)         
+<i class="fa-solid fa-memory"></i> **space complexity:** O(n)   
+
+
 x<sup>n</sup>
 x<sub>n</sub>
 
