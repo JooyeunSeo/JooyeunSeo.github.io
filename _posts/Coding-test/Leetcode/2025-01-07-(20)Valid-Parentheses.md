@@ -9,6 +9,7 @@ tags:
   - Coding Test
   - Easy
   - Python
+  - Stack
   - pop()
   - keys()
   - values()
@@ -48,7 +49,7 @@ An input string is valid if:
 **Constraints:**
 
 - 1 <= s.length <= 10<sub>4</sub>
-- s consists of parentheses only `()[]{}`.   
+- `s` consists of parentheses only `()[]{}`.   
 
 
 💡 **Hint 1:** <u><span style="color:white">Use a stack of characters.</span></u>

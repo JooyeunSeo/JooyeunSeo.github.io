@@ -1,6 +1,6 @@
 ---
 excerpt: "'LeetCode-테스트이름' 풀이 정리"
-title: "\0양식"
+title: "\0리트코드양식"
 header:
   teaser: "/assets/images/defaults/logo-LeetCode-black.png"
 categories:
