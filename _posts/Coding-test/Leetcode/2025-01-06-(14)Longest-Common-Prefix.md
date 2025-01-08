@@ -2,7 +2,7 @@
 excerpt: "'LeetCode-Longest Common Prefix' 풀이 정리"
 title: "\014. Longest Common Prefix"
 header:
-  teaser: "/assets/images/defaults/logo-LeetCode-black.png"
+  teaser: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/LeetCode_Logo_black_with_text.svg/458px-LeetCode_Logo_black_with_text.svg.png"
 categories:
   - Leetcode
 tags:

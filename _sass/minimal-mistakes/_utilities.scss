@@ -223,6 +223,9 @@ $text-alignments: left, right, start, end, center, justify;
     $vine-color: ".fa-vine",
     $xing-color: ".fa-xing, .fa-xing-square",
     $youtube-color: ".fa-youtube",
+    /* Author 아이콘 색 추가 */
+    #26C18F: ".fa-pen",
+    #CEB180: ".fa-envelope",
   ) {
     #{$icons} {
       color: $color;

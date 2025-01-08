@@ -2,7 +2,7 @@
 excerpt: "'LeetCode-Merge Two Sorted Lists' 풀이 정리"
 title: "\021. Merge Two Sorted Lists"
 header:
-  teaser: "/assets/images/defaults/logo-LeetCode-black.png"
+  teaser: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/LeetCode_Logo_black_with_text.svg/458px-LeetCode_Logo_black_with_text.svg.png"
 categories:
   - Leetcode
 tags:
