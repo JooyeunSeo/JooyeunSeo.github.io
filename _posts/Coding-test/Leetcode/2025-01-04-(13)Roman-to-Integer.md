@@ -63,7 +63,7 @@ Given a roman numeral, convert it to an integer.
 - It is guaranteed that s is a valid roman numeral in the range [1, 3999].   
 
 💡 **Hint 1:**   
-<u><span style="color:white">Problem is simpler to solve by working the string from back to front and using a map.</span></u>
+<u><span style="color:#F5F5F5">Problem is simpler to solve by working the string from back to front and using a map.</span></u>
 
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 

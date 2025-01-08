@@ -59,15 +59,15 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 
 
 💡 **Hint 1:**   
-<u><span style="color:white">In this problem, the key point to focus on is the input array being sorted. As far as duplicate elements are concerned, what is their positioning in the array when the given array is sorted? Look at the image below for the answer. If we know the position of one of the elements, do we also know the positioning of all the duplicate elements?</span></u>
+<u><span style="color:#F5F5F5">In this problem, the key point to focus on is the input array being sorted. As far as duplicate elements are concerned, what is their positioning in the array when the given array is sorted? Look at the image below for the answer. If we know the position of one of the elements, do we also know the positioning of all the duplicate elements?</span></u>
 
 ![](https://assets.leetcode.com/uploads/2019/10/20/hint_rem_dup.png)
 
 💡 **Hint 2:**   
-<u><span style="color:white">We need to modify the array in-place and the size of the final array would potentially be smaller than the size of the input array. So, we ought to use a two-pointer approach here. One, that would keep track of the current element in the original array and another one for just the unique elements.</span></u>
+<u><span style="color:#F5F5F5">We need to modify the array in-place and the size of the final array would potentially be smaller than the size of the input array. So, we ought to use a two-pointer approach here. One, that would keep track of the current element in the original array and another one for just the unique elements.</span></u>
 
 💡 **Hint 3:**   
-<u><span style="color:white">Essentially, once an element is encountered, you simply need to <b>bypass</b> its duplicates and move on to the next unique element.</span></u>
+<u><span style="color:#F5F5F5">Essentially, once an element is encountered, you simply need to <b>bypass</b> its duplicates and move on to the next unique element.</span></u>
 
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 

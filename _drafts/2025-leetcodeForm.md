@@ -35,7 +35,7 @@ x<sub>n</sub>
 **Follow up:** 
 
 💡 **Hint 1:**   
-<u><span style="color:white">hint</span></u>
+<u><span style="color:#F5F5F5">hint</span></u>
 
 
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
