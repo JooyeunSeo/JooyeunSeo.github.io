@@ -28,11 +28,14 @@ tags:
 
 **Constraints:**
 
+x<sup>n</sup>
+x<sub>n</sub>
 
 
 **Follow up:** 
 
-💡 **Hint 1:** <u><span style="color:white">hint</span></u>
+💡 **Hint 1:**   
+<u><span style="color:white">hint</span></u>
 
 
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
@@ -63,7 +66,5 @@ tags:
 <i class="fa-solid fa-memory"></i> **space complexity:** O(n)   
 
 
-x<sup>n</sup>
-x<sub>n</sub>
 
 {: style="color: blue;"}

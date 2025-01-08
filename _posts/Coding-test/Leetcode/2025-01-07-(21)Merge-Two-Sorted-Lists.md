@@ -22,6 +22,8 @@ Return the *head of the merged linked list*.
 
 **Example 1:**
 
+![](https://assets.leetcode.com/uploads/2020/10/03/merge_ex1.jpg)
+
 - Input: list1 = \[1,2,4], list2 = \[1,3,4]    
 - Output: \[1,1,2,3,4,4]
 
@@ -88,3 +90,69 @@ merged sorted list:
 |:-------------:|-----|-----|-----|-----|-----|---|
 | list1 current | 2   | 2   | 4   | 4   | /   |   |
 | list2 current | 1   | 3   | 3   | 4   |     | / |
+
+## <i class="fa-solid fa-flask"></i> Other Solutions
+
+### 1st
+
+```python
+# Definition for singly-linked list.
+class ListNode(object):
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class Solution(object):
+    def mergeTwoLists(self, list1, list2):
+        if not list1:               # 둘 중 빈 리스트가 있을 경우 재귀 호출 종료
+            return list2
+        if not list2:
+            return list1
+            
+        if list1.val < list2.val:   # 재귀: 각 리스트의 현재 노드를 비교
+            # list1의 현재 노드가 더 작으면, list1을 결과에 포함
+            list1.next = self.mergeTwoLists(list1.next, list2)
+            return list1
+        else:
+            # list2의 현재 노드가 더 작으면, list2를 결과에 포함
+            list2.next = self.mergeTwoLists(list1, list2.next)
+            return list2
+```
+
+재귀 호출을 이용한 방법으로, 위의 함수보다 실행 시간은 더 오래걸렸다.
+
+`list1` = 1 → 2 → 4    
+`list2` = 1 → 3 → 4
+{: style="color: blue;"}
+<br>
+
+**재귀 호출 순서**
+
+1. mergeTwoLists(`1 → 2 → 4`, `1 → 3 → 4`)
+   - **list1.val (1)** vs list2.val (1) ⇒ list1 선택
+   - list1.next = mergeTwoLists(`2 → 4`, `1 → 3 → 4`) 호출
+2. mergeTwoLists(`2 → 4`, `1 → 3 → 4`)
+   - list1.val (2) vs **list2.val (1)** ⇒ list2 선택
+   - list2.next = mergeTwoLists(`2 → 4`, `3 → 4`) 호출
+3. mergeTwoLists(`2 → 4`, `3 → 4`)
+   - **list1.val (2)** vs list2.val (3) ⇒ list1 선택
+   - list1.next = mergeTwoLists(`4`, `3 → 4`) 호출
+4. mergeTwoLists(`4`, `3 → 4`)
+   - list1.val (4) vs **list2.val (3)** ⇒ list2 선택
+   - list2.next = mergeTwoLists(`4`, `4`) 호출
+5. mergeTwoLists(`4`, `4`)
+   - **list1.val (4)** vs list2.val (4) ⇒ list1 선택
+   - list1.next = mergeTwoLists(`None`, `4`) 호출
+6. mergeTwoLists(`None`, `4`)
+   - list1이 `None`이므로, **list2**를 return `4 → None`
+   
+<br>
+
+**반환 과정(역순 호출)**
+
+1. mergeTwoLists(`None`, `4`) ⇒ return `4 → None` (반환된 값을 이전 호출에서 list1.next에 연결)
+2. mergeTwoLists(`4`, `4`) ⇒ return `4 → 4 → None`
+3. mergeTwoLists(`4`, `3 → 4`) ⇒ return `3 → 4 → 4 → None`
+4. mergeTwoLists(`2 → 4`, `3 → 4`) ⇒ return `2 → 3 → 4 → 4 → None`
+5. mergeTwoLists(`2 → 4`, `1 → 3 → 4`) ⇒ return `1 → 2 → 3 → 4 → 4 → None`
+6. mergeTwoLists(`1 → 2 → 4`, `1 → 3 → 4`) ⇒ return `1 → 1 → 2 → 3 → 4 → 4 → None`

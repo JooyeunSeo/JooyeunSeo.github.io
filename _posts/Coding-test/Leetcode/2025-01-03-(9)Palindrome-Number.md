@@ -42,7 +42,8 @@ Given an integer `x`, return `true` if `x` is a ***palindrome***, and `false` ot
 
 **Follow up:** Could you solve it without converting the integer to a string?
 
-💡 **Hint 1:** <u><span style="color:white">Beware of overflow when you reverse the integer.</span></u>
+💡 **Hint 1:**   
+<u><span style="color:white">Beware of overflow when you reverse the integer.</span></u>
 
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 

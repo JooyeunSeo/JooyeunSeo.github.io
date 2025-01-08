@@ -52,11 +52,14 @@ An input string is valid if:
 - `s` consists of parentheses only `()[]{}`.   
 
 
-💡 **Hint 1:** <u><span style="color:white">Use a stack of characters.</span></u>
+💡 **Hint 1:**   
+<u><span style="color:white">Use a stack of characters.</span></u>
 
-💡 **Hint 2:** <u><span style="color:white">When you encounter an opening bracket, push it to the top of the stack.</span></u>
+💡 **Hint 2:**   
+<u><span style="color:white">When you encounter an opening bracket, push it to the top of the stack.</span></u>
 
-💡 **Hint 3:** <u><span style="color:white">When you encounter a closing bracket, check if the top of the stack was the opening for it. If yes, pop it from the stack. Otherwise, return false.</span></u>
+💡 **Hint 3:**   
+<u><span style="color:white">When you encounter a closing bracket, check if the top of the stack was the opening for it. If yes, pop it from the stack. Otherwise, return false.</span></u>
 
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 
