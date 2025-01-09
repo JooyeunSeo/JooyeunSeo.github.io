@@ -85,38 +85,8 @@ author:
 - 프로필 링크의 아이콘은 [Font Awesome](https://fontawesome.com/v6/search?m=free)에서 가져올 수 있다
    - e.g. HTML code가 `<i class="fa-brands fa-github"></i>` → "fab fa-fw fa-github"
    - e.g. HTML code가 `<i class="fa-solid fa-envelope"></i>` → "fas fa-fw fa-envelope"
+- 아이콘 <a href="https://jooyeunseo.github.io/jekyll/Styling/#social-icons" target="_blank">색상</a> 커스텀 가능
 - 이메일 주소에 링크를 달기 위해서 `mailto:` 추가
-
----
-
-프로필 링크 아이콘 색상 변경
-
-`/_sass` → `/_minimal-mistakes` → `_utilities.scss`
-```scss
-/* social icons*/
-
-.social-icons {
-  .fas,
-  .fab,
-  .far,
-  .fal {
-    color: $text-color;
-  }
-
-  @each $color, $icons in (
-    $behance-color: ".fa-behance, .fa-behance-square",
-    
-    ...
-
-    $youtube-color: ".fa-youtube",
-    /* Author 아이콘 색 추가 */
-    #26C18F: ".fa-pen",
-    #CEB180: ".fa-envelope",
-  )
-  ...
-}
-```
-Font awesome 코드에서 맨 뒷부분만 복사해서 `@each $color, $icons in` 안에 원하는 색상과 추가
 
 ## Site Footer
 

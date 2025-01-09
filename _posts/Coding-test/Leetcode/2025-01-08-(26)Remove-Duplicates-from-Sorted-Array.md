@@ -21,9 +21,10 @@ Consider the number of unique elements of `nums` to be `k`, to get accepted, you
 
 - Change the array `nums` such that the first `k` elements of `nums` contain the unique elements in the order they were present in `nums` initially. The remaining elements of `nums` are not important as well as the size of `nums`.
 - Return `k`.
+<br><br>
 
 **Custom Judge:**     
-
+The judge will test your solution with the following code:
 ```c
 int[] nums = [...]; // Input array
 int[] expectedNums = [...]; // The expected answer with correct length
@@ -57,7 +58,6 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 - -100 <= nums\[i] <= 100
 - `nums` is sorted in non-decreasing order.
 
-
 💡 **Hint 1:**   
 <u><span style="color:#F5F5F5">In this problem, the key point to focus on is the input array being sorted. As far as duplicate elements are concerned, what is their positioning in the array when the given array is sorted? Look at the image below for the answer. If we know the position of one of the elements, do we also know the positioning of all the duplicate elements?</span></u>
 
@@ -80,6 +80,7 @@ class Solution(object):
         """
         uniq_p = 0      # 같은 숫자를 가진 원소들 중 맨 앞 원소의 인덱스(고유 원소에 카운트됨)
         curr_p = 1      # 현재 가리키는 원소의 인덱스(nums[0]는 무조건 고유 원소이므로 nums[1]부터 시작)
+        
         for curr_p in range(1, len(nums)):
             if nums[curr_p] != nums[uniq_p]:    # curr_p가 가리키는 원소가 uniq_p가 가리키는 원소와 불일치하면
                 uniq_p += 1                     # uniq_p의 인덱스에 +1 해서 한 칸 옮기기 
