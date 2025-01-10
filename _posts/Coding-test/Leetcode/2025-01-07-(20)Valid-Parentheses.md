@@ -130,8 +130,8 @@ class Solution:
         
         return not stack  # 스택이 비어있다면 True 반환
 ```
-<i class="fa-solid fa-clock"></i> **time complexity:** O(n) ← 문자열 s를 한 번 순회    
-<i class="fa-solid fa-memory"></i> **space complexity:** O(n) ← 최악의 경우의 스택 크기(모두 여는 괄호)   
+<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛) ← 문자열 s를 한 번 순회    
+<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛) ← 최악의 경우의 스택 크기(모두 여는 괄호)   
 
 - 파이썬 딕셔너리 메소드 <mark>keys()</mark>는 딕셔너리의 키만 모아서 리스트로 반환
 - 파이썬 딕셔너리 메소드 <mark>values()</mark>는 딕셔너리의 값만 모아서 리스트로 반환

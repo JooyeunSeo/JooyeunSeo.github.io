@@ -1,6 +1,6 @@
 ---
 excerpt: "'LeetCode-테스트이름' 풀이 정리"
-title: "\0리트코드양식"
+title: "\0"
 header:
   teaser: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/LeetCode_Logo_black_with_text.svg/458px-LeetCode_Logo_black_with_text.svg.png"
 categories:
@@ -28,8 +28,8 @@ tags:
 
 **Constraints:**
 
-x<sup>n</sup>
-x<sub>n</sub>
+<sup>n</sup>
+<sub>n</sub>
 
 
 **Follow up:** 
@@ -54,16 +54,16 @@ x<sub>n</sub>
 ```python
 
 ```
-<i class="fa-solid fa-clock"></i> **time complexity:** O(n)         
-<i class="fa-solid fa-memory"></i> **space complexity:** O(n)   
+<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛)𝑂(𝑙𝑜𝑔<sub>𝑥</sub>)𝑚      
+<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛)𝑂(𝑙𝑜𝑔<sub>𝑥</sub>)𝑚          
 
 ### <a href="링크" target="_blank">2nd</a>
 
 ```python
 
 ```
-<i class="fa-solid fa-clock"></i> **time complexity:** O(n)         
-<i class="fa-solid fa-memory"></i> **space complexity:** O(n)   
+<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛)𝑂(𝑙𝑜𝑔<sub>𝑥</sub>)𝑚               
+<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛)𝑂(𝑙𝑜𝑔<sub>𝑥</sub>)𝑚   
 
 
 

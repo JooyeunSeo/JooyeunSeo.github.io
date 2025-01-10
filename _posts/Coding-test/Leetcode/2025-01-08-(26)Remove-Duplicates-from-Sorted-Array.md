@@ -128,5 +128,5 @@ class Solution:
         
         return i
 ```
-<i class="fa-solid fa-clock"></i> **time complexity:** O(n)         
-<i class="fa-solid fa-memory"></i> **space complexity:** O(1)   
+<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛)             
+<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(1)   

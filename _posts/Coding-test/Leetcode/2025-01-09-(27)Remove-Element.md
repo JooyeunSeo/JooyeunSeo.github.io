@@ -127,8 +127,8 @@ class Solution:
         
         return k
 ```
-<i class="fa-solid fa-clock"></i> **time complexity:** O(n) ← 리스트의 크기에 비례        
-<i class="fa-solid fa-memory"></i> **space complexity:** O(1)   
+<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛) ← 리스트의 크기에 비례        
+<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(1)   
 
 두 개의 포인터가 모두 맨 앞에서부터 시작하고, 현재 포인터 `i`의 원소값과 `val`이 다를 때만 포인터 `k`를 이동하는 방식이다.   
 
@@ -156,8 +156,8 @@ class Solution:
             nums.remove(val)  # 리스트에서 가장 먼저 발견한 val을 지우고 그 뒤를 한 칸씩 앞으로 이동하여 재정렬
         return len(nums)
 ```
-<i class="fa-solid fa-clock"></i> **time complexity:** O(n<sub>2</sub>)        
-<i class="fa-solid fa-memory"></i> **space complexity:** O(1)   
+<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛<sup>2</sup>)         
+<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(1)   
 
 코드는 간단하지만, <mark>.remove()</mark> 함수는 리스트를 순회하는 원리이다.   
 따라서 최악의 경우 시간 복잡도가 O(n<sup>2</sup>)이 되어 효율이 떨어진다.

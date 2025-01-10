@@ -125,8 +125,8 @@ class Solution:
         
         return pref
 ```
-<i class="fa-solid fa-clock"></i> **time complexity:** O(m\*n) ← {len(strs) - 1} \* 가장 긴 공통 접두사의 길이     
-<i class="fa-solid fa-memory"></i> **space complexity:** O(len(strs[0]))       
+<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛 \* 𝑚) ← {len(strs) - 1} \* 가장 긴 공통 접두사의 길이     
+<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(len(strs[0]))        
 
 `strs` = \["flower", "flow", "flight"]    
 `pref` = flower   

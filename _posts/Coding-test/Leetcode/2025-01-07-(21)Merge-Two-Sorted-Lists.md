@@ -75,8 +75,8 @@ class Solution(object):
         current.next = list1 if list1 else list2  # 한 쪽 리스트가 먼저 끝난 경우 남은 리스트를 전부 연결
         return head.next                          # head를 반환하면 연결 리스트가 전부 반환됨
 ```
-<i class="fa-solid fa-clock"></i> **time complexity:** O(m+n) ← `list1`과 `list2`의 길이     
-<i class="fa-solid fa-memory"></i> **space complexity:** O(1)   
+<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑚 \* 𝑛) ← `list1`과 `list2`의 길이     
+<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(1)   
 
 연결 리스트를 파이썬으로 구현하는 것이 생소해서 솔루션 게시판의 <a href="https://leetcode.com/problems/merge-two-sorted-lists/solutions/6048156/video-using-dummy-pointer-and-recursion-solution-as-a-bonus/" target="_blank">포스트</a>를 참고했다.
 

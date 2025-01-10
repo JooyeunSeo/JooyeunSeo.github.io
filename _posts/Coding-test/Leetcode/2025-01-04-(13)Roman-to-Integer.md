@@ -138,8 +138,8 @@ class Solution:
 
         return res + roman[s[-1]]   # 마지막 남은 1개의 문자는 그대로 더하기
 ```
-<i class="fa-solid fa-clock"></i> **time complexity:** O(n) ← 입력 문자열 `s`의 길이         
-<i class="fa-solid fa-memory"></i> **space complexity:** O(1) ← `s`와 상관없이 딕셔너리의 크기는 동일       
+<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛) ← 입력 문자열 `s`의 길이         
+<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(1) ← `s`와 상관없이 딕셔너리의 크기는 동일       
 
 `s` =  "XIV"    
 `res` = 0    

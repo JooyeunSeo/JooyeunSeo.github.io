@@ -14,13 +14,13 @@ docs:
   - title: "Coding Test"
     children:
       - title: "LeetCode"
-        url: /Leetcode/
+        url: /leetcode/
         category: "Leetcode"
   - title: "etc."              
     children:
       - title: "Cheatsheet"           # 치트시트
-        url: /Cheatsheet/
+        url: /cheatsheet/
         category: Cheatsheet
       - title: "Blog with Jekyll"     # Jekyll로 블로그 생성
-        url: /Jekyll/
+        url: /jekyll/
         category: "Jekyll"

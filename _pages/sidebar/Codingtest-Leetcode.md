@@ -3,7 +3,7 @@ title: "LeetCode"
 header:
   image: /assets/images/defaults/header-main.png
 layout: archive
-permalink: /Leetcode/
+permalink: /leetcode/
 ---
 
 {% assign category_name = "Leetcode" %}

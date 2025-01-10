@@ -3,7 +3,7 @@ title: "Cheatsheet"
 header:
   image: /assets/images/defaults/header-main.png
 layout: archive
-permalink: /Cheatsheet/
+permalink: /cheatsheet/
 ---
 
 {% assign category_name = "Cheatsheet" %}
