@@ -54,16 +54,16 @@ tags:
 ```python
 
 ```
-<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛)𝑂(𝑙𝑜𝑔<sub>𝑥</sub>)𝑚      
-<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛)𝑂(𝑙𝑜𝑔<sub>𝑥</sub>)𝑚          
+<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛)𝑂(𝑛<sup>2</sup>)𝑂(log𝑛)𝑚𝑥    
+<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛)𝑂(𝑛<sup>2</sup>)𝑂(log𝑛)𝑚𝑥             
 
 ### <a href="링크" target="_blank">2nd</a>
 
 ```python
 
 ```
-<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛)𝑂(𝑙𝑜𝑔<sub>𝑥</sub>)𝑚               
-<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛)𝑂(𝑙𝑜𝑔<sub>𝑥</sub>)𝑚   
+<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛)𝑂(𝑛<sup>2</sup>)𝑂(log𝑛)𝑚𝑥            
+<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛)𝑂(𝑛<sup>2</sup>)𝑂(log𝑛)𝑚𝑥    
 
 
 

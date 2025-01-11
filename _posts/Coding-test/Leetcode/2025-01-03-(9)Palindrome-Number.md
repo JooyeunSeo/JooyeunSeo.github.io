@@ -143,7 +143,7 @@ class Solution:
         
         return reverse == xcopy
 ```     
-<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑙𝑜𝑔<sub>𝑥</sub>)     
+<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(log𝑥) ← `x`의 자릿수는 `x`의 크기에 로그 스케일로 비례   
 <i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(1)    
 
 while문 계산 예시
