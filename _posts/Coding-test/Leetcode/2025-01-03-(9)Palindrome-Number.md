@@ -4,10 +4,9 @@ title: "\09. Palindrome Number"
 header:
   teaser: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/LeetCode_Logo_black_with_text.svg/458px-LeetCode_Logo_black_with_text.svg.png"
 categories:
-  - Leetcode
+  - Leetcode-Easy
 tags:
   - Coding Test
-  - Easy
   - Python
 ---
 

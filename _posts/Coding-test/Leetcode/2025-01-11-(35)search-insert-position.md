@@ -4,10 +4,9 @@ title: "\035. Search Insert Position"
 header:
   teaser: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/LeetCode_Logo_black_with_text.svg/458px-LeetCode_Logo_black_with_text.svg.png"
 categories:
-  - Leetcode
+  - Leetcode-Easy
 tags:
   - Coding Test
-  - Easy
   - Python
   - Array
   - Binary Search
@@ -75,6 +74,9 @@ class Solution(object):
 
 while문 밖의 반환값을 right_p + 1로 했는데, 그냥 left_p로 적는 것이 더 깔끔할 것 같다.
 <br><br>
+
+nums = \[1, 3, 5, 6]
+{: style="color: blue;"}
 
 <pre>
 -1   0    1    2    3   4   (index)

@@ -5,17 +5,17 @@ main:
     url: /tags/
   - title: "pages"
     url: /page-archive/
-  - title: "Discussion"
-    url: https://github.com/JooyeunSeo/JooyeunSeo.github.io/discussions/categories/blog-comments
+  - title: ".github.io"
+    url: https://github.com/JooyeunSeo/JooyeunSeo.github.io
     target: _blank
 
 # sidebar menu links
 docs:
   - title: "Coding Test"
     children:
-      - title: "LeetCode"
-        url: /leetcode/
-        category: "Leetcode"
+      - title: "LeetCode-Easy"
+        url: /leetcode-easy/
+        category: "Leetcode-Easy"
   - title: "etc."              
     children:
       - title: "Cheatsheet"           # 치트시트

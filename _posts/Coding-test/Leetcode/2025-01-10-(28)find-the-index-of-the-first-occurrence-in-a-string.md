@@ -4,10 +4,9 @@ title: "\028. Find the Index of the First Occurrence in a String"
 header:
   teaser: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/LeetCode_Logo_black_with_text.svg/458px-LeetCode_Logo_black_with_text.svg.png"
 categories:
-  - Leetcode
+  - Leetcode-Easy
 tags:
   - Coding Test
-  - Easy
   - Python
   - find()
 ---
@@ -117,8 +116,13 @@ Boyer-Moore 알고리즘의 최악의 시간 복잡도는 𝑂(𝑛 \* 𝑚 + �
 
 최악의 시간 복잡도는 Brute Force보다 길지만 아주 특별한 케이스가 아니면 거의 일어나지 않고 평균 체크 문자수가 더 적기 때문에 효율적이라고 할 수 있다.
 
+`haystack` = "THISISASIMPLEEXAMPLE"    
+`needle`= "EXAMPLE"
+{: style="color: blue;"}
+
 <pre>
-0123456789.........19
+0123456789.........19 (index)
+---------------------------------------------------------------------
 THISISASIMPLEEXAMPLE 
 EXAMPLE               ← EXAMPLE에 S가 없기 때문에 i=6까지 스킵
 
@@ -134,3 +138,6 @@ THISISASIMPLEEXAMPLE
 THISISASIMPLEEXAMPLE 
              EXAMPLE  ← 뒤에서부터 하나씩 매치한 결과 모두 매칭됨
 </pre>
+
+return i = 13
+{: style="color: green;"}

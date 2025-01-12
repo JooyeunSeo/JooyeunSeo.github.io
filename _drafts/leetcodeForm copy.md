@@ -4,10 +4,9 @@ title: "\0"
 header:
   teaser: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/LeetCode_Logo_black_with_text.svg/458px-LeetCode_Logo_black_with_text.svg.png"
 categories:
-  - Leetcode
+  - Leetcode-Easy
 tags:
   - Coding Test
-  - Easy
   - Python
 ---
 
@@ -49,7 +48,7 @@ tags:
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 
-### <a href="링크" target="_blank">1st</a>
+### <a href="" target="_blank">1st</a>
 
 ```python
 
@@ -57,7 +56,7 @@ tags:
 <i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛)𝑂(𝑛<sup>2</sup>)𝑂(log𝑛)𝑚𝑥    
 <i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛)𝑂(𝑛<sup>2</sup>)𝑂(log𝑛)𝑚𝑥             
 
-### <a href="링크" target="_blank">2nd</a>
+### <a href="" target="_blank">2nd</a>
 
 ```python
 

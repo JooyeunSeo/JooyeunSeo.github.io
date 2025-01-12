@@ -4,10 +4,9 @@ title: "\014. Longest Common Prefix"
 header:
   teaser: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/LeetCode_Logo_black_with_text.svg/458px-LeetCode_Logo_black_with_text.svg.png"
 categories:
-  - Leetcode
+  - Leetcode-Easy
 tags:
   - Coding Test
-  - Easy
   - Python
   - min()
   - startswith()
