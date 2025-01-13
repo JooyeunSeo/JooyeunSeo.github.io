@@ -53,17 +53,23 @@ tags:
 ```python
 
 ```
-<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛)𝑂(𝑛<sup>2</sup>)𝑂(log𝑛)𝑚𝑥    
-<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛)𝑂(𝑛<sup>2</sup>)𝑂(log𝑛)𝑚𝑥             
+<i class="fa-solid fa-clock"></i> **time complexity:**     
+<i class="fa-solid fa-memory"></i> **space complexity:**            
 
 ### <a href="" target="_blank">2nd</a>
 
 ```python
 
 ```
-<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛)𝑂(𝑛<sup>2</sup>)𝑂(log𝑛)𝑚𝑥            
-<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛)𝑂(𝑛<sup>2</sup>)𝑂(log𝑛)𝑚𝑥    
+<i class="fa-solid fa-clock"></i> **time complexity:**             
+<i class="fa-solid fa-memory"></i> **space complexity:**     
 
 
 
 {: style="color: blue;"}
+
+𝑂(𝑛)
+𝑂(𝑛<sup>2</sup>)
+𝑂(log𝑛)
+𝑚
+𝑥
