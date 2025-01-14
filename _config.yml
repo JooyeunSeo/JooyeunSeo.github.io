@@ -10,11 +10,11 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 # Site Settings
 locale                   : "en-US"
 rtl                      : # false (default)
-title                    : "My record"
+title                    : "Tech Blog by Yon"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Jooyeun Seo"
-description              : "An amazing website."
+description              : "Coding with a cup of coffee ☕️"
 url                      : "https://jooyeunseo.github.io"
 baseurl                  : ""
 repository               : "JooyeunSeo/JooyeunSeo.github.io" # GitHub username/repo-name
@@ -34,7 +34,7 @@ comments:
     category_id          : "DIC_kwDONao_8s4ClfK4"
     discussion_term      : "pathname"
     reactions_enabled    : "1" # '1' for enabled (default), '0' for disabled
-    theme                : "light" # test this theme later -> "preferred_color_scheme"
+    theme                : "light" # default: light
     strict               : "0" # 1 for enabled, 0 for disabled (default)
     input_position       : "bottom"
     emit_metadata        : "0" # 1 for enabled, 0 for disabled (default) # https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#imetadatamessage

@@ -5,9 +5,6 @@ main:
     url: /tags/
   - title: "pages"
     url: /page-archive/
-  - title: ".github.io"
-    url: https://github.com/JooyeunSeo/JooyeunSeo.github.io
-    target: _blank
 
 # sidebar menu links
 docs:
