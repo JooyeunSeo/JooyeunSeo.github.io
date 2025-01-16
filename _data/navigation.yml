@@ -1,16 +1,16 @@
 main:
   - title: "About"
     url: /about/
+  # - title: "Portfolio"
+  #   url: /portfolio/
   - title: "Tags"
     url: /tags/
-  - title: "pages"
-    url: /page-archive/
 
 # sidebar menu links
 docs:
   - title: "Coding Test"
     children:
-      - title: "LeetCode-Easy"
+      - title: "LeetCode-Easy"        # 리트코드 easy 문제풀이
         url: /leetcode-easy/
         category: "Leetcode-Easy"
   - title: "etc."              

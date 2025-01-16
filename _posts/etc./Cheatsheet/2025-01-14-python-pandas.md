@@ -109,6 +109,47 @@ Amy
 Carter
 </pre>
 
+### <a href="" target="_blank">DataFrame.merge()</a>
+
+- 두 개의 데이터프레임을 하나의 특정 열에 병합
+- 파라미터에 (데이터프레임1, 데이터프레임2, **on**=공통으로 존재하는 열의 이름) 순서로 전달
+
+<div class="notice--info" markdown="1">
+
+💡 **기본키(primary key)**
+
+- 테이블의 각 행을 고유하게 식별하는 열 또는 열의 조합
+- 중복이 없고, NULL 값을 가질 수 없다.
+
+💡 **외래키(foreign key)**
+
+- 한 테이블의 열이 다른 테이블의 *기본키*를 참조할 때 사용
+- 두 테이블 간의 관계를 형성
+<br>
+
+| Student ID | Name  | Age |
+|------------|-------|-----|
+|         1  | Amy   | 23  |
+|         2  | Brown | 31  |
+|         3  | Clack | 28  |
+
+<u>Students 데이터프레임</u>
+
+기본키: Student ID(각 학생을 고유하게 식별)
+<br><br>
+↑
+
+| Course ID | Course Name | Student ID |
+|-----------|-------------|------------|
+| 1324      | Science     | 1          |
+| 6235      | Math        | 1          |
+| 9122      | Art         | 2          |
+
+<u>Courses 데이터프레임</u>
+
+기본키: Course ID(각 강의를 고유하게 식별)    
+외래키: Student ID(Students 데이터프레임의 기본키를 참조, 각 강의가 어떤 학생과 연결되는지 나타냄)
+</div>
 
 ## Column
 
@@ -181,6 +222,11 @@ Name: temp, dtype: float64
 
 데이터 사이언스에 활용할 수 있는 판다스 메소드
 
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html" target="_blank">DataFrame.describe()</a>
+
+- 데이터프레임의 여러 통계를 한 번에 볼 수 있다.
+(count, ean, std, min, 25%, 50%, 75%, max) 
+
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.head.html" target="_blank">DataFrame.head()</a>,   <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.tail.html" target="_blank">DataFrame.tail()</a>
 
 - 데이터프레임의 상위, 하위 5개 행(기본값)만 출력
@@ -210,6 +256,20 @@ Name: temp, dtype: float64
 - 필요없는 행(NaN 값이 포함된)을 제거한 새 데이터프레임 생성
 - 새로 생성된 데이터는 변수에 저장해야 한다.
 
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.fillna.html" target="_blank">DataFrame.fillna()</a>
+
+- NaN 값을 원하는 값으로 변경
+- 파라미터
+   - **value:** 원하는 값(e.g. 0)
+   - **inplace:** `False`(기본값)는 원본 데이터를 유지, `True`는 정렬 결과를 원본 데이터에 반영
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.any.html" target="_blank">DataFrame.any()</a>
+
+- 지정된 범위 내의 값들 중 하나라도 조건을 만족한다면 `True`를, 아니면 `False`를 반환
+- `.isna().values` 뒤에 연결해서 NaN 값이 있는지 확인할 수 있음
+   - `False`를 반환해야 NaN 값이 하나도 없다는 의미
+   <!-- values 속성은 numpy할 때 링크하기 -->
+
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.insert.html" target="_blank">DataFrame.insert()</a>
 
 - 데이터프레임의 지정된 위치에 새 열을 추가
@@ -217,6 +277,15 @@ Name: temp, dtype: float64
    - **loc:** 열이 삽입될 위치의 인덱스
    - **column:** 열 이름(라벨)
    - **value:** 삽입할 열 데이터
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.pivot.html" target="_blank">DataFrame.pivot()</a>
+
+- 주어진 인덱스, 열 값으로 데이터프레임을 새로 재구성
+- 값이 누락된 항목에는 자동으로 NaN 값이 들어간다.
+- 파라미터
+   - **columns:** 열의 범주
+   - **index:** 행의 범주
+   - **values:** 새로운 셀에 들어갈 값의 범주
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sort_values.html" target="_blank">DataFrame.sort_values()</a>
 
@@ -228,6 +297,24 @@ Name: temp, dtype: float64
    - **inplace:** `False`(기본값)는 원본 데이터를 유지, `True`는 정렬 결과를 원본 데이터에 반영 
    - **key:** 정렬 기준을 원하는 함수로 지정하려는 경우 사용
 
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.rolling.html" target="_blank">DataFrame.rolling()</a>
+
+- 시계열(time-series) 데이터나 순차적인 데이터에서 지정된 윈도우 크기만큼 데이터를 슬라이딩하면서 계산
+- **window** 파라미터에 윈도우 크기를 전달(e.g. `3`은 현재 값과 이전 2개의 값, 즉 3개의 연속된 값이 기준)
+- 뒤에 `.mean()`을 연결하면 이동 평균(moving average) 생성(차트의 변화를 확인하며 적당한 window 값 찾기)
+- 계산 결과는 변수에 저장하기
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.resample.html" target="_blank">DataFrame.resample()</a>
+
+- 시계열 데이터를 새로운 시간 단위로 재조정
+- <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.last.html" target="_blank">DataFrame.last()</a>로 각 단위의 가장 마지막 상태를 가져올 수 있다.
+    <div class="notice--warning" markdown="1">
+    ⚠️ 2.1 버전부터는 권장되지 않는 메소드로, 직접 마지막 인덱스에 접근하는 방식을 권고중
+    </div>
+- 파라미터
+   - **rule:** 리샘플링할 주기(연별 빈도는 `'Y'`, 월별 빈도는 `'M'` <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#dateoffset-objects" target="_blank">등</a>)
+   - **on:** 리샘플링할 열(datetime 타입이어야 한다.)
+
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html" target="_blank">DataFrame.groupby()</a>
 
 - 데이터를 특정 기준으로 그룹화
@@ -237,12 +324,29 @@ Name: temp, dtype: float64
 
 - 각 열(행)에서 NaN 값을 제외한 값만 카운트
 - 파라미터 **axis:** 0(기본값)은 열별로 세고(행을 따라 계산)하고, 1은 행별로 셈(열을 따라 계산)
-- `DataFrame.groupby()` 메소드의 뒤에 연결하면 특정 그룹의 값만 셀 수 있다.
+- `.groupby()` 메소드의 뒤에 연결하면 특정 그룹의 값만 셀 수 있다.
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.agg.html" target="_blank">DataFrame.agg()</a>
+
+- 데이터프레임이나 시리즈에 대해 하나 이상의 집계 함수를 적용 가능
+- 파라미터에 `{ 키(열 이름): 값(적용할 함수) }`처럼 딕셔너리로 전달하면 각 열마다 다른 함수를 적용할 수 있다.
+- `.groupby()` 메소드의 뒤에 연결하면 특정 데이터프레임 열에 기반한 작업을 할 수 있다.
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sum.html" target="_blank">DataFrame.sum()</a>
+
+- 총 개수를 계산
+- `.groupby()` 메소드의 뒤에 연결하면 특정 그룹에 속한 개수를 계산할 수 있다.
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.mean.html" target="_blank">Series.mean()</a>
 
 - 평균값을 계산
-- `DataFrame.groupby()` 메소드의 뒤에 연결하면 특정 그룹의 평균값을 계산할 수 있다.
+- `.groupby()` 메소드의 뒤에 연결하면 특정 그룹의 평균값을 계산할 수 있다.
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.nunique.html" target="_blank">Series.nunique()</a>
+
+- 특정 열의 고유한 항목의 개수를 반환
+- **dropna** 파라미터는 기본적으로 NA값을 제외하도록 설정됨
+- 데이터프레임의 행 개수와 nunique의 값이 일치하면 중복되는 항목이나 결측값이 없다는 의미
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.max.html" target="_blank">Series.max()</a>,   <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.min.html" target="_blank">Series.min()</a>
 
@@ -273,6 +377,14 @@ Name: temp, dtype: float64
 - `.` 앞의 열에서 파라미터로 전달한 열을 나눠서 새로운 열 생성
 
 <br>
+
+## General Functions
+
+### <a href="" target="_blank">pandas.to_datetime()</a>
+
+- 문자열 등의 데이터 타입을 타임스탬프로 변환
+- 해당 값에는 년(4자리), 월, 일, 시간 등의 정보가 있어야 한다.
+- 변환 후 원래 값에 덮어씌워야 적용됨
 
 ## <a href="https://pandas.pydata.org/docs/user_guide/options.html#options-and-settings" target="_blank">Options</a>
 
