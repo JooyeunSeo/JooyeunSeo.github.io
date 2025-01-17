@@ -8,7 +8,7 @@ categories:
 tags:
   - Python
   - Pandas
-last_modified_at: 2025-01-14T14:45:30+09:00
+last_modified_at: 2025-01-17T14:45:30+09:00
 ---
 
 > **Pandas**    
@@ -224,13 +224,20 @@ Name: temp, dtype: float64
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html" target="_blank">DataFrame.describe()</a>
 
-- 데이터프레임의 여러 통계를 한 번에 볼 수 있다.
-(count, ean, std, min, 25%, 50%, 75%, max) 
+- 데이터프레임의 여러 통계(count, ean, std, min, 25%, 50%, 75%, max)를 반환
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.info.html" target="_blank">DataFrame.info()</a>
+
+- 데이터프레임에 대한 간결한 정보를 반환
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.head.html" target="_blank">DataFrame.head()</a>,   <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.tail.html" target="_blank">DataFrame.tail()</a>
 
 - 데이터프레임의 상위, 하위 5개 행(기본값)만 출력
 - 파라미터 **n**에 값을 전달하여 원하는 개수만큼 출력 가능
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sample.html" target="_blank">DataFrame.sample()</a>
+
+- 파라미터 **n**에 전달한 개수만큼의 행을 무작위로 골라서 반환
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.shape.html" target="_blank">DataFrame.shape</a>
 
@@ -245,6 +252,23 @@ Name: temp, dtype: float64
 
 - [] 안에 인덱스를 넣어서 특정 행을 출력할 수 있다.
 - <mark style='background-color: LightYellow'>⚠️ 파이썬 슬라이싱처럼 범위를 지정 가능하나, loc는 시작과 끝 숫자가 모두 포함됨</mark>
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop.html" target="_blank">DataFrame.drop()</a>
+
+- 데이터프레임에서 특정 열이나 행을 제거
+- 파라미터
+   - **axis:** `0`(기본값)은 행 단위, `1`은 열 단위
+   - **inplace:** `False`(기본값)는 원본 데이터를 유지, `True`는 정렬 결과를 원본 데이터에 반영
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.duplicated.html" target="_blank">DataFrame.duplicated()</a>
+
+- 중복된 행(이미 *모든* 요소들의 값이 같은 행이 존재)을 `True`로 표시하여 반환
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html" target="_blank">DataFrame.drop_duplicates()</a>
+
+- 중복된 항목을 삭제
+- 파라미터 **subset**에 중복 항목을 식별하기 위해 비교할 열 이름 또는 열 이름의 리스트 전달    
+(`.duplicated()`로 걸러내지 못한 중복 항목을 찾기 위함)
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isna.html" target="_blank">DataFrame.isna()</a>
 
@@ -277,6 +301,14 @@ Name: temp, dtype: float64
    - **loc:** 열이 삽입될 위치의 인덱스
    - **column:** 열 이름(라벨)
    - **value:** 삽입할 열 데이터
+   - **allow_duplicates:** 중복된 열 이름 허용 여부
+
+### <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.stack.html" target="_blank">DataFrame.stack()</a>
+
+- 데이터프레임의 열을 행(인덱스)로 변환(Series 타입으로 결과 반환)
+- 파라미터
+   - **level:** 스택을 수행할 레벨 지정(기본값은 마지막 레벨인 `-1`)
+   - **dropna:** 결측값 제거 여부(기본값은 `True`)
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.pivot.html" target="_blank">DataFrame.pivot()</a>
 
@@ -318,13 +350,19 @@ Name: temp, dtype: float64
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html" target="_blank">DataFrame.groupby()</a>
 
 - 데이터를 특정 기준으로 그룹화
-- 파라미터 **by**에 열 이름 또는 열 이름의 리스트, 함수 등의 값을 전달하여 그룹화 기준 정하기
+- 파라미터
+   - **by:** 열 이름 또는 열 이름의 리스트, 함수 등을 전달하여 그룹화 기준 정하기
+   - **as_index:** `True`(기본값)는 그룹화된 열을 새 데이터프레임의 인덱스로 사용, `False`는 일반 열로 유지
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.count.html" target="_blank">DataFrame.count()</a>
 
 - 각 열(행)에서 NaN 값을 제외한 값만 카운트
 - 파라미터 **axis:** 0(기본값)은 열별로 세고(행을 따라 계산)하고, 1은 행별로 셈(열을 따라 계산)
 - `.groupby()` 메소드의 뒤에 연결하면 특정 그룹의 값만 셀 수 있다.
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.value_counts.html" target="_blank">DataFrame.value_counts()</a>
+
+- 데이터프레임의 각 행이 나타나는 빈도를 반환
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.agg.html" target="_blank">DataFrame.agg()</a>
 
@@ -376,15 +414,30 @@ Name: temp, dtype: float64
 - == `.divide()`
 - `.` 앞의 열에서 파라미터로 전달한 열을 나눠서 새로운 열 생성
 
+### <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.replace.html" target="_blank">Series.str.replace()</a>
+
+- 해당 열의 값에 있는 특정 문자를 다른 문자로 대체(공백으로 대체할 경우 제거됨)
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.str.split.html" target="_blank">Series.str.split()</a>
+
+- 해당 열의 값을 특정 문자를 기반으로 해서 분할
+
 <br>
 
 ## General Functions
 
-### <a href="" target="_blank">pandas.to_datetime()</a>
+### <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html" target="_blank">pandas.to_datetime()</a>
 
 - 문자열 등의 데이터 타입을 타임스탬프로 변환
 - 해당 값에는 년(4자리), 월, 일, 시간 등의 정보가 있어야 한다.
 - 변환 후 원래 값에 덮어씌워야 적용됨
+
+### <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_numeric.html#pandas.to_numeric" target="_blank">pandas.to_numeric()</a>
+
+- 데이터를 숫자로 변환
+- 해당 데이터에 쉼표 등의 문자가 없어야 가능
+- 파라미터
+   - **expand:** `False`(기본값)는 리스트/시리즈 반환, `True`는 분리된 항목을 데이터프레임의 각 열로 반환
 
 ## <a href="https://pandas.pydata.org/docs/user_guide/options.html#options-and-settings" target="_blank">Options</a>
 
@@ -400,8 +453,10 @@ pd.options.display.float_format = "{:,.2f}".format  # 천 단위 구분기호를
 <br><br>
 <center>References</center>
 
-1) Angela Yu, [Python 부트캠프 : 100개의 프로젝트로 Python 개발 완전 정복], Udemy, https://www.udemy.com/course/best-100-days-python/?couponCode=ST3MT72524   
+1) Angela Yu, [Python 부트캠프 : 100개의 프로젝트로 Python 개발 완전 정복], Udemy, https://www.udemy.com/course/best-100-days-python/?couponCode=ST3MT72524    
+2) [API reference], https://pandas.pydata.org/docs/reference/index.html#  
 {: .small}
+
 <!--
 ```python
 ```
