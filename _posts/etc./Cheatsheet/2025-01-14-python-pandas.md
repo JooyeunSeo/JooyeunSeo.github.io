@@ -252,6 +252,14 @@ Name: temp, dtype: float64
 
 - [] 안에 인덱스를 넣어서 특정 행을 출력할 수 있다.
 - <mark style='background-color: LightYellow'>⚠️ 파이썬 슬라이싱처럼 범위를 지정 가능하나, loc는 시작과 끝 숫자가 모두 포함됨</mark>
+- 둘 이상의 조건을 만족하는 행만 출력하려면 비트 연산자 <mark>&</mark> 사용
+   - e.g. `new_data = df.loc[ (df.column_a == 0) & (df.column_b != 0) ]`
+   - 비트 연산자의 우선순위가 비교 연산자보다 먼저이기 때문에, 비교 연산자에 괄호 필요 
+
+### <a href="https://www.udemy.com/course/best-100-days-python/learn/lecture/29150300#overview" target="_blank">DataFrame.query()</a>
+
+- 여러 조건을 필터링하여 만족하는 부분 집합 생성
+- `.loc[]`과 `&` 연산자를 사용하는 것과 같다(`.query()`에서는 연산자 대신 `and` 키워드).
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop.html" target="_blank">DataFrame.drop()</a>
 
@@ -414,6 +422,11 @@ Name: temp, dtype: float64
 - == `.divide()`
 - `.` 앞의 열에서 파라미터로 전달한 열을 나눠서 새로운 열 생성
 
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.astype.html" target="_blank">Series.astype()</a>
+
+- 해당 데이터의 타입을 지정한 타입으로 변경(e.g. `str`)
+- Series 객체의 `.str` 속성(문자열일 때만 사용 가능) 앞에 붙여서 문자열로 변환
+
 ### <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.replace.html" target="_blank">Series.str.replace()</a>
 
 - 해당 열의 값에 있는 특정 문자를 다른 문자로 대체(공백으로 대체할 경우 제거됨)
@@ -426,18 +439,34 @@ Name: temp, dtype: float64
 
 ## General Functions
 
-### <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html" target="_blank">pandas.to_datetime()</a>
+### <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html" target="_blank">.to_datetime()</a>
 
 - 문자열 등의 데이터 타입을 타임스탬프로 변환
 - 해당 값에는 년(4자리), 월, 일, 시간 등의 정보가 있어야 한다.
 - 변환 후 원래 값에 덮어씌워야 적용됨
 
-### <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_numeric.html#pandas.to_numeric" target="_blank">pandas.to_numeric()</a>
+### <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_numeric.html#pandas.to_numeric" target="_blank">.to_numeric()</a>
 
-- 데이터를 숫자로 변환
-- 해당 데이터에 쉼표 등의 문자가 없어야 가능
+- 데이터를 숫자(int, float)로 변환
+- 숫자, 문자, 결측치가 혼합된 데이터에서 유연하게 사용 가능
 - 파라미터
    - **expand:** `False`(기본값)는 리스트/시리즈 반환, `True`는 분리된 항목을 데이터프레임의 각 열로 반환
+   - **errors:**
+      - `'raise'`: 변환할 수 없는 값이 있으면 오류 발생(기본값)
+      - `'coerce`: 변환 불가능한 값은 NaN으로 처리
+      - `'ignore'`: 변환 불가능한 값은 원래 값 유지
+
+## Index Objects
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DatetimeIndex.html#pandas.DatetimeIndex" target="_blank">.DatetimeIndex()</a>
+
+- datetime 객체의 배열로 구성된 Pandas의 인덱스 객체
+- 파라미터에 날짜값으로 이루어진 열을 전달 가능
+- 속성
+   - `.year`: 연도 반환
+   - `.month`: 월 반환
+   - `.day`: 일 반환
+   - `.weekday`: 요일 반환(`0`은 월요일, `6`은 일요일)
 
 ## <a href="https://pandas.pydata.org/docs/user_guide/options.html#options-and-settings" target="_blank">Options</a>
 
@@ -453,8 +482,8 @@ pd.options.display.float_format = "{:,.2f}".format  # 천 단위 구분기호를
 <br><br>
 <center>References</center>
 
-1) Angela Yu, [Python 부트캠프 : 100개의 프로젝트로 Python 개발 완전 정복], Udemy, https://www.udemy.com/course/best-100-days-python/?couponCode=ST3MT72524    
-2) [API reference], https://pandas.pydata.org/docs/reference/index.html#  
+1. Angela Yu, [Python 부트캠프 : 100개의 프로젝트로 Python 개발 완전 정복], Udemy, https://www.udemy.com/course/best-100-days-python/?couponCode=ST3MT72524    
+2. [API reference], https://pandas.pydata.org/docs/reference/index.html#  
 {: .small}
 
 <!--

@@ -1,22 +1,36 @@
 ---
-excerpt: "Python에서 데이터를 시각화하는 Matplotlib 라이브러리 정리"
+excerpt: "Python에서 데이터를 시각화하는 Matplotlib, Plotly, Seaborn 라이브러리 정리"
 title: "Python Data Science: Data Visualization"
 header:
-  teaser: ""
+  teaser: "https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 categories:
   - Cheatsheet
 tags:
   - Python
-  - NumPy
+  - Pandas
   - Matplotlib
-last_modified_at: 2025-02-01T15:37:30+09:00
+  - Plotly
+  - Seaborn
+last_modified_at: 2025-01-18T15:37:30+09:00
 ---
+
+<div class="notice--info" markdown="1">
+💡 **Google Colab**에서 작업한다면 해당 라이브러리들을 따로 설치할 필요가 없지만, 업데이트가 필요할 수 있다.
+
+<pre>
+%pip install --upgrade {라이브러리 이름 e.g. plotly}
+</pre>
+</div>
 
 ## Matplotlib
 
 > **Matplotlib(맷플롯립)**   
 > - 정적인 이미지 형식의 그래프를 만드는 파이썬 라이브러리로, Pandas와 잘 맞는다.
 > - 그래프의 세부 요소를 세밀하게 제어할 수 있어 보고서, 논문 등에 사용
+>
+> ```bash 
+> pip install matplotlib            # 터미널에서 설치
+> ```
 > ```python
 > import matplotlib.pyplot as plt
 > ```
@@ -172,6 +186,11 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
 
 > **Plotly(플로틀리)**   
 > Zoom, Pan, Hover, Toggle 등을 수행할 수 있는 대화형 그래프를 생성하는 파이썬 라이브러리
+>
+> ```bash 
+> pip install plotly             # 터미널에서 설치
+> pip install ipywidgets         # 주피터 노트북에서 사용할 경우 그래프를 제대로 표시하기 위해 권장
+> ```
 > ```python
 > import plotly.express as px
 > ```
@@ -235,9 +254,13 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
 
 - 생성된 그래프 개체를 graph_objects로 표시
 
+<br>
+
 ### STYLE
 
+<div class="notice--info" markdown="1">
 💡 그래프 생성 메소드의 파라미터에 없는 부분을 구성하려면 먼저 그래프 객체를 만든 후 필요한 메소드 호출   
+</div>
 
 #### <a href="https://plotly.com/python-api-reference/generated/generated/plotly.graph_objects.Figure.update_traces.html?highlight=update_traces" target="_blank">Figure.update_traces()</a> 
 
@@ -263,24 +286,96 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
    - **coloraxis_showscale:** 그래프 생성 시 *color_continuous_scale*로 설정한 색상 스케일 축 표시 여부
    - **legend:** 범례의 레이아웃 설정    
    (e.g. `dict(title="제목", orientation="표시 방향", x=x축 위치, y=y축 위치, xanchor="위치 기준")`)
+<br>
 
 ## Seaborn
 
 > **Seaborn(씨본)**   
 > Matplotlib을 기반으로 한 파이썬 라이브러리로, 더 많은 기능과 세련된 디자인을 제공
-> ```python
-> ㄴㅈㅈ
+> 
+> ```bash
+> pip install seaborn         # 터미널에서 설치
 > ```
+> ```python
+> import seaborn as sns       # 관례적으로 sns라는 이름으로 임포트
+> ```
+
+### GRAPHS
+
+#### <a href="https://seaborn.pydata.org/generated/seaborn.scatterplot.html" target="_blank">.scatterplot()</a>
+
+- 산점도 차트 생성
+- 파라미터
+   - **data:** 판다스 데이터프레임
+   - **x:** x축 데이터로 사용할 열
+   - **y:** y축 데이터로 사용할 열
+   - **hue:** 지정한 값을 기준으로 점의 색상 결정(큰 값일수록 진한 색)
+   - **palette:** `hue`의 색상 그라데이션을 변경할 컬러맵(colormap) 지정
+   - **size:** 지정한 값을 기준으로 점의 크기 결정 
+
+#### <a href="https://seaborn.pydata.org/generated/seaborn.regplot.html#seaborn.regplot" target="_blank">.regplot()</a>
+
+- 산점도 + 선형 회귀선(점들 사이의 선형 관계를 나타내는 직선)을 함께 표시하는 차트 생성
+- 파라미터
+   - **scatter_kws:** 점의 스타일을 설정하는 딕셔너리
+       - `{'alpha': 투명도(0은 투명, 1은 불투명}`
+       - `{'color': 색상}`
+       - `{'s': 크기}`
+       - `{'marker': 모양}`
+       - `{'linewidth': 테두리 두께}`
+       - `{'edgecolor': 테두리 색상}`
+   - **line_kws:** 회귀선의 스타일을 설정하는 딕셔너리
+      - `{'color': 색상}`
+      - `{'alpha': 투명도}`
+      - `{'linewidth': 두께}`
+      - `{'linestyle': 스타일}`
+
+### STYLE
+
+<div class="notice--info" markdown="1">
+💡 Seaborn은 Matplotlib 기반이기 때문에 맷플롯립 레이어에서도 차트를 구성할 수 있다.     
+💡 차트 생성 메소드가 반환하는 **<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" target="_blank">맷플롯립의 Axes 객체</a>**를 구성하여 스타일 지정하기    
+💡 모든 차트가 아닌 특정 차트에만 스타일을 설정하려면 파이썬 `with` 키워드 사용    
+
+```python
+plt.figure(figsize=(8, 4), dpi=200)       # 1. 먼저 맷플롯립으로 차트 크기와 해상도 조절
+
+with sns.axes_style('darkgrid'):          # (with 블록 내에서만 유효한 스타일 변경)
+   ax = sns.scatterplot(data=df,             # 2. 씨본으로 Axes 객체 생성
+                        x='column_a',
+                        y='column_b')
+
+   ax.set(ylim=(0, 100000),                  # 3. 맷플롯립 레이어에서 축 한계와 레이블 등 설정
+          xlim=(0, 300000),
+          xlabel='A',
+          ylabel='B')
+
+plt.show()                                   # 4. 맷플롯립으로 차트 출력   
+```
+</div>
+
+#### <a href="https://seaborn.pydata.org/generated/seaborn.axes_style.html" target="_blank">.axes_style()</a>
+
+- 차트의 전체적인 테마 변경
+- "darkgrid", "whitegrid", "dark", "white", "ticks" 테마 중 선택
+
+#### <a href="" target="_blank"></a>
+
+#### <a href="" target="_blank"></a>
+
+
+
 
 
 <br><br>
 <center>References</center>
 
-1) Angela Yu, [Python 부트캠프 : 100개의 프로젝트로 Python 개발 완전 정복], Udemy, https://www.udemy.com/course/best-100-days-python/?couponCode=ST3MT72524   
-2) [API Reference], https://matplotlib.org/stable/api/index.html   
-3) [Python API reference for plotly], https://plotly.com/python-api-reference/   
+1. Angela Yu, [Python 부트캠프 : 100개의 프로젝트로 Python 개발 완전 정복], Udemy, https://www.udemy.com/course/best-100-days-python/?couponCode=ST3MT72524   
+2. [API Reference], https://matplotlib.org/stable/api/index.html   
+3. [Python API reference for plotly], https://plotly.com/python-api-reference/     
+4. [API reference], https://seaborn.pydata.org/api.html   
 {: .small}
-
+<!--
 ```python
 ```
 <i class="fa-solid fa-right-from-bracket"></i>    
@@ -290,4 +385,4 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
 <a href="" target="_blank"></a>
 
 <img src="https://github.com/dcurtis/markdown-mark/blob/master/png/208x128.png?raw=true" 
-     width="10%">
+     width="10%"> -->
