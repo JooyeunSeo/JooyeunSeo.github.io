@@ -81,12 +81,12 @@ score_data.to_csv("new_data.csv")             # 데이터프레임 객체를 CSV
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iterrows.html" target="_blank">DataFrame.iterrows()</a>
 
 ```python
-for (index, row) in score_data.iterrows():        # 위에서 생성한 score_data의 각 행의 (index, row) 튜플 반복 출력
+for (index, row) in score_data.iterrows():   # 위에서 생성한 score_data의 각 행의 (index, row) 튜플 반복 출력
     print(index)
     print(row)
     
 for (index, row) in score_data.iterrows(): 
-    if row.scores > 60:                           # 조건에 맞는 행의 특정 열만 반복 출력
+    if row.scores > 60:                      # 조건에 맞는 행의 특정 열만 반복 출력
         print(row.students)
 ```
 <i class="fa-solid fa-right-from-bracket"></i>    

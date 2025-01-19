@@ -2,7 +2,7 @@
 excerpt: "'LeetCode-테스트이름' 풀이 정리"
 title: "\0"
 header:
-  teaser: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/LeetCode_Logo_black_with_text.svg/458px-LeetCode_Logo_black_with_text.svg.png"
+  teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"
 categories:
   - Leetcode-Easy
 tags:
