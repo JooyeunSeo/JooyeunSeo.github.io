@@ -250,8 +250,9 @@ Name: temp, dtype: float64
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html" target="_blank">DataFrame.loc[]</a>
 
-- [] 안에 인덱스를 넣어서 특정 행을 출력할 수 있다.
-- <mark style='background-color: LightYellow'>⚠️ 파이썬 슬라이싱처럼 범위를 지정 가능하나, loc는 시작과 끝 숫자가 모두 포함됨</mark>
+- 데이터프레임에서 행과 열을 선택
+- 첫 번째 []에는 **행 조건**(인덱스), 두 번째 \[]\(선택사항)에는 **열 조건**(열 이름 또는 열 이름들의 리스트) 전달
+- <mark style='background-color: LightYellow'>⚠️ 파이썬 슬라이싱처럼 인덱스 범위를 지정 가능하나, loc는 시작과 끝 숫자가 모두 포함됨</mark>
 - 둘 이상의 조건을 만족하는 행만 출력하려면 비트 연산자 <mark>&</mark> 사용
    - e.g. `new_data = df.loc[ (df.column_a == 0) & (df.column_b != 0) ]`
    - 비트 연산자의 우선순위가 비교 연산자보다 먼저이기 때문에, 비교 연산자에 괄호 필요 
@@ -271,6 +272,14 @@ Name: temp, dtype: float64
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.duplicated.html" target="_blank">DataFrame.duplicated()</a>
 
 - 중복된 행(이미 *모든* 요소들의 값이 같은 행이 존재)을 `True`로 표시하여 반환
+- `.values.any()` 앞에 연결해서 중복값이 있는지 확인할 수 있다(`False`를 반환해야 하나도 없다는 뜻).
+<!-- values 속성은 numpy 링크 -->
+- 파라미터
+   - **subset:** 중복을 판단할 때 고려할 단일 열 또는 여러 열의 리스트 전달(기본값은 `None`, 즉 모든 열)
+   - **keep:** 
+      - `'first'`: 중복 데이터 중 처음만 남기고 이후의 항목들을 중복(True)으로 표시(기본값)
+      - `'last'`: 중복 데이터 중 마지막만 남기고 이전의 항목들을 중복(True)으로 표시
+      - `False`: 중복 데이터 전부를 중복(True)으로 표시
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html" target="_blank">DataFrame.drop_duplicates()</a>
 
@@ -282,6 +291,7 @@ Name: temp, dtype: float64
 
 - NaN(Not a Number)값을 찾는 메소드
 - 누락된 데이터(빈 셀)나 정크 데이터(숫자 대신 문자열을 포함하는 셀)를 뜻함
+- `.values.any()` 앞에 연결해서 NaN 값이 있는지 확인할 수 있다(`False`를 반환해야 하나도 없다는 뜻).  
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.dropna.html" target="_blank">DataFrame.dropna()</a>
 
@@ -298,9 +308,7 @@ Name: temp, dtype: float64
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.any.html" target="_blank">DataFrame.any()</a>
 
 - 지정된 범위 내의 값들 중 하나라도 조건을 만족한다면 `True`를, 아니면 `False`를 반환
-- `.isna().values` 뒤에 연결해서 NaN 값이 있는지 확인할 수 있음
-   - `False`를 반환해야 NaN 값이 하나도 없다는 의미
-   <!-- values 속성은 numpy할 때 링크하기 -->
+- 다른 함수 뒤에 연결하여 많이 사용됨
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.insert.html" target="_blank">DataFrame.insert()</a>
 
@@ -365,7 +373,7 @@ Name: temp, dtype: float64
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.count.html" target="_blank">DataFrame.count()</a>
 
 - 각 열(행)에서 NaN 값을 제외한 값만 카운트
-- 파라미터 **axis:** 0(기본값)은 열별로 세고(행을 따라 계산)하고, 1은 행별로 셈(열을 따라 계산)
+- 파라미터 **axis**에서 0(기본값)은 열별로 세고(행을 따라 계산)하고, 1은 행별로 센다(열을 따라 계산).
 - `.groupby()` 메소드의 뒤에 연결하면 특정 그룹의 값만 셀 수 있다.
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.value_counts.html" target="_blank">DataFrame.value_counts()</a>
@@ -381,6 +389,7 @@ Name: temp, dtype: float64
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sum.html" target="_blank">DataFrame.sum()</a>
 
 - 총 개수를 계산
+- `.isna()` 메소드의 뒤에 연결하면 데이터프레임의 열마다 있는 NaN 값의 개수를 셀 수 있다.
 - `.groupby()` 메소드의 뒤에 연결하면 특정 그룹에 속한 개수를 계산할 수 있다.
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.mean.html" target="_blank">Series.mean()</a>
@@ -402,30 +411,18 @@ Name: temp, dtype: float64
 
 - 특정 열에서 가장 큰 값, 가장 작은 값을 가진 행의 인덱스 반환
 
-### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.add.html" target="_blank">Series.add()</a>
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.add.html" target="_blank">Series.add()</a>, <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.sub.html" target="_blank">Series.sub()</a>, <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.mul.html" target="_blank">Series.mul()</a>, <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.div.html" target="_blank">Series.div()</a>
 
-- == `.addition()`
-- `.` 앞의 열에 파라미터로 전달한 열을 합해서 새로운 열 생성
-
-### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.sub.html" target="_blank">Series.sub()</a>
-
-- == `.subtract()`
-- `.` 앞의 열에서 파라미터로 전달한 열을 빼서 새로운 열 생성
-
-### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.mul.html" target="_blank">Series.mul()</a>
-
-- == `.multiply()`
-- `.` 앞의 열에 파라미터로 전달한 열을 곱해서 새로운 열 생성
-
-### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.div.html" target="_blank">Series.div()</a>
-
-- == `.divide()`
-- `.` 앞의 열에서 파라미터로 전달한 열을 나눠서 새로운 열 생성
+- `.add()` == `.addition()` → a.add(b)는 a + b
+- `.sub()` == `.subtract()` → a.sub(b)는 a - b
+- `.mul()` == `.multiply()` → a.mul(b)는 a \* b
+- `.div()`== `.divide()` → a.div(b)는 a / b
+- 각 연산은 새로운 열 생성
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.astype.html" target="_blank">Series.astype()</a>
 
 - 해당 데이터의 타입을 지정한 타입으로 변경(e.g. `str`)
-- Series 객체의 `.str` 속성(문자열일 때만 사용 가능) 앞에 붙여서 문자열로 변환
+- Series 객체의 `.str` 속성(문자열일 때만 사용 가능) 앞에 붙여서 문자열로 변환할 때 사용 가능
 
 ### <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.replace.html" target="_blank">Series.str.replace()</a>
 
@@ -434,7 +431,9 @@ Name: temp, dtype: float64
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.str.split.html" target="_blank">Series.str.split()</a>
 
 - 해당 열의 값을 특정 문자를 기반으로 해서 분할
-
+- 파라미터
+   - **pat:** 기준이 될 문자(기본값은 공백)
+   - **expand:** `False`(기본값)는 리스트/시리즈 반환, `True`는 분리된 항목을 데이터프레임의 각 열로 반환
 <br>
 
 ## General Functions

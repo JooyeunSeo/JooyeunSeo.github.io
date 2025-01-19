@@ -17,9 +17,9 @@ last_modified_at: 2025-01-18T15:37:30+09:00
 <div class="notice--info" markdown="1">
 💡 **Google Colab**에서 작업한다면 해당 라이브러리들을 따로 설치할 필요가 없지만, 업데이트가 필요할 수 있다.
 
-<pre>
-%pip install --upgrade {라이브러리 이름 e.g. plotly}
-</pre>
+```bash
+%pip install --upgrade plotly
+```
 </div>
 
 ## Matplotlib
@@ -61,6 +61,8 @@ ax2 = ax1.twinx()
 ax1.plot(x-data, y-data-a)     # 공유하는 축은 똑같이 설정
 ax2.plot(x-data, y-data-b)
 ```
+<br>
+💡 **서로 다른 타입의 차트를 한 차트에 겹쳐서 표시할 수 있다.**
 </div>
 
 #### <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html" target="_blank">pyplot.plot()</a>
@@ -72,6 +74,7 @@ ax2.plot(x-data, y-data-b)
    - **linewidth:** 선 굵기 지정
    - **label:** 선에 이름 붙이기
    - **color:** 선 색상 지정
+   - **linewidth:** 선 굵기 지정
    - **linestyle:** 선 스타일 지정
       - `'solid'` 또는 `'-'` → ───────
       - `'dashed'` 또는 `'--'` → ── ── ──
@@ -94,11 +97,15 @@ ax2.plot(x-data, y-data-b)
 #### <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html" target="_blank">pyplot.scatter()</a>
 
 - 점을 찍어 각 데이터의 값을 나타내는 산점도 차트 생성
-- 마커 크기와 색상을 변경 가능
+- 현재 활성화된 가로(x)축과 세로(y)축 순서대로 원하는 데이터 전달
+- 파라미터
+   - **alpha:** 점의 투명도(중첩된 데이터의 시각화를 용이하게 만들기)
+   - **size:** 점의 사이즈
 
 #### <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html" target="_blank">pyplot.bar()</a>
 
 - 막대 차트 생성
+- 현재 활성화된 가로(x)축과 세로(y)축 순서대로 원하는 데이터 전달
 
 #### <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html" target="_blank">pyplot.show()</a>
 
@@ -115,6 +122,10 @@ ax2.plot(x-data, y-data-b)
 
 ### STYLE
 
+#### <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html" target="_blank">pyplot.title()</a>
+
+- 차트 제목 설정
+
 #### <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html" target="_blank">pyplot.figure()</a>
 
 - 차트 사이즈 조정
@@ -122,10 +133,18 @@ ax2.plot(x-data, y-data-b)
    - **figsize:** (너비, 높이) 값을 튜플로 전달
    - **dpi:** 해상도 조절
 
+#### <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.grid.html" target="_blank">pyplot.grid()</a>
+
+- 차트 위에 회색 격자를 겹쳐서 표시
+- **linestyle:** 파라미터로 점 스타일 지정 가능
+
 #### <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xticks.html#matplotlib.pyplot.xticks" target="_blank">pyplot.xticks()</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html" target="_blank">pyplot.yticks()</a>
 
 - x축, y축을 구성
 - 파라미터
+   - **ticks:**
+      - x축, y축 눈금의 위치(빈 리스트 전달 시 모든 눈금 제거)
+      - NumPy의 <a href="https://jooyeunseo.github.io/cheatsheet/python-numpy/#arange" target="_blank">.arange()</a> 활용 가능(e.g. `np.arange(1900, 2025, step=5)`)
    - **fontsize:** 눈금의 글자 크기 조절
    - **rotation:** 눈금의 글자 기울기 조절(글씨가 길어서 서로 겹칠 경우 기울기 조정으로 해결 가능)
 
@@ -141,16 +160,15 @@ ax2.plot(x-data, y-data-b)
 - x축, y축의 상한 및 하한 설정(e.g. 값이 음수가 될 수 없는 경우 최저를 0으로 설정)
 - 첫 번째 파라미터는 하한값, 두 번째 파라미터는 상한값
 
-
 #### <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xlabel.html" target="_blank">Axes.set_xlabel()</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_ylabel.html" target="_blank">Axes.set_ylabel()</a>
 
-- 현재 활성화된 축이 아닌 특정 Axes 객체에 제목을 추가
+- 현재 활성화된 축이 아닌 특정 Axes 객체의 x축, y축에 제목을 추가
 - 한 차트에서 여러 축을 표시해야 할 때 사용
 
-#### <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.grid.html" target="_blank">pyplot.grid()</a>
+#### <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.invert_xaxis.html" target="_blank">Axes.invert_xaxis()</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.invert_yaxis.html" target="_blank">Axes.invert_yaxis()</a>
 
-- 차트 위에 회색 격자를 겹쳐서 표시
-- **linestyle:** 파라미터로 점 스타일 지정 가능
+- x축, y축을 반전(작은 값→큰 값에서 큰 값→작은 값으로 순서 변경)
+
 
 ### SETTINGS
 
@@ -206,9 +224,9 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
    - **title:** 차트 제목
    - **data_frame:** 데이터프레임 또는 딕셔너리(추가하지 않고 다른 파라미터에서 직접 열을 가져와도 됨)
    - **names:** 데이터프레임의 열 이름을 사용하여 파이 조각에 이름을 지정
-   - **labels:** 리스트나 딕셔너리 형태로 전달하여 파이 조각의 이름을 지정
+   - **labels:** 가독성을 위해 names보다 간결하거나 읽기 쉬운 이름을 리스트 또는 딕셔너리로 전달
    - **values:** 파이 조각의 크기(비율) 지정
-   - **hole:** 차트 가운데 동그랗게 빈 공간을 추가하고 크기 조절(도넛 차트로 변경됨)
+   - **hole:** 차트 가운데 동그랗게 빈 공간을 추가하고 크기 조절(<mark>도넛 차트</mark>로 변경됨)
    - **width, height:** 차트의 너비 및 높이(픽셀)
 
 #### <a href="https://plotly.com/python-api-reference/generated/plotly.express.bar.html" target="_blank">express.bar()</a>
@@ -219,11 +237,12 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
    - **data_frame:** 데이터프레임 또는 딕셔너리
    - **x:** x축 데이터(카테고리 이름)
    - **y:** y축 데이터(수치형 데이터)
+   - **color:** 각 막대의 색상을 나타낼 데이터(한 막대를 값에 따라 여러 색깔로 분할할 수 있음) 
+   - **color_continuous_scale:** 값에 따라 변하는 색상 스케일 <a href="https://plotly.com/python/builtin-colorscales/l" target="_blank">설정</a>
    - **orientation:** 막대 방향 지정(`'v'는 세로, `'h'`는 가로)
-   - **hover_name:** 점 위에 마우스를 올릴 때 표시될 추가 정보
    - **barmode:** 막대의 표시 방식(e.g. `group`은 한 카테고리에 대한 여러 데이터가 옆에 나란히 배치됨)
    - **width, height:** 차트의 너비 및 높이(픽셀)
-   - **color_continuous_scale:** 값에 따라 변하는 색상 스케일 <a href="https://plotly.com/python/builtin-colorscales/l" target="_blank">설정</a>
+   - **hover_name:** 점 위에 마우스를 올릴 때 표시될 추가 정보
 
 #### <a href="https://plotly.com/python-api-reference/generated/plotly.express.scatter.html" target="_blank">express.scatter()</a>
 
@@ -235,7 +254,6 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
    - **y:** y축 데이터(수치형 데이터)
    - **size:** 각 점의 크기를 나타낼 수치형 데이터
    - **color:** 각 점의 색상을 나타낼 데이터   
-   (수치형 데이터는 컬러 스케일, 범주형 데이터는 고유한 색상으로 그룹화)
    - **hover_name:** 점 위에 마우스를 올릴 때 표시될 추가 정보
 
 #### <a href="https://plotly.com/python-api-reference/generated/plotly.express.box.html" target="_blank">express.box()</a>
@@ -300,6 +318,8 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
 > import seaborn as sns       # 관례적으로 sns라는 이름으로 임포트
 > ```
 
+<br>
+
 ### GRAPHS
 
 #### <a href="https://seaborn.pydata.org/generated/seaborn.scatterplot.html" target="_blank">.scatterplot()</a>
@@ -357,7 +377,7 @@ plt.show()                                   # 4. 맷플롯립으로 차트 출�
 #### <a href="https://seaborn.pydata.org/generated/seaborn.axes_style.html" target="_blank">.axes_style()</a>
 
 - 차트의 전체적인 테마 변경
-- "darkgrid", "whitegrid", "dark", "white", "ticks" 테마 중 선택
+- "darkgrid", "whitegrid", "dark", "white", "ticks" 중 선택
 
 #### <a href="" target="_blank"></a>
 
