@@ -8,7 +8,7 @@ categories:
 tags:
   - Python
   - Pandas
-last_modified_at: 2025-01-17T14:45:30+09:00
+last_modified_at: 2025-01-20T12:30:30+09:00
 ---
 
 > **Pandas**    
@@ -222,6 +222,25 @@ Name: temp, dtype: float64
 
 데이터 사이언스에 활용할 수 있는 판다스 메소드
 
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html" target="_blank">DataFrame.loc[]</a>
+
+- 데이터프레임에서 행과 열을 선택
+- 첫 번째 []에는 **행 조건**(인덱스), 두 번째 \[]\(선택사항)에는 **열 조건**(열 이름 또는 열 이름들의 리스트) 전달
+- <mark style='background-color: LightYellow'>⚠️ 파이썬 슬라이싱처럼 인덱스 범위를 지정 가능하나, loc는 시작과 끝 숫자가 모두 포함됨</mark>
+- 둘 이상의 조건을 만족하는 행만 출력하려면 비트 연산자 <mark>&</mark> 사용
+   - e.g. `new_data = df.loc[ (df.column_a == 0) & (df.column_b != 0) ]`
+   - 비트 연산자의 우선순위가 비교 연산자보다 먼저이기 때문에, 비교 연산자에 괄호 필요
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.shape.html" target="_blank">DataFrame.shape</a>
+
+- 데이터프레임의 차원(행, 열 등)의 개수를 나타내는 튜플 반환
+<!-- - ndarray.shape 도 가능(링크달기) -->
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.columns.html" target="_blank">DataFrame.columns</a>
+
+- 속성만 사용했을 때는 데이터프레임의 모든 열의 이름을 반환
+- 속성에 리스트로 열 이름들을 할당하면 데이터프레임의 열 이름 변경(리스트의 길이와 실제 열 개수가 일치해야 한다)
+
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html" target="_blank">DataFrame.describe()</a>
 
 - 데이터프레임의 여러 통계(count, ean, std, min, 25%, 50%, 75%, max)를 반환
@@ -238,24 +257,6 @@ Name: temp, dtype: float64
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sample.html" target="_blank">DataFrame.sample()</a>
 
 - 파라미터 **n**에 전달한 개수만큼의 행을 무작위로 골라서 반환
-
-### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.shape.html" target="_blank">DataFrame.shape</a>
-
-- 데이터프레임의 차원(행, 열 등)의 개수를 나타내는 튜플 반환
-<!-- - ndarray.shape 도 가능(링크달기) -->
-
-### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.columns.html" target="_blank">DataFrame.columns</a>
-
-- 데이터프레임의 모든 열의 이름만 출력
-
-### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html" target="_blank">DataFrame.loc[]</a>
-
-- 데이터프레임에서 행과 열을 선택
-- 첫 번째 []에는 **행 조건**(인덱스), 두 번째 \[]\(선택사항)에는 **열 조건**(열 이름 또는 열 이름들의 리스트) 전달
-- <mark style='background-color: LightYellow'>⚠️ 파이썬 슬라이싱처럼 인덱스 범위를 지정 가능하나, loc는 시작과 끝 숫자가 모두 포함됨</mark>
-- 둘 이상의 조건을 만족하는 행만 출력하려면 비트 연산자 <mark>&</mark> 사용
-   - e.g. `new_data = df.loc[ (df.column_a == 0) & (df.column_b != 0) ]`
-   - 비트 연산자의 우선순위가 비교 연산자보다 먼저이기 때문에, 비교 연산자에 괄호 필요 
 
 ### <a href="https://www.udemy.com/course/best-100-days-python/learn/lecture/29150300#overview" target="_blank">DataFrame.query()</a>
 
@@ -368,6 +369,7 @@ Name: temp, dtype: float64
 - 데이터를 특정 기준으로 그룹화
 - 파라미터
    - **by:** 열 이름 또는 열 이름의 리스트, 함수 등을 전달하여 그룹화 기준 정하기
+   - **level:** 다중 인덱스가 있는 데이터프레임에서 특정 인덱스 레벨을 기준으로 그룹화(by와 다름)
    - **as_index:** `True`(기본값)는 그룹화된 열을 새 데이터프레임의 인덱스로 사용, `False`는 일반 열로 유지
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.count.html" target="_blank">DataFrame.count()</a>
@@ -391,6 +393,20 @@ Name: temp, dtype: float64
 - 총 개수를 계산
 - `.isna()` 메소드의 뒤에 연결하면 데이터프레임의 열마다 있는 NaN 값의 개수를 셀 수 있다.
 - `.groupby()` 메소드의 뒤에 연결하면 특정 그룹에 속한 개수를 계산할 수 있다.
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.cumsum.html" target="_blank">DataFrame.cumsum()</a>
+
+- 누적 합계(cumulative sum)를 계산
+- 첫 번째 값은 그대로 유지되고 그 이후의 값은 이전 값과 현재 값을 누적하여 합산
+- `.groupby()` 메소드의 뒤에 연결하면 특정 그룹에 대해 누적 합계를 계산할 수 있다.
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.nlargest.html" target="_blank">DataFrame.nlargest()</a>, <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.nsmallest.html" target="_blank">DataFrame.nsmallest()</a>
+
+- 데이터프레임에서 가장 큰 값, 가장 작은 값을 가진 행을 반환
+- columns 파라미터의 기준으로 정렬된 상태로 반환된다.
+- 파라미터
+   - **n:** 반환할 행의 개수
+   - **columns:** 기준이 되는 열
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.mean.html" target="_blank">Series.mean()</a>
 
@@ -424,16 +440,30 @@ Name: temp, dtype: float64
 - 해당 데이터의 타입을 지정한 타입으로 변경(e.g. `str`)
 - Series 객체의 `.str` 속성(문자열일 때만 사용 가능) 앞에 붙여서 문자열로 변환할 때 사용 가능
 
-### <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.replace.html" target="_blank">Series.str.replace()</a>
+### <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.html#" target="_blank">Series.str</a>
 
-- 해당 열의 값에 있는 특정 문자를 다른 문자로 대체(공백으로 대체할 경우 제거됨)
+- 문자열 형식의 데이터를 조작
+- **<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.replace.html" target="_blank">.replace()</a>**
+   - 해당 열의 값에 있는 특정 문자를 다른 문자로 대체
+   - 공백으로 대체할 경우 제거할 수 있다.
+- **<a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.str.split.html" target="_blank">.split()</a>**
+   - 해당 열의 값을 특정 문자를 기반으로 해서 분할
+   - 파라미터
+      - **pat:** 기준이 될 문자(기본값은 공백)
+      - **expand:** `False`(기본값)는 리스트/시리즈 반환, `True`는 분리된 항목을 데이터프레임의 각 열로 반환
 
-### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.str.split.html" target="_blank">Series.str.split()</a>
+### <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.dt.html" target="_blank">Series.dt</a>
 
-- 해당 열의 값을 특정 문자를 기반으로 해서 분할
-- 파라미터
-   - **pat:** 기준이 될 문자(기본값은 공백)
-   - **expand:** `False`(기본값)는 리스트/시리즈 반환, `True`는 분리된 항목을 데이터프레임의 각 열로 반환
+- datetime 형식의 데이터를 조작
+- 속성
+   - `.year`: 연도 추출
+   - `.month`: 월 추출
+   - `.day`: 일 추출
+   - `.hour`: 시간 추출
+   - `.minute`: 분 추출
+   - `.second`: 초 추출
+   - `.weekday`: 요일 추출(월요일을 `0`으로 반환)
+
 <br>
 
 ## General Functions

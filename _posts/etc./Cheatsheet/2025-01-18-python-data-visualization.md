@@ -2,7 +2,7 @@
 excerpt: "Python에서 데이터를 시각화하는 Matplotlib, Plotly, Seaborn 라이브러리 정리"
 title: "Python Data Science: Data Visualization"
 header:
-  teaser: "https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  teaser: "https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3A347ece48-0f69-11e9-a3aa-118c761d2745?source=ig"
 categories:
   - Cheatsheet
 tags:
@@ -11,7 +11,7 @@ tags:
   - Matplotlib
   - Plotly
   - Seaborn
-last_modified_at: 2025-01-18T15:37:30+09:00
+last_modified_at: 2025-01-20T12:30:30+09:00
 ---
 
 <div class="notice--info" markdown="1">
@@ -27,7 +27,8 @@ last_modified_at: 2025-01-18T15:37:30+09:00
 > **Matplotlib(맷플롯립)**   
 > - 정적인 이미지 형식의 그래프를 만드는 파이썬 라이브러리로, Pandas와 잘 맞는다.
 > - 그래프의 세부 요소를 세밀하게 제어할 수 있어 보고서, 논문 등에 사용
->
+> - <a href="https://matplotlib.org/cheatsheets/#matplotlib-cheatsheets-and-handouts" target="_blank">Matplotlib cheatsheets and handouts</a>에서 요약본 pdf 다운로드
+> 
 > ```bash 
 > pip install matplotlib            # 터미널에서 설치
 > ```
@@ -268,6 +269,40 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
    - **notched:** 상자 위아래에 홈 추가 여부(두 박스가 겹치는지 확인하거나 중앙값의 신뢰 구간 확인에 유용)
    - **points:** 이상치(outliers, 박스를 벗어난 데이터) 표시 방법(e.g. `all`은 모든 이상치를 점으로 표시)
 
+#### <a href="https://plotly.com/python-api-reference/generated/plotly.express.line.html" target="_blank">express.line()</a>
+
+- Pandas DataFrame을 기반으로 간단하고 빠르게 선형 차트 생성
+- <a href="https://plotly.com/python/line-charts/" target="_blank">Line Charts in Python</a> 참고
+
+#### <a href="https://plotly.com/python-api-reference/generated/plotly.express.sunburst.html" target="_blank">express.sunburst()</a> 
+
+- Pandas DataFrame을 기반으로 간단하고 빠르게 햇살형 차트 생성
+- 계층적 데이터를 원형으로 시각화   
+(e.g. 1번째 레벨: `'Region'`, 2번째 레벨: `'Country'`, 3번째 레벨: `'City'`, 각 섹션의 크기: `'Population'`)
+- <a href="https://plotly.com/python/sunburst-charts/" target="_blank">Sunburst Charts in Python</a> 참고
+- 파라미터
+   - **title:** 차트 제목
+   - **data_frame:** 데이터프레임 또는 딕셔너리
+   - **path:** 계층적 데이터의 열 이름을 리스트로 지정
+   - **values:** 각 섹션의 크기를 결정하는 데이터
+   - **color** 각 섹션의 색상을 나타낼 데이터
+
+#### <a href="https://plotly.com/python-api-reference/generated/plotly.express.choropleth.html" target="_blank">express.choropleth()</a>
+
+- 지역 데이터를 시각화할 수 있는 색상 지도(choropleth map) 생성
+- <a href="https://plotly.com/python/choropleth-maps/" target="_blank">Choropleth Maps in Python</a> 참고
+- 파라미터
+   - **title:** 차트 제목
+   - **data_frame:** 데이터프레임 또는 딕셔너리
+   - **locations:** 지역을 나타내는 값이 저장된 열
+   - **locationmode:** locations 값의 형식 지정
+      - `'ISO-3'`: 3글자 ISO 국가 코드(기본값)
+      - `'USA-states'`: 미국 주 이름
+      - `'country names'`: 국가 이름
+   - **hover_name:** 마우스를 올렸을 때 표시될 텍스트
+   - **hover_data:** 마우스를 올렸을 때 추가로 표시할 데이터(열 이름들을 리스트로 전달 가능)
+   - **color:** 각 지역의 색상을 나타낼 데이터   
+
 #### <a href="https://plotly.com/python-api-reference/generated/generated/plotly.graph_objects.Figure.show.html?highlight=show" target="_blank">Figure.show()</a>
 
 - 생성된 그래프 개체를 graph_objects로 표시
@@ -337,6 +372,12 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
 
 - 산점도 + 선형 회귀선(점들 사이의 선형 관계를 나타내는 직선)을 함께 표시하는 차트 생성
 - 파라미터
+   - **data:** 판다스 데이터프레임
+   - **x:** x축 데이터로 사용할 열
+   - **y:** y축 데이터로 사용할 열
+   - **lowess:**
+      - Locally Weighted Scatterplot Smoothing의 약자
+      - `True`로 설정하면 선형 회귀 대신 국소 회귀를 사용하여 더 부드럽고 자연스러운 추세선을 그릴 수 있다.
    - **scatter_kws:** 점의 스타일을 설정하는 딕셔너리
        - `{'alpha': 투명도(0은 투명, 1은 불투명}`
        - `{'color': 색상}`
@@ -349,6 +390,38 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
       - `{'alpha': 투명도}`
       - `{'linewidth': 두께}`
       - `{'linestyle': 스타일}`
+
+#### <a href="https://seaborn.pydata.org/generated/seaborn.lmplot.html#seaborn.lmplot" target="_blank">.lmplot()</a>
+
+- `.regplot()`의 확장 형태로, 선형 회귀선이나 국소 회귀선에 대한 여러 조건 설정 가능
+- 파라미터
+   - **row:** 지정된 열을 기준으로 서브플롯을 생성하여 행으로 배치(가로로 나열됨)
+   - **col:** 지정된 열을 기준으로 서브플롯을 생성하여 열로 배치(세로로 나열됨)
+   - **aspect:** 각 플롯의 가로 세로 비율 설정
+   - **hue:** 색상으로 그룹을 구분할 열 지정(row, col처럼 서브플롯을 생성하지 않고 한 차트에 모두 표시)
+
+#### <a href="https://seaborn.pydata.org/generated/seaborn.histplot.html" target="_blank">.histplot()</a>
+
+- 히스토그램 생성
+- 데이터를 구간(bin)으로 나누고 각 구간에 포함된 데이터의 개수를 막대로 표현
+- 파라미터
+   - **data:** 판다스 데이터프레임
+   - **x:** x축 데이터로 사용할 열(x축은 bins를 나타내고 y축은 해당 구간에 속한 데이터의 개수나 밀도가 됨)
+   - **bins:** 데이터를 나누는 구간의 개수(데이터에 따라 적절히 설정해야 한다.)
+
+#### <a href="https://seaborn.pydata.org/generated/seaborn.boxplot.html#seaborn.boxplot" target="_blank">.boxplot()</a>
+
+- 박스 차트 생성
+- 구성 요소
+   - **Box:** 데이터의 중앙 50%를 나타냄(박스의 상단은 세 번째 사분위수, 하단은 첫 번째 사분위수가 된다.)
+   - **Median:** 박스 안의 가로선은 데이터의 중앙값(두 번째 사분위수)
+   - **Whiskers:** 박스에서 벗어나는 선들은 데이터를 1.5배 IQR 범위 내로 확장한 부분
+   - **Outliers:** 수염(Whiskers) 끝을 넘어서는 점들(원과 같은 기호로 표시)
+- 파라미터
+   - **data:** 판다스 데이터프레임
+   - **x:** x축 데이터로 사용할 열
+   - **y:** y축 데이터로 사용할 열
+
 
 ### STYLE
 
@@ -378,14 +451,6 @@ plt.show()                                   # 4. 맷플롯립으로 차트 출�
 
 - 차트의 전체적인 테마 변경
 - "darkgrid", "whitegrid", "dark", "white", "ticks" 중 선택
-
-#### <a href="" target="_blank"></a>
-
-#### <a href="" target="_blank"></a>
-
-
-
-
 
 <br><br>
 <center>References</center>
