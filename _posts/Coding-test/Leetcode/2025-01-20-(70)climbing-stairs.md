@@ -145,6 +145,6 @@ helper(5)
 └── memo[4] → 5 (saved)
 </pre>
 
-memo[5] = 5 + 3
+memo[5] = 5 + 3    
 ∴ `n` = 8
 {: style="color: green;"}

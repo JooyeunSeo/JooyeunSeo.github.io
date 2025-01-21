@@ -8,7 +8,7 @@ categories:
 tags:
   - Python
   - Pandas
-last_modified_at: 2025-01-20T12:30:30+09:00
+last_modified_at: 2025-01-21T14:30:30+09:00
 ---
 
 > **Pandas**    
@@ -322,10 +322,17 @@ Name: temp, dtype: float64
 
 ### <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.stack.html" target="_blank">DataFrame.stack()</a>
 
-- 데이터프레임의 열을 행(인덱스)로 변환(Series 타입으로 결과 반환)
+- 데이터프레임의 열을 행(인덱스)으로 변환(Series 타입으로 결과 반환)
 - 파라미터
    - **level:** 스택을 수행할 레벨 지정(기본값은 마지막 레벨인 `-1`)
    - **dropna:** 결측값 제거 여부(기본값은 `True`)
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.set_index.html#pandas.DataFrame.set_index" target="_blank">DataFrame.set_index()</a>
+
+- 지정한 열 또는 배열을 데이터프레임의 인덱스로 설정
+- 파라미터
+   - **keys:** 단일 열이나 배열 또는 리스트로 여러 개의 열 전달
+   - **inplace:** `False`(기본값)는 원본 데이터를 유지, `True`는 정렬 결과를 원본 데이터에 반영 
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.pivot.html" target="_blank">DataFrame.pivot()</a>
 

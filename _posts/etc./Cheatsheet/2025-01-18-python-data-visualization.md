@@ -11,7 +11,7 @@ tags:
   - Matplotlib
   - Plotly
   - Seaborn
-last_modified_at: 2025-01-20T12:30:30+09:00
+last_modified_at: 2025-01-21T14:30:30+09:00
 ---
 
 <div class="notice--info" markdown="1">
@@ -137,7 +137,9 @@ ax2.plot(x-data, y-data-b)
 #### <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.grid.html" target="_blank">pyplot.grid()</a>
 
 - 차트 위에 회색 격자를 겹쳐서 표시
-- **linestyle:** 파라미터로 점 스타일 지정 가능
+- 파라미터
+   - **color:** 격자선 색 지정
+   - **linestyle:** 격자선 스타일 지정
 
 #### <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xticks.html#matplotlib.pyplot.xticks" target="_blank">pyplot.xticks()</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html" target="_blank">pyplot.yticks()</a>
 
@@ -177,7 +179,21 @@ ax2.plot(x-data, y-data-b)
 
 - 각 데이터 시리즈의 레이블을 수집하여 범례를 생성
 - 그래프 오른쪽 위(기본값)에 각 라인의 색상, 이름과 함께 표시됨
-- **fontsize** 파라미터로 글자 크기를 조절
+- 파라미터
+   - **fontsize:** 글자 크기 조절
+   - **handles:**
+      - 범례에 표시하고 싶은 객체만 리스트로 전달
+      - plot 객체가 반환하는 **튜플**에서 **첫 번째 값**(선, 점 등 그래프에 보여질 객체)만 handles에 전달됨    
+          ```python
+          ...
+
+          black_line, = plt.plot( ... )    # 라인 객체 1 저장(, = 으로 반환값의 첫 번째 값만 저장)
+          white_line, = plt.plot( ... )    # 라인 객체 2 저장(같은 축에 선을 하나 더 그림)
+
+          plt.legend(handles=[black_line, white_line], fontsize=18)
+          plt.show()
+          ```  
+      - `.legend()`로 자동 생성하는 범례보다 더 세밀하게 제어할 수 있고, 생성한 객체에서 속성 변경으로 스타일을 관리할 수 있다.
 
 #### <a href="https://matplotlib.org/stable/api/dates_api.html" target="_blank">.dates</a>
 
@@ -190,7 +206,7 @@ import matplotlib.dates as mdates
 
 years = mdates.YearLocator()              # 연도를 찾는 로케이터
 months = mdates.MonthLocator()            # 월을 찾는 로케이터
-years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지정(e.g. 연도를 2025로 표시)
+years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지정(e.g. '%Y'는 연도를 2025로 표시)
 ```
 
 - **<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axis.Axis.set_major_locator.html" target="_blank">Axis.set_major_locator()</a>:** 큰 눈금의 위치 설정
@@ -198,8 +214,9 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
 - **<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axis.Axis.set_minor_locator.html" target="_blank">Axis.set_minor_locator()</a>:** 작은 눈금의 위치 설정
 - **<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axis.Axis.set_minor_formatter.html" target="_blank">Axis.set_minor_formatter()</a>:** 작은 눈금에 날짜를 표시하는 형식 지정
 
-
 --------------------------------------------
+
+<br><br>
 
 ## Plotly
 
@@ -218,30 +235,18 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
 
 ### GRAPHS
 
-#### <a href="https://plotly.com/python-api-reference/generated/plotly.express.pie.html" target="_blank">express.pie()</a>
-
-- Pandas DataFrame을 기반으로 간단하고 빠르게 파이 차트 생성
-- 파라미터
-   - **title:** 차트 제목
-   - **data_frame:** 데이터프레임 또는 딕셔너리(추가하지 않고 다른 파라미터에서 직접 열을 가져와도 됨)
-   - **names:** 데이터프레임의 열 이름을 사용하여 파이 조각에 이름을 지정
-   - **labels:** 가독성을 위해 names보다 간결하거나 읽기 쉬운 이름을 리스트 또는 딕셔너리로 전달
-   - **values:** 파이 조각의 크기(비율) 지정
-   - **hole:** 차트 가운데 동그랗게 빈 공간을 추가하고 크기 조절(<mark>도넛 차트</mark>로 변경됨)
-   - **width, height:** 차트의 너비 및 높이(픽셀)
-
 #### <a href="https://plotly.com/python-api-reference/generated/plotly.express.bar.html" target="_blank">express.bar()</a>
 
 - Pandas DataFrame을 기반으로 간단하고 빠르게 막대 차트 생성
 - 파라미터
    - **title:** 차트 제목
-   - **data_frame:** 데이터프레임 또는 딕셔너리
+   - **data_frame:** 데이터프레임 또는 딕셔너리(생략 가능)
    - **x:** x축 데이터(카테고리 이름)
    - **y:** y축 데이터(수치형 데이터)
-   - **color:** 각 막대의 색상을 나타낼 데이터(한 막대를 값에 따라 여러 색깔로 분할할 수 있음) 
+   - **color:** 색상으로 데이터를 구분하여 보여줄 열(한 막대를 값에 따라 여러 색깔로 분할할 수 있음) 
    - **color_continuous_scale:** 값에 따라 변하는 색상 스케일 <a href="https://plotly.com/python/builtin-colorscales/l" target="_blank">설정</a>
    - **orientation:** 막대 방향 지정(`'v'는 세로, `'h'`는 가로)
-   - **barmode:** 막대의 표시 방식(e.g. `group`은 한 카테고리에 대한 여러 데이터가 옆에 나란히 배치됨)
+   - **barmode:** 막대의 표시 방식(e.g. `'group'`은 한 카테고리에 대한 여러 데이터가 옆에 나란히 배치됨)
    - **width, height:** 차트의 너비 및 높이(픽셀)
    - **hover_name:** 점 위에 마우스를 올릴 때 표시될 추가 정보
 
@@ -250,29 +255,63 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
 - Pandas DataFrame을 기반으로 간단하고 빠르게 산점도 차트 생성
 - 파라미터
    - **title:** 차트 제목
-   - **data_frame:** 데이터프레임 또는 딕셔너리
+   - **data_frame:** 데이터프레임 또는 딕셔너리(생략 가능)
    - **x:** x축 데이터(카테고리 이름)
    - **y:** y축 데이터(수치형 데이터)
    - **size:** 각 점의 크기를 나타낼 수치형 데이터
-   - **color:** 각 점의 색상을 나타낼 데이터   
+   - **color:** 색상으로 데이터를 구별하여 보여줄 열
    - **hover_name:** 점 위에 마우스를 올릴 때 표시될 추가 정보
+
+#### <a href="https://plotly.com/python-api-reference/generated/plotly.express.line.html" target="_blank">express.line()</a>
+
+- Pandas DataFrame을 기반으로 간단하고 빠르게 선형 차트 생성
+- <a href="https://plotly.com/python/line-charts/" target="_blank">Line Charts in Python</a> 참고
+- 파라미터
+   - **title:** 차트 제목
+   - **data_frame:** 데이터프레임 또는 딕셔너리(생략 가능)
+   - **x:** x축 데이터(카테고리 이름)
+   - **y:** y축 데이터(수치형 데이터)
+   - **color:** 색상으로 데이터를 구별하여 보여줄 열(여러 개의 선을 한 차트에 표시할 수 있다.)
 
 #### <a href="https://plotly.com/python-api-reference/generated/plotly.express.box.html" target="_blank">express.box()</a>
 
 - Pandas DataFrame을 기반으로 간단하고 빠르게 상자 차트 생성
 - 파라미터
    - **title:** 차트 제목
-   - **data_frame:** 데이터프레임 또는 딕셔너리
+   - **data_frame:** 데이터프레임 또는 딕셔너리(생략 가능)
    - **x:** x축 데이터(카테고리 이름)
    - **y:** y축 데이터(수치형 데이터)
    - **color:** 각 상자의 색상을 나타낼 데이터   
    - **notched:** 상자 위아래에 홈 추가 여부(두 박스가 겹치는지 확인하거나 중앙값의 신뢰 구간 확인에 유용)
    - **points:** 이상치(outliers, 박스를 벗어난 데이터) 표시 방법(e.g. `all`은 모든 이상치를 점으로 표시)
 
-#### <a href="https://plotly.com/python-api-reference/generated/plotly.express.line.html" target="_blank">express.line()</a>
+#### <a href="https://plotly.com/python-api-reference/generated/plotly.express.histogram.html" target="_blank">express.histogram()</a>
 
-- Pandas DataFrame을 기반으로 간단하고 빠르게 선형 차트 생성
-- <a href="https://plotly.com/python/line-charts/" target="_blank">Line Charts in Python</a> 참고
+- 히스토그램 생성
+- <a href="https://plotly.com/python/histograms/" target="_blank">Histograms in Python</a> 참고
+- 파라미터
+   - **title:** 차트 제목
+   - **data_frame:** 데이터프레임 또는 딕셔너리(생략 가능)
+   - **x:** x축 데이터(카테고리 이름)
+   - **y:** y축 데이터(수치형 데이터)
+   - **nbins:** 히스토그램의 빈(bin)개수를 설정(e.g. 30일 경우 데이터를 30개의 구간으로 나눔)
+   - **color:** 각 막대의 색상을 나타낼 데이터
+   - **opacity:** 막대의 투명도 설정(겹치는 구간에서 투명하게 보여서 쉽게 구분할 수 있다.)
+   - **barmode:** 막대의 표시 방식(e.g. `'overlay'`는 한 카테고리에 대한 여러 데이터가 겹쳐서 표시됨)
+   - **histnorm:** y축 값을 퍼센트로 정규화(수치가 크게 다른 값끼리 비교할 때 유용)
+   - **marginal:** 차트 위나 옆에 추가적인 그래프 제공(e.g. `'box'`는 박스 플롯 추가)
+
+#### <a href="https://plotly.com/python-api-reference/generated/plotly.express.pie.html" target="_blank">express.pie()</a>
+
+- Pandas DataFrame을 기반으로 간단하고 빠르게 파이 차트 생성
+- 파라미터
+   - **title:** 차트 제목
+   - **data_frame:** 데이터프레임 또는 딕셔너리(생략 가능)
+   - **names:** 데이터프레임의 열 이름을 사용하여 파이 조각에 이름을 지정
+   - **labels:** 가독성을 위해 names보다 간결하거나 읽기 쉬운 이름을 리스트 또는 딕셔너리로 전달
+   - **values:** 파이 조각의 크기(비율) 지정
+   - **hole:** 차트 가운데 동그랗게 빈 공간을 추가하고 크기 조절(<mark>도넛 차트</mark>로 변경됨)
+   - **width, height:** 차트의 너비 및 높이(픽셀)
 
 #### <a href="https://plotly.com/python-api-reference/generated/plotly.express.sunburst.html" target="_blank">express.sunburst()</a> 
 
@@ -282,7 +321,7 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
 - <a href="https://plotly.com/python/sunburst-charts/" target="_blank">Sunburst Charts in Python</a> 참고
 - 파라미터
    - **title:** 차트 제목
-   - **data_frame:** 데이터프레임 또는 딕셔너리
+   - **data_frame:** 데이터프레임 또는 딕셔너리(생략 가능)
    - **path:** 계층적 데이터의 열 이름을 리스트로 지정
    - **values:** 각 섹션의 크기를 결정하는 데이터
    - **color** 각 섹션의 색상을 나타낼 데이터
@@ -293,7 +332,7 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
 - <a href="https://plotly.com/python/choropleth-maps/" target="_blank">Choropleth Maps in Python</a> 참고
 - 파라미터
    - **title:** 차트 제목
-   - **data_frame:** 데이터프레임 또는 딕셔너리
+   - **data_frame:** 데이터프레임 또는 딕셔너리(생략 가능)
    - **locations:** 지역을 나타내는 값이 저장된 열
    - **locationmode:** locations 값의 형식 지정
       - `'ISO-3'`: 3글자 ISO 국가 코드(기본값)
@@ -339,7 +378,10 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
    - **coloraxis_showscale:** 그래프 생성 시 *color_continuous_scale*로 설정한 색상 스케일 축 표시 여부
    - **legend:** 범례의 레이아웃 설정    
    (e.g. `dict(title="제목", orientation="표시 방향", x=x축 위치, y=y축 위치, xanchor="위치 기준")`)
-<br>
+
+--------------------------------------------
+
+<br><br>
 
 ## Seaborn
 
@@ -356,6 +398,10 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
 <br>
 
 ### GRAPHS
+
+<div class="notice--info" markdown="1">
+💡 한 차트에 여러 그래프를 그리려면 차트 생성 메소드를 원하는 만큼 호출
+</div>
 
 #### <a href="https://seaborn.pydata.org/generated/seaborn.scatterplot.html" target="_blank">.scatterplot()</a>
 
@@ -409,6 +455,16 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
    - **x:** x축 데이터로 사용할 열(x축은 bins를 나타내고 y축은 해당 구간에 속한 데이터의 개수나 밀도가 됨)
    - **bins:** 데이터를 나누는 구간의 개수(데이터에 따라 적절히 설정해야 한다.)
 
+#### <a href="https://seaborn.pydata.org/generated/seaborn.kdeplot.html" target="_blank">.kdeplot()</a>
+
+- 커널 밀도 추정(Kernel Density Estimation, KDE) 그래프 생성
+- 데이터의 분포를 부드러운 곡선 형태로 추정하는 데 사용
+- 파라미터
+   - **data:** 판다스 데이터프레임
+   - **x:** x축 데이터로 사용할 열
+   - **shade:** `True`로 설정하면 각 분포 아래(곡선 안쪽)를 색으로 채운다(겹치는 영역 확인에 용이).
+   - **clip:** x축 값의 범위를 제한(e.g. `(0, 1)`는  KDE 곡선을 0에서 1 사이의 범위로 제한)
+
 #### <a href="https://seaborn.pydata.org/generated/seaborn.boxplot.html#seaborn.boxplot" target="_blank">.boxplot()</a>
 
 - 박스 차트 생성
@@ -421,7 +477,7 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
    - **data:** 판다스 데이터프레임
    - **x:** x축 데이터로 사용할 열
    - **y:** y축 데이터로 사용할 열
-
+<br>
 
 ### STYLE
 
