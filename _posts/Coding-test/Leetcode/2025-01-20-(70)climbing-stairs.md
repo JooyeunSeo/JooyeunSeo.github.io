@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-테스트이름' 풀이 정리"
+excerpt: "'LeetCode-Climbing Stairs' 풀이 정리"
 title: "\070. Climbing Stairs"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"
@@ -8,7 +8,7 @@ categories:
 tags:
   - Coding Test
   - Python
-  - factorial()
+  - math.factorial()
   - Fibonacci numbers
 ---
 
@@ -57,7 +57,7 @@ class Solution(object):
         two_steps = 0                 # steps 조합에서 2 steps의 개수
         count = 0                     # 가능한 조합의 총 개수
 
-        for i in range(n // 2 + 1):   # 2 steps 개수를 기준으로 반복(0개부터 n//2+1개까지)
+        for i in range(n // 2 + 1):   # 2 steps 개수를 기준으로 반복(0개부터 n//2개까지)
             two_steps = i             
             one_steps = n - (2 * i)   # 2 steps가 i개일 때 1 step의 개수
             

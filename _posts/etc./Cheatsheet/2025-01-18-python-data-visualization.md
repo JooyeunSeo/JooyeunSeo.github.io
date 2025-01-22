@@ -7,10 +7,7 @@ categories:
   - Cheatsheet
 tags:
   - Python
-  - Pandas
-  - Matplotlib
-  - Plotly
-  - Seaborn
+  - Data Science
 last_modified_at: 2025-01-21T14:30:30+09:00
 ---
 
