@@ -1,5 +1,5 @@
 ---
-title: "스플래시 페이지 제목"
+title: "Splash Page"
 layout: splash
 permalink: /splash-page/
 date: 2016-03-23T11:48:41-04:00
@@ -11,47 +11,46 @@ header:
     - label: "Download"
       url: "https://github.com/mmistakes/minimal-mistakes/"
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
-excerpt: "부제목"
-
+excerpt: "sample page"
 intro: 
-  - excerpt: 'asdghkjtyugdf'
+  - excerpt: 'intro의 excerpt 문구. Centered with `type="center"`'
 feature_row:
-  - image_path: assets/images/foo-bar-identity-th.jpg
+  - image_path: assets/images/unsplash-gallery-image-1-th.jpg
     alt: "placeholder image 1"
     title: "Placeholder 1"
-    excerpt: "tjutyhjgdhj"
-  - image_path: assets/images/foo-bar-identity-th.jpg
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+  - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
     image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
     alt: "placeholder image 2"
     title: "Placeholder 2"
-    excerpt: "asdfasdfasdfasdtehdfgdfg"
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
     url: "#test-link"
     btn_label: "Read More"
     btn_class: "btn--primary"
-  - image_path: assets/images/foo-bar-identity-th.jpg
+  - image_path: /assets/images/unsplash-gallery-image-3-th.jpg
     title: "Placeholder 3"
-    excerpt: "thdfgdsfgsd"
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
 feature_row2:
-  - image_path: assets/images/foo-bar-identity-th.jpg
+  - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
     alt: "placeholder image 2"
     title: "Placeholder Image Left Aligned"
-    excerpt: 'dfsdfsdfsd'
+    excerpt: 'This is some sample content that goes here with **Markdown** formatting. Left aligned with `type="left"`'
     url: "#test-link"
     btn_label: "Read More"
     btn_class: "btn--primary"
 feature_row3:
-  - image_path: assets/images/foo-bar-identity-th.jpg
+  - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
     alt: "placeholder image 2"
     title: "Placeholder Image Right Aligned"
-    excerpt: 'wsetqwrtgaerfasdf'
+    excerpt: 'This is some sample content that goes here with **Markdown** formatting. Right aligned with `type="right"`'
     url: "#test-link"
     btn_label: "Read More"
     btn_class: "btn--primary"
 feature_row4:
-  - image_path: assets/images/foo-bar-identity-th.jpg
+  - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
     alt: "placeholder image 2"
     title: "Placeholder Image Center Aligned"
-    excerpt: 'asdfasdfasdfasdf'
+    excerpt: 'This is some sample content that goes here with **Markdown** formatting. Centered with `type="center"`'
     url: "#test-link"
     btn_label: "Read More"
     btn_class: "btn--primary"

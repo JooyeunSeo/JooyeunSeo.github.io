@@ -1,8 +1,8 @@
 main:
-  - title: "About"
-    url: /about/
-  # - title: "Portfolio"
-  #   url: /portfolio/
+  # - title: "About"
+  #   url: /about/
+  - title: "Personal projects"
+    url: /personal-projects/
   - title: "Tags"
     url: /tags/
 
