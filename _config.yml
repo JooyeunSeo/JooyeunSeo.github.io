@@ -249,7 +249,7 @@ tag_archive:
   type: liquid
   path: /tags/
 collections:  # 콜렉션 추가
-  personal-projects:
+  projects:
     output: true
     permalink: /:collection/:path/
 # https://github.com/jekyll/jekyll-archives

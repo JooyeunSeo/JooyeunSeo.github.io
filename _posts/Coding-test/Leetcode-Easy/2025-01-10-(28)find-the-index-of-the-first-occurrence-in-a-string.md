@@ -110,33 +110,36 @@ class Solution:
             i += max(1, j - letters.get(haystack[i+j], -1))
         return -1
 ```
-슬라이싱을 이용한 코드는 Brute Force 알고리즘으로, Boyer-Moore 알고리즘을 적용한 코드도 참고해봤다.   
+슬라이싱을 이용한 코드는 Brute Force 알고리즘이어서 효율이 낮기 때문에 Boyer-Moore 알고리즘을 변형 적용한 답안도 참고해봤다. 이 코드는 문자열을 뒤에서부터 비교하고 정해진 규칙을 기준으로 스킵할 수 있는 위치를 계산해서 효율성을 높였다.    
+
 Brute Force 알고리즘의 최악의 시간 복잡도는 𝑂(𝑛 \* 𝑚)이고 평균 𝑛 \* 𝑚 / 2 개의 문자를 체크한다.   
 Boyer-Moore 알고리즘의 최악의 시간 복잡도는 𝑂(𝑛 \* 𝑚 + 𝑚)이고 평균 𝑛 / 𝑚 + 𝑚 개의 문자를 체크한다.   
 
-최악의 시간 복잡도는 Brute Force보다 길지만 아주 특별한 케이스가 아니면 거의 일어나지 않고 평균 체크 문자수가 더 적기 때문에 효율적이라고 할 수 있다.
+이 코드의 경우 딕셔너리 계산 때문에 𝑚 만큼 더 + 됐다. 그래서 최악의 시간 복잡도는 Brute Force를 이용한 방법보다 크지만, 최악의 경우는 아주 특별한 케이스가 아니면 거의 일어나지 않고 평균 체크 문자수가 더 적기 때문에 효율적이라고 할 수 있다.
+
+소제목에 건 링크에서 더 자세한 설명을 볼 수 있다.
 
 `haystack` = "THISISASIMPLEEXAMPLE"    
 `needle`= "EXAMPLE"
 {: style="color: blue;"}
 
 <pre>
-0123456789.........19 (index)
----------------------------------------------------------------------
-THISISASIMPLEEXAMPLE 
-EXAMPLE               ← EXAMPLE에 S가 없기 때문에 i=6까지 스킵
+0123456789.............23 (index)
+--------------------------------------------------------------------------
+THIS IS A SIMPLE EXAMPLE 
+EXAMPLE                  ← haystack[6](= S)이 "EXAMPLE"에 없으므로 최대 크기 스킵
 
-THISISASIMPLEEXAMPLE 
-       EXAMPLE        ← 공통문자 P가 있고 끝 문자가 다를 땐 P끼리 위치를 맞춰야 한다
+THIS IS A SIMPLE EXAMPLE 
+       EXAMPLE           ← haystack[13](= P) != E 이지만 "EXAMPLE"에 P 존재  
 
-THISISASIMPLEEXAMPLE 
-      EXAMPLE         ← 뒤에서부터 하나씩 매치한 결과 i=8에서 불일치하므로 스킵 가능
+THIS IS A SIMPLE EXAMPLE 
+         EXAMPLE         ← 뒤에서부터 하나씩 매치한 결과 i=11에서 불일치하므로 스킵
 
-THISISASIMPLEEXAMPLE 
-         EXAMPLE      ← 공통문자 X가 있고 끝 문자가 다를 땐 X끼리 위치를 맞춰야 한다
+THIS IS A SIMPLE EXAMPLE 
+            EXAMPLE      ← haystack[18](= X) != E 이지만 "EXAMPLE"에 X 존재
 
-THISISASIMPLEEXAMPLE 
-             EXAMPLE  ← 뒤에서부터 하나씩 매치한 결과 모두 매칭됨
+THIS IS A SIMPLE EXAMPLE 
+                 EXAMPLE ← 뒤에서부터 하나씩 매치한 결과 모두 매칭
 </pre>
 
 return i = 13
