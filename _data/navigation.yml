@@ -1,10 +1,8 @@
 main:
   # - title: "About"
   #   url: /about/
-  - title: "Projects"
+  - title: "PROJECT"
     url: /projects/
-  - title: "Tags"
-    url: /tags/
 
 # sidebar menu links
 docs:
@@ -21,3 +19,8 @@ docs:
       - title: "Blog with Jekyll"     # Jekyll로 블로그 생성
         url: /jekyll/
         category: "Jekyll"
+  - title: <i class="fa-solid fa-magnifying-glass"></i>
+    url: /search/ 
+    children:
+      - title: "Tags"
+        url: /tags/
