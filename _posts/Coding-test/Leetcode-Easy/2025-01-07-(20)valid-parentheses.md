@@ -9,7 +9,6 @@ tags:
   - Coding Test
   - Python
   - Stack
-  - pop()
   - keys()
   - values()
 ---

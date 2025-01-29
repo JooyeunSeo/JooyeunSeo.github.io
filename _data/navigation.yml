@@ -19,7 +19,7 @@ docs:
       - title: "Blog with Jekyll"     # Jekyll로 블로그 생성
         url: /jekyll/
         category: "Jekyll"
-  - title: <i class="fa-solid fa-magnifying-glass"></i>
+  - title: 🔍
     url: /search/ 
     children:
       - title: "Tags"
