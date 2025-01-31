@@ -8,6 +8,9 @@ categories:
 tags:
   - Coding Test
   - Python
+  - Binary Tree
+  - DFS
+  - Recursion
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

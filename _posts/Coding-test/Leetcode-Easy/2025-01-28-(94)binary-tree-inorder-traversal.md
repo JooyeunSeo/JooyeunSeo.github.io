@@ -9,6 +9,7 @@ tags:
   - Coding Test
   - Python
   - Binary Tree
+  - Recursion
   - Stack
 ---
 
@@ -159,7 +160,7 @@ class Solution:
         return res
 ```
 <i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛)     
-<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛)           
+<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛)      
 
 스택으로 중위 순회를 구현하는 답안이다.
 시간 복잡도와 공간 복잡도는 재귀 호출 방식과 같지만, 트리의 크기가 커지면 생길 수 있는 오버헤드가 문제가 없기 때문에 훨씬 더 효율적이었다.
