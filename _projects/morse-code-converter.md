@@ -1,6 +1,6 @@
 ---
 layout: splash
-excerpt: "This converter will translate string to morse code"
+excerpt: "This converter will translate string to morse code."
 title: "Morse Code Converter"
 header:
   teaser: "https://www.worldhistory.org/img/r/p/1500x1500/17222.png.webp?v=1679479979-1679480090"
