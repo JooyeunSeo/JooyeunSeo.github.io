@@ -9,6 +9,7 @@ tags:
   - Coding Test
   - Python
   - Binary Tree
+  - Recursion
   - DFS
 ---
 
@@ -77,7 +78,8 @@ class Solution(object):
 <i class="fa-solid fa-clock"></i> Runtime: **3** ms \| Beats **88.20%**    
 <i class="fa-solid fa-memory"></i> Memory: **88.20** MB \| Beats **18.28%**
 
-잎 노드에서부터 깊이 계산을 시작하는 구조다. 잎 노드는 자식이 없어서 `max(0, 0) + 1 = 1`, 즉 깊이 값이 1이 된다. 개인적으로 지금까지 했던 트리 문제 중에 가장 어려웠던 문제였다.
+잎 노드에서부터 깊이 계산을 시작하는 구조다. 잎 노드는 자식이 없어서 `max(0, 0) + 1 = 1`, 즉 깊이 값이 1이 된다.    
+개인적으로 지금까지 했던 트리 문제 중에 가장 어려웠던 문제였다.
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 

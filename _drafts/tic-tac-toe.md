@@ -162,46 +162,16 @@ game over       next: human(●)  next: human(●)  next: human(●)  next: huma
 
 # Result
 
-<img src="/assets/images/personal-projects/tic_tac_toe_1.png" 
+<img src="/assets/images/personal-projects/tic_tac_toe_1.gif" 
      width="60%">
 
-AI와 easy 레벨로 겨루기 모드를 선택   
-<br>
+pvp 모드로 다른 사람과 플레이
+<br><br>
 
-<img src="/assets/images/personal-projects/tic_tac_toe_2.png" 
+<img src="/assets/images/personal-projects/tic_tac_toe_2.gif" 
      width="60%">
 
-AI가 easy 레벨에서 랜덤으로 칸을 선택하는 모습   
-<br>
-
-<img src="/assets/images/personal-projects/tic_tac_toe_3.png" 
-     width="60%">
-
-1p 모드에서 AI를 이겼을 때(easy 레벨)   
-<br>
-
-<img src="/assets/images/personal-projects/tic_tac_toe_4.png" 
-     width="60%">
-
-1p 모드에서 무승부일 때   
-<br>
-
-<img src="/assets/images/personal-projects/tic_tac_toe_5.png" 
-     width="60%">
-
-AI가 hard 레벨에서 미니맥스 알고리즘으로 최적의 칸을 선택하는 모습   
-<br>
-
-<img src="/assets/images/personal-projects/tic_tac_toe_6.png" 
-     width="60%">
-
-1p 모드에서 AI에게 졌을 때   
-<br>
-
-<img src="/assets/images/personal-projects/tic_tac_toe_7.png" 
-     width="60%">
-
-2p 모드를 선택(올바른 값이나 빈 칸을 입력해야 게임판에 표시할 수 있는 구조)
+AI 모드에서 hard 레벨로 컴퓨터와 플레이
 <br>
 
 <br><br><br>
