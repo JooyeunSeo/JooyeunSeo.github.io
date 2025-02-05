@@ -11,8 +11,6 @@ header:
   actions:
     - label: "Download Zip"
       url: "https://github.com/JooyeunSeo/JooyeunSeo.github.io/raw/main/download/Tic_Tac_Toe.zip"
-    - label: "Try now"
-      url: "https://dynamic-web-page-2bzr.onrender.com/morse_code_converter"
 ---
 
 # Intro
@@ -61,11 +59,26 @@ header:
 
 ### Language
 
-파이썬
+파이썬으로 구현
 
 ### Coding
 
-
+- 보드 상태 관리
+   - 2차원 배열 안에 O, X 또는 공백(빈 상태를 나타내는 값)이 들어간다.
+   - 시작 시 모든 원소를 공백으로 초기화한다.
+- 게임 종료 체크
+   - 가로, 세로, 대각선에 같은 표시가 있는지 확인하는 방식으로 승자가 있는지 판별한다.
+   - 각 표시에 따라 다른 값을 반환해서 누가 승자인지 확인할 때 사용한다.
+- 보드가 꽉 찼는지 체크
+   - 승자가 없고 보드가 꽉 찼다면 무승부로 처리한다.
+   - 한 칸에 표시가 마크될 때마다 `marked_cells` 변수에 하나씩 카운트해서 그 값이 9가 됐을 경우 종료한다.    
+   (매번 게임판을 순회하며 빈 칸을 찾을 필요가 없도록 시간 절약)
+- 차례 관리
+   - 현재 플레이어가 누구인지 계속 추적한다.
+   - 게임이 종료되지 않았을 경우 다음 플레이어와 그 플레이어의 표시로 전환한다.
+- 플레이어의 입력 확인
+   - 입력값이 유효한지 확인하고 범위를 벗어난 값을 입력했을 경우 계속 다시 입력받는다.
+   - 게임판에서 칸을 선택할 때는 선택한 위치가 빈 칸인지도 함께 확인해야 한다.
 <br><br>
 
 ### Computer AI
@@ -172,23 +185,14 @@ pvp 모드로 다른 사람과 플레이
      width="60%">
 
 AI 모드에서 hard 레벨로 컴퓨터와 플레이
-<br>
-
 <br><br><br>
 
 # Future Improvements
 
+과제가 텍스트 기반 프로그램 제작이었기 때문에 텍스트로만 게임판을 구현했지만, Tkinter나 Pygame을 사용해서 GUI로 만들면 더 좋을 것이다. 또 flask로 구동한 웹에서 루프를 구현하기가 어려워서 웹 버전은 생략했는데, 웹 개발에 대해 좀 더 배우면 보완하고 싶다.
 <br><br><br>
 
 # Conclusion
 
+사람과 대결할 때 항상 최적의 선택을 하는 AI 알고리즘을 게임에 적용할 수 있었다. 또 객체 지향 프로그래밍(OOP)을 활용해서 각 기능을 모듈화하고 관리화하는 방법을 익힐 수 있었다.
 <br><br><br>
-
-
-
-<https://tictactoefree.com/kr/gisa/maebeon-tiktaekto-igineun-bangbeob>   
-<https://tictactoefree.com/kr/gyuchik>   
-<https://tictactoefree.com/kr/gisa/tiktakto-du-beonjjae-sijak-igi>  
-<https://www.youtube.com/watch?v=trKjYdBASyQ>
-
-
