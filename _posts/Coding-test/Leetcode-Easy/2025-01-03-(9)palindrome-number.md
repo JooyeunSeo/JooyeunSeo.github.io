@@ -61,11 +61,8 @@ class Solution(object):
         else:
             return False
 ```
-<i class="fa-solid fa-clock"></i> Runtime: **38** ms \| Beats **5.26%**    
-<i class="fa-solid fa-memory"></i> Memory: **12.38** MB \| Beats **22.77%**    
-
 변수를 문자열로 변환한 뒤, 앞에서부터 하나씩 추출한 것과 뒤에서부터 하나씩 추출한 것을 비교하는 방식을 사용했다.  
-이 코드는 매우 간단하지만 거의 꼴지 수준의 런타임을 기록했다. 
+이 코드는 매우 간단하지만 아주 느린 실행 시간을 기록했다. 
 
 ```python
 class Solution(object):

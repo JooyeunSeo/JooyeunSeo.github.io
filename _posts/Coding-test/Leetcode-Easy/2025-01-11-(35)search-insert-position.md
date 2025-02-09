@@ -65,7 +65,7 @@ class Solution(object):
             
         return right_p + 1          # '오른쪽 포인터 > 왼쪽 포인터'일 때 '오른쪽 포인터 + 1'에 삽입
 ```
-<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100%**    
+<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100.00%**    
 <i class="fa-solid fa-memory"></i> Memory: **12.87** MB \| Beats **38.64%**
 
 오름차순으로 정렬된 리스트에서 이진 탐색(<em>binary search</em>)을 사용했다. 이진 탐색은 이미 **정렬**된 리스트 형태에서 사용 가능한 방법으로, 리스트의 크기를 절반씩 줄여가며 주어진 탐색 키(target)와 같은 값의 원소를 찾는 원리이다.   

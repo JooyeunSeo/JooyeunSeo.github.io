@@ -102,7 +102,7 @@ class Solution(object):
                 
         return len(nums[:front_p])      # num를 front_p의 바로 뒤까지 자른 길이(k)만큼을 반환
 ```
-<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100%**    
+<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100.00%**    
 <i class="fa-solid fa-memory"></i> Memory: **12.61** MB \| Beats **18.84%**
 
 두 개의 포인터(앞에서부터 시작하는 포인터와 뒤에서부터 시작하는 포인터)가 필요하다.

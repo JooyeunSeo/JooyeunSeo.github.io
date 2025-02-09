@@ -67,7 +67,7 @@ class Solution(object):
 
         return compare(root.left, root.right)
 ```
-<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100%**    
+<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100.00%**    
 <i class="fa-solid fa-memory"></i> Memory: **12.77** MB \| Beats **15.01%**
 
 처음에는 트리를 왼쪽과 오른쪽으로 절반 나눈 뒤, 왼쪽 서브트리는 루트 → 왼쪽 자식 → 오른쪽 자식 순으로 순회하고, 오른쪽 서브트리는 루트 → 오른쪽 자식 → 왼쪽 자식 순으로 순회해서 두 순서가 동일한지 비교하는 방법을 사용했다.   

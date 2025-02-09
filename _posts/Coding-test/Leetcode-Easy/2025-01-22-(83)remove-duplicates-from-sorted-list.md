@@ -64,7 +64,7 @@ class Solution(object):
         cur.next = None               # head의 마지막 노드 이후 연결 제거
         return ans.next               # 더미 노드 이후의 리스트를 반환
 ```
-<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100%**    
+<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100.00%**    
 <i class="fa-solid fa-memory"></i> Memory: **12.50** MB \| Beats **13.71%**
 
 ListNode() 함수로 연결 리스트를 생성하면 초기값이 자동으로 0으로 설정되어서 `0 → 0 → 0` 과 같은 head일 경우 아무 것도 출력되지 않았다.

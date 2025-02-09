@@ -87,7 +87,7 @@ class Solution(object):
         if idx_n >= 0:
             nums1[:idx_n + 1] = nums2[:idx_n + 1]
 ```
-<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100%**    
+<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100.00%**    
 <i class="fa-solid fa-memory"></i> Memory: **12.47** MB \| Beats **33.60%**
 
 정렬된 두 개의 배열을 하나의 정렬된 배열로 병합하는 문제였다. 추가적인 메모리를 사용하지 않고 인덱스 오류 없이 포인터를 사용하기 위해 역방향(뒤에서부터) 병합을 했다.   

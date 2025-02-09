@@ -65,7 +65,7 @@ class Solution(object):
         
         return int(count)
 ```
-<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100%**    
+<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100.00%**    
 <i class="fa-solid fa-memory"></i> Memory: **12.40** MB \| Beats **48.99%**
 
 *중복된 문자* 가 포함된 n개의 문자를 *순서에 상관있게* 나열하는 **중복 순열** 공식을 사용해서 풀었다.

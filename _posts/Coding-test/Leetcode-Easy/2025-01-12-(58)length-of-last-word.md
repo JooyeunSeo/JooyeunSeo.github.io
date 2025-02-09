@@ -66,7 +66,7 @@ class Solution(object):
                 return length
         return length                           # 한 단어로만 이루어진 문자열의 경우 for문 종료 후 반환
 ```
-<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100%**    
+<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100.00%**    
 <i class="fa-solid fa-memory"></i> Memory: **12.76** MB \| Beats **6.23%**
 
 

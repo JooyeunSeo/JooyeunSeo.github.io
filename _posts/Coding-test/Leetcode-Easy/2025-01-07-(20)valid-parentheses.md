@@ -96,7 +96,7 @@ class Solution(object):
         else:
             return stack[-1]
 ```
-<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100%**    
+<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100.00%**    
 <i class="fa-solid fa-memory"></i> Memory: **12.61** MB \| Beats **6.00%**
 
 스택을 이용하는 문제이다.    

@@ -88,7 +88,7 @@ class Solution(object):
         k = uniq_p + 1  # 0부터 카운트했기 때문에 고유 원소의 개수는 +1 해야 한다
         return k                      
 ```
-<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100%**    
+<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100.00%**    
 <i class="fa-solid fa-memory"></i> Memory: **13.87** MB \| Beats **20.32%**
 
 두 개의 포인터(고유 원소를 가리키는 포인터와 현재 노드를 가리키는 포인터)가 필요하다.

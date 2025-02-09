@@ -60,7 +60,7 @@ class Solution(object):
                 return i
         return -1
 ```
-<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100%**    
+<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100.00%**    
 <i class="fa-solid fa-memory"></i> Memory: **12.56** MB \| Beats **20.46%**
 
 for문과 슬라이싱 기능을 사용한 코드
