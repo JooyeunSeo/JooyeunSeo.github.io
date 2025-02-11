@@ -9,6 +9,7 @@ tags:
   - Coding Test
   - Python
   - Pascal's triangle
+  - Array
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
@@ -84,20 +85,23 @@ output = [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
 ```python
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
-        res = [[1]]   # 첫 번째 행 먼저 반환
+        res = [[1]]                             # 첫 번째 행
 
-        for _ in range(numRows - 1):
-            dummy_row = [0] + res[-1] + [0]
-            row = []
+        for _ in range(numRows - 1):            # 두 번째 행부터 시작
+            dummy_row = [0] + res[-1] + [0]     # 이전 행에 0을 양쪽에 추가한 새로운 더미 행 생성
+            row = []                            # 현재 행 저장
 
             for i in range(len(res[-1]) + 1):
-                row.append(dummy_row[i] + dummy_row[i+1])
+                row.append(dummy_row[i] + dummy_row[i+1])   # 두 인접 항목을 더해서 새로운 항목 생성
             res.append(row)
         
         return res
 ```
 <i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛<sup>2</sup>)      
 <i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛<sup>2</sup>)  
+
+각 행의 맨 앞과 맨 뒤에 0을 더한다는 아이디어를 사용한 답안이다. 0은 1에 더해도 그대로 1이 되기 때문에 결과에 전혀 영향을 주지 않고, 두 인접 항목을 더하는 연산을 일괄 적용할 수 있다.
+
 
 ### <a href="https://leetcode.com/problems/pascals-triangle/solutions/4016203/three-approachesbeginner-friendlyfull-ex-c39l/" target="_blank">2nd</a>
 
