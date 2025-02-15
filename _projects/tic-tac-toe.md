@@ -5,7 +5,7 @@ title: "Tic Tac Toe"
 header:
   teaser: "https://images.unsplash.com/photo-1695009327063-e50668c30d32?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   overlay_color: "#000"
-  overlay_filter: "0.5"
+  overlay_filter: "0.3"
   overlay_image: https://images.unsplash.com/photo-1695009327063-e50668c30d32?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
   caption: "Photo credit: [**Unsplash**](https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%ED%98%B8%EB%B0%95%EA%B3%BC-%EC%A1%B0%EB%A1%B1%EB%B0%95%EC%9D%84-%EC%96%B9%EC%9D%80-%EB%82%98%EB%AC%B4-%ED%85%8C%EC%9D%B4%EB%B8%94-nWFdL88mKuQ)"
   actions:

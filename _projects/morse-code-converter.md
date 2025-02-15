@@ -5,7 +5,7 @@ title: "Morse Code Converter"
 header:
   teaser: "https://www.worldhistory.org/img/r/p/1500x1500/17222.png.webp?v=1679479979-1679480090"
   overlay_color: "#000"
-  overlay_filter: "0.5"
+  overlay_filter: "0.3"
   overlay_image: https://www.worldhistory.org/img/r/p/1500x1500/17222.png.webp?v=1679479979-1679480090
   caption: "Photo credit: [**World History Encyclopedia**](https://www.worldhistory.org/image/17222/telegraph-morse-key/)"
   actions:
