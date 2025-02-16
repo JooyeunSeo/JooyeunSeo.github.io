@@ -1,4 +1,5 @@
 ---
+show_date: True
 layout: splash
 excerpt: "This converter will translate string to morse code."
 title: "Morse Code Converter"
