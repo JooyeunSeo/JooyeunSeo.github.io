@@ -110,10 +110,10 @@ class Solution:
         s = re.sub('[^a-zA-Z0-9]', '', s).lower()
         return s == s[::-1]  
 ```
-isalnum() 없이 정규식(regular expression)과 <mark>re.sub()</mark>를 이용한 예시를 공부해봤다. 이 함수는 문자열에서 정규식 패턴을 찾아서 다른 문자로 치환한다(문자열을 새로 만듦). 이 경우 비문자를 s에서 제거한다.
+isalnum()처럼 간편한 함수를 사용하지 못할 경우를 대비한 답안도 참고했다. <mark>정규 표현식</mark>(regular expression)과 <mark>re.sub()</mark>를 활용했으며, 이 함수는 문자열에서 정규식 패턴을 찾아서 다른 문자로 치환한다. 문자열을 새로 만들기 때문에 𝑂(𝑛)의 추가 공간을 사용한다.
 
 <div class="notice--info" markdown="1">
-**[^a-zA-Z0-9]** 정규식
+💡 **[^a-zA-Z0-9]**
 
 - `[]` : 문자 클래스([] 안에 포함된 문자 중 하나라도 일치하면 매칭됨)
 - `a-z` : a부터 z

@@ -1,7 +1,7 @@
 ---
 layout: splash
 excerpt: "설명"
-title: "프로젝트제목"
+title: "Typing Speed Test App"
 header:
   teaser: "/assets/images/foo-bar-identity.jpg"
   overlay_color: "#000"
