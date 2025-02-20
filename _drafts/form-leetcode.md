@@ -67,6 +67,7 @@ tags:
 
 
 {: style="color: blue;"}
+{: style="color: green;"}
 
 𝑂(𝑛)
 𝑂(𝑛<sup>2</sup>)

@@ -80,7 +80,7 @@ class Solution:
 <i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛)    
 <i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(1)           
 
-XOR 연산의 성질을 이용한 답안으로, 문제에서 요구하는 모든 조건을 만족했다. 같은 숫자끼리는 결국 0이 되기 때문에 단 하나만 있는 숫자가 결과가 된다. XOR 연산끼리는 순서를 바꿔도 같은 결과가 나온다는 것이 중요했던 것 같다.
+XOR 연산(^)의 성질을 이용한 답안으로, 문제에서 요구하는 모든 조건을 만족했다. 같은 숫자끼리는 결국 0이 되기 때문에 단 하나만 있는 숫자가 결과가 된다. XOR 연산끼리는 순서를 바꿔도 같은 결과가 나온다는 것이 중요했던 것 같다.
 
 <div class="notice--info" markdown="1">
 💡 <a href="https://jooyeunseo.github.io/cheatsheet/digital-logic-gate/" target="_blank">XOR 연산</a>의 성질
@@ -88,6 +88,21 @@ XOR 연산의 성질을 이용한 답안으로, 문제에서 요구하는 모든
 - 같은 숫자끼리 XOR 연산: 0
 - 0과 어떤 숫자를 XOR 연산: 그 숫자 자신   
 - XOR 연산은 순서를 바꿔도 같은 결과
+
+`nums` = [4,1,2,1,2], `result` = 0
+{: style="color: blue;"}
+
+<pre>
+result
+     0 ^ 4 ^ 1 ^ 2 ^ 1 ^ 2
+   = 0 ^ 4 ^ 1 ^ 1 ^ 2 ^ 2
+   = 0 ^ 4 ^   0   ^   0  
+   = 0 ^ 4 ^ 0
+   = 4
+</pre>
+
+return 4
+{: style="color: green;"}
 </div>
 
 ### <a href="https://leetcode.com/problems/single-number/solutions/3171261/solution-by-deleted_user-um8h/" target="_blank">2nd</a>

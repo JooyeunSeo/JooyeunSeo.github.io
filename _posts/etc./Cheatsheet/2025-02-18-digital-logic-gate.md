@@ -1,5 +1,5 @@
 ---
-excerpt: "디지털 논리회로를 구성하는 논리 게이트"
+excerpt: "디지털 논리회로를 구성하는 논리 게이트 정리"
 title: "Digital Logic Gate"
 toc: false
 header:
@@ -8,6 +8,7 @@ categories:
   - Cheatsheet
 last_modified_at: 2025-02-18T00:30:30+09:00
 ---
+<br>
 
 |  Type  | Distinctive<br>Shape   |  Boolean<br>Algebra  | Truth Table<br>A, B → Q | Explanation |
 |:------:|:----------------------:|:--------------------:|:-----------------------:|---------|
