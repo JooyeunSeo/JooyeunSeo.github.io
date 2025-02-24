@@ -8,6 +8,7 @@ categories:
 tags:
   - Github Pages
   - Ruby
+last_modified_at: 2025-02-24T17:30:30+09:00
 ---
 
 **GitHub Pages**와 **Jekyll(지킬)**을 이용하여 무료로 블로그 호스팅하기!
@@ -139,6 +140,20 @@ end
     ```bash
     bundle install
     ```
+
+<div class="notice--warning" markdown="1">
+⚠️ **bundle install**를 실행했을 때 아래와 같은 문구가 뜬다면    
+
+Bundler 2.6.5 is running, but your lockfile was generated with 2.6.1. Installing Bundler 2.6.1 and restarting using that version.
+{: style="color: red;"}
+
+```python
+bundle update --bundler
+```
+해당 명령어를 실행하여 Bundler 버전을 업데이트하고 `Gemfile.lock` 파일을 새로 생성   
+(하단 `BUNDLED WITH`에 Bundler 버전이 명시됨)
+</div>
+
 <br>
 
 ### Run Jekyll

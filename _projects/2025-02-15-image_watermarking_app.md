@@ -3,11 +3,11 @@ layout: splash
 excerpt: "A GUI tool for adding customizable watermarks to images, supporting text and pattern options."
 title: "Image Watermarking App"
 header:
-  teaser: "https://images.unsplash.com/photo-1596369325307-cbe5dc05d4d1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  teaser: "https://cdn.pixabay.com/photo/2012/03/01/16/11/animal-20574_1280.jpg"
   overlay_color: "#000"
   overlay_filter: "0.3"
-  overlay_image: https://images.unsplash.com/photo-1596369325307-cbe5dc05d4d1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  caption: "Photo credit: [**Unsplash**](https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EA%B0%88%EC%83%89-%EB%AA%A8%EB%9E%98%EC%97%90-%EB%B0%9C%EC%9E%90%EA%B5%AD-IxejHK_ToZA)"
+  overlay_image: https://cdn.pixabay.com/photo/2012/03/01/16/11/animal-20574_1280.jpg
+  caption: "Photo credit: [**Pixabay**](https://pixabay.com/ko/photos/%EB%8F%99%EB%AC%BC-%EB%B0%B0%EA%B2%BD-%EA%B0%9C-%EB%B0%9C-%EB%B0%9C%EC%9E%90%EA%B5%AD-20574/)"
   actions:
     - label: "Download Zip"
       url: "https://github.com/JooyeunSeo/JooyeunSeo.github.io/raw/main/download/Image_Watermarking_App.zip"

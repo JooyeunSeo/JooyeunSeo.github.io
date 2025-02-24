@@ -161,4 +161,3 @@ n = null node                          ↳ intersection
 
 Intersected at '8'
 {: style="color: green;"}
-
