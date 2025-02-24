@@ -43,6 +43,8 @@ Given the `root` of a binary tree, return the *postorder traversal of its nodes'
 - Input: root = [1]
 - Output: [1]
 
+**Constraints:**
+
 - The number of nodes in the tree is in the range [0, 100].
 - -100 <= Node.val <= 100
 
@@ -69,19 +71,19 @@ class Solution(object):
 
         order = []
         stack = []
-        last_visited = None                       # 마지막 방문 노드(부모 노드에서 오른쪽 자식 중복 방문 방지)
-        current_node = root                       # 현재 탐색중인 노드
+        last_visited = None                    # 마지막 방문 노드(부모 노드에서 오른쪽 자식 중복 방문 방지)
+        next_node = root                       # 다음에 처리될 예정인 노드(루트에서 시작)
 
-        while current_node or stack:
-            if current_node:
-                stack.append(current_node)        # 현재 노드를 스택에 추가
-                current_node = current_node.left  # 왼쪽 자식 먼저 탐색
+        while next_node or stack:
+            if next_node:
+                stack.append(next_node)        # 현재 위치한 노드를 스택에 추가
+                next_node = next_node.left     # 왼쪽 자식 먼저 탐색
             else:
-                node = stack[-1]                  # 왼쪽으로 끝까지 갔거나 오른쪽 자식만 있을 경우
+                node = stack[-1]               # 현재 처리중인 노드(아직 pop하지 않음)
                 if node.right and last_visited != node.right:
-                    current_node = node.right         # 오른쪽 자식 탐색(아직 방문한적 없음)
+                    next_node = node.right       # 오른쪽 자식 탐색(아직 방문한적 없음)
                 else:
-                    order.append(node.val)            # 오른쪽 자식을 이미 방문한 경우 부모 노드 방문
+                    order.append(node.val)       # 오른쪽 자식이 없거나 이미 방문했을 경우 부모 방문
                     last_visited = stack.pop()
 
         return order
@@ -90,6 +92,48 @@ class Solution(object):
 <i class="fa-solid fa-memory"></i> Memory: **12.56** MB \| Beats **17.08%**
 
 후위 순회가 전위 순회나 중위 순회보다 좀 더 까다로웠다. 부모 노드로 거슬러 올라갔을 때, 이미 방문했던 오른쪽 자식을 다시 방문하는 문제를 해결하는데서 시간이 많이 들었다.
+
+root = [1,2,3,4,5,null,8,null,null,6,7,9]
+{: style="color: blue;"}
+
+<pre>
+        1
+      /   \
+     2     3
+    / \     \
+   4   5     8 
+  /   / \   / 
+ n   6  7  9  
+    /
+   n 
+
+next     stack         node   last visit   order
+1        [1]                   None        []
+2        [1,2]                 None        []
+4        [1,2,4]               None        []
+None     [1,2,4]       4       4(pop)      [4]
+None     [1,2]         2       4           [4]
+5        [1,2,5]       2       4           [4]
+6        [1,2,5,6]     2       4           [4]
+None     [1,2,5,6]     6       6(pop)      [4,6]
+None     [1,2,5]       5       6           [4,6]
+7        [1,2,5,7]     5       6           [4,6]
+None     [1,2,5,7]     7       7(pop)      [4,6,7]
+None     [1,2,5]       5       7→5(pop)    [4,6,7,5]
+None     [1,2]         2       2(pop)      [4,6,7,5,2]     
+None     [1]           1       2           [4,6,7,5,2]
+3        [1,3]         1       2           [4,6,7,5,2]
+None     [1,3]         3       3           [4,6,7,5,2]
+8        [1,3,8]       3       3           [4,6,7,5,2]
+9        [1,3,8,9]     3       3           [4,6,7,5,2]
+None     [1,3,8,9]     9       9(pop)      [4,6,7,5,2,9]
+None     [1,3,8]       8       9→8(pop)    [4,6,7,5,2,9,8]
+None     [1,3]         3       8→3(pop)    [4,6,7,5,2,9,8,3]
+None     [1]           1       3→1(pop)    [4,6,7,5,2,9,8,3,1]
+</pre>
+
+order = [4,6,7,5,2,9,8,3,1]
+{: style="color: green;"}
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 
