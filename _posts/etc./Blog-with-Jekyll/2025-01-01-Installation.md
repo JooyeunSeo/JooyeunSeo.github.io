@@ -66,7 +66,7 @@ last_modified_at: 2025-02-24T17:30:30+09:00
     bundler -v
     ```
 
-## minimal-mistake Theme Installation
+## minimal-mistake Theme
 
 <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/" target="_blank">docs Link</a>      
 <a href="https://github.com/mmistakes/minimal-mistakes" target="_blank">Github Repository Link</a>  

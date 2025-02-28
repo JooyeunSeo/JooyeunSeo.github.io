@@ -71,6 +71,13 @@ start_timer 및 update_timer 메서드를 사용하여 타이머를 관리합니
 <br><br><br>
 
 # Result
+<div style="width: 50%;">   <!-- 가로 너비를 차지할 비율 -->
+    <iframe src="https://www.youtube.com/embed/fKB_bdxIbdI?start=3"
+            frameborder="0" allowfullscreen>
+    </iframe>
+</div>
+
+{% include video id="1061218422" provider="vimeo" %}
 
 <br><br><br>
 
@@ -82,7 +89,10 @@ start_timer 및 update_timer 메서드를 사용하여 타이머를 관리합니
 
 # Conclusion
 
-
+<div style="width: 70%;">
+   {% include video id="1SRJl3TDRaKR4A_j9-A_QnN77iXAjEHV3/view?usp=sharing" provider="google-drive" %}
+</div>
+https://drive.google.com/file/d/1SRJl3TDRaKR4A_j9-A_QnN77iXAjEHV3/view?usp=sharing
 
 ### reference
 
