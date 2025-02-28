@@ -9,8 +9,8 @@ header:
   overlay_image: https://cdn.pixabay.com/photo/2017/03/16/10/23/hands-on-keyboard-2148723_1280.jpg
   caption: "Photo credit: [**Pixabay**](https://pixabay.com/ko/photos/%ED%82%A4%EB%B3%B4%EB%93%9C%EC%97%90-%EC%86%90-%EA%B1%B4%EB%B0%98-%EC%BB%B4%ED%93%A8%ED%8C%85-2148723/)"
   actions:
-    - label: "Download Zip"
-      url: "https://github.com/JooyeunSeo/JooyeunSeo.github.io/raw/main/download/Typing_Speed_Test_App.zip"
+    - label: "Download zip"
+      url: "https://drive.google.com/file/d/uc?id=1QZQCzXNcJ_hXPOvZedR8R_uJXghEi-bQ&export=download"
 ---
 
 # Intro

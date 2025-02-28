@@ -10,7 +10,7 @@ header:
   caption: "Photo credit: [**Pixabay**](https://pixabay.com/ko/photos/%EB%B0%9C%EB%A0%8C%ED%83%80%EC%9D%B8-%EB%8D%B0%EC%9D%B4-%EB%B0%B0%EA%B2%BD-1777859/)"
   actions:
     - label: "Download Zip"
-      url: "https://github.com/JooyeunSeo/JooyeunSeo.github.io/raw/main/download/Tic_Tac_Toe.zip"
+      url: "https://drive.google.com/file/d/uc?id=1RgsiMY7tG2hDBUTQF3L9sqf4T5rDdoJB&export=download"
 ---
 
 # Intro

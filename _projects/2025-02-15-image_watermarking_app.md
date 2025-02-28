@@ -10,7 +10,7 @@ header:
   caption: "Photo credit: [**Pixabay**](https://pixabay.com/ko/photos/%EB%8F%99%EB%AC%BC-%EB%B0%B0%EA%B2%BD-%EA%B0%9C-%EB%B0%9C-%EB%B0%9C%EC%9E%90%EA%B5%AD-20574/)"
   actions:
     - label: "Download Zip"
-      url: "https://github.com/JooyeunSeo/JooyeunSeo.github.io/raw/main/download/Image_Watermarking_App.zip"
+      url: "https://drive.google.com/file/d/uc?id=1xpQOkPPxZaimN6RMNOcq6oKonFpuPPMN&export=download"
 ---
 
 # Intro

@@ -10,7 +10,7 @@ header:
   caption: "Photo credit: [**Unsplash**](#)"
   actions:
     - label: "Download Zip"
-      url: "https://github.com/JooyeunSeo/JooyeunSeo.github.io/raw/main/download/!!!!!!!.zip"
+      url: "https://drive.google.com/file/d/uc?id={아이디}&export=download" 
 ---
 
 # Intro
