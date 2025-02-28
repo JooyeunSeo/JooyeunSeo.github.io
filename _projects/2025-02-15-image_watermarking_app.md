@@ -40,18 +40,6 @@ header:
 
 ### Coding
 
-아래 유투브들을 참고하여 이미지에 텍스트를 추가하는 방법을 익혔다.
-
-<figure class="half">
-  <div style="width: 45%;">
-    <iframe src="https://www.youtube.com/embed/dcLcIa-qR8c" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <div style="width: 45%;">
-    <iframe src="https://www.youtube.com/embed/x6fHhNvcGjg" frameborder="0" allowfullscreen></iframe>
-  </div>
-</figure>
-
-
 - Tkinter로 GUI 구현 및 이미지 파일 열기/저장
    - PNG, JPG, JPEG, BMP 확장자를 지원한다.
    - 처리된 이미지들은 사용자가 지정한 폴더에 저장한다.
@@ -91,5 +79,12 @@ PyInstaller 모듈을 통해 프로그램을 실행 파일 형태로 변환했�
 
 # Conclusion
 
-우선 많은 개체들을 원하는 위치에 어긋나는 것 없이 깔끔하게 배치하는 것이 쉽지 않았다. 또 한글 깨짐 현상, EXIF 메타데이터, RGBA 모드, 워터마크 텍스트의 위치 좌표 계산 및 크기 조절 등 신경써야 할 부분이 너무 많아서 완성하기까지 시간이 아주 오래 걸렸다.   
+많은 개체들을 원하는 위치에 어긋나는 것 없이 깔끔하게 배치하는 것이 쉽지 않았다. 또 한글 깨짐 현상, EXIF 메타데이터, RGBA 모드, 워터마크 텍스트의 위치 좌표 계산 및 크기 조절 등 신경써야 할 부분이 너무 많아서 완성하기까지 시간이 아주 오래 걸렸다.   
 또 실행 파일로 만들어서 배포하는 것도 처음 시도했는데, 코드에서 변경해야 할 부분이 많았다. 파일 경로를 모두 절대 경로로 바꿔야했고, 원본 이미지를 보여주기 위해 사용한 PILLOW 라이브러리의 `show()` 때문에 프로그램이 다시 열리는 문제가 생겨서 tkinter로 새 창을 여는 것으로 대신했다. 하지만 이번 기회를 계기로 GUI 프로그램 제작에 좀 더 익숙해질 수 있었다.
+
+<br>
+
+### reference
+
+Tkinter 구현1: <https://www.youtube.com/watch?v=dcLcIa-qR8c>   
+Tkinter 구현2: <https://www.youtube.com/watch?v=x6fHhNvcGjg>

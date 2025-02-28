@@ -36,7 +36,7 @@ enable_copy_code_button  : true # 코드 블록에 복사 버튼 유무
 copyright                : # 저작권 정보 설정(defaults: site.title)
 copyright_url            : # 저작권 url 설정(defaults: site.url)
 ```
-**comments:** [이후 관련 포스트에서 진행](#)
+**comments:** [**Comments system by giscus**](http://localhost:4000/jekyll/comments/)
 ```yml
 reCaptcha:  # Google reCaptcha 서비스 사용 시 설정(사람과 봇을 구별하는 기능으로, 이 블로그에서는 생략)
 atom_feed:  # jekyll-feed 플러그인(루트 경로에서 RSS 피드 파일을 제공)의 설정으로, 기본값 그대로 설정
@@ -47,13 +47,9 @@ lunr:       # 기본 라이브러리로, GitHub Pages와 호환됨
   search_within_pages    : false
 ```
 
-## SEO Related
+## SEO Related, Analytics
 
-[이후 관련 포스트에서 진행](#)
-
-## Analytics
-
-[이후 관련 포스트에서 진행](#)
+[**Analytics & SEO Setting**](http://localhost:4000/jekyll/analytics&seo/)
 
 ## Site Author
 
@@ -82,10 +78,10 @@ author:
       # url: "https://instagram.com/"
 ```
 - 블로그 왼쪽 사이드바 위에 표시되는 프로필 영역 설정
-- 프로필 링크의 아이콘은 [Font Awesome](https://fontawesome.com/v6/search?m=free)에서 가져올 수 있다
+- 프로필 링크의 아이콘은 <a href="https://fontawesome.com/v6/search?m=free" target="_blank">Font Awesome</a>에서 가져올 수 있다
    - e.g. HTML code가 `<i class="fa-brands fa-github"></i>` → "fab fa-fw fa-github"
    - e.g. HTML code가 `<i class="fa-solid fa-envelope"></i>` → "fas fa-fw fa-envelope"
-- 아이콘 <a href="https://jooyeunseo.github.io/jekyll/Styling/#social-icons" target="_blank">색상</a> 커스텀 가능
+- 아이콘 [**색상**](https://jooyeunseo.github.io/jekyll/Styling/#social-icons) 커스텀 가능
 - 이메일 주소에 링크를 달기 위해서 `mailto:` 추가
 
 ## Site Footer
