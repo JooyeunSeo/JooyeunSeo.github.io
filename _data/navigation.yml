@@ -20,7 +20,8 @@ docs:
         url: /jekyll/
         category: "Jekyll"
   - title: 🔍
-    url: /search/ 
     children:
+      - title: "Search"
+        url: /search/
       - title: "Tags"
         url: /tags/
