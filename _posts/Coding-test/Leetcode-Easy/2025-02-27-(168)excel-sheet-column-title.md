@@ -19,9 +19,9 @@ Given an integer `columnNumber`, return *its corresponding column title as it ap
 
 For example:
 
-A -> 1   
-B -> 2   
-C -> 3   
+A -> 1      
+B -> 2     
+C -> 3     
 ...   
 Z -> 26   
 AA -> 27   
@@ -66,10 +66,10 @@ class Solution(object):
         
         for i in range(len(values)):
             if values[i] == 0 or values[i] == -1:       # 값이 0 또는 -1이고
-                if i < len(values) - 1:                     # 마지막 값이 아닐 경우만 알파벳으로 변환(마지막일 경우 무시)
-                    convert.append(chr(values[i] + 90))         # Z 또는 Y
-                if i+1 <= len(values) - 1:                  # 그 다음 값이 존재할 경우
-                    values[i+1] -= 1                            # 다음 값에 -1 수행
+                if i < len(values) - 1:                   # 마지막 값이 아닐 경우만 알파벳으로 변환
+                    convert.append(chr(values[i] + 90))       # Z 또는 Y
+                if i+1 <= len(values) - 1:                # 그 다음 값이 존재할 경우
+                    values[i+1] -= 1                          # 다음 값에 -1 수행
             else:
                 convert.append(chr(values[i] + 64))
         
