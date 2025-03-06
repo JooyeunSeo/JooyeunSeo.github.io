@@ -8,7 +8,7 @@ categories:
 tags:
   - Python
   - Data Science
-last_modified_at: 2025-01-21T14:30:30+09:00
+last_modified_at: 2025-03-06T14:30:30+09:00
 ---
 
 > **Pandas**    
@@ -109,10 +109,18 @@ Amy
 Carter
 </pre>
 
-### <a href="" target="_blank">DataFrame.merge()</a>
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.merge.html#pandas-dataframe-merge" target="_blank">DataFrame.merge()</a>
 
-- 두 개의 데이터프레임을 하나의 특정 열에 병합
-- 파라미터에 (데이터프레임1, 데이터프레임2, **on**=공통으로 존재하는 열의 이름) 순서로 전달
+- 두 개의 데이터프레임(기준이 될 `left dataframe`과 여기에 합칠 `right`)을 하나의 특정 열에 병합
+- 파라미터
+   - **right:** 데이터프레임 또는 시리즈
+   - **on:** 공통으로 존재하는 열 또는 열의 리스트
+   - **how:** join하는 방식 지정
+      - `'inner'` : 양쪽에 모두 존재하는 키만 포함, 일치하는 값이 없는 행은 제거(기본값)
+      - `'outer'` : 양쪽의 모든 행을 포함, 양쪽에서 모두 일치하는 값이 없으면 NaN로 채움
+      - `'left'` : left의 모든 행을 포함, right에서 일치하는 값이 없으면 NaN로 채움
+      - `'right'` : right의 모든 행을 포함, left에서 일치하는 값이 없으면 NaN로 채움
+      - `'cross'` : 양쪽의 모든 가능한 조합을 생성
 
 <div class="notice--info" markdown="1">
 
