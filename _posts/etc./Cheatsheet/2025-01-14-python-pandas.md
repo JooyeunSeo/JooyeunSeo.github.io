@@ -236,7 +236,8 @@ Name: temp, dtype: float64
 
 - 데이터프레임의 특정 행과 열을 라벨(이름)으로 선택
 - `df.loc["행 라벨", "열 라벨"]` 으로 표기
-- **행 라벨**은 인덱스, **열 라벨**(선택사항)은 열 이름 또는 열 이름들의 리스트
+  - **행 라벨**은 인덱스, **열 라벨**(선택사항)은 열 이름 또는 열 이름들의 리스트
+  - 선택된 부분만 시리즈 형태로 반환됨(데이터프레임으로 반환하려면 각 행과 열 라벨을 다시 리스트로 감싸기)
 - <mark style='background-color: LightYellow'>⚠️ 파이썬 슬라이싱처럼 인덱스 범위를 지정 가능하나, loc는 시작과 끝 숫자가 모두 포함됨</mark>
 - 인덱스 대신 특정 열의 값(이름, 점수 등)을 기준으로 접근하려면 조건 명시 필요
 - 둘 이상의 조건을 만족하는 행만 출력하려면 비트 연산자 <mark>&</mark> 사용
@@ -253,7 +254,12 @@ Name: temp, dtype: float64
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.shape.html" target="_blank">DataFrame.shape</a>
 
 - 데이터프레임의 차원(행, 열 등)의 개수를 나타내는 튜플 반환
-<!-- - ndarray.shape 도 가능(링크달기) -->
+- NumPy에서 <a href="ndarray.shape" target="_blank">ndarray.shape</a>도 가능
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.empty.html" target="_blank">DataFrame.empty</a>
+
+- 해당 데이터프레임이나 시리즈가 비어있다면 True를 반환
+- NaN 값만 있을 경우 비어있지 않은 것으로 간주되기 때문에 `.dropna()` 뒤에 붙여서 사용
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.columns.html" target="_blank">DataFrame.columns</a>
 
