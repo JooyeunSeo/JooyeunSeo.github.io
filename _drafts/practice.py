@@ -32,9 +32,9 @@ def highlight_tag():
     highlight_text = input("highlight text: ")
     print(f"<mark>{highlight_text}</mark>")
 #--------------------------------------------#
-
+leetcode_post_title()
 #--------------------------------------------#
-#####  OS별 맞춤  #####
+##########################  OS별 맞춤  ##########################
 def clear_screen(self):
     if os.name == 'nt':         # Windows
         os.system('cls')
@@ -43,7 +43,7 @@ def clear_screen(self):
     else:
         pass                    # pass in different environments
 ################################################################
-################################################################
+#--------------------------------------------------------------#
 class Solution(object):
     def titleToNumber(self, columnTitle):
         """
@@ -58,7 +58,7 @@ class Solution(object):
             i += 1
         return sum
 
-#-----------------------------------------------#
+#--------------------------------------------------------------#
 test = Solution()
-testcase = test.dd()
+testcase = test.titleToNumber("AA")
 print(testcase)

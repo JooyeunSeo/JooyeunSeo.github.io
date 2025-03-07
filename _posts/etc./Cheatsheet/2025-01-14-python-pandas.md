@@ -8,7 +8,7 @@ categories:
 tags:
   - Python
   - Data Science
-last_modified_at: 2025-03-06T14:30:30+09:00
+last_modified_at: 2025-03-07T14:30:30+09:00
 ---
 
 > **Pandas**    
@@ -111,7 +111,9 @@ Carter
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.merge.html#pandas-dataframe-merge" target="_blank">DataFrame.merge()</a>
 
-- 두 개의 데이터프레임(기준이 될 `left dataframe`과 여기에 합칠 `right`)을 하나의 특정 열에 병합
+- 두 개의 데이터프레임을 하나의 특정 열에 병합
+   - `left dataframe`과 `right dataframe`으로 분류
+   - `left.merge(right, ...)` 또는 `pd.merge(left, right, ...)` 으로 작성 가능
 - 파라미터
    - **right:** 데이터프레임 또는 시리즈
    - **on:** 공통으로 존재하는 열 또는 열의 리스트
@@ -164,8 +166,8 @@ Carter
 데이터프레임(전체 표)에서 추출한 단일 <mark>열</mark>은 Pandas의 **Series 클래스**의 객체가 된다.
 
 ```python
-print(data["temp"])   # 시리즈 출력하는 방법1
-print(data.temp)      # 시리즈 출력하는 방법2
+print(data["temp"])   # [] 표기법
+print(data.temp)      # . 표기법
 ```
 <i class="fa-solid fa-right-from-bracket"></i>    
 <pre>
@@ -232,12 +234,21 @@ Name: temp, dtype: float64
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html" target="_blank">DataFrame.loc[]</a>
 
-- 데이터프레임에서 행과 열을 선택
-- 첫 번째 []에는 **행 조건**(인덱스), 두 번째 \[]\(선택사항)에는 **열 조건**(열 이름 또는 열 이름들의 리스트) 전달
+- 데이터프레임의 특정 행과 열을 라벨(이름)으로 선택
+- `df.loc["행 라벨", "열 라벨"]` 으로 표기
+- **행 라벨**은 인덱스, **열 라벨**(선택사항)은 열 이름 또는 열 이름들의 리스트
 - <mark style='background-color: LightYellow'>⚠️ 파이썬 슬라이싱처럼 인덱스 범위를 지정 가능하나, loc는 시작과 끝 숫자가 모두 포함됨</mark>
+- 인덱스 대신 특정 열의 값(이름, 점수 등)을 기준으로 접근하려면 조건 명시 필요
 - 둘 이상의 조건을 만족하는 행만 출력하려면 비트 연산자 <mark>&</mark> 사용
    - e.g. `new_data = df.loc[ (df.column_a == 0) & (df.column_b != 0) ]`
    - 비트 연산자의 우선순위가 비교 연산자보다 먼저이기 때문에, 비교 연산자에 괄호 필요
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iloc.html" target="_blank">DataFrame.iloc[]</a>
+
+- 데이터프레임의 특정 행과 열을 위치(인덱스 번호)로 선택
+- 인덱스 번호는 첫 번째 행, 열부터 **0**으로 시작
+- `df.iloc["행 번호", "열 번호"]` 으로 표기
+- <mark style='background-color: LightYellow'>⚠️ loc와 달리 일반 슬라이싱처럼 끝 숫자가 포함되지 않음</mark>
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.shape.html" target="_blank">DataFrame.shape</a>
 
@@ -247,7 +258,9 @@ Name: temp, dtype: float64
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.columns.html" target="_blank">DataFrame.columns</a>
 
 - 속성만 사용했을 때는 데이터프레임의 모든 열의 이름을 반환
-- 속성에 리스트로 열 이름들을 할당하면 데이터프레임의 열 이름 변경(리스트의 길이와 실제 열 개수가 일치해야 한다)
+- 속성에 리스트로 열 이름들을 할당하면 데이터프레임의 열 이름 변경 가능
+   - `df.columns = ['열1', '열2', ...]`
+   - 리스트의 길이와 실제 열 개수 일치시키기
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html" target="_blank">DataFrame.describe()</a>
 
@@ -266,7 +279,7 @@ Name: temp, dtype: float64
 
 - 파라미터 **n**에 전달한 개수만큼의 행을 무작위로 골라서 반환
 
-### <a href="https://www.udemy.com/course/best-100-days-python/learn/lecture/29150300#overview" target="_blank">DataFrame.query()</a>
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.query.html" target="_blank">DataFrame.query()</a>
 
 - 여러 조건을 필터링하여 만족하는 부분 집합 생성
 - `.loc[]`과 `&` 연산자를 사용하는 것과 같다(`.query()`에서는 연산자 대신 `and` 키워드).
@@ -298,9 +311,14 @@ Name: temp, dtype: float64
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isna.html" target="_blank">DataFrame.isna()</a>
 
-- NaN(Not a Number)값을 찾는 메소드
-- 누락된 데이터(빈 셀)나 정크 데이터(숫자 대신 문자열을 포함하는 셀)를 뜻함
+- NaN(Not a Number)값일 경우 True를 반환
+- NaN 값은 누락된 데이터(빈 셀)나 정크 데이터(숫자 대신 문자열을 포함하는 셀)를 뜻함
 - `.values.any()` 앞에 연결해서 NaN 값이 있는지 확인할 수 있다(`False`를 반환해야 하나도 없다는 뜻).  
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.notna.html" target="_blank">DataFrame.notna()</a>
+
+- NaN 값일 아닐 경우 True를 반환
+- isna()의 반대
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.dropna.html" target="_blank">DataFrame.dropna()</a>
 
@@ -385,7 +403,8 @@ Name: temp, dtype: float64
 - 파라미터
    - **by:** 열 이름 또는 열 이름의 리스트, 함수 등을 전달하여 그룹화 기준 정하기
    - **level:** 다중 인덱스가 있는 데이터프레임에서 특정 인덱스 레벨을 기준으로 그룹화(by와 다름)
-   - **as_index:** `True`(기본값)는 그룹화된 열을 새 데이터프레임의 인덱스로 사용, `False`는 일반 열로 유지
+   - **as_index:** `True`(기본값)는 그룹화된 열을 새 데이터프레임의 인덱스로 사용, `False`는 기존 인덱스 유지
+   - **dropna:** : 결측값 계산에서 제외 여부
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.count.html" target="_blank">DataFrame.count()</a>
 

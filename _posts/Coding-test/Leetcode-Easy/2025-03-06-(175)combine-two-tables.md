@@ -15,9 +15,11 @@ tags:
 
 **Pandas Schema**
 ```python
-data = [[1, 'Wang', 'Allen'], [2, 'Alice', 'Bob']]
+data = [[1, 'Wang', 'Allen'],
+        [2, 'Alice', 'Bob']]
 person = pd.DataFrame(data, columns=['personId', 'firstName', 'lastName']).astype({'personId':'Int64', 'firstName':'object', 'lastName':'object'})
-data = [[1, 2, 'New York City', 'New York'], [2, 3, 'Leetcode', 'California']]
+data = [[1, 2, 'New York City', 'New York'],
+        [2, 3, 'Leetcode', 'California']]
 address = pd.DataFrame(data, columns=['addressId', 'personId', 'city', 'state']).astype({'addressId':'Int64', 'personId':'Int64', 'city':'object', 'state':'object'})
 ```
 <br>
@@ -108,7 +110,7 @@ def combine_two_tables(person: pd.DataFrame, address: pd.DataFrame) -> pd.DataFr
 <i class="fa-solid fa-clock"></i> Runtime: **485** ms \| Beats **47.55%**    
 <i class="fa-solid fa-memory"></i> Memory: **67.85** MB \| Beats **59.87%**
 
-SQL은 잘 몰라서 Pandas의 merge로 풀었다. how 파라미터를 left 또는 right로 설정해줘야 일치하는 값이 없는 행이 제거되지 않고 null 값이 들어가게 된다. 또 두 테이블을 바로 병합하는 것보다 병합에 필요없는 행을 미리 제거하는 것이 훨씬 빨랐다.
+SQL은 잘 몰라서 Pandas의 <mark>merge</mark>로 풀었다. how 파라미터를 left 또는 right로 설정해줘야 일치하는 값이 없는 행이 제거되지 않고 null 값이 들어가게 된다. 또 두 테이블을 바로 병합하는 것보다 병합에 필요없는 행을 미리 제거하는 것이 훨씬 빨랐다.
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 
@@ -133,7 +135,7 @@ def combine_two_tables(person: pd.DataFrame, address: pd.DataFrame) -> pd.DataFr
     # Return the resulting DataFrame
     return res 
 ```
-Pandas의 merge를 이용했지만 조금 다른 방식으로 푼 답안도 참고했다.
+Pandas의 merge를 이용했지만 조금 다른 방식으로 푼 답안도 참고했다. 병합 후 필요없는 행을 <mark>drop</mark>하는 대신 원하는 행만 순서대로 재배치한 후 복사본을 반환했다.
 
 ### <a href="https://leetcode.com/problems/combine-two-tables/solutions/2593063/2-ways-to-write-the-same-query-using-lef-zmfk/" target="_blank">2nd</a>
 
@@ -149,5 +151,5 @@ FROM Person P
 LEFT JOIN Address A USING (personId)
 ```
 MySQL로 푸는 것이 더 빠른 것 같아서 참고했다. Pandas의 merge에서 how 파라미터를 left로 설정한 것과 비슷하게 personId를 기준으로 `LEFT JOIN`하는 것이 포인트다.   
-첫 번째 쿼리는 `ON` 조건을 사용하여 P.personId와 A.personId가 일치하는 경우에만 Address 테이블의 데이터를 가져오는 방식이다.   
-두 번째 쿼리는 `USING` 문법을 사용하여 personId(동일한 열 이름)를 기준으로 조인한다.
+첫 번째 쿼리는 <mark>ON</mark> 조건을 사용하여 P.personId와 A.personId가 일치하는 경우에만 Address 테이블의 데이터를 가져오는 방식이다.   
+두 번째 쿼리는 <mark>USING</mark> 문법을 사용하여 personId(동일한 열 이름)를 기준으로 조인한다.
