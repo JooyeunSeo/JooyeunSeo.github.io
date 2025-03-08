@@ -116,13 +116,15 @@ Carter
    - `left.merge(right, ...)` 또는 `pd.merge(left, right, ...)` 으로 작성 가능
 - 파라미터
    - **right:** 데이터프레임 또는 시리즈
-   - **on:** 공통으로 존재하는 열 또는 열의 리스트
+   - **on:** 두 데이터프레임에 공통으로 존재하는 열 또는 열의 리스트
+   - **left_on**, **right_on:** 서로 다른 열을 기준으로 병합할 경우 각각 left, right에서 기준이 되는 열을 지정
    - **how:** join하는 방식 지정
       - `'inner'` : 양쪽에 모두 존재하는 키만 포함, 일치하는 값이 없는 행은 제거(기본값)
       - `'outer'` : 양쪽의 모든 행을 포함, 양쪽에서 모두 일치하는 값이 없으면 NaN로 채움
       - `'left'` : left의 모든 행을 포함, right에서 일치하는 값이 없으면 NaN로 채움
       - `'right'` : right의 모든 행을 포함, left에서 일치하는 값이 없으면 NaN로 채움
       - `'cross'` : 양쪽의 모든 가능한 조합을 생성
+   - **suffixes:** 중복된 열 이름을 구별하기 위한 접미사(기본값은 `('_x', '_y')`, 각각 left와 right의 중복 열 이름에 붙임)
 
 <div class="notice--info" markdown="1">
 
@@ -268,6 +270,13 @@ Name: temp, dtype: float64
    - `df.columns = ['열1', '열2', ...]`
    - 리스트의 길이와 실제 열 개수 일치시키기
 
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.rename.html" target="_blank">DataFrame.rename()</a>
+
+- 데이터프레임의 열 또는 행의 이름 변경
+- 파라미터
+   - **axis:** `0` 또는 axis 대신 `'index'`는 **행** 이름 변경, `1` 또는 axis 대신`'columns'`는 **열** 이름 변경
+   - **inplace:** `False`(기본값)는 원본 데이터를 유지, `True`는 정렬 결과를 원본 데이터에 반영
+
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html" target="_blank">DataFrame.describe()</a>
 
 - 데이터프레임의 여러 통계(count, ean, std, min, 25%, 50%, 75%, max)를 반환
@@ -299,7 +308,8 @@ Name: temp, dtype: float64
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.duplicated.html" target="_blank">DataFrame.duplicated()</a>
 
-- 중복된 행(이미 *모든* 요소들의 값이 같은 행이 존재)을 `True`로 표시하여 반환
+- 중복된 행(이미 *모든* 요소들의 값이 같은 행이 존재)을 `True`로 표시하여 반환(원본 데이터프레임을 변경하지 않음)
+- `.duplicated()`앞에 <mark>~</mark>(논리 부정) 연산자를 붙이면 중복되지 않은 고유한 값만 남게 된다.
 - `.values.any()` 앞에 연결해서 중복값이 있는지 확인할 수 있다(`False`를 반환해야 하나도 없다는 뜻).
 <!-- values 속성은 numpy 링크 -->
 - 파라미터
@@ -311,9 +321,12 @@ Name: temp, dtype: float64
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html" target="_blank">DataFrame.drop_duplicates()</a>
 
-- 중복된 항목을 삭제
-- 파라미터 **subset**에 중복 항목을 식별하기 위해 비교할 열 이름 또는 열 이름의 리스트 전달    
-(`.duplicated()`로 걸러내지 못한 중복 항목을 찾기 위함)
+- 중복된 항목을 삭제한 새로운 데이터프레임 반환
+- 파라미터
+   - **subset** (중복 항목을 더 정확히 걸러내기 위해 지정해야 할 때도 있음)
+   - **keep**
+   - **inplace:** `False`(기본값)는 원본 데이터를 유지, `True`는 정렬 결과를 원본 데이터에 반영
+
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isna.html" target="_blank">DataFrame.isna()</a>
 

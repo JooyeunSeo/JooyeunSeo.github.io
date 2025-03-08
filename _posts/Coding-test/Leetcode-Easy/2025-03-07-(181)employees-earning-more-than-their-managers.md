@@ -46,6 +46,7 @@ The result format is in the following example.
 
 - Input:   
     <pre> 
+    Employee table:
     +----+-------+--------+-----------+
     | id | name  | salary | managerId |
     +----+-------+--------+-----------+
@@ -89,6 +90,7 @@ def find_employees(employee: pd.DataFrame) -> pd.DataFrame:
 <i class="fa-solid fa-clock"></i> Runtime: **392** ms \| Beats **80.72%**    
 <i class="fa-solid fa-memory"></i> Memory: **67.62** MB \| Beats **70.68%**
 
+id를 인덱스로 설정한 뒤, 딕셔너리에 id와 salary를 저장하고 map을 이용해 해당하는 값을 가져오는 방식이다. loc[]으로 원하는 값만 선별할 때, 'Employee' 열을 []으로 감싸야 Series가 아니라 Dataframe 타입으로 반환된다.
 
 주의해야 할 테이스케이스
 1. managerId가 존재하지만 데이터프레임에 해당 id가 없는 경우    
@@ -152,7 +154,7 @@ def find_employees(employee: pd.DataFrame) -> pd.DataFrame:
 # 4. Finally, it extracts the `name_x` column (employee names) from the filtered rows
 #    and returns it as a new DataFrame called `result_df`.
 ```
-Pandas를 사용한 방법으로, 데이터베이스 자기 자신과 병합했다. merge는 두 데이터프레임을 결합하면서 동일한 열 이름이 있을 경우 `_x`, `_y`를 붙여서 구분한다.
+Pandas를 사용한 방법으로, 데이터베이스 자기 자신과 병합했다.
 
 ### <a href="https://leetcode.com/problems/employees-earning-more-than-their-managers/solutions/3825038/100-easy-fast-clean-solution-by-kartik_k-iq18/" target="_blank">2nd</a>
 
