@@ -18,7 +18,7 @@ def post_title():
     date = str(now).split(" ")[0]
     title = input()
     title = title.replace(" ", "-").lower()
-    title_form = date + "-" + title + ".md"
+    title_form = date + "-" + title
     print(title_form)
 
 
