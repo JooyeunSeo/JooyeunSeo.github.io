@@ -8,7 +8,7 @@ categories:
 tags:
   - Python
   - Data Science
-last_modified_at: 2025-03-07T14:30:30+09:00
+last_modified_at: 2025-03-11T14:30:30+09:00
 ---
 
 > **Pandas**    
@@ -327,6 +327,10 @@ Name: temp, dtype: float64
    - **keep**
    - **inplace:** `False`(기본값)는 원본 데이터를 유지, `True`는 정렬 결과를 원본 데이터에 반영
 
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isin.html" target="_blank">DataFrame.isin()</a>
+
+- 특정 열의 값이 주어진 값들과 일치하는지 확인(`True`인 행만 출력)
+- **values** 파라미터에 리스트, 시리즈, 데이터프레임, 딕셔너리 등으로 전달
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isna.html" target="_blank">DataFrame.isna()</a>
 
