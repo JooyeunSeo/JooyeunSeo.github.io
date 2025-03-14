@@ -8,7 +8,7 @@ categories:
 tags:
   - Coding Test
   - Python
-  - ord()
+  - ASCII
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

@@ -43,22 +43,13 @@ def clear_screen(self):
     else:
         pass                    # pass in different environments
 ################################################################
-#--------------------------------------------------------------#
-class Solution(object):
-    def titleToNumber(self, columnTitle):
-        """
-        :type columnTitle: str
-        :rtype: int
-        """
-        i = -1                          # 자리수에 따라 지수로 곱할 값
-        sum = 0                         # 모든 자리수를 더한 결과값
-        for c in columnTitle[::-1]:     # 뒤에서부터 순서대로 체크
-            convert = int(26 * 26**i) * (ord(c) - 64)
-            sum += convert
-            i += 1
-        return sum
 
 #--------------------------------------------------------------#
-test = Solution()
-testcase = test.titleToNumber("AA")
-print(testcase)
+# class Solution:
+    
+
+
+# #---------------#
+# test = Solution()
+# testcase = test.reverseBits(43261596)
+# print(testcase)

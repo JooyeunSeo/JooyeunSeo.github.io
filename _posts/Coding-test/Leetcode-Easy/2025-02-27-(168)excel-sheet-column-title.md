@@ -8,8 +8,7 @@ categories:
 tags:
   - Coding Test
   - Python
-  - chr()
-  - ord()
+  - ASCII
   - divmod()
 ---
 

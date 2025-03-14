@@ -8,7 +8,7 @@ categories:
 tags:
   - Coding Test
   - Python
-  - Bitwise Operator
+  - Bitwise
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
@@ -19,8 +19,8 @@ You must implement a solution with a linear runtime complexity and use only cons
 
 **Example 1:**
 
-Input: nums = [2,2,1]
-Output: 1
+- Input: nums = [2,2,1]
+- Output: 1
 
 **Example 2:**
 
