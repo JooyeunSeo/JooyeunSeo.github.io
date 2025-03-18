@@ -12,6 +12,7 @@ tags:
   - Two Pointers
   - isalnum()
   - all()
+  - Bitwise
   - Regular Expression
   - re.sub()
 ---

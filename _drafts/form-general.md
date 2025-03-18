@@ -17,5 +17,5 @@ last_modified_at: YYYY-MM-DDT00:30:30+09:00
 <br><br>
 <center>References</center>
 
-1. re 
+1. 『』
 {: .small}
