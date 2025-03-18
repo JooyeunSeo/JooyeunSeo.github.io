@@ -40,7 +40,6 @@ Your script should output the following valid phone numbers:
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 
 ```bash
-# Read from the file file.txt and output all valid phone numbers to stdout.
 grep -E '^[0-9]{3}-[0-9]{3}-[0-9]{4}$|^\([0-9]{3}\)[ ][0-9]{3}-[0-9]{4}$' file.txt
 ```
 <i class="fa-solid fa-clock"></i> Runtime: **60** ms \| Beats **84.67%**    
@@ -62,3 +61,20 @@ grep -E '^[0-9]{3}-[0-9]{3}-[0-9]{4}$|^\([0-9]{3}\)[[:space:]][0-9]{3}-[0-9]{4}$
 <i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(1)          
 
 **(xxx) xxx-xxxx** 패턴의 공백을 POSIX 문자 클래스로 표현했다. `[:space:]`는 모든 공백문자를 포함하는 표현으로, 스페이스, 탭(\\t), 개행(\\n), 캐리지 리턴(\\r), 폼 피드(\\f), 수직 탭(\\v) 등이 포함된다. 참고로 `[:blank:]`는 스페이스와 탭만 허용한다.
+
+### <a href="" target="_blank">2nd</a>
+
+```bash
+python3 -c "
+import re
+with open('file.txt', 'r') as file:
+    for line in file:
+        if re.match(r'^(\(\d{3}\) \d{3}-\d{4}|\d{3}-\d{3}-\d{4})', line.strip()):
+            print(line.strip())
+"
+```
+`python3 -c "파이썬 코드"`: 커맨드라인에서 (문자로 제공된)파이썬 코드 실행    
+`import re`: 정규 표현식을 사용하기 위한 모듈    
+`line.strip()`: 문자열의 앞뒤 불필요한 공백을 제거    
+`re.match()`: 문자열이 해당 패턴에 일치하는지 확인    
+`r"정규 표현식"`: 문자열 안의 이스케이프 문자를 무시하고 그대로 처리하기 위해 Raw String으로 처리
