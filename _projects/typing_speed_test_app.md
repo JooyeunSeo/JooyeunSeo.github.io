@@ -1,16 +1,20 @@
 ---
+date: 2025-02-28
 layout: splash
-excerpt: "This game tests your typing speed and accuracy. Type as many words as you can in 1 minute, and challenge yourself to beat your highest score."
+excerpt: "This game tests your typing speed and accuracy. <br>Type as many words as you can in 1 minute, and challenge yourself to beat your highest score."
 title: "Typing Speed Test App"
 header:
   teaser: "https://cdn.pixabay.com/photo/2017/03/16/10/23/hands-on-keyboard-2148723_1280.jpg"
   overlay_color: "#000"
-  overlay_filter: "0.3"
+  overlay_filter: "0.5"
   overlay_image: https://cdn.pixabay.com/photo/2017/03/16/10/23/hands-on-keyboard-2148723_1280.jpg
   caption: "Photo credit: [**Pixabay**](https://pixabay.com/ko/photos/%ED%82%A4%EB%B3%B4%EB%93%9C%EC%97%90-%EC%86%90-%EA%B1%B4%EB%B0%98-%EC%BB%B4%ED%93%A8%ED%8C%85-2148723/)"
   actions:
     - label: "Download zip"
-      url: "https://drive.google.com/file/d/uc?id=1QZQCzXNcJ_hXPOvZedR8R_uJXghEi-bQ&export=download"
+      url: "https://drive.google.com/uc?id=1QZQCzXNcJ_hXPOvZedR8R_uJXghEi-bQ&export=download"
+---
+**Note:** The file is large, so Google Drive may display a warning before download. This is normal.
+
 ---
 
 # Intro
@@ -86,9 +90,11 @@ header:
 
 # Future Improvements
 
-1. 시각적인 효과를 주려고 노력했지만 타이핑에 집중하다보면 잘 눈에 띄지 않는다는 느낌이 들었다. 그래서 애니메이션 효과를 추가하여 UX를 보강하고 싶다.
-2. 단어의 길이나 복잡도를 기준으로 게임 난이도를 조절할 수 있는 기능을 추가해도 좋을 것 같다.
-3. 지금도 사용자가 텍스트 파일을 열어서 원하는 단어를 추가할 수 있지만, 애플리케이션에서 바로 엑셀, JSON 등의 파일을 첨부할 수 있다면 더 편할 것이다.
+- **애니메이션 효과 추가**    
+시각적인 효과를 주려고 노력했지만 타이핑에 집중하다보면 잘 눈에 띄지 않는 것 같다. 그래서 더욱 다양한 애니메이션 효과로 UX를 보강하려고 한다.
+- **단어의 길이나 복잡도를 기준으로 게임 난이도를 조절할 수 있는 기능 추가**
+- **사용자 단어 파일 추가 기능 개선**   
+지금도 사용자가 텍스트 파일을 열어서 원하는 단어를 추가할 수 있지만, 애플리케이션에서 바로 엑셀, JSON 등의 파일을 첨부할 수 있다면 더욱 편리할 것이다.
 <br><br><br>
 
 # Conclusion
@@ -101,7 +107,6 @@ Pygame 라이브러리를 처음 활용했는데, 사운드 효과를 넣으니 
 **Tkinter 구현:** <https://www.youtube.com/watch?v=rilvj2hV-aM>    
 **영어 단어 샘플:** <https://randomwordgenerator.com/>    
 **배경 음악:** Music by <a href="https://pixabay.com/ko/users/sachinda4684-47311951/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=289143">sachinda shehan</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=289143">Pixabay</a>
+{: .small}
 
-
-
-
+<b>Posted on:</b> {{ page.date | date: "%B %d, %Y" }}

@@ -1,16 +1,17 @@
 ---
+date: 2025-02-05
 layout: splash
 excerpt: "Play tic tac toe game on the 3 x 3 board against a friend or the AI."
 title: "Tic Tac Toe"
 header:
   teaser: "https://cdn.pixabay.com/photo/2016/10/28/11/57/valentines-day-background-1777859_1280.jpg"
   overlay_color: "#000"
-  overlay_filter: "0.3"
+  overlay_filter: "0.5"
   overlay_image: https://cdn.pixabay.com/photo/2016/10/28/11/57/valentines-day-background-1777859_1280.jpg
   caption: "Photo credit: [**Pixabay**](https://pixabay.com/ko/photos/%EB%B0%9C%EB%A0%8C%ED%83%80%EC%9D%B8-%EB%8D%B0%EC%9D%B4-%EB%B0%B0%EA%B2%BD-1777859/)"
   actions:
     - label: "Download Zip"
-      url: "https://drive.google.com/file/d/uc?id=1RgsiMY7tG2hDBUTQF3L9sqf4T5rDdoJB&export=download"
+      url: "https://drive.google.com/uc?id=1RgsiMY7tG2hDBUTQF3L9sqf4T5rDdoJB&export=download"
 ---
 
 # Intro
@@ -83,12 +84,7 @@ header:
 
 ### Computer AI
 
-<a href="https://en.wikipedia.org/wiki/Minimax" target="_blank">Minimax algorithm(최소극대화 알고리즘)</a>을 활용해서 알고리즘을 만들었다. 이 규칙은 상대가 항상 나를 가장 불리하게 만드는 최적의 선택을 한다는 가정하에 내 차례에서 가장 좋은 선택을 하는 원리다. 틱택토, 체스, 오델로 등 2인이 플레이하는 게임에 널리 쓰이는 알고리즘이기 때문에 이 프로젝트에 적용시켜 보았다. 알고리즘이 잘 작동한다면 사람이 아무리 완벽히 플레이해도 AI를 이길 수 없다(비기는 것까지만 가능). 아래의 유투브를 참고해서 알고리즘을 이해하고 코드를 작성했다.
-
-<div style="width: 50%;">
-    <iframe src="https://www.youtube.com/embed/Bk9hlNZc6sE?start=3580" frameborder="0" allowfullscreen></iframe>
-</div>
-<br>
+<a href="https://en.wikipedia.org/wiki/Minimax" target="_blank">Minimax algorithm(최소극대화 알고리즘)</a>을 활용해서 알고리즘을 만들었다. 이 규칙은 상대가 항상 나를 가장 불리하게 만드는 최적의 선택을 한다는 가정하에 내 차례에서 가장 좋은 선택을 하는 원리다. 틱택토, 체스, 오델로 등 2인이 플레이하는 게임에 널리 쓰이는 알고리즘이기 때문에 이 프로젝트에 적용시켜 보았다. 알고리즘이 잘 작동한다면 사람이 아무리 완벽히 플레이해도 AI를 이길 수 없다(비기는 것까지만 가능).
 
 컴퓨터는 사람을 이기기 위해 다음과 같은 논리를 따른다.
 
@@ -189,9 +185,18 @@ AI 모드에서 hard 레벨로 컴퓨터와 플레이
 
 # Future Improvements
 
-과제가 텍스트 기반 프로그램 제작이었기 때문에 텍스트로만 게임판을 구현했지만, Tkinter나 Pygame을 사용해서 GUI로 만들어보고 싶다.
+- **GUI 프로그램으로 구현**   
+- **점수 기록 기능 추가**   
+각 플레이어의 점수를 기록해서 먼저 정해진 점수에 도달하는 쪽이 이기는 기능을 추가한다면 좀 더 경쟁하는 느낌이 날 것이다.
 <br><br><br>
 
 # Conclusion
 
 사람과 대결할 때 항상 최적의 선택을 하는 AI 알고리즘을 게임에 적용할 수 있었다. 또 객체 지향 프로그래밍(OOP)을 활용해서 각 기능을 모듈화하고 관리화하는 방법을 익힐 수 있었다.
+
+### reference
+
+**Minimax algorithm:** <https://youtu.be/Bk9hlNZc6sE?si=j611ABRB_1IWVc6m&t=3548>
+{: .small}
+
+<b>Posted on:</b> {{ page.date | date: "%B %d, %Y" }}

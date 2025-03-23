@@ -1,16 +1,17 @@
 ---
+date: 2025-01-26
 layout: splash
 excerpt: "This converter will translate string to morse code."
 title: "Morse Code Converter"
 header:
   teaser: "https://www.worldhistory.org/img/r/p/1500x1500/17222.png.webp?v=1679479979-1679480090"
   overlay_color: "#000"
-  overlay_filter: "0.3"
+  overlay_filter: "0.5"
   overlay_image: https://www.worldhistory.org/img/r/p/1500x1500/17222.png.webp?v=1679479979-1679480090
   caption: "Photo credit: [**World History Encyclopedia**](https://www.worldhistory.org/image/17222/telegraph-morse-key/)"
   actions:
     - label: "Download Zip"
-      url: "https://drive.google.com/file/d/uc?id=1RHljR59QBC3nqtZn3bR15MdO2PmU1LZo&export=download"
+      url: "https://drive.google.com/uc?id=1RHljR59QBC3nqtZn3bR15MdO2PmU1LZo&export=download"
     - label: "Try now"
       url: "https://dynamic-web-page-2bzr.onrender.com/morse_code_converter"
 ---
@@ -129,9 +130,9 @@ header:
 
 # Future Improvements
 
-지금은 알파벳과 숫자만 지원하고 있지만, 한글이나 일본어를 모스 부호로 번역하는 프로그램으로 발전시켜보고 싶다. 또 추가하고 싶은 기능은 변환된 모스 부호를 beep 음으로 재생하는 것이다. <a href="https://morsecode.world/international/translator.html" target="_blank">https://morsecode.world/international/translator.html</a>에서 아이디어를 얻었다.
-
-그리고 동적 웹사이트에서 구현한 코드의 경우 현재는 문자열을 입력하고 제출 버튼을 누르면 결과가 뜨는 방식이다. 더 나아가서 입력을 하면 바로 변환 결과를 보여주는 동적 기능을 넣으면 훨씬 좋은 프로그램이 될 것 같다. Ajax를 사용하면 된다고 하는데 나중에 JavaScript에 대해 배우게 되면 이 부분을 업데이트하려고 한다. 
+- **한국어, 일본어 등 다양한 언어 추가**
+- **변환된 모스 부호를 beep 음으로 재생하는 기능 추가**    
+모스 부호를 소리로도 직접 들을 수 있는 기능으로, <a href="https://morsecode.world/international/translator.html" target="_blank">https://morsecode.world/international/translator.html</a>에서 아이디어를 얻었다.
 <br><br><br>
 
 # Conclusion
@@ -139,4 +140,4 @@ header:
 프로그램 자체는 매우 간단했지만, 코드를 잘 짜는 것뿐만 아니라 프로그램을 실행하는 사람의 편의를 처음으로 고려해볼 수 있는 기회였다.  
 그리고 웹페이지에서 구현한 프로그램이 많이 부족하다고 느꼈다. 웹 개발에 대해서는 아직 이 부트캠프에서 간단히 배운 게 전부여서 앞으로 틈틈히 더 공부해서 보강하려고 한다.
 
-
+<b>Posted on:</b> {{ page.date | date: "%B %d, %Y" }}

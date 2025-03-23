@@ -1,16 +1,20 @@
 ---
+date: 2025-02-15
 layout: splash
 excerpt: "A GUI tool for adding customizable watermarks to images, supporting text and pattern options."
 title: "Image Watermarking App"
 header:
   teaser: "https://cdn.pixabay.com/photo/2012/03/01/16/11/animal-20574_1280.jpg"
   overlay_color: "#000"
-  overlay_filter: "0.3"
+  overlay_filter: "0.5"
   overlay_image: https://cdn.pixabay.com/photo/2012/03/01/16/11/animal-20574_1280.jpg
   caption: "Photo credit: [**Pixabay**](https://pixabay.com/ko/photos/%EB%8F%99%EB%AC%BC-%EB%B0%B0%EA%B2%BD-%EA%B0%9C-%EB%B0%9C-%EB%B0%9C%EC%9E%90%EA%B5%AD-20574/)"
   actions:
     - label: "Download Zip"
-      url: "https://drive.google.com/file/d/uc?id=1xpQOkPPxZaimN6RMNOcq6oKonFpuPPMN&export=download"
+      url: "https://drive.google.com/uc?id=1xpQOkPPxZaimN6RMNOcq6oKonFpuPPMN&export=download"
+---
+**Note:** The file is large, so Google Drive may display a warning before download. This is normal.
+
 ---
 
 # Intro
@@ -74,7 +78,8 @@ PyInstaller 모듈을 통해 프로그램을 실행 파일 형태로 변환했�
 
 # Future Improvements
 
-원하는 로고를 워터마크로 넣거나 텍스트에 테두리를 넣는 기능도 넣고 싶었는데 프로그램이 너무 복잡해져서 일단 생략했다. tkinter를 다루는 데 더 익숙해지면 이런 기능들을 더 추가해서 보완하려고 한다.    
+- 원하는 이미지를 워터마크로 사용할 수 있는 기능 추가
+- 워터마크 텍스트에 테두리를 추가하는 옵션 넣기
 <br><br><br>
 
 # Conclusion
@@ -88,3 +93,6 @@ PyInstaller 모듈을 통해 프로그램을 실행 파일 형태로 변환했�
 
 Tkinter 구현1: <https://www.youtube.com/watch?v=dcLcIa-qR8c>   
 Tkinter 구현2: <https://www.youtube.com/watch?v=x6fHhNvcGjg>
+{: .small}
+
+<b>Posted on:</b> {{ page.date | date: "%B %d, %Y" }}

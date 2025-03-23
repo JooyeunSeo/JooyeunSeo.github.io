@@ -1,4 +1,5 @@
 ---
+date: 2024-10-10
 layout: splash
 excerpt: "설명"
 title: "프로젝트제목"
@@ -10,7 +11,10 @@ header:
   caption: "Photo credit: [**Unsplash**](#)"
   actions:
     - label: "Download Zip"
-      url: "https://drive.google.com/file/d/uc?id={아이디}&export=download" 
+      url: "https://drive.google.com/uc?id={아이디}&export=download" 
+---
+**Note:** The file is large, so Google Drive may display a warning before download. This is normal.
+
 ---
 
 # Intro
@@ -44,3 +48,7 @@ header:
 <br>
 
 ### reference
+
+{: .small}
+
+<b>Posted on:</b> {{ page.date | date: "%B %d, %Y" }}
