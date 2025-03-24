@@ -17,5 +17,3 @@ sidebar:
   - title: <a href="https://jooyeunseo.github.io/" target="_blank">🏠</a>
     text: "Click icon to back to the main page"
 ---
-
-## Personal projects

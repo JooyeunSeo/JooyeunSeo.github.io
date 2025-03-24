@@ -7,8 +7,9 @@ categories:
   - Leetcode-Easy
 tags:
   - Coding Test
-  - Regular Expression
   - Bash
+  - Python
+  - Regular Expression
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
