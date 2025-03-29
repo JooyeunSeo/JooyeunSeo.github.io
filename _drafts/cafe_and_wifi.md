@@ -2,7 +2,7 @@
 date: 2025-03-25
 layout: splash
 excerpt: "설명"
-title: "프로젝트제목"
+title: "Cafe and Wifi"
 header:
   teaser: "/assets/images/foo-bar-identity.jpg"
   overlay_color: "#000"
@@ -25,6 +25,11 @@ header:
 이 데이터베이스와 여러분이 REST API와 웹 개발에 관해 배운 내용을 이용하여 이 데이터를 활용하는 웹사이트를 만들어보세요. 카페가 표시되어야 하지만 사람들이 새로운 카페를 추가하거나 삭제할 수도 있어야 합니다.
 예를 들면, 런던에 있는 다음의 스타트업 업체는 바로 그렇게 하는 웹사이트를 갖고 있습니다.
 <https://laptopfriendly.co/london>
+
+62일차 프로젝트
+기기 충전과 와이파이 사용이 가능한 카페 목록을 정리하는 웹사이트
+
+
 
 
 <br><br><br>
