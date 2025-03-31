@@ -7,8 +7,9 @@ categories:
   - Cheatsheet
 tags:
   - Python
+  - Pandas
   - Data Science
-last_modified_at: 2025-03-11T14:30:30+09:00
+last_modified_at: 2025-03-31T14:30:30+09:00
 ---
 
 > **Pandas**    
@@ -182,6 +183,14 @@ print(data.temp)      # . 표기법
 6    24
 Name: temp, dtype: int64
 </pre>
+
+<div class="notice--info" markdown="1">
+💡 **`[]` 와 `[[]]` 의 차이**
+
+- data**[**"temp"**]** : temp 열을 Series 타입으로 반환
+- data**[[**"temp"**]]** : temp 열을 DataFrame 타입으로 반환(해당 열 하나만 있는 데이터프레임이 된다)
+
+</div>
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.to_list.html" target="_blank">Series.to_list()</a>
 
@@ -419,6 +428,24 @@ Name: temp, dtype: float64
 - 파라미터
    - **rule:** 리샘플링할 주기(연별 빈도는 `'Y'`, 월별 빈도는 `'M'` <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#dateoffset-objects" target="_blank">등</a>)
    - **on:** 리샘플링할 열(datetime 타입이어야 한다.)
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.diff.html" target="_blank">DataFrame.diff()</a>
+
+- "현재 행(열)의 값 - n행(열) 이전 또는 이후의 값"을 계산하여 반환(기본적으로 float 타입으로 반환)
+- 계산 방향에 따라 맨 처음 또는 마지막 행(열)은 비교할 값이 없기 때문에 무조건 NaN가 된다.   
+(`.fillna(0)` 등으로 값 대체하기)
+- datetime 타입일 경우 차이나는 날짜 수 만큼 `n days`로 표시됨
+- 파라미터
+   - **periods:** n행(열) 앞의 값을 비교하기 위해 int형으로 값 전달(기본값은 1으로, 음수일 경우 뒤의 값 비교)
+   - **axis:** `0`(기본값)은 행 단위, `1`은 열 단위
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.shift.html" target="_blank">DataFrame.shift()</a>
+
+- 현재 값이 속한 행(열)을 n행(열)만큼 이동
+- 이동 방향에 따라 맨 처음 또는 마지막 행(열)은 더 이동할 곳이 없기 때문에 무조건 NaN가 된다.
+- 파라미터
+   - **periods:** n행(열) 만큼 앞으로 이동하기 위해 int형으로 값 전달(기본값은 1으로, 음수일 경우 뒤로 이동)
+   - **axis:** `0` 또는 `'index'`는 **행** 기준, `1` 또는 `'columns'`는 **열** 기준
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html" target="_blank">DataFrame.groupby()</a>
 

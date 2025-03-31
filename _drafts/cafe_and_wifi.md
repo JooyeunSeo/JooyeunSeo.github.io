@@ -1,14 +1,14 @@
 ---
-date: 2025-03-25
+date: 2025-03-29
 layout: splash
 excerpt: "설명"
 title: "Cafe and Wifi"
 header:
-  teaser: "/assets/images/foo-bar-identity.jpg"
+  teaser: "https://images.unsplash.com/photo-1581387490232-2181c3736353?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   overlay_color: "#000"
   overlay_filter: "0.3"
-  overlay_image: /assets/images/foo-bar-identity.jpg
-  caption: "Photo credit: [**Unsplash**](#)"
+  overlay_image: https://images.unsplash.com/photo-1581387490232-2181c3736353?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  caption: "Photo credit: [**Unsplash**](https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EA%B0%88%EC%83%89-%EB%82%98%EB%AC%B4-%ED%85%8C%EC%9D%B4%EB%B8%94%EC%97%90-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%82%AC%EB%9E%8C-7weXfu_XTSw)"
   actions:
     - label: "Download Zip"
       url: "https://drive.google.com/uc?id={아이디}&export=download" 
