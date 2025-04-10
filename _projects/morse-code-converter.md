@@ -12,7 +12,7 @@ header:
   actions:
     - label: "Download Zip"
       url: "https://drive.google.com/uc?id=1RHljR59QBC3nqtZn3bR15MdO2PmU1LZo&export=download"
-    - label: "Try now"
+    - label: "Visit the Website"
       url: "https://dynamic-web-page-2bzr.onrender.com/morse_code_converter"
 ---
 

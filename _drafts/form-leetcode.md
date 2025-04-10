@@ -42,8 +42,8 @@ tags:
 ```python
 
 ```
-<i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **0**    
-<i class="fa-solid fa-memory"></i> Memory: **0** MB \| Beats **0**
+<i class="fa-solid fa-clock"></i> Runtime: **** ms \| Beats ****    
+<i class="fa-solid fa-memory"></i> Memory: **** MB \| Beats ****
 
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
@@ -61,8 +61,6 @@ tags:
 ```python
 
 ```
-<i class="fa-solid fa-clock"></i> **time complexity:**             
-<i class="fa-solid fa-memory"></i> **space complexity:**     
 
 
 
