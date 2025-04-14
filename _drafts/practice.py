@@ -39,14 +39,26 @@ def highlight_tag():
     print(f"<mark>{highlight_text}</mark>")
 
 ################################
-leetcode_post_title()
-#------------------------------#
-class Solution:
-    def leetcodetest(self):
-        return "leetcode test"
-#------------------------------#
-
+# leetcode_post_title()
+# #------------------------------#
+# class Solution:
+#     def leetcodetest(self):
+#         return "leetcode test"
+# #------------------------------#
+class Solution(object):
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        if len(set(nums)) < len(nums):
+            return True
+        else:
+            return False
 #---------------#
 test = Solution()
-testcase = test.leetcodetest()
+testcase = test.containsDuplicate([1,2,3,1])
+print(testcase)
+test = Solution()
+testcase = test.containsDuplicate([1,2,3,4])
 print(testcase)
