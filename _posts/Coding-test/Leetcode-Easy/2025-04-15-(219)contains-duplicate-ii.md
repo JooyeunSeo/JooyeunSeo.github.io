@@ -59,8 +59,7 @@ class Solution(object):
 <i class="fa-solid fa-clock"></i> Runtime: **32** ms \| Beats **47.23%**    
 <i class="fa-solid fa-memory"></i> Memory: **24.72** MB \| Beats **18.62%**
 
-설명이 조금 헷갈리는 문제였는데, `nums[i] == nums[j]`와 `abs(i - j) <= k`의 조건에 맞는 인덱스 `i`와 `j`가 한 쌍이라도 있을 경우 True를 반환해야 한다는 뜻이었다.
-그렇기 때문에 이미 딕셔너리에 저장된 키가 nums[i]이고 이와 비교할 현재 원소의 값이 nums[j]일 때, abs(i - j)가 k보다 크다면 바로 False를 반환하는 것이 아니라 i의 인덱스를 j로 업데이트해야 한다.
+설명이 조금 헷갈리는 문제였는데, 조건 `nums[i] == nums[j]`와 `abs(i - j) <= k`에 모두 부합하는 인덱스 `i`와 `j`가 한 쌍이라도 있을 경우 True를 반환해야 한다는 뜻이었다. 그렇기 때문에 이미 딕셔너리에 저장된 키가 nums[i]이고 이와 비교할 현재 원소의 값이 nums[j]일 때, abs(i - j)가 k보다 크다면 바로 False를 반환하는 것이 아니라 키의 값인 i를 j로 업데이트해야 한다.
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 
@@ -109,7 +108,7 @@ k = 2
 {: style="color: blue;"}
 <pre>
 i   val    seen
---------------------
+-----------------------
 0    2     {2}            add val
 1    0     {2, 0}         add val
 2    3     {2, 0, 3}      add val
