@@ -13,9 +13,6 @@ header:
     - label: "Download Zip"
       url: "https://drive.google.com/uc?id={아이디}&export=download" 
 ---
-**Note:** The file is large, so Google Drive may display a warning before download. This is normal.
-
----
 
 # Intro
 
