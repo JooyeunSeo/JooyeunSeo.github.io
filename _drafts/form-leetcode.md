@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-테스트이름' 풀이 정리"
+excerpt: "'LeetCode-' 풀이 정리"
 title: "\0"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"
@@ -17,9 +17,7 @@ tags:
 **Example 1:**
 
 
-
 **Example 2:**
-
 
 
 **Example 3:**
@@ -28,14 +26,11 @@ tags:
 **Constraints:**
 
 <sup>n</sup>
-<sub>n</sub>
-
 
 **Follow up:** 
 
 💡 **Hint 1:**   
 <u><span style="color:#F5F5F5">hint</span></u>
-
 
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 
