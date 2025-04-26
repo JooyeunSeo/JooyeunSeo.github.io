@@ -130,7 +130,19 @@ class MyQueue:
     def empty(self) -> bool:
         return not self.input and not self.output
 ```
-<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(1): push, empty / amortized 𝑂(1): pop, peek    
+<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(1): push, empty / **amortized 𝑂(1):** pop, peek    
 <i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛) 
 
 제출했던 답변은 push가 자주 일어날 경우 효율이 좋지 않기 때문에, 이것처럼 각 원소가 input에서 output으로 단 한번만 이동하는 방식이 더 좋은 성능을 낼 수 있다.
+
+push(1), push(2), push(3), pop(), push(4), pop()
+{: style="color: blue;"}
+<pre>
+            input         output
+push(1)     [1]           []
+push(2)     [1, 2]        []
+push(3)     [1, 2, 3]     []
+pop()       []            [3, 2, 1] → [3, 2] (remove 1)
+push(4)     [4]           [3, 2]
+pop()       [4]           [3] (remove 2)
+</pre>
