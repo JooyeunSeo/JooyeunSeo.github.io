@@ -93,7 +93,11 @@ header:
       - `pbkdf2:sha256` 해싱 알고리즘을 사용하고 솔트 길이는 8로 설정
       - 사용자마다 솔트값이 다르기 때문에 같은 비밀번호를 입력해도 서로 다른 해시가 생성됨
    - `check_password_hash`로 로그인 시 검증 수행
-3. 데이터베이스
+3. 환경변수 설정
+   - DB 경로(서버 배포시에는 PostgreSQL, 로컬 개발 환경에서는 디렉토리에 생성된 SQLite 파일 사용)   
+   - Flask 앱의 SECRET_KEY(암호화나 서명을 필요로 하는 작업에 사용되는 비밀 키)
+   - 이메일 주소, 비밀번호 등 민감한 개인 정보 
+4. 데이터베이스
    - SQLAlchemy ORM으로 파이썬 클래스와 객체를 통해 SQL 쿼리 없이 데이터베이스를 조작
       - `model_class=Base`를 사용하여 데이터베이스 모델을 정의하고 관리
       - 모델 간 관계는 `db.relationship()`과 `db.ForeignKey()`로 설정
@@ -103,10 +107,6 @@ header:
       - Cafe: User의 자식, CafeComment의 부모 (1:N 관계)
       - CafeComment: User와 Cafe의 자식 (N:1 관계)
    - Flask 애플리케이션의 컨텍스트(Context) 내에서 `db.create_all()`을 호출하여 DB 초기화
-4. 환경변수 설정
-   - DB 경로(서버 배포시에는 PostgreSQL, 로컬 개발 환경에서는 디렉토리에 생성된 SQLite 파일 사용)   
-   - Flask 앱의 SECRET_KEY(암호화나 서명을 필요로 하는 작업에 사용되는 비밀 키)
-   - 이메일 주소, 비밀번호 등 민감한 개인 정보
 <br><br><br>
 
 # Result
