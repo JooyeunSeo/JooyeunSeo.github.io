@@ -2,7 +2,7 @@
 date: 2024-10-10
 layout: splash
 excerpt: "설명"
-title: "프로젝트제목"
+title: "Text Disappear App"
 header:
   teaser: "/assets/images/foo-bar-identity.jpg"
   overlay_color: "#000"
@@ -12,9 +12,6 @@ header:
   actions:
     - label: "Download Zip"
       url: "https://drive.google.com/uc?id={아이디}&export=download" 
----
-**Note:** The file is large, so Google Drive may display a warning before download. This is normal.
-
 ---
 
 # Intro
