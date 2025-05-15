@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Employees Earning More Than Their Managers' 풀이 정리"
+excerpt: "'LeetCode: Employees Earning More Than Their Managers' 풀이 정리"
 title: "\0181. Employees Earning More Than Their Managers"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

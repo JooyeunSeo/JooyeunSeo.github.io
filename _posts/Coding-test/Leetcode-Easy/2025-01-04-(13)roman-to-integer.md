@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Roman to Integer' 풀이 정리"
+excerpt: "'LeetCode: Roman to Integer' 풀이 정리"
 title: "\013. Roman to Integer"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

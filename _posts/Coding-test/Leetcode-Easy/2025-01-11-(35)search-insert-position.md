@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Search Insert Position' 풀이 정리"
+excerpt: "'LeetCode: Search Insert Position' 풀이 정리"
 title: "\035. Search Insert Position"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

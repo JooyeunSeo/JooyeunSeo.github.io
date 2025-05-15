@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Palindrome Linked List' 풀이 정리"
+excerpt: "'LeetCode: Palindrome Linked List' 풀이 정리"
 title: "\0234. Palindrome Linked List"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

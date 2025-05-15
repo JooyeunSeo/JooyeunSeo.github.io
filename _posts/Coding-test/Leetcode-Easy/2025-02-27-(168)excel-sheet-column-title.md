@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Excel Sheet Column Title' 풀이 정리"
+excerpt: "'LeetCode: Excel Sheet Column Title' 풀이 정리"
 title: "\0168. Excel Sheet Column Title"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

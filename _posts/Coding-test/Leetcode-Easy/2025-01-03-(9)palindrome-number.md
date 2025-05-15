@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Palindrome Number' 풀이 정리"
+excerpt: "'LeetCode: Palindrome Number' 풀이 정리"
 title: "\09. Palindrome Number"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

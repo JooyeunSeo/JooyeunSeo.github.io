@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Convert Sorted Array to Binary Search Tree' 풀이 정리"
+excerpt: "'LeetCode: Convert Sorted Array to Binary Search Tree' 풀이 정리"
 title: "\0108. Convert Sorted Array to Binary Search Tree"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

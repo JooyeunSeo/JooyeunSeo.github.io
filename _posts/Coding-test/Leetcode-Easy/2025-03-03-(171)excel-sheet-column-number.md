@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Excel Sheet Column Number' 풀이 정리"
+excerpt: "'LeetCode: Excel Sheet Column Number' 풀이 정리"
 title: "\0171. Excel Sheet Column Number"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

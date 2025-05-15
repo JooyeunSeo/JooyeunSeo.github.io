@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Merge Two Sorted Lists' 풀이 정리"
+excerpt: "'LeetCode: Merge Two Sorted Lists' 풀이 정리"
 title: "\021. Merge Two Sorted Lists"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

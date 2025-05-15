@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Intersection of Two Linked Lists' 풀이 정리"
+excerpt: "'LeetCode: Intersection of Two Linked Lists' 풀이 정리"
 title: "\0160. Intersection of Two Linked Lists"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

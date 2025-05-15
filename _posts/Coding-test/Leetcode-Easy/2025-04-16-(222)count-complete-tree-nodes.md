@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Count Complete Tree Nodes' 풀이 정리"
+excerpt: "'LeetCode: Count Complete Tree Nodes' 풀이 정리"
 title: "\0222. Count Complete Tree Nodes"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

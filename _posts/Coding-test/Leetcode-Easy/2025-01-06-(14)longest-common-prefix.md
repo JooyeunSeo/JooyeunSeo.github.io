@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Longest Common Prefix' 풀이 정리"
+excerpt: "'LeetCode: Longest Common Prefix' 풀이 정리"
 title: "\014. Longest Common Prefix"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

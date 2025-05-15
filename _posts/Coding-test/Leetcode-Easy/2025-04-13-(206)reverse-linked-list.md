@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Reverse Linked List' 풀이 정리"
+excerpt: "'LeetCode: Reverse Linked List' 풀이 정리"
 title: "\0206. Reverse Linked List"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

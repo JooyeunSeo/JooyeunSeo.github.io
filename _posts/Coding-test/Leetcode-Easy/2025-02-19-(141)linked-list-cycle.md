@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Linked List Cycle' 풀이 정리"
+excerpt: "'LeetCode: Linked List Cycle' 풀이 정리"
 title: "\0141. Linked List Cycle"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

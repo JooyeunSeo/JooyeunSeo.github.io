@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Find the Index of the First Occurrence in a String' 풀이 정리"
+excerpt: "'LeetCode: Find the Index of the First Occurrence in a String' 풀이 정리"
 title: "\028. Find the Index of the First Occurrence in a String"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

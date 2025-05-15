@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-First Bad Version' 풀이 정리"
+excerpt: "'LeetCode: First Bad Version' 풀이 정리"
 title: "\0278. First Bad Version"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

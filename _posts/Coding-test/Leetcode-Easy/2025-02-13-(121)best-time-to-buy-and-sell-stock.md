@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Best Time to Buy and Sell Stock' 풀이 정리"
+excerpt: "'LeetCode: Best Time to Buy and Sell Stock' 풀이 정리"
 title: "\0121. Best Time to Buy and Sell Stock"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

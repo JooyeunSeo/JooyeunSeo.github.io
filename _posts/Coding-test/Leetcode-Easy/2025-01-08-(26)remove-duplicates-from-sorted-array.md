@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Remove Duplicates from Sorted Array' 풀이 정리"
+excerpt: "'LeetCode: Remove Duplicates from Sorted Array' 풀이 정리"
 title: "\026. Remove Duplicates from Sorted Array"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

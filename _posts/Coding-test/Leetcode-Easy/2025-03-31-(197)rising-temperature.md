@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Rising Temperature' 풀이 정리"
+excerpt: "'LeetCode: Rising Temperature' 풀이 정리"
 title: "\0197. Rising Temperature"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

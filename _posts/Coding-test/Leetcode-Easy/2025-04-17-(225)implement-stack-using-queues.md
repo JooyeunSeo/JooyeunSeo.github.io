@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Implement Stack using Queues' 풀이 정리"
+excerpt: "'LeetCode: Implement Stack using Queues' 풀이 정리"
 title: "\0225. Implement Stack using Queues"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

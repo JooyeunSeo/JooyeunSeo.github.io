@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Binary Tree Inorder Traversal' 풀이 정리"
+excerpt: "'LeetCode: Binary Tree Inorder Traversal' 풀이 정리"
 title: "\094. Binary Tree Inorder Traversal"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

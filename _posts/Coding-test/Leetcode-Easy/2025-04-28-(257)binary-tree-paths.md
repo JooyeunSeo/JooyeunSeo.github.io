@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Binary Tree Paths' 풀이 정리"
+excerpt: "'LeetCode: Binary Tree Paths' 풀이 정리"
 title: "\0257. Binary Tree Paths"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

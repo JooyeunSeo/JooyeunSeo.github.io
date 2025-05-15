@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Pascal's Triangle' 풀이 정리"
+excerpt: "'LeetCode: Pascal's Triangle' 풀이 정리"
 title: "\0118. Pascal's Triangle"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Missing Number' 풀이 정리"
+excerpt: "'LeetCode: Missing Number' 풀이 정리"
 title: "\0268. Missing Number"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

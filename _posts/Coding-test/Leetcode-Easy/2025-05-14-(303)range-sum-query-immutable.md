@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Range Sum Query - Immutable' 풀이 정리"
+excerpt: "'LeetCode: Range Sum Query - Immutable' 풀이 정리"
 title: "\0303. Range Sum Query - Immutable"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

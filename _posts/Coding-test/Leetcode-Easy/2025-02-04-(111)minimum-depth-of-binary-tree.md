@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Minimum Depth of Binary Tree' 풀이 정리"
+excerpt: "'LeetCode: Minimum Depth of Binary Tree' 풀이 정리"
 title: "\0111. Minimum Depth of Binary Tree"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

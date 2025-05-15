@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Remove Linked List Elements' 풀이 정리"
+excerpt: "'LeetCode: Remove Linked List Elements' 풀이 정리"
 title: "\0203. Remove Linked List Elements"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

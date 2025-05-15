@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Valid Phone Numbers' 풀이 정리"
+excerpt: "'LeetCode: Valid Phone Numbers' 풀이 정리"
 title: "\0193. Valid Phone Numbers"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

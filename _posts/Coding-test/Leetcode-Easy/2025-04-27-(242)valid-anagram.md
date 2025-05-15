@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Valid Anagram' 풀이 정리"
+excerpt: "'LeetCode: Valid Anagram' 풀이 정리"
 title: "\0242. Valid Anagram"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

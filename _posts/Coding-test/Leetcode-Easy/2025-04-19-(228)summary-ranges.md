@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Summary Ranges' 풀이 정리"
+excerpt: "'LeetCode: Summary Ranges' 풀이 정리"
 title: "\0228. Summary Ranges"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

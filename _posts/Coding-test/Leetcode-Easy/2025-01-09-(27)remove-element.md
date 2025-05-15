@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode-Remove Element' 풀이 정리"
+excerpt: "'LeetCode: Remove Element' 풀이 정리"
 title: "\027. Remove Element"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"
