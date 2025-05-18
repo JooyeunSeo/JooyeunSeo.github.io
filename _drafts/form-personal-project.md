@@ -1,13 +1,13 @@
 ---
-date: 2024-10-10
+date: 2025-01-01
 layout: splash
 excerpt: "설명"
 title: "프로젝트제목"
 header:
-  teaser: "/assets/images/foo-bar-identity.jpg"
+  teaser: "/assets/images/sample-header-image.jpg"
   overlay_color: "#000"
   overlay_filter: "0.3"
-  overlay_image: /assets/images/foo-bar-identity.jpg
+  overlay_image: /assets/images/sample-header-image.jpg
   caption: "Photo credit: [**Unsplash**](#)"
   actions:
     - label: "Download Zip"

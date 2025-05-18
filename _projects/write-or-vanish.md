@@ -1,14 +1,14 @@
 ---
-date: 2024-10-10
+date: 2025-05-18
 layout: splash
 excerpt: "설명"
-title: "Text Disappear App"
+title: "Write or Vanish"
 header:
-  teaser: "/assets/images/foo-bar-identity.jpg"
+  teaser: "https://images.unsplash.com/photo-1609967804992-c9ad515d6049?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   overlay_color: "#000"
   overlay_filter: "0.3"
-  overlay_image: /assets/images/foo-bar-identity.jpg
-  caption: "Photo credit: [**Unsplash**](#)"
+  overlay_image: https://images.unsplash.com/photo-1609967804992-c9ad515d6049?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  caption: "Photo credit: [**Unsplash**](https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EB%B6%88-%EA%B5%AC%EB%8D%A9%EC%9D%B4%EC%97%90-%EB%B6%88%ED%83%80%EB%8A%94-%EB%82%98%EB%AC%B4-jANTjqcrAQA)"
   actions:
     - label: "Download Zip"
       url: "https://drive.google.com/uc?id={아이디}&export=download" 
@@ -41,6 +41,8 @@ header:
 <br><br><br>
 
 # Result
+
+<div style="width: 70%;">{% include video id="1085417083" provider="vimeo" %}</div>
 
 <br><br><br>
 

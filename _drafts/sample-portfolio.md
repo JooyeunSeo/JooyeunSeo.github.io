@@ -4,24 +4,24 @@ classes: wide
 title: "Baz Boom Identity"
 excerpt: "Baz Boom design system including logo mark, website design, and branding applications."
 header:
-  image: assets/images/foo-bar-identity.jpg
-  teaser: assets/images/foo-bar-identity-th.jpg
+  image: assets/images/sample-header-image.jpg
+  teaser: assets/images/sample-teaser-image.jpg
 sidebar:
   - title: "Role"
-    image: assets/images/foo-bar-identity-th.jpg
+    image: assets/images/sample-teaser-image.jpg
     image_alt: "logo"
     text: "Designer, Front-End Developer"
   - title: "Responsibilities"
     text: "Reuters try PR stupid commenters should isn't a business model"
 gallery:
-  - url: assets/images/foo-bar-identity.jpg
-    image_path: assets/images/foo-bar-identity-th.jpg
+  - url: assets/images/sample-header-image.jpg
+    image_path: assets/images/sample-teaser-image.jpg
     alt: "placeholder image 1"
-  - url: assets/images/foo-bar-identity.jpg
-    image_path: assets/images/foo-bar-identity-th.jpg
+  - url: assets/images/sample-header-image.jpg
+    image_path: assets/images/sample-teaser-image.jpg
     alt: "placeholder image 2"
-  - url: assets/images/foo-bar-identity.jpg
-    image_path: assets/images/foo-bar-identity-th.jpg
+  - url: assets/images/sample-header-image.jpg
+    image_path: assets/images/sample-teaser-image.jpg
     alt: "placeholder image 3"
 ---
 
