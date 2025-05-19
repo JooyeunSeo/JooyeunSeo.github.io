@@ -35,8 +35,8 @@ header:
 
 # Design
 
-- 사용자의 운영체제를 확인한다.
-   - 운영체제에 따라 터미널에서 화면을 지우고 커서를 맨 위로 다시 돌리는 명령어가 다르기 때문
+- 사용자의 운영체제를 확인한다.   
+(운영체제에 따라 터미널에서 화면을 지우고 커서를 맨 위로 다시 돌리는 명령어가 다름)
 - 딕셔너리에 모든 알파벳 및 숫자를 키로, 키에 해당하는 모스부호를 값으로 짝지어서 저장한다.
 - 프로그램 루프
    1. 변환된 모스 부호를 저장하는 리스트와 허용되지 않은 문자를 저장하는 리스트를 초기화한다.
@@ -57,10 +57,13 @@ header:
 
 # Implementation
 
-### Language
+### Tech Stack
 
-- Python 부트캠프를 진행 중이기 때문에 python을 메인으로 사용했다.  
-- 동적 웹사이트에서 코드를 실행하기 위해 Flask, Jinja2 프레임워크와 HTML/CSS 등의 웹 개발 언어를 사용했다.
+- **Programming Language:** Python
+- **Environment:**
+   - Terminal-based CLI(Command Line Interface)
+   - Web server (Flask)
+- **Templates:** Jinja2 (HTML rendering)
 
 ### Coding
 

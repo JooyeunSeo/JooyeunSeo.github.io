@@ -1,7 +1,7 @@
 ---
 date: 2025-04-10
 layout: splash
-excerpt: "Discover and share information about laptop-friendly cafes in your city. <br>Anyone can sign up to add cafes to the list or leave comments."
+excerpt: "Discover and share information about laptop-friendly cafes in your city. Anyone can sign up to add cafes to the list or leave comments."
 title: "Laptop Friendly Cafes"
 header:
   teaser: "https://images.unsplash.com/photo-1581387490232-2181c3736353?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

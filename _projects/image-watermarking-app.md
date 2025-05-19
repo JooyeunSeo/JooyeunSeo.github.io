@@ -38,9 +38,11 @@ header:
 
 # Implementation
 
-### Language
+### Tech Stack
 
-파이썬
+- **Programming Language:** Python
+- **Graphics Library:** Tkinter
+- **Packaging:** PyInstaller
 
 ### Coding
 

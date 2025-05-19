@@ -66,9 +66,11 @@ Python의 turtle 라이브러리리를 이용해서 만든 벽돌깨기 게임�
 
 # Implementation
 
-### Language
+### Tech Stack
 
-파이썬
+- **Programming Language:** Python
+- **Graphics Library:** Turtle, Pygame
+- **Packaging:** PyInstaller
 
 ### Coding
 

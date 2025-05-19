@@ -58,9 +58,10 @@ header:
 
 # Implementation
 
-### Language
+### Tech Stack
 
-파이썬으로 구현
+- **Programming Language:** Python
+- **Environment:** Terminal-based CLI
 
 ### Coding
 

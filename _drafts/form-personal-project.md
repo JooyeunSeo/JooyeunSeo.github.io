@@ -27,9 +27,17 @@ header:
 
 # Implementation
 
-### Language
+### Tech Stack
 
-파이썬으로 구현
+- **Programming Language:** Python
+- **Graphics Library:** Turtle, Pygame, Tkinter
+- **Packaging:** PyInstaller
+- **Backend:** Flask, Flask-Login, SQLAlchemy
+- **Templates:** Jinja2 (HTML rendering)
+- **Frontend:** JavaScript
+- **Database:** SQLite
+- **Email:** smtplib, email.mime
+- **Security:** werkzeug.security
 
 ### Coding
 
