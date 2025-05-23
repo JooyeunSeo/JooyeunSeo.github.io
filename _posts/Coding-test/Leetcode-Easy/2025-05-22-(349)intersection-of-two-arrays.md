@@ -61,7 +61,7 @@ class Solution:
     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
         mp = {}               # nums1의 숫자들을 키로 저장
         for num in nums1:
-            mp[num] = mp.get(num, 0) + 1  # 키가 딕셔너리에 있으면 해당 값에 +1, 없으면 0 저장
+            mp[num] = mp.get(num, 0) + 1  # 키가 딕셔너리에 있으면 해당 값에 +1, 없으면 0으로 저장
         
         result = []
         for num in nums2:     # nums2에 있는 숫자 중 mp에 있는 것만 결과에 추가

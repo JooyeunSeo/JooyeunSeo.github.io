@@ -76,8 +76,11 @@ class Solution(object):
 ```python
 class Solution:
     def reverseVowels(self, s: str) -> str:
-        vowels=[i for i in s if i in "aeiouAEIOU"]    # 모음만 뽑아서 리스트에 순서대로 저장
-        result=[i if i not in "aeiouAEIOU" else vowels.pop() for i in s]  # s의 글자가 모음인 경우 vowels의 뒤에서부터 꺼냄
+        # 모음만 뽑아서 리스트에 순서대로 저장
+        vowels=[i for i in s if i in "aeiouAEIOU"]
+
+        # s의 글자가 모음인 경우 vowels의 뒤에서부터 꺼냄
+        result=[i if i not in "aeiouAEIOU" else vowels.pop() for i in s]  
         return "".join(result)
 ```
 <i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛)    
