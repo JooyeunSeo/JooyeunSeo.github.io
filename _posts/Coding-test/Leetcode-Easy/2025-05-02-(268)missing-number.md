@@ -10,7 +10,6 @@ tags:
   - Python
   - sorted()
   - Bitwise
-  - 
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

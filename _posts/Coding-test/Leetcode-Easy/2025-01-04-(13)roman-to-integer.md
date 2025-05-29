@@ -9,6 +9,7 @@ tags:
   - Coding Test
   - Python
   - zip()
+  - Hash Table
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
