@@ -11,7 +11,7 @@ header:
   caption: "Photo credit: [**Unsplash**](https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EA%B7%B8-%EC%9C%84%EC%97%90-%ED%97%A4%EB%93%9C%ED%8F%B0%EC%9D%B4-%EB%8B%AC%EB%A6%B0-%EC%B1%85-ZVAKWvq8J98)"
   actions:
     - label: "Download Zip"
-      url: "https://drive.google.com/uc?id=1PC2r_b39fhrhjRpsQ7DOQDdk_aQ3wMLM&export=download" 
+      url: "https://drive.google.com/uc?id=18_vMwhoYKfEibE8E3UUI9nFXpGd3sqk7&export=download" 
 ---
 **Note:** The file is large, so Google Drive may display a warning before download. This is normal.
 
@@ -75,7 +75,7 @@ Speak PDF는 사용자가 선택한 PDF 파일의 텍스트를 음성으로 변�
 
 # Result
 
-
+<div style="width: 90%;">{% include video id="1090098376" provider="vimeo" %}</div>
 <br><br><br>
 
 # Future Improvements
@@ -88,7 +88,7 @@ Speak PDF는 사용자가 선택한 PDF 파일의 텍스트를 음성으로 변�
 
 # Conclusion
 
-이 프로그램을 위해 Google Cloud TTS API를 연동해보며 클라우드 인증 과정에 대해 익힐 수 있었다. 또 PDF에서 텍스트를 추출하기 위해 처음에는 PyPDF2라는 모듈을 썼는데, 글자들이 "thisistext" 와 같이 띄어쓰기가 무시된 채 붙어서 나오는 현상이 있었다. 그래서 PDF 파일의 내부 구조를 더 정교하게 분석한다는 PyMuPDF로 바꿨더니 훨씬 원본에 가깝게 인식한다는 것을 알 수 있었다. 특히 멀티스레딩을 적용해 음성 합성과 오디오 재생을 백그라운드에서 처리하는 방식은 프로그램의 안정성과 사용자 경험을 동시에 고려하는 데 큰 도움이 되었다.
+이 프로그램을 개발하면서 Google Cloud TTS API를 연동해보며 클라우드 인증 과정에 대해 실습할 수 있었다. PDF에서 텍스트를 추출하기 위해 처음에는 PyPDF2 모듈을 사용했지만, 띄어쓰기가 무시되고 "thisisasentence"처럼 글자들이 붙어서 추출되는 문제가 있었다. 그래서 PDF 내부 구조를 더 정교하게 분석하는 PyMuPDF로 교체했더니 훨씬 원본에 가까운 텍스트를 얻을 수 있었다. 또한, 멀티스레딩을 적용해 음성 합성과 오디오 재생을 백그라운드에서 처리함으로써 프로그램의 안정성과 사용자 경험을 모두 향상시킬 수 있었다.
 <br>
 
 ### reference

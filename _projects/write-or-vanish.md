@@ -92,7 +92,7 @@ header:
 
 # Result
 
-<div style="width: 70%;">{% include video id="1085417083" provider="vimeo" %}</div>
+<div style="width: 80%;">{% include video id="1085417083" provider="vimeo" %}</div>
 
 <br><br><br>
 
