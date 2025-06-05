@@ -8,7 +8,8 @@ categories:
 tags:
   - Coding Test
   - Python
-  - find()
+  - Slicing
+  - Boyer–Moore
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

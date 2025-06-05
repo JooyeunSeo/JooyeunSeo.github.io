@@ -9,8 +9,7 @@ tags:
   - Coding Test
   - Python
   - Stack
-  - keys()
-  - values()
+  - Hash Table
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

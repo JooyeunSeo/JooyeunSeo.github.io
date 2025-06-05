@@ -8,10 +8,8 @@ categories:
 tags:
   - Coding Test
   - Python
-  - min()
-  - startswith()
   - sorted()
-  - slicing
+  - Slicing
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

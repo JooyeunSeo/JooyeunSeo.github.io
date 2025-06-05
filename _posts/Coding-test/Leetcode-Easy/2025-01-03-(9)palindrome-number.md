@@ -17,7 +17,6 @@ Given an integer `x`, return `true` if `x` is a ***palindrome***, and `false` ot
 
 *[palindrome]: An integer is a palindrome when it reads the same forward and backward.
 
-
 **Example 1:**
 
 - Input: x = 121

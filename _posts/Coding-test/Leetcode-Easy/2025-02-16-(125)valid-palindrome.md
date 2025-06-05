@@ -10,11 +10,8 @@ tags:
   - Python
   - Palindrome
   - Two Pointers
-  - isalnum()
-  - all()
   - Bitwise
   - Regular Expression
-  - re.sub()
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
