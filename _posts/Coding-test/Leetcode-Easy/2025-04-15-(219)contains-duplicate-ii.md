@@ -8,6 +8,7 @@ categories:
 tags:
   - Coding Test
   - Python
+  - Array
   - set()
   - Sliding Window
   - Hash Table

@@ -8,6 +8,7 @@ categories:
 tags:
   - Coding Test
   - Python
+  - Array
   - Binary Search Tree
   - Recursion
 ---

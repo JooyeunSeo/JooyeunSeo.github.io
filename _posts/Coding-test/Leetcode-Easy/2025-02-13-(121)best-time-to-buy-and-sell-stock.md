@@ -8,6 +8,7 @@ categories:
 tags:
   - Coding Test
   - Python
+  - Array
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

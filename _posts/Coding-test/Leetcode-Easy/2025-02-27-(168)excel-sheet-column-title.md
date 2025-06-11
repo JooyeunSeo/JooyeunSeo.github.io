@@ -8,8 +8,9 @@ categories:
 tags:
   - Coding Test
   - Python
+  - String
+  - Math
   - ASCII
-  - divmod()
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

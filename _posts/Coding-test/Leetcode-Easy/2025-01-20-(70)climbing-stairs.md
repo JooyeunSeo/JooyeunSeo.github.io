@@ -8,7 +8,7 @@ categories:
 tags:
   - Coding Test
   - Python
-  - math.factorial()
+  - Math
   - Fibonacci numbers
 ---
 

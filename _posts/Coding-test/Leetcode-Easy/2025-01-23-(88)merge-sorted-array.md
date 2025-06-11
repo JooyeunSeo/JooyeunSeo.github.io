@@ -8,6 +8,8 @@ categories:
 tags:
   - Coding Test
   - Python
+  - Sorting
+  - Array
   - Two Pointers
 ---
 

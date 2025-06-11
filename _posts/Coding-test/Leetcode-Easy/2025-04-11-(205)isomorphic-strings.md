@@ -8,6 +8,7 @@ categories:
 tags:
   - Coding Test
   - Python
+  - String
   - Hash Table
 ---
 

@@ -8,8 +8,11 @@ categories:
 tags:
   - Coding Test
   - Python
-  - sorted()
+  - Math
+  - Sorting
+  - Array
   - Bitwise
+  - sorted()
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

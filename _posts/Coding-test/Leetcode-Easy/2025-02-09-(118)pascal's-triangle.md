@@ -8,8 +8,8 @@ categories:
 tags:
   - Coding Test
   - Python
-  - Pascal's triangle
   - Array
+  - Pascal's triangle
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
