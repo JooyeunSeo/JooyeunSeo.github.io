@@ -12,6 +12,7 @@ tags:
   - Palindrome
   - Hash Table
   - set()
+  - Greedy
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
