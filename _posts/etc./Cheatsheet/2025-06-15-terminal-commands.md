@@ -108,9 +108,21 @@ last_modified_at: YYYY-MM-DDT00:30:30+09:00
    - `-r` `dir/` : 디렉토리 삭제
    - `-rf` (recursively, forcibly) : 해당 디렉토리 강제 삭제(삭제할 위치 밖에서 실행)
 
-### export
-- 환경 변수 설정
-- 설명 추가 보충 부탁
+### export *VAR=value*
+- 환경변수를 등록하거나 하위 프로세스(자식 쉘 등)에 전달(현재 셸 세션 내에서만 유효)
+- 등록 후 사용 가능한 명령어
+   - **echo** `$VAR` : 해당 환경변수 값 출력
+   - **env** : 현재 export된 모든 환경변수 목록 출력 가능
+   - **unset** : 변수나 환경변수, 함수 등을 셸에서 삭제 가능
+      - unset `VAR` : 환경변수 삭제
+      - unset `-f` `myFunc` : 셸 함수 삭제
+- 설정을 영구적으로 적용하려면 설정 파일에 등록하기
+   1. **echo** `$SHELL` : 현재 사용하는 셸 확인
+   2. 설정 파일 열기(**nano**, **vim** 등의 에디터 사용)
+      - bash : `~/.bash_profile`, `~/.bashrc`
+      - zsh : `~/.zshrc`
+   3. 가장 아래에 `export VAR=value` 추가
+   4. **source** `~/.filename` : 저장 후 설정 적용
 
 ### vim *file.txt*
 - 리눅스/유닉스 계열에서 가장 많이 쓰이는 텍스트 에디터
