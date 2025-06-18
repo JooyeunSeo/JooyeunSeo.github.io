@@ -6,14 +6,19 @@ header:
 categories:
   - Cheatsheet
 tags:
+  - Bash
+  - Regular Expression
 last_modified_at: YYYY-MM-DDT00:30:30+09:00
 ---
 
-## Linux (MacOS)
+## Linux (MacOS 등)
 
-### man *command*
+### man *<font color="#b0b0af">command</font>*
 - manual
 - 특정 명령어에 대한 사용법과 설명이 담긴 매뉴얼 페이지 출력
+
+### history
+- 사용한 명령어 이력 출력
 
 ### clear
 - 화면 지움
@@ -23,7 +28,7 @@ last_modified_at: YYYY-MM-DDT00:30:30+09:00
 - print working directory
 - 현재 터미널이 위치한 디렉토리 경로를 출력
 
-### open *path*
+### open *<font color="#d3a27f">path</font>*
 - 해당 경로를 파일 탐색기로 열기
 - open `.` : 현재 디렉토리 열기
 
@@ -34,13 +39,37 @@ last_modified_at: YYYY-MM-DDT00:30:30+09:00
    - `-l` (long) : 자세한 정보 (권한, 소유자, 용량, 날짜 등)
    - `-a` (all) : 숨긴 파일까지 포함하여 표시
 
-### cd *path*
+### cd *<font color="#d3a27f">path</font>*
 - change directory
 - 해당 경로의 디렉토리로 이동(현재 위치에서 접근 가능해야 함)
 - cd `..` : 한 단계 상위 디렉토리
 - cd `~` : 홈 디렉토리
 
-### find *path* *options* *pattern*
+### which *<font color="#b0b0af">command</font>*
+- 명령어가 시스템 경로 어디에 설치되어 있는지 확인
+- PATH 환경변수에 등록된 디렉토리에서 가장 먼저 발견된 실행파일 경로를 출력
+- 명령어가 어느 경로에서 실행되는지, 또는 여러 버전 중 어떤 게 쓰이는지 확인할 때 사용(e.g. python)
+
+### ps
+- process state
+- 현재 실행 중인 프로세스와 상태를 출력
+- 매개변수
+   - `a` : 모든 사용자 프로세스 표시
+   - `u` : 사용자 정보 포함
+   - `x` : 터미널에 종속되지 않은 프로세스도 포함
+
+### kill <font color="#b8b4b4">PID</font>
+- 해당 PID(프로세스 ID, ps 명령어로 확인 가능) 프로세스 종료
+- kill `-9` `PID` : 강제 종료(SIGKILL)
+
+### head *<font color="#87c4f8">file.txt</font>*&nbsp;&nbsp;&nbsp;<br>tail *<font color="#87c4f8">file.txt</font>*
+- 파일의 앞부분/뒷부분만 출력(default: 10줄)
+- 여러 개의 파일 출력 가능
+- 매개변수
+   - `-n` `num` : 처음/마지막 num 개의 줄 출력
+   - tail `-f` : 내용이 변경될 때마다 실시간으로 출력(tail에만 존재, 로그 파일에서 활용)
+
+### find *<font color="#d3a27f">path</font>* *<font color="#ffd090">options</font>* *<font color="#ffc4ff">pattern</font>*
 - 해당 경로에서 조건에 맞는 패턴을 가진 파일이나 디렉토리를 검색
 - 조건자 옵션
    - `-type` : 파일 또는 디렉토리 이름 기준 검색(e.g. `"file.txt"`)
@@ -49,10 +78,13 @@ last_modified_at: YYYY-MM-DDT00:30:30+09:00
    - `-size` : 크기 조건 검색(e.g. `+1M`, `-100k`)
    - `-exec` : 찾은 결과에 명령어 실행
 
-### grep *options* *"keyword"* *file.txt*
+### grep *<font color="#ffd090">options</font>* *<font color="#d7bce4">"keyword"</font>* *<font color="#87c4f8">file.txt</font>*
 - global regular expression print
 - 해당 파일(주로 텍스트 파일)에서 검색어가 포함된 줄을 검색
-- `*.txt` : 현재 디렉토리에서 검색어가 포함된 모든 txt 파일을 검색 
+- `*.txt` : 현재 디렉토리에서 검색어가 포함된 모든 txt 파일을 검색
+- `| grep` 조합은 원하는 정보만 걸러내기 위해 자주 사용됨
+   - **ls** `-al` `|` **grep** `"\.log$"` : 확장자가 .log인 파일만 출력
+   - **cat** `file.txt` `|` **grep** `"ERROR"` : 파일에서 "ERROR"가 포함된 줄만 출력
 - 옵션
    - `-n` : 매칭된 줄 번호를 함께 출력
    - `-i` : 대소문자 구분 없이 검색 (insensitive)
@@ -62,31 +94,26 @@ last_modified_at: YYYY-MM-DDT00:30:30+09:00
    - `-E` : 기본 grep보다 더 복잡한 정규 표현식 문법(ERE) 지원
    - `-F` : Fixed Strings 모드로, 정규 표현식 없이 문자열 그대로 검색
 
-### which *command*
-- 명령어가 시스템 경로 어디에 설치되어 있는지 확인
-- PATH 환경변수에 등록된 디렉토리에서 가장 먼저 발견된 실행파일 경로를 출력
-- 명령어가 어느 경로에서 실행되는지, 또는 여러 버전 중 어떤 게 쓰이는지 확인할 때 사용(e.g. python)
-
-### mkdir *new_dir*
+### mkdir *<font color="#ffe474">new_dir</font>*
 - make directory
 - 해당 이름으로 새 디렉토리 생성
 
-### touch *new_file.txt*
+### touch *<font color="#87c4f8">new_file.txt</font>*
 - 존재하지 않는 파일명 : 새 파일 생성
 - 이미 존재하는 파일명 : 최근 수정 시간만 갱신
 
-### cat *file.txt*
+### cat *<font color="#87c4f8">file.txt</font>*
 - concatenate
 - 해당 파일(주로 텍스트 파일)의 내용 출력
 
-### cp *source* *destination*
+### cp *<font color="#93bf85">source</font>* *<font color="#77bbc2">destination</font>*
 - copy
 - 파일이나 디렉토리를 복사
 - 예시
    - cp `a.txt` `b.txt` : a.txt를 복사해서 b.txt라는 이름으로 저장(이미 존재한다면 덮어씌워짐)
    - cp `a.txt` `dir/` : dir 디렉토리 내부에 a.txt가 복사됨
 
-### mv *source* *destination*
+### mv *<font color="#93bf85">source</font>* *<font color="#77bbc2">destination</font>*
 - move
 - 파일이나 디렉토리를 이동하거나 이름 변경
 - 예시
@@ -108,23 +135,23 @@ last_modified_at: YYYY-MM-DDT00:30:30+09:00
    - `-r` `dir/` : 디렉토리 삭제
    - `-rf` (recursively, forcibly) : 해당 디렉토리 강제 삭제(삭제할 위치 밖에서 실행)
 
-### export *VAR=value*
-- 환경변수를 등록하거나 하위 프로세스(자식 쉘 등)에 전달(현재 셸 세션 내에서만 유효)
+### export *<font color="#ffafaf">VAR=value</font>*
+- 환경변수를 등록하거나 하위 프로세스에 전달(현재 셸 세션 내에서만 유효)
 - 등록 후 사용 가능한 명령어
-   - **echo** `$VAR` : 해당 환경변수 값 출력
-   - **env** : 현재 export된 모든 환경변수 목록 출력 가능
-   - **unset** : 변수나 환경변수, 함수 등을 셸에서 삭제 가능
+   - **echo** <font color="#ffafaf">$</font>`VAR` : 해당 환경변수 값 출력
+   - **env** : 현재 export된 모든 환경변수 목록 출력
+   - **unset** : 변수나 환경변수, 함수 등을 셸에서 삭제
       - unset `VAR` : 환경변수 삭제
       - unset `-f` `myFunc` : 셸 함수 삭제
-- 설정을 영구적으로 적용하려면 설정 파일에 등록하기
-   1. **echo** `$SHELL` : 현재 사용하는 셸 확인
-   2. 설정 파일 열기(**nano**, **vim** 등의 에디터 사용)
+- 설정을 영구적으로 적용하려면 설정 파일에 등록해야 한다
+   1. **echo** <font color="#ffafaf">$</font>`SHELL` : 현재 사용하는 셸 확인
+   2. 설정 파일 열기(**nano**, **vim** 등의 편집기 사용)
       - bash : `~/.bash_profile`, `~/.bashrc`
       - zsh : `~/.zshrc`
    3. 가장 아래에 `export VAR=value` 추가
    4. **source** `~/.filename` : 저장 후 설정 적용
 
-### vim *file.txt*
+### vim *<font color="#87c4f8">file.txt</font>*
 - 리눅스/유닉스 계열에서 가장 많이 쓰이는 텍스트 에디터
 - 파일을 열고 vim 모드 진입 후 명령어 사용 가능
 

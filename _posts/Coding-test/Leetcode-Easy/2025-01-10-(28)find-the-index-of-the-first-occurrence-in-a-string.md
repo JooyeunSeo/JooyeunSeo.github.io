@@ -9,6 +9,7 @@ tags:
   - Coding Test
   - Python
   - String
+  - String Matching
   - Slicing
   - Boyer–Moore
 ---
