@@ -25,9 +25,11 @@ tags:
 
 **Constraints:**
 
-<sup>n</sup>
+<sup>31</sup>
+<sup>4</sup>
 
 **Follow up:** 
+**Note:** 
 
 💡 **Hint 1:**   
 <u><span style="color:#F5F5F5">hint</span></u>

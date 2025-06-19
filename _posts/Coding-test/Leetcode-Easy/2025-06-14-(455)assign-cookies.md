@@ -42,7 +42,7 @@ You need to output 2.
 - 0 <= s.length <= 3 * 10<sup>4</sup>
 - 1 <= g[i], s[j] <= 2<sup>31</sup> - 1
 
-**Follow up:** This question is the same as <a href="https://leetcode.com/problems/maximum-matching-of-players-with-trainers/description/" target="_blank">2410: Maximum Matching of Players With Trainers.</a>
+**Note:** This question is the same as <a href="https://leetcode.com/problems/maximum-matching-of-players-with-trainers/description/" target="_blank">2410: Maximum Matching of Players With Trainers.</a>
 
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 

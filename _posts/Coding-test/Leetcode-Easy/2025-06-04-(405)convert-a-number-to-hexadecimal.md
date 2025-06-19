@@ -86,4 +86,4 @@ class Solution:
 <i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(1)    
 <i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(1)        
 
-음수를 32비트 unsigned 정수처럼 변환하기 위한 쉬운 방법이 있어서 참고했다. 32비트 부호 없는 정수 최대 범위인 `2**32`에 음수 정수를 더하는 것이다.
+음수를 32비트 unsigned 정수처럼 변환하기 위한 쉬운 방법이 있어서 참고했다. 32비트 부호 없는 정수 최대 범위인 2<sup>32</sup> 에 음수 정수를 더하는 것이다.

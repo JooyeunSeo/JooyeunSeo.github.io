@@ -1,6 +1,6 @@
 ---
-excerpt: "터미널에서 자주 사용하는 명령어 정리"
-title: "Terminal Commands"
+excerpt: "터미널에서 자주 사용하는 단축키 및 명령어 정리"
+title: "Terminal Shortcut Keys & Commands"
 header:
   teaser: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Dir_command_in_Windows_Command_Prompt.png/500px-Dir_command_in_Windows_Command_Prompt.png"
 categories:
@@ -8,17 +8,35 @@ categories:
 tags:
   - Bash
   - Regular Expression
-last_modified_at: YYYY-MM-DDT00:30:30+09:00
+last_modified_at: 2025-06-19T00:30:30+09:00
 ---
 
-## Linux (MacOS 등)
+## Shortcut Keys
+
+- `Tab` : 파일 또는 디렉토리 이름 자동완성 ⭐️
+- `Ctrl(⌃)` + `A` : 커서를 줄 맨 앞으로 이동 ⭐️
+- `Ctrl(⌃)` + `E` : 커서를 줄 맨 끝으로 이동 ⭐️
+- `Ctrl(⌃)` + `B` : 커서를 한 글자 왼쪽으로 이동
+- `Ctrl(⌃)` + `F` : 커서를 한 글자 오른쪽으로 이동
+- `Ctrl(⌃)` + `U` : 커서부터 왼쪽 모두 삭제 ⭐️
+- `Ctrl(⌃)` + `K` : 커서부터 오른쪽 모두 삭제 ⭐️
+- `Ctrl(⌃)` + `W` : 커서 왼쪽 방향으로 한 단어씩 삭제(스페이스 단위)
+- `Ctrl(⌃)` + `Y` : 직전에 삭제한 텍스트 붙여넣기
+- `Ctrl(⌃)` + `L` : 화면 전체 지움(`clear`와 동일)
+- `Ctrl(⌃)` + `T` : 커서 앞 두 글자 순서 변경(오타 정정할 때 유용)
+- `Ctrl(⌃)` + `C` : 현재 입력 취소 / 실행 중인 프로세스 강제 종료 ⭐️
+- `Ctrl(⌃)` + `D` : 입력줄 비어 있을 때 사용 시 현재 shell 종료
+- `Ctrl(⌃)` + `Z` : 실행 중인 프로세스를 백그라운드로 보내기 (일시정지)
+
+## Commands on Linux (MacOS)
 
 ### man *<font color="#b0b0af">command</font>*
 - manual
 - 특정 명령어에 대한 사용법과 설명이 담긴 매뉴얼 페이지 출력
 
 ### history
-- 사용한 명령어 이력 출력
+- 지금까지 입력한 명령어 기록 목록 출력
+- history `num` : 입력한 개수만큼 출력
 
 ### clear
 - 화면 지움
@@ -94,9 +112,9 @@ last_modified_at: YYYY-MM-DDT00:30:30+09:00
    - `-E` : 기본 grep보다 더 복잡한 정규 표현식 문법(ERE) 지원
    - `-F` : Fixed Strings 모드로, 정규 표현식 없이 문자열 그대로 검색
 
-### mkdir *<font color="#ffe474">new_dir</font>*
+### mkdir *<font color="#ffe474">new_dir1</font>* *<font color="#ffe474">new_dir2</font>* *<font color="#ffe474">new_dir3</font>*
 - make directory
-- 해당 이름으로 새 디렉토리 생성
+- 해당 이름으로 새 디렉토리(들) 생성
 
 ### touch *<font color="#87c4f8">new_file.txt</font>*
 - 존재하지 않는 파일명 : 새 파일 생성

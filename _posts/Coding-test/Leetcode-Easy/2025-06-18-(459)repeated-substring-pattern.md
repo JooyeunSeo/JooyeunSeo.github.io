@@ -83,3 +83,16 @@ s+s         = "abacababacababacababacab"
 (s+s)[1:-1] =  "bacababacababacababaca"
                      abacababacab
 </pre>
+
+return True
+{: style="color: green;"}
+<br>
+s = “aba”
+{: style="color: blue;"}
+<pre>
+s+s         = "abaaba"   
+(s+s)[1:-1] =  "baab"
+</pre>
+
+return False
+{: style="color: green;"}
