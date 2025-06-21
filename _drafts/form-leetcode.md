@@ -29,7 +29,7 @@ tags:
 <sup>4</sup>
 
 **Follow up:** 
-**Note:** 
+**Note:** **Note:** This question is the same as <a href="" target="_blank"></a>
 
 💡 **Hint 1:**   
 <u><span style="color:#F5F5F5">hint</span></u>
@@ -62,6 +62,9 @@ tags:
 
 
 {: style="color: blue;"}
+<pre>
+</pre>
+
 {: style="color: green;"}
 
 𝑂(𝑛)
