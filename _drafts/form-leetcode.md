@@ -37,7 +37,11 @@ tags:
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 
 ```python
-
+# 파이 튜터 등에서 테스트해보기#
+test = Solution()
+testcase = test.FUCTION()
+print(testcase)
+#########################
 ```
 <i class="fa-solid fa-clock"></i> Runtime: **** ms \| Beats ****    
 <i class="fa-solid fa-memory"></i> Memory: **** MB \| Beats ****

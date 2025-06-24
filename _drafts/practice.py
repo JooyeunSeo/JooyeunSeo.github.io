@@ -41,12 +41,3 @@ def highlight_tag():
 ################################
 leetcode_post_title()
 #------------------------------#
-class Solution:
-    def leetcodetest(self):
-        return "leetcode test"
-#------------------------------#
-
-#---------------#
-test = Solution()
-testcase = test.leetcodetest()
-print(testcase)
