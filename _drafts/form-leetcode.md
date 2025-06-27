@@ -1,5 +1,5 @@
 ---
-excerpt: "'LeetCode: ' 풀이 정리"
+excerpt: "내용입력"
 title: "\0"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"

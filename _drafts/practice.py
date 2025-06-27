@@ -1,4 +1,4 @@
-import datetime as dt   
+import datetime as dt
 import os
 
 ##########################  OS별 맞춤  ##########################
@@ -16,10 +16,12 @@ def leetcode_post_title():
     now = dt.datetime.now()
     date = str(now).split(" ")[0]
     title = input()
-    title = "(" + title.replace(". ", ")")
-    title = title.replace(" ", "-").lower()
-    title_form = date + "-" + title
-    print(title_form)
+    head, sub = title, title
+    head = "(" + head.replace(". ", ")")
+    head = head.replace(" ", "-").lower()
+    head = date + "-" + head
+    sub = sub.split(". ")[1]
+    print(f"{head}\n'LeetCode: {sub}' 풀이 정리")
 
 def post_title():
     now = dt.datetime.now()
