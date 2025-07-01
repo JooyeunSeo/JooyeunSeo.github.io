@@ -141,8 +141,8 @@ current_count == max_count → modes.append(2)
 modes = [1, 2]
 
 current_val   : 2 → 2
-node.val == current_val   → current_count = 2
-current_count > max_count → max_count = 2
+node.val == current_val    → current_count = 2
+current_count > max_count  → max_count = 2
 modes = [2]
 </pre>
 
