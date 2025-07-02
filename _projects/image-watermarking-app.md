@@ -74,8 +74,7 @@ PyInstaller 모듈을 통해 프로그램을 실행 파일 형태로 변환했�
 
 # Result
 
-<img src="/assets/images/personal-projects/image_watermarking_app.gif" 
-     width="80%">
+<img src="/assets/images/personal-projects/image_watermarking_app.gif" width="80%">
 <br><br><br>
 
 # Future Improvements

@@ -115,20 +115,16 @@ Udemy Academy의 *100개의 프로젝트로 Python 개발 완전 정복* 부트�
 
 ### CLI Program
 
-<img src="/assets/images/personal-projects/morse_code_converter_1.png" 
-     width="80%">
+<img src="/assets/images/personal-projects/morse_code_converter_1.png" width="80%">
 
-<img src="/assets/images/personal-projects/morse_code_converter_2.png" 
-     width="80%">
+<img src="/assets/images/personal-projects/morse_code_converter_2.png" width="80%">
 <br><br>
 
 ### Webpage
 
-<img src="/assets/images/personal-projects/morse_code_converter_3.png" 
-     width="80%">
+<img src="/assets/images/personal-projects/morse_code_converter_3.png" width="80%">
 
-<img src="/assets/images/personal-projects/morse_code_converter_4.png" 
-     width="80%">     
+<img src="/assets/images/personal-projects/morse_code_converter_4.png" width="80%">     
 <br><br><br>
 
 # Future Improvements
