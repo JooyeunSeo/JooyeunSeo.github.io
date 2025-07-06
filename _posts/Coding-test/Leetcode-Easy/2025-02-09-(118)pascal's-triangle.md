@@ -10,6 +10,7 @@ tags:
   - Python
   - Array
   - Pascal's triangle
+  - Dynamic Programming
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

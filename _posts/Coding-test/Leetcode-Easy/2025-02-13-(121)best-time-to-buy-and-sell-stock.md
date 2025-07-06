@@ -9,6 +9,7 @@ tags:
   - Coding Test
   - Python
   - Array
+  - Dynamic Programming
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

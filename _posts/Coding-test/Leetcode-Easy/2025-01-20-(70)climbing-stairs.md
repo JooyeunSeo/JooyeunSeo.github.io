@@ -10,6 +10,8 @@ tags:
   - Python
   - Math
   - Fibonacci numbers
+  - Memoization
+  - Dynamic Programming
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

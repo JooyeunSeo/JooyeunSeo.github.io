@@ -10,6 +10,7 @@ tags:
   - Python
   - Array
   - Pascal's triangle
+  - Dynamic Programming
   - math.comb()
   - zip()
 ---

@@ -10,6 +10,7 @@ tags:
   - Python
   - String
   - Two Pointers
+  - Dynamic Programming
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

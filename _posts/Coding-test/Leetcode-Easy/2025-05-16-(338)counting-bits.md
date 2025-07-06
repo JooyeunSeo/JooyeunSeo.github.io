@@ -9,6 +9,7 @@ tags:
   - Coding Test
   - Python
   - Bitwise
+  - Dynamic Programming
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
