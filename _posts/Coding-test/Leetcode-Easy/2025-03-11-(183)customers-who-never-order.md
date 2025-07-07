@@ -31,9 +31,9 @@ Table: `Customers`
 | id          | int     |
 | name        | varchar |
 +-------------+---------+
-</pre>
 id is the primary key (column with unique values) for this table.    
 Each row of this table indicates the ID and name of a customer.   
+</pre>
 
 Table: `Orders`
 <pre>
@@ -43,15 +43,17 @@ Table: `Orders`
 | id          | int  |
 | customerId  | int  |
 +-------------+------+
-</pre>
 id is the primary key (column with unique values) for this table.   
 customerId is a foreign key (reference columns) of the ID from the Customers table.   
 Each row of this table indicates the ID of an order and the ID of the customer who ordered it.   
-<br>
+</pre>
 
-Write a solution to find all customers who never order anything.   
-Return the result table in **any order**.   
+Write a solution to find all customers who never order anything.
+
+Return the result table in **any order**.
+
 The result format is in the following example.   
+<br>
 
 **Example 1:**
 

@@ -33,14 +33,17 @@ Table: `Employee`
 | salary      | int     |
 | managerId   | int     |
 +-------------+---------+
-</pre>
 id is the primary key (column with unique values) for this table.     
-Each row of this table indicates the ID of an employee, their name, salary, and the ID of their manager.
-<br>
+Each row of this table indicates
+the ID of an employee, their name, salary, and the ID of their manager.
+</pre>
 
-Write a solution to find the employees who earn more than their managers.   
-Return the result table in **any order**.   
-The result format is in the following example.   
+Write a solution to find the employees who earn more than their managers.
+
+Return the result table in **any order**.
+
+The result format is in the following example.      
+<br>
 
 **Example 1:**
 
@@ -92,7 +95,7 @@ def find_employees(employee: pd.DataFrame) -> pd.DataFrame:
 
 id를 인덱스로 설정한 뒤, 딕셔너리에 id와 salary를 저장하고 map을 이용해 해당하는 값을 가져오는 방식이다. loc[]으로 원하는 값만 선별할 때, 'Employee' 열을 []으로 감싸야 Series가 아니라 Dataframe 타입으로 반환된다.
 
-주의해야 할 테이스케이스
+주의해야 할 테스트 케이스
 1. managerId가 존재하지만 데이터프레임에 해당 id가 없는 경우    
 2. 데이터프레임에 managerId가 없는 직원 단 한 명만 존재하는 경우
 <br>

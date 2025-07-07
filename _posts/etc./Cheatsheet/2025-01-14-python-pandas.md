@@ -9,7 +9,7 @@ tags:
   - Python
   - Pandas
   - Data Science
-last_modified_at: 2025-03-31T14:30:30+09:00
+last_modified_at: 2025-07-07T14:30:30+09:00
 ---
 
 > **Pandas**    
@@ -380,7 +380,8 @@ Name: temp, dtype: float64
 
 ### <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.stack.html" target="_blank">DataFrame.stack()</a>
 
-- 데이터프레임의 열을 행(인덱스)으로 변환(Series 타입으로 결과 반환)
+- 데이터프레임의 열을 행(인덱스)으로 쌓음(Series 타입으로 결과 반환)
+- MultiIndex(다중 인덱스) 구조로 변함
 - 파라미터
    - **level:** 스택을 수행할 레벨 지정(기본값은 마지막 레벨인 `-1`)
    - **dropna:** 결측값 제거 여부(기본값은 `True`)
@@ -392,14 +393,43 @@ Name: temp, dtype: float64
    - **keys:** 단일 열이나 배열 또는 리스트로 여러 개의 열 전달
    - **inplace:** `False`(기본값)는 원본 데이터를 유지, `True`는 정렬 결과를 원본 데이터에 반영 
 
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.reset_index.html" target="_blank">DataFrame.reset_index()</a>
+
+- 인덱스를 일반 열로 되돌림
+- 기본 숫자 인덱스(0, 1, 2,...)가 부여됨
+- 파라미터
+   - **drop:** `False`(기본값)는 인덱스를 일반 열로 되돌림, `True`는 인덱스를 완전히 삭제
+   - **level:** 다중 인덱스일 때 특정 계층 인덱스만 리셋(나머지는 유지)
+   - **inplace:** `False`(기본값)는 원본 데이터를 유지, `True`는 정렬 결과를 원본 데이터에 반영 
+
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.pivot.html" target="_blank">DataFrame.pivot()</a>
 
 - 주어진 인덱스, 열 값으로 데이터프레임을 새로 재구성
 - 값이 누락된 항목에는 자동으로 NaN 값이 들어간다.
+- 동일한 index/column 조합이 2개 이상이면 ValueError 발생
 - 파라미터
-   - **columns:** 열의 범주
    - **index:** 행의 범주
+   - **columns:** 열의 범주
    - **values:** 새로운 셀에 들어갈 값의 범주
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.pivot_table.html" target="_blank">DataFrame.pivot_table()</a>
+
+- 주어진 인덱스와 열 값을 기준으로 데이터를 재구성하고, 중복된 항목은 집계 함수로 처리
+- 중복된 index/column 조합이 있어도 에러 없이 처리 가능
+- 파라미터
+   - **index:** 행의 범주
+   - **columns:** 열의 범주
+   - **values:** 새로운 셀에 들어갈 값의 범주
+   - **aggfunc:** 집계 함수 (e.g. `mean`(기본값), `sum`, `count`, `min`, `max` 등)
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html" target="_blank">DataFrame.groupby()</a>
+
+- 데이터를 특정 기준으로 그룹화
+- 파라미터
+   - **by:** 열 이름 또는 열 이름의 리스트, 함수 등을 전달하여 그룹화 기준 정하기
+   - **level:** 다중 인덱스가 있는 데이터프레임에서 특정 인덱스 레벨을 기준으로 그룹화(by와 다름)
+   - **as_index:** `True`(기본값)는 그룹화된 열을 새 데이터프레임의 인덱스로 사용, `False`는 기존 인덱스 유지
+   - **dropna:** : 결측값 계산에서 제외 여부
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sort_values.html" target="_blank">DataFrame.sort_values()</a>
 
@@ -446,15 +476,6 @@ Name: temp, dtype: float64
 - 파라미터
    - **periods:** n행(열) 만큼 앞으로 이동하기 위해 int형으로 값 전달(기본값은 1으로, 음수일 경우 뒤로 이동)
    - **axis:** `0` 또는 `'index'`는 **행** 기준, `1` 또는 `'columns'`는 **열** 기준
-
-### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html" target="_blank">DataFrame.groupby()</a>
-
-- 데이터를 특정 기준으로 그룹화
-- 파라미터
-   - **by:** 열 이름 또는 열 이름의 리스트, 함수 등을 전달하여 그룹화 기준 정하기
-   - **level:** 다중 인덱스가 있는 데이터프레임에서 특정 인덱스 레벨을 기준으로 그룹화(by와 다름)
-   - **as_index:** `True`(기본값)는 그룹화된 열을 새 데이터프레임의 인덱스로 사용, `False`는 기존 인덱스 유지
-   - **dropna:** : 결측값 계산에서 제외 여부
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.count.html" target="_blank">DataFrame.count()</a>
 

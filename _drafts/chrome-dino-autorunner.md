@@ -1,5 +1,5 @@
 ---
-date: 2025-07-02
+date: 2025-07-06
 layout: splash
 excerpt: "설명"
 title: "Chrome Dino AutoRunner"
