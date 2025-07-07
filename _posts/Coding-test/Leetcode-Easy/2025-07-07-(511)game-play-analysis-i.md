@@ -8,6 +8,7 @@ categories:
 tags:
   - Coding Test
   - Pandas
+  - MySQL
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
@@ -91,30 +92,26 @@ def game_analysis(activity: pd.DataFrame) -> pd.DataFrame:
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 
-### <a href="" target="_blank">1st</a>
+### <a href="https://leetcode.com/problems/game-play-analysis-i/solutions/6927393/two-different-pandas-code-to-solve-this-gsu2q/" target="_blank">1st</a>
 
 ```python
+import pandas as pd
 
+def game_analysis(activity: pd.DataFrame) -> pd.DataFrame:
+    # 방법 1
+    df = activity.groupby('player_id')['event_date'].min().reset_index().rename(columns={'event_date':'first_login'})
+
+    # 방법 2
+    df = activity.pivot_table(index='player_id',values='event_date',aggfunc='min').reset_index().rename(columns={'event_date':'first_login'})
+
+    return df
 ```
-<i class="fa-solid fa-clock"></i> **time complexity:**     
-<i class="fa-solid fa-memory"></i> **space complexity:**            
+`pivot_table()`로도 필터링할 수 있다.
 
-### <a href="" target="_blank">2nd</a>
+### <a href="https://leetcode.com/problems/game-play-analysis-i/solutions/6667894/beginner-friendly-unlock-first-login-tra-9ih8/" target="_blank">2nd</a>
 
-```python
-
+```sql
+SELECT player_id, MIN(event_date) AS first_login  -- 3. 각 플레이어의 최소 날짜를 구하고 열이름 변경
+FROM Activity                                     -- 1. 데이터가 있는 테이블에서
+GROUP BY player_id;                               -- 2. 플레이어 id별로 그룹화
 ```
-
-
-
-{: style="color: blue;"}
-<pre>
-</pre>
-
-{: style="color: green;"}
-
-𝑂(𝑛)
-𝑂(𝑛<sup>2</sup>)
-𝑂(log𝑛)
-𝑚
-𝑥
