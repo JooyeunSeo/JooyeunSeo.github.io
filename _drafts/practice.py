@@ -31,7 +31,7 @@ def post_title():
     title_form = date + "-" + title
     print(title_form)
 
-def new_window_link():
+def a_tag_new_window():
     link = input("link: ")
     text = input("text: ")
     print(f'<a href="{link}" target="_blank">{text}</a>')
@@ -40,6 +40,9 @@ def highlight_tag():
     highlight_text = input("highlight text: ")
     print(f"<mark>{highlight_text}</mark>")
 
-################################
+
+#####################
 leetcode_post_title()
-#------------------------------#
+# post_title()
+# a_tag_new_window()
+# highlight_tag()
