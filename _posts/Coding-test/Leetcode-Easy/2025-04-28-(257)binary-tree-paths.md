@@ -11,7 +11,7 @@ tags:
   - String
   - Binary Tree
   - Recursion
-  - DFS
+  - Depth-First Search
   - Stack
 ---
 

@@ -9,8 +9,9 @@ tags:
   - Coding Test
   - Python
   - Binary Tree
-  - DFS
+  - Depth-First Search
   - Recursion
+  - Breadth-First Search
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
@@ -124,3 +125,27 @@ class Solution:
 ```
 <i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛)     
 <i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛)     
+
+### <a href="https://leetcode.com/problems/symmetric-tree/solutions/6905759/using-bfs-easiest-explanation-and-code-java-python-c-javascript/?envType=problem-list-v2&envId=breadth-first-search" target="_blank">2nd</a>
+
+```python
+class Solution:
+    def isSymmetric(self, root: TreeNode) -> bool:
+        queue = deque([root.left, root.right])
+        while queue:
+            left = queue.popleft()
+            right = queue.popleft()
+
+            if not left and not right:
+                continue
+            if not left or not right or left.val != right.val:
+                return False
+
+            queue.append(left.left)
+            queue.append(right.right)
+            queue.append(left.right)
+            queue.append(right.left)
+
+        return True
+```
+큐를 사용하여 두 트리의 노드를 비교할 수 있다.

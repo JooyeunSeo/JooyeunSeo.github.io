@@ -72,7 +72,7 @@ class Solution(object):
 <i class="fa-solid fa-clock"></i> Runtime: **** ms \| Beats **100.00%**    
 <i class="fa-solid fa-memory"></i> Memory: **12.36** MB \| Beats **80.08%**
 
-'가장 긴' uncommon subsequence를 찾아야 하기 때문에, a, b 둘 중 길이가 더 긴 문자열 자체가 longest uncommon subsequence이 된다.
+'가장 긴' uncommon subsequence를 찾아야 하기 때문에, a와 b가 서로 다르다면 둘 중 길이가 더 긴 문자열 자체가 longest uncommon subsequence이 된다.
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 

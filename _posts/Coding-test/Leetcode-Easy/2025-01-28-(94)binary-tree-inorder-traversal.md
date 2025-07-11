@@ -11,6 +11,7 @@ tags:
   - Binary Tree
   - Recursion
   - Stack
+  - Depth-First Search
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

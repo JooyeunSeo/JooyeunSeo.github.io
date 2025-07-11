@@ -9,7 +9,7 @@ tags:
   - Coding Test
   - Python
   - Binary Search Tree
-  - DFS
+  - Depth-First Search
   - Recursion
 ---
 

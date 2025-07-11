@@ -10,7 +10,7 @@ tags:
   - Python
   - Binary Tree
   - Recursion
-  - DFS
+  - Depth-First Search
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

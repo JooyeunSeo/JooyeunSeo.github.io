@@ -10,8 +10,8 @@ tags:
   - Python
   - Array
   - Matrix
-  - DFS
-  - BFS
+  - Depth-First Search
+  - Breadth-First Search
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

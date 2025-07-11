@@ -9,10 +9,9 @@ tags:
   - Coding Test
   - Python
   - Binary Tree
-  - DFS
+  - Depth-First Search
   - Recursion
-  - BFS
-  - Queue
+  - Breadth-First Search
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
