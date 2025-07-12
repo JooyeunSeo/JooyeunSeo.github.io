@@ -1,6 +1,6 @@
 ---
 excerpt: "_config.yml 파일을 수정하여 전반적인 블로그 구성을 변경하기"
-title: "Configuration"
+title: "\02. Configuration"
 header:
   teaser: "https://jekyllrb.com/img/logo-2x.png"
 categories:

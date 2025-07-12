@@ -1,6 +1,6 @@
 ---
 excerpt: "상단 네비게이션 메뉴와 왼쪽 사이드바 네비게이션 메뉴 커스텀하기"
-title: "Navigation (Masthead & Sidebar)"
+title: "\03. Navigation (Masthead & Sidebar)"
 header:
   teaser: "https://jekyllrb.com/img/logo-2x.png"
 categories:

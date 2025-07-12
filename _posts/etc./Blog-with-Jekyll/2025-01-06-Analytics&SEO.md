@@ -1,6 +1,6 @@
 ---
 excerpt: "Google Analytics와 Google search Console로 블로그를 검색 엔진 상위에 노출시키고 방문자 분석하기"
-title: "Analytics & SEO Setting"
+title: "\06. Analytics & SEO Setting"
 header:
   teaser: "https://jekyllrb.com/img/logo-2x.png"
 categories:

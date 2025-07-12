@@ -1,6 +1,6 @@
 ---
 excerpt: "Github Pages와 Jekyll 및 minimal-mistakes 테마로 블로그 호스팅 및 설정하기"
-title: "Github Pages & Jekyll Installation"
+title: "\01. Github Pages & Jekyll Installation"
 header:
   teaser: "https://jekyllrb.com/img/logo-2x.png"
 categories:
@@ -132,17 +132,17 @@ group :jekyll_plugins do
 end
 ```
 
-1. `Gemfile` 파일의 원래 내용을 지우고 양식 붙여넣기
+1. `Gemfile` 파일의 원래 내용을 지우고 위의 양식 복사해서 붙여넣기
 2. `# gem "github-pages", group: :jekyll_plugins` 주석 해제
-3. `# The following plugins are automatically loaded by the theme-gem:` 밑 5개의 플러그인 주석 해제
-4. `group :jekyll_plugins do` - `end` 안으로 주석 해제한 플러그인 5개를 이동
-5. 파일 저장 후 VS Code의 터미널에서 변화 적용
+3. `# The following plugins are automatically loaded by the theme-gem:` 밑 플러그인 5개 주석 해제 후   
+`group :jekyll_plugins do` - `end` 안으로 이동시키기
+4. 파일 저장 후 VS Code의 터미널에서 변화 적용
     ```bash
     bundle install
     ```
 
 <div class="notice--warning" markdown="1">
-⚠️ **bundle install**를 실행했을 때 아래와 같은 문구가 뜬다면    
+⚠️ **bundle install**을 실행했을 때 아래와 같은 문구가 뜬다면    
 
 Bundler 2.6.5 is running, but your lockfile was generated with 2.6.1. Installing Bundler 2.6.1 and restarting using that version.
 {: style="color: red;"}
@@ -223,7 +223,7 @@ git add .
 
 git에 커밋
 ```bash
-git commit -m 'Commit message'
+git commit -m 'your commit message'
 ```
 <br>
 
