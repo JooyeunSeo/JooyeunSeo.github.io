@@ -112,20 +112,7 @@ class Solution:
         
         return depth        
 ```
-너비 우선 탐색(BFS, Breadth-First Search) 방식으로 접근한 답안도 있어서 참고했다.   
-BFS에서는 큐(queue)를 이용하기 때문에 파이썬의 collections 모듈에서 제공하는 <mark>deque</mark>로 큐를 구현한 것을 알 수 있었다.
-
-<div class="notice--info" markdown="1">
-💡 **deque(덱, Double-Ended Queue)**
-
-```python
-from collections import deque
-```
-
-- 양방향에서 삽입/삭제 가능 → `append()`, `appendleft()`, `pop()`, `popleft()`
-- 리스트의 `pop()`보다 빠른 연산 가능
-- 스택과 큐 모두 구현 가능
-</div>
+너비 우선 탐색 방식으로 접근한 답안도 있어서 참고했다.
 
 root = [1,2,3,4,5,6]
 {: style="color: blue;"}
