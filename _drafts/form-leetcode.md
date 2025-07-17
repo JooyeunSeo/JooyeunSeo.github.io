@@ -67,6 +67,7 @@ print(testcase)
 
 {: style="color: blue;"}
 <pre>
+
 </pre>
 
 {: style="color: green;"}
