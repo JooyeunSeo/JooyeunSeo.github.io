@@ -9,7 +9,7 @@ tags:
   - Python
   - Pandas
   - Data Science
-last_modified_at: 2025-07-07T14:30:30+09:00
+last_modified_at: 2025-07-26T14:30:30+09:00
 ---
 
 > **Pandas**    
@@ -33,7 +33,7 @@ last_modified_at: 2025-07-07T14:30:30+09:00
 >> Saturday,22,Sunny   
 >> Sunday,24,Sunny   
 
-## Table
+## ▦ Table
 
 Pandas의 **DataFrame 클래스**로 <mark>표</mark> 전체를 출력할 수 있다.
 
@@ -164,7 +164,7 @@ Carter
 외래키: Student ID(Students 데이터프레임의 기본키를 참조, 각 강의가 어떤 학생과 연결되는지 나타냄)
 </div>
 
-## Column
+## ▥ Column
 
 데이터프레임(전체 표)에서 추출한 단일 <mark>열</mark>은 Pandas의 **Series 클래스**의 객체가 된다.
 
@@ -187,10 +187,29 @@ Name: temp, dtype: int64
 <div class="notice--info" markdown="1">
 💡 **`[]` 와 `[[]]` 의 차이**
 
-- data**[**"temp"**]** : temp 열을 Series 타입으로 반환
-- data**[[**"temp"**]]** : temp 열을 DataFrame 타입으로 반환(해당 열 하나만 있는 데이터프레임이 된다)
-
+- data**[**"temp"**]** : data의 temp 열을 Series로 반환
+- data**[[**"temp"**]]** : data의 temp 열을 DataFrame으로 반환(1열짜리 새로운 DataFrame 객체)
 </div>
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.to_frame.html" target="_blank">Series.to_frame()</a>
+
+- **이중 대괄호** 대신 해당 메서드로도 Series → DataFrame 변환 가능
+
+```python
+temp_df = data["temp"].to_frame()      # Series 구조인 temp 열을 1열짜리 DataFrame으로 변환
+print(temp_df)
+```
+<i class="fa-solid fa-right-from-bracket"></i>    
+<pre>
+   temp
+0    12
+1    14
+2    15
+3    14
+4    21
+5    22
+6    24
+</pre>
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.to_list.html" target="_blank">Series.to_list()</a>
 
@@ -203,7 +222,7 @@ print(temp_list)
 [12, 14, 15, 14, 21, 22, 24]
 </pre>
 
-## Row
+## ▤ Row
 
 Pandas의 DataFrame과 Series 클래스로 표의 특정 <mark>행</mark>만 출력할 수 있다.
 
@@ -239,9 +258,9 @@ Name: condition, dtype: object
 Name: temp, dtype: float64
 </pre>
 
-## Data Science
+## ✅ Methods
 
-데이터 사이언스에 활용할 수 있는 판다스 메소드
+Data Science에 활용할 수 있는 판다스 메소드 정리
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html" target="_blank">DataFrame.loc[]</a>
 
@@ -396,6 +415,7 @@ Name: temp, dtype: float64
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.reset_index.html" target="_blank">DataFrame.reset_index()</a>
 
 - 인덱스를 일반 열로 되돌림
+- Series를 DataFrame으로 변환할 수 있음
 - 기본 숫자 인덱스(0, 1, 2,...)가 부여됨
 - 파라미터
    - **drop:** `False`(기본값)는 인덱스를 일반 열로 되돌림, `True`는 인덱스를 완전히 삭제
@@ -428,7 +448,7 @@ Name: temp, dtype: float64
 - 파라미터
    - **by:** 열 이름 또는 열 이름의 리스트, 함수 등을 전달하여 그룹화 기준 정하기
    - **level:** 다중 인덱스가 있는 데이터프레임에서 특정 인덱스 레벨을 기준으로 그룹화(by와 다름)
-   - **as_index:** `True`(기본값)는 그룹화된 열을 새 데이터프레임의 인덱스로 사용, `False`는 기존 인덱스 유지
+   - **as_index:** `True`(기본값)는 by를 새 데이터프레임의 인덱스로 승격, `False`는 기존 인덱스 유지
    - **dropna:** : 결측값 계산에서 제외 여부
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sort_values.html" target="_blank">DataFrame.sort_values()</a>
@@ -571,7 +591,7 @@ Name: temp, dtype: float64
 
 <br>
 
-## General Functions
+## ✅ General Functions
 
 ### <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html" target="_blank">.to_datetime()</a>
 
@@ -590,7 +610,7 @@ Name: temp, dtype: float64
       - `'coerce`: 변환 불가능한 값은 NaN으로 처리
       - `'ignore'`: 변환 불가능한 값은 원래 값 유지
 
-## Index Objects
+## ✅ Index Objects
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DatetimeIndex.html#pandas.DatetimeIndex" target="_blank">.DatetimeIndex()</a>
 
@@ -602,7 +622,7 @@ Name: temp, dtype: float64
    - `.day`: 일 반환
    - `.weekday`: 요일 반환(`0`은 월요일, `6`은 일요일)
 
-## <a href="https://pandas.pydata.org/docs/user_guide/options.html#options-and-settings" target="_blank">Options</a>
+## ✅ <a href="https://pandas.pydata.org/docs/user_guide/options.html#options-and-settings" target="_blank">Options</a>
 
 ```python
 import pandas as pd

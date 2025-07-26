@@ -19,7 +19,7 @@ last_modified_at: 2025-01-21T14:30:30+09:00
 ```
 </div>
 
-## Matplotlib
+## 📊 Matplotlib
 
 > **Matplotlib(맷플롯립)**   
 > - 정적인 이미지 형식의 그래프를 만드는 파이썬 라이브러리로, Pandas와 잘 맞는다.
@@ -215,7 +215,7 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
 
 <br><br>
 
-## Plotly
+## 📊 Plotly
 
 > **Plotly(플로틀리)**   
 > Zoom, Pan, Hover, Toggle 등을 수행할 수 있는 대화형 그래프를 생성하는 파이썬 라이브러리
@@ -380,7 +380,7 @@ years_fmt = mdates.DateFormatter('%Y')    # 날짜를 표시하는 방식을 지
 
 <br><br>
 
-## Seaborn
+## 📊 Seaborn
 
 > **Seaborn(씨본)**   
 > Matplotlib을 기반으로 한 파이썬 라이브러리로, 더 많은 기능과 세련된 디자인을 제공

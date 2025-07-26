@@ -55,10 +55,10 @@ last_modified_at: 2025-02-17T12:30:30+09:00
 - 간단하게 계산하려면 최고차항에 영향을 주는 `루프에서 반복 횟수`만 조사하면 된다.
 <br>   
 
-### 𝑂(Big-O) Notation
+### <font color="red">𝑂(Big-O) Notation</font>
 
 - 점근적 상한(Asymptotic Upper Bound) → 입력이 어떤 상태든 실행시간이 상한을 넘지 않음을 보장
-- 최악의 수행시간을 나타내기 때문에 안전한 분석을 위해 가장 많이 사용된다.
+- 최악의 수행시간을 나타내기 때문에 **안전한 분석**을 위해 가장 많이 사용된다.
 
 #### Time complexity
 
@@ -89,13 +89,13 @@ last_modified_at: 2025-02-17T12:30:30+09:00
 (입력 크기 `𝑛`)
 <br>
 
-### Ω(Big-Omega) Notation
+### <font color="blue">Ω(Big-Omega) Notation</font>
 
 - 점근적 하한(Asymptotic Lower Bound) → 어떤 입력이 주어지든 이 하한보다 더 빠를 수 없음
 - 최선의 수행시간 분석에 자주 사용된다.
 <br>
 
-### Θ(Big-theta) Notation
+### <font color="purple">Θ(Big-theta) Notation</font>
 
 - 동일한 점근적 상한과 하한(Asymptotic Tight Bound) → 점근적 상한과 하한을 동시에 만족하는 경우
 - 입력 크기 `𝑛`이 충분히 커지면 실행시간이 항상 특정 범위(𝑂와 Ω 사이) 안에서 유지됨을 보장한다.
