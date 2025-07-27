@@ -87,7 +87,7 @@ BFS 방식을 사용해서 깊이를 계산했다. `node.children`가 복수 개
 class Solution(object):
     def maxDepth(self, root):
         queue = []
-        if root: queue.append((root, 1))    # 빈 트리가 아니라면 (루트 노트, 값)을 포함
+        if root: queue.append((root, 1))    # 빈 트리가 아니라면 (루트 노트, 깊이)를 포함
         depth = 0
         for (node, level) in queue:
             depth = level

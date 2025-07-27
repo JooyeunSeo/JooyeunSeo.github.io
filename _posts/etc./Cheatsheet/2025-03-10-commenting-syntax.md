@@ -19,16 +19,16 @@ categories:
 | **JavaScript** |      `//`      |    `/* */`    |
 |    **Ruby**    |       `#`      | `=begin =end` |
 |     **PHP**    |     `/`, `#`   |    `/* */`    |
-|      **R**     |       `#`      |               |
+|      **R**     |       `#`      |       x       |
 
 <br>
 
 ## Markup & Styling
 
-|   Type   | Single Comment | Block Comment |
-|:--------:|:--------------:|:-------------:|
-| **HTML** |   `<!-- -->`   |               |
-|  **CSS** |     `/* */`    |               |
+|   Type   | Single & Block Comment |
+|:--------:|:----------------------:|
+| **HTML** |   `<!-- -->`           |
+|  **CSS** |     `/* */`            |
 
 <br>
 

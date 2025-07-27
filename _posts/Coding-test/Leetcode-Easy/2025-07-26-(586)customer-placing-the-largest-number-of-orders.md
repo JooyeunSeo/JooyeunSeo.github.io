@@ -89,7 +89,7 @@ def largest_orders(orders: pd.DataFrame) -> pd.DataFrame:
 <i class="fa-solid fa-clock"></i> Runtime: **271** ms \| Beats **87.20%**    
 <i class="fa-solid fa-memory"></i> Memory: **67.32** MB \| Beats **38.86%**
 
-마지막에 customer_number행을 반환해야 하기 때문에 그룹화할 때 `as_index`를 False로 설정해서 인덱스로 넘어가지 않도록 방지했다. 그리고 order_number 열을 이중 대괄호로 선택해서 Series로 변경되지 않고 DataFrame 구조를 유지하도록 했다. 또 테스트 케이스는 최대 주문 고객이 단 1명임을 보장하지만, 공동 1등이 있을 경우에도 사용 가능하도록 만들어봤다.
+마지막에 customer_number행을 반환해야 하기 때문에 그룹화할 때 `as_index`를 False로 설정해서 인덱스로 넘어가지 않도록 방지했다. 그리고 order_number 열을 이중 대괄호로 선택해서 Series로 변경되지 않고 DataFrame 구조를 유지하도록 했다. 또 테스트 케이스는 최대 주문 고객이 단 1명임을 보장하지만, 만약 공동 1등이 존재할 경우에도 사용 가능하도록 만들어봤다.
 
 <pre>
    order_number  customer_number
@@ -141,7 +141,7 @@ def largest_orders(orders: pd.DataFrame) -> pd.DataFrame:
 SELECT customer_number            -- 6. customer_number 열만 보여주기 
 FROM Orders                       -- 1. 테이블에서 데이터 가져오기
 GROUP BY customer_number          -- 2. customer_number 값을 기준으로 그룹화
-ORDER BY count(*) DESC LIMIT 1;   -- 3. 각 그룹에 대해 행 개수 집계
-                                  -- 4. 집계 결과를 기준으로 내림차순
-                                  -- 5. 상단 첫 번째 행만 남기기
+ORDER BY count(*) DESC LIMIT 1;   /* 3. 각 그룹에 대해 행 개수 집계
+                                     4. 집계 결과를 기준으로 내림차순
+                                     5. 상단 첫 번째 행만 남기기 */ 
 ```
