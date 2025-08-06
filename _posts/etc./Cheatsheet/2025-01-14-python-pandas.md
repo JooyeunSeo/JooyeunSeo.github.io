@@ -9,7 +9,7 @@ tags:
   - Python
   - Pandas
   - Data Science
-last_modified_at: 2025-07-26T14:30:30+09:00
+last_modified_at: 2025-08-06T14:30:30+09:00
 ---
 
 > **Pandas**    
@@ -559,6 +559,30 @@ Data Science에 활용할 수 있는 판다스 메소드 정리
 - `.mul()` == `.multiply()` → a.mul(b)는 a \* b
 - `.div()`== `.divide()` → a.div(b)는 a / b
 - 각 연산은 새로운 열 생성
+
+### <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.map.html" target="_blank">Series.map()</a>
+
+- Series의 각 요소에 대해 변환 작업을 수행하여 새로운 Series를 반환
+- 파라미터
+   - **arg:** 매핑에 적용할 대상
+      - `function`: 각 요소에 함수 적용(e.g. `lambda x: x * 2`)
+      - `dictionary`: 값 치환용 딕셔너리 매핑(e.g. `{True: 'Yes', False: 'No'}`)
+      - `Series`: 다른 Series 기반 매핑(index 기준)
+   - **na_action:** `None`(기본값)은 NaN 값도 함수에 그대로 전달, `ignore`은 NaN 값을 전달하지 않고 유지
+
+### <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.apply.html" target="_blank">Series.apply()</a>
+
+- Series에서는 map()과 비슷하게 동작하지만, 함수 인자 전달이 더 유연하며 복잡한 연산에 적합
+- 파라미터
+   - **func:** 매핑에 적용할 함수
+   - **args:** 함수에 위치 인자(\*args)로 전달
+   - **\*\*kwargs:** 함수에 명시적 키워드(\*\*kwargs)로 전달됨
+
+<div class="notice--info" markdown="1">
+💡 **<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html" target="_blank">DataFrame.apply()</a>**에서는 `axis` 파라미터를 통해 각 **행** 또는 **열** 단위로 함수를 적용 가능
+- `0`: 열 방향(기본값)
+- `1`: 행 방향
+</div>
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.astype.html" target="_blank">Series.astype()</a>
 
