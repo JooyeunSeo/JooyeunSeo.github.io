@@ -10,7 +10,6 @@ tags:
   - Python
   - Sorting
   - Array
-  - set()
   - Hash Table
 ---
 

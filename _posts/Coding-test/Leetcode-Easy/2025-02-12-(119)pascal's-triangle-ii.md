@@ -11,7 +11,6 @@ tags:
   - Array
   - Pascal's triangle
   - Dynamic Programming
-  - zip()
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

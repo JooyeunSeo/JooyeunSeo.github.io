@@ -11,7 +11,7 @@ tags:
   - String
   - Palindrome
   - Two Pointers
-  - Bitwise
+  - Bit Manipulation
   - Regular Expression
 ---
 

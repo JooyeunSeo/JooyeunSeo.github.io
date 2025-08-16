@@ -10,7 +10,7 @@ tags:
   - Python
   - Math
   - Binary Search
-  - Bitwise
+  - Bit Manipulation
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

@@ -8,9 +8,9 @@ categories:
 tags:
   - Coding Test
   - Python
-  - Sorting
   - Array
-  - set()
+  - Sorting
+  - Hash Table
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

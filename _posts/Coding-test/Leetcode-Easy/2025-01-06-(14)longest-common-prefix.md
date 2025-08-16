@@ -8,9 +8,9 @@ categories:
 tags:
   - Coding Test
   - Python
+  - Array
   - String
-  - sorted()
-  - Slicing
+  - Trie
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

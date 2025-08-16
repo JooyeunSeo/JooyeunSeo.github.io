@@ -10,7 +10,6 @@ tags:
   - Python
   - String
   - Math
-  - zip()
   - Hash Table
 ---
 

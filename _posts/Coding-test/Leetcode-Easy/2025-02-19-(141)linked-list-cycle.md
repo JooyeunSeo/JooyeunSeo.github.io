@@ -12,7 +12,6 @@ tags:
   - Cycle Detection
   - Floyd
   - Two Pointers
-  - set()
   - Hash Table
 ---
 

@@ -9,7 +9,7 @@ tags:
   - Coding Test
   - Python
   - Math
-  - Bitwise
+  - Bit Manipulation
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
@@ -67,7 +67,7 @@ class Solution(object):
 <i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100.00%**    
 <i class="fa-solid fa-memory"></i> Memory: **12.29** MB \| Beats **99.57%**
 
-음의 정수는 앞에 부호로 1을 붙이는데, 파이썬 내부에서는 정수에 비트 수 제한이 없기 때문에 1이 무한대가 된다. 따라서 하위 32비트를 잘라줘야 한다.
+비트마스크를 이용한 방법이다. 음의 정수는 앞에 부호로 1을 붙이는데, 파이썬 내부에서는 정수에 비트 수 제한이 없기 때문에 1이 무한대가 된다. 따라서 하위 32비트를 잘라줘야 한다.
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 

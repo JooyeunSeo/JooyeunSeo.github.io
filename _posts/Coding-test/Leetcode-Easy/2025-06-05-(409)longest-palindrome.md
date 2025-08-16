@@ -11,7 +11,6 @@ tags:
   - String
   - Palindrome
   - Hash Table
-  - set()
   - Greedy
 ---
 

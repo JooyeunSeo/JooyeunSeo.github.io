@@ -8,7 +8,7 @@ categories:
 tags:
   - Coding Test
   - Python
-  - Bitwise
+  - Bit Manipulation
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

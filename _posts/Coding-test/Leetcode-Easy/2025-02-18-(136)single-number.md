@@ -9,7 +9,7 @@ tags:
   - Coding Test
   - Python
   - Array
-  - Bitwise
+  - Bit Manipulation
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

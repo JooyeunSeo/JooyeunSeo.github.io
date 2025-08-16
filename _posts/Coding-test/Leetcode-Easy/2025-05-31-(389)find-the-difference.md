@@ -11,7 +11,7 @@ tags:
   - Sorting
   - String
   - Hash Table
-  - Bitwise
+  - Bit Manipulation
   - ASCII
 ---
 

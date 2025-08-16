@@ -11,8 +11,7 @@ tags:
   - Math
   - Sorting
   - Array
-  - Bitwise
-  - sorted()
+  - Bit Manipulation
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
