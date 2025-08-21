@@ -33,6 +33,10 @@ last_modified_at: 2025-08-19T00:30:30+09:00
 - Print Working Directory
 - 현재 터미널이 위치한 디렉토리 경로를 출력
 
+### open *<font color="#d3a27f">path</font>*
+- 해당 경로를 파일 탐색기로 열기
+- open `.` : 현재 디렉토리 열기
+
 ### ls
 - list
 - 현재 디렉토리 내의 모든 파일 및 폴더 목록 출력
@@ -43,11 +47,6 @@ last_modified_at: 2025-08-19T00:30:30+09:00
 ### mkdir *<font color="#ffe474">new_dir1</font>* *<font color="#ffe474">new_dir2</font>*
 - Make Directory
 - 해당 이름으로 새 디렉토리(들) 생성
-
-### rmdir *<font color="#ffe474">empty_dir</font>*
-- Remove Directory
-- 해당 디렉토리가 비어있을 시 삭제
-- 빈 폴더 정리용(실제 삭제는 `rm` 사용)
 
 ### cd *<font color="#d3a27f">path</font>*
 - Change Directory
@@ -60,10 +59,6 @@ last_modified_at: 2025-08-19T00:30:30+09:00
 ### touch *<font color="#87c4f8">new_file.txt</font>*
 - 존재하지 않는 파일명 : 새 파일 생성
 - 이미 존재하는 파일명 : 최근 수정 시간만 갱신
-
-### open *<font color="#d3a27f">path</font>*
-- 해당 경로를 파일 탐색기로 열기
-- open `.` : 현재 디렉토리 열기
 
 ### cp *<font color="#93bf85">source</font>* *<font color="#77bbc2">destination</font>*
 - Copy
@@ -90,6 +85,15 @@ last_modified_at: 2025-08-19T00:30:30+09:00
 - Concatenate
 - 해당 파일(주로 텍스트 파일)의 내용 출력
 
+### find *<font color="#d3a27f">path</font>* *<font color="#ffd090">options</font>* *<font color="#ffc4ff">pattern</font>*
+- 해당 경로에서 조건에 맞는 패턴을 가진 파일이나 디렉토리를 검색
+- 조건자 옵션
+   - `-type` : 파일 또는 디렉토리 이름 기준 검색(e.g. `"file.txt"`)
+   - `-iname` : 대소문자 구분 없이 이름 검색(e.g. `"*.jpg"`)
+   - `-type` : 대상 종류 지정(e.g. `f`: 파일, `d`: 디렉토리)
+   - `-size` : 크기 조건 검색(e.g. `+1M`, `-100k`)
+   - `-exec` : 찾은 결과에 명령어 실행
+
 ### chmod
 - Change Mode
 - 파일이나 디렉토리의 권한 지정 및 변경
@@ -99,22 +103,13 @@ last_modified_at: 2025-08-19T00:30:30+09:00
 - 파일이나 디렉토리의 소유자 변경
 
 <!---------------- ---------------->
-## 📚 Text Processing
+## 📚 Text in File
 ### head *<font color="#87c4f8">file.txt</font>*&nbsp;&nbsp;&nbsp;<br>tail *<font color="#87c4f8">file.txt</font>*
-- 파일의 앞부분/뒷부분만 출력(default: 10줄)
+- 파일의 앞부분/뒷부분의 일부만 출력(default: 10줄)
 - 여러 개의 파일 출력 가능
 - 옵션
    - `-n` `num` : 처음/마지막 num 개의 줄 출력
    - tail `-f` : 내용이 변경될 때마다 실시간으로 출력(tail에만 존재, 로그 파일에서 활용)
-
-### find *<font color="#d3a27f">path</font>* *<font color="#ffd090">options</font>* *<font color="#ffc4ff">pattern</font>*
-- 해당 경로에서 조건에 맞는 패턴을 가진 파일이나 디렉토리를 검색
-- 조건자 옵션
-   - `-type` : 파일 또는 디렉토리 이름 기준 검색(e.g. `"file.txt"`)
-   - `-iname` : 대소문자 구분 없이 이름 검색(e.g. `"*.jpg"`)
-   - `-type` : 대상 종류 지정(e.g. `f`: 파일, `d`: 디렉토리)
-   - `-size` : 크기 조건 검색(e.g. `+1M`, `-100k`)
-   - `-exec` : 찾은 결과에 명령어 실행
 
 ### grep *<font color="#ffd090">options</font>* *<font color="#d7bce4">"keyword"</font>* *<font color="#87c4f8">file.txt</font>*
 - Global Regular Expression Print
@@ -162,14 +157,14 @@ last_modified_at: 2025-08-19T00:30:30+09:00
 ## ⚙️ System
 ### ping *<font color="#b8b4b4">ADDRESS</font>*
 - Packet Internet Groper
-- IP 또는 도메인의 주소를 넣어 해당 네트워크의 상태를 확인
+- IP 또는 도메인의 주소로 해당 네트워크의 상태를 확인 가능
 - `Ctrl-C`로 강제 종료하기 전까지 계속 출력됨
 - 옵션
    - `-c` `num` : 입력된 숫자만큼만 출력되도록 제한
    - `-i` `sec` : 전송 간격 조정(default: 1초) 
 
 ### uname
-- 현 시스템의 정보 출력
+- 시스템의 정보 출력
 - 옵션
    - `-a` : 모든 정보
    - `-c` : 커널 이름
