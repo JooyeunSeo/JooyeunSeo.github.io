@@ -43,12 +43,10 @@ An input string is valid if:
 - Input: s = `([])`
 - Output: true
 
-
 **Constraints:**
 
 - 1 <= s.length <= 10<sub>4</sub>
 - `s` consists of parentheses only `()[]{}`.   
-
 
 💡 **Hint 1:**   
 <u><span style="color:#F5F5F5">Use a stack of characters.</span></u>
@@ -153,5 +151,4 @@ class Solution(object):
                 stack.pop() # otherwise, pop the opening bracket from the stack
         return not stack
 ```
-
 딕셔너리를 사용하지 않은 코드

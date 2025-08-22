@@ -12,7 +12,6 @@ tags:
   - String Matching
   - Binary Tree
   - Hash Function
-  - Recursion
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

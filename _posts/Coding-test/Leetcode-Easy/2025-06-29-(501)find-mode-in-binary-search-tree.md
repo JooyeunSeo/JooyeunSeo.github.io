@@ -10,7 +10,6 @@ tags:
   - Python
   - Binary Search Tree
   - Depth-First Search
-  - Recursion
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

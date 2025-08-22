@@ -9,7 +9,6 @@ tags:
   - Coding Test
   - Python
   - Binary Tree
-  - Recursion
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

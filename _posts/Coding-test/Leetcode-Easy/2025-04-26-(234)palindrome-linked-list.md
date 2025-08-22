@@ -11,6 +11,7 @@ tags:
   - Linked List
   - Palindrome
   - Floyd
+  - Recursion
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

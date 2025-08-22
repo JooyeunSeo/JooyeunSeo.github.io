@@ -9,7 +9,6 @@ tags:
   - Coding Test
   - Python
   - Binary Tree
-  - Recursion
   - Depth-First Search
   - Breadth-First Search
 ---

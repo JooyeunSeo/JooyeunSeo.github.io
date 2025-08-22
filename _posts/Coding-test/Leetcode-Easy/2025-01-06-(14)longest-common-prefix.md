@@ -82,7 +82,6 @@ class Solution:
             ans+=first[i]
         return ans
 ```
-
 <mark>sorted()</mark> 함수를 사용하여 리스트를 알파벳 순서로 정의하는 방법
 
 - 이 방법으로 정렬하면 첫 번째 문자열과 마지막 문자열이 가장 큰 차이를 갖게 된다.

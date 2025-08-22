@@ -93,15 +93,9 @@ merged sorted list:
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 
-### 1st
+### <a href="https://leetcode.com/problems/merge-two-sorted-lists/solutions/7105130/merge-two-sorted-lists-in-python-for-beg-txha/" target="_blank">1st</a>
 
 ```python
-# Definition for singly-linked list.
-class ListNode(object):
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
 class Solution(object):
     def mergeTwoLists(self, list1, list2):
         if not list1:               # 둘 중 빈 리스트가 있을 경우 재귀 호출 종료
@@ -118,7 +112,6 @@ class Solution(object):
             list2.next = self.mergeTwoLists(list1, list2.next)
             return list2
 ```
-
 재귀 호출을 이용한 방법으로, 위의 함수보다 실행 시간은 더 오래걸렸다.
 
 `list1` = 1 → 2 → 4    

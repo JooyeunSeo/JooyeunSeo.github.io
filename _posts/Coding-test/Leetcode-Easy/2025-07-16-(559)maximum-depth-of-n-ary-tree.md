@@ -11,7 +11,6 @@ tags:
   - Tree
   - Depth-First Search
   - Breadth-First Search
-  - Recursion
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

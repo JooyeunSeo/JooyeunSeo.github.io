@@ -10,7 +10,6 @@ tags:
   - Python
   - String
   - Binary Tree
-  - Recursion
   - Depth-First Search
   - Stack
 ---
