@@ -37,13 +37,14 @@ Given a string `s`, return `true` if it is a ***palindrome***, or `false` otherw
 
 - Input: s = " "
 - Output: true
-- Explanation: s is an empty string "" after removing non-alphanumeric characters.    
+- Explanation:    
+`s` is an empty string "" after removing non-alphanumeric characters.     
 Since an empty string reads the same forward and backward, it is a palindrome.
 
 **Constraints:**
 
 - 1 <= s.length <= 2 * 10<sup>5</sup>
-- s consists only of printable ASCII characters.
+- `s` consists only of printable ASCII characters.
 
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 
