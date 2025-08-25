@@ -159,17 +159,20 @@ bundle update --bundler
 ### Run Jekyll
 
 ```bash
-bundle exec jekyll serve
+bundle exec jekyll serve --livereload --drafts --future
 ```
-- Github에 Push하기 전 로컬 서버에서 미리 실행해서 확인할 수 있다.
+- Github에 Push하기 전 로컬 서버에서 돌릴 수 있음
 - **로컬 서버 주소:** <http://localhost:4000/>
 - **서버 정지:** 터미널에서 `ctrl` + `c`
-- <mark>--livereload</mark> 명령어 추가
+- <mark>--livereload</mark>
    - 소스파일에서 변경사항이 생길 때마다 페이지 자동 새로고침
    - 예외로 `_config.yml` 파일을 변경할 경우에는 서버 정지 후 재실행 필요
-- <mark>--drafts</mark> 명령어 추가
+- <mark>--drafts</mark>
    - `/_drafts` 안에 있는 포스트까지 함께 로컬 서버에서 확인 가능
    - 실제 웹 서버에서는 나타나지 않기 때문에 게시물을 임시 저장하는 용도로 사용
+- <mark>--future</mark>
+   - 현재 로컬 시간보다 앞선 미래 날짜의 포스트도 함께 로컬 서버에서 확인 가능
+   - 실제 웹 서버에서는 설정된 날짜 이후에 나타남
 
 ### ⚠️ Errors
 
