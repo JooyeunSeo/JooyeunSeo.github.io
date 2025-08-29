@@ -40,11 +40,11 @@ copyright_url            : # 저작권 url 설정(defaults: site.url)
 ```yml
 reCaptcha:  # Google reCaptcha 서비스 사용 시 설정(사람과 봇을 구별하는 기능으로, 이 블로그에서는 생략)
 atom_feed:  # jekyll-feed 플러그인(루트 경로에서 RSS 피드 파일을 제공)의 설정으로, 기본값 그대로 설정
-search                   : true # 블로그 내 검색 기능 유무(상단 네비게이션 바의 가장 오른쪽에 표시됨)
-search_full_content      : true # 블로그에서 검색 시 본문 내용 중 첫 50단어만 인덱싱하는 기능
-search_provider          : lunr # 블로그 내 검색 기능 제공자(lunr, algolia, google 중 택 1)
+search                   : true   # 블로그 내 검색 기능 on/off(상단 네비게이션 바 가장 오른쪽에 표시됨)
+search_full_content      : true   # 블로그에서 검색 시 본문 내용 중 첫 50단어만 인덱싱 on/off
+search_provider          : lunr   # 블로그 내 검색 기능 제공자(lunr, algolia, google 중 택 1)
 lunr:       # 기본 라이브러리로, GitHub Pages와 호환됨
-  search_within_pages    : false
+  search_within_pages    : false  # 포스트 내 해당 검색어의 위치 및 문맥 표시 on/off
 ```
 
 ## SEO Related, Analytics

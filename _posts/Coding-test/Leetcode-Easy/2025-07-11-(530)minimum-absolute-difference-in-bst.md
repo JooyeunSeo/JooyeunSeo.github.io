@@ -105,7 +105,7 @@ return 9
 class Solution(object):
     def getMinimumDifference(self, root):
         self.prev = None
-        self.ans = float('inf')   # 초기값을 무한대로 설정
+        self.ans = float('inf')   # 초기값을 양의 무한대로 설정
 
         def dfs(node):
             if node:
