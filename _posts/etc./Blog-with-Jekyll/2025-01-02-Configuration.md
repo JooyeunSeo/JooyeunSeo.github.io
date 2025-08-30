@@ -8,8 +8,8 @@ categories:
 tags:
   - Github Pages
 ---
- 
-`_config.yml` 파일 수정 후 저장
+
+`_config.yml` 파일 수정 후 저장하기
 
 ## <a href="https://mmistakes.github.io/minimal-mistakes/docs/configuration/" target="_blank">Site Settings</a>
 
@@ -78,7 +78,7 @@ author:
       # url: "https://instagram.com/"
 ```
 - 블로그 왼쪽 사이드바 위에 표시되는 프로필 영역 설정
-- 프로필 링크의 아이콘은 <a href="https://fontawesome.com/v6/search?m=free" target="_blank">Font Awesome</a>에서 가져올 수 있다
+- 프로필 링크의 아이콘은 <a href="https://fontawesome.com/v6/search?m=free" target="_blank">Font Awesome</a>에서 가져올 수 있다.
    - e.g. HTML code가 `<i class="fa-brands fa-github"></i>` → "fab fa-fw fa-github"
    - e.g. HTML code가 `<i class="fa-solid fa-envelope"></i>` → "fas fa-fw fa-envelope"
 - 아이콘 [**색상**](https://jooyeunseo.github.io/jekyll/Styling/#social-icons) 커스텀 가능
@@ -155,8 +155,6 @@ defaults:
 - 개별 페이지나 포스트에서 다른 값으로 덮어쓰지 않는 한 여기서 설정한 값이 적용됨
 
 ## etc.
-
-기본값 그대로 둔 설정들
 
 - **Social Sharing:** 소셜 미디어에 페이지 공유 관련 설정
 - **Reading files:** Jekyll이 처리할 파일과 무시할 파일을 지정
