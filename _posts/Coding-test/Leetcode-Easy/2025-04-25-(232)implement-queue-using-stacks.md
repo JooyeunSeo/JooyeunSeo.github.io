@@ -10,6 +10,7 @@ tags:
   - Python
   - Queue
   - Stack
+  - Design
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
