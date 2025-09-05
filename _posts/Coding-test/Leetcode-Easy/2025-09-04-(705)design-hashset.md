@@ -54,7 +54,7 @@ myHashSet.contains(2); // return False, (already removed)
 class MyHashSet(object):
 
     def __init__(self):
-        self.hashset = {}
+        self.hashset = [False] * (10**6 + 1)    # key range(0 - 10^6)
 
     def add(self, key):
         """
@@ -62,7 +62,7 @@ class MyHashSet(object):
         :rtype: None
         """
         self.hashset[key] = True
-
+        
     def remove(self, key):
         """
         :type key: int
@@ -75,7 +75,7 @@ class MyHashSet(object):
         :type key: int
         :rtype: bool
         """
-        return self.hashset.get(key, False) # 값이 False거나 딕셔너리에 추가된 적 없는 key는 False
+        return self.hashset[key]
 
 
 # Your MyHashSet object will be instantiated and called as such:
@@ -84,35 +84,14 @@ class MyHashSet(object):
 # obj.remove(key)
 # param_3 = obj.contains(key)
 ```
-<i class="fa-solid fa-clock"></i> Runtime: **21** ms \| Beats **91.58%**    
-<i class="fa-solid fa-memory"></i> Memory: **18.60** MB \| Beats **35.05%%**
+<i class="fa-solid fa-clock"></i> Runtime: **70** ms \| Beats **47.97%**    
+<i class="fa-solid fa-memory"></i> Memory: **40.00** MB \| Beats **5.10%**
 
-
+해시셋을 해시 테이블 기반의 자료구조 사용 없이 구현해야 한다. 여러 방법이 있지만 이렇게 `key`의 범위가 확실히 고정된 경우에는 키를 인덱스로 사용하는 리스트를 사용하는 것이 가장 간편한 것 같다.
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 
-### <a href="https://leetcode.com/problems/design-hashset/solutions/6736637/conquer-constant-time-set-operations-wit-ge5p/" target="_blank">1st</a>
-
-```python
-class MyHashSet(object):
-    def __init__(self):
-        self.a = [False] * 1000001    # from 0 to 10^6
-
-    def add(self, key):
-        self.a[key] = True
-
-    def remove(self, key):
-        self.a[key] = False
-
-    def contains(self, key):
-        return self.a[key]
-```
-<i class="fa-solid fa-clock"></i> **time complexity:**  all operations: 𝑂(1)    
-<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(1)            
-
-딕셔너리 대신 `key`를 인덱스로 사용하는 리스트를 이용하여 푸는 방법도 있었다. 모든 원소가 False인 리스트를 key의 범위만큼의 길이로 설정한 뒤 키가 추가/삭제될 때마다 해당 인덱스의 원소를 바꿔주면 된다.
-
-### <a href="https://leetcode.com/problems/design-hashset/solutions/6279609/best-solution-for-arrays-hashset-in-c-py-4wq2/" target="_blank">2nd</a>
+### <a href="https://leetcode.com/problems/design-hashset/solutions/6279609/best-solution-for-arrays-hashset-in-c-py-4wq2/" target="_blank">1st</a>
 
 ```python
 class MyHashSet:
@@ -134,6 +113,9 @@ class MyHashSet:
         idx = key % self.n
         return key in self.arr[idx]
 ```
+<i class="fa-solid fa-clock"></i> **time complexity:**  all operations: 𝑂(1)    
+<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑚+𝑛) ← bucket+key 개수     
+
 파이썬에 내장된 `set`의 내부 동작을 간단하게 구현한 코드도 참고했다. 이 문제에서는 10,000 개의 버킷을 만들 경우 버킷당 100개 정도의 키를 넣을 수 있다.
 
 Input: ["MyHashSet", "add", "add", "contains", "contains", "add", "contains", "remove", "contains"]   
