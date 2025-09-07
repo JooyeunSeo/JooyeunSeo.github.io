@@ -10,6 +10,7 @@ tags:
   - Python
   - Array
   - Design
+  - Prefix Sum
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
