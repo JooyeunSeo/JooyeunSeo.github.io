@@ -67,22 +67,31 @@ def notice_box():
 
 # ----------- 실행  -----------#
 def run_file():
-    select = input(
-        "✅ 실행할 함수 선택\n" \
-        "1: 리트코드 포스팅 파일이름 형식\n" \
-        "2: 일반 포스팅 파일이름 형식\n" \
-        "3: 새 창으로 링크 열기\n" \
-        "4: 글자에 형광펜 칠하기\n" \
-        "5. 색깔 박스 만들기\n"
-        )
-    if select == "1":
-        leetcode_post_title()
-    elif select == "2":
-        post_title()
-    elif select == "3":
-        a_tag_new_window()
-    elif select == "4":
-        highlight_tag()
-    elif select == "5":
-        notice_box()
+    print("✅ 실행할 함수 선택\n" \
+          "1: 리트코드 포스팅 파일이름 형식\n" \
+          "2: 일반 포스팅 파일이름 형식\n" \
+          "3: 새 창으로 링크 열기\n" \
+          "4: 글자에 형광펜 칠하기\n" \
+          "5. 색깔 박스 만들기\n")
+    
+    while True:
+        select = input()
+
+        if select == "1":
+            leetcode_post_title()
+            break
+        elif select == "2":
+            post_title()
+            break
+        elif select == "3":
+            a_tag_new_window()
+            break
+        elif select == "4":
+            highlight_tag()
+            break
+        elif select == "5":
+            notice_box()
+            break
+        else:
+            print("1-5 숫자 중 하나 누르기.")
 run_file()

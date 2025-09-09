@@ -10,7 +10,7 @@ tags:
   - Python
   - Array
   - Prefix Sum
-  - Weekly Contest 58
+  - Weekly Contest
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
