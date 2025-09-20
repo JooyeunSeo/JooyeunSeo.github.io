@@ -70,7 +70,7 @@ class Solution(object):
 <i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100.00%**    
 <i class="fa-solid fa-memory"></i> Memory: **12.45** MB \| Beats **96.41%**
 
-중위 순회로 정렬된 결과에서 앞뒤 노드끼리의 차이를 비교한다.
+<a href="https://jooyeunseo.github.io/leetcode-easy/(530)minimum-absolute-difference-in-bst/" target="_blank">530</a>번과 동일한 문제로, 중위 순회로 정렬된 결과에서 앞뒤 노드끼리의 차이를 비교한다.
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 
