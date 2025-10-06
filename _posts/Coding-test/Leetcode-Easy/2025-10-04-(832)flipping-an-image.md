@@ -76,7 +76,7 @@ class Solution(object):
 <i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100.00%**    
 <i class="fa-solid fa-memory"></i> Memory: **12.49** MB \| Beats **53.63%**
 
-XOR을 이용하여 비트를 반전시켰다.
+**XOR**을 이용하여 비트를 반전시켰다.
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 
@@ -107,4 +107,4 @@ class Solution(object):
                 j -= 1
         return image
 ```
-각 row마다 맨 앞과 뒤에서 시작하는 두 개의 포인터를 사용하는 방법으로, 원본 리스트를 수정하기 때문에 공간 복잡도를 줄일 수 있다.
+각 row마다 맨 앞과 뒤에서 시작하는 두 개의 포인터를 사용하는 방법도 있다. row의 절반까지만 탐색하면 되고, 원본 리스트를 수정하기 때문에 더 효율적이다.
