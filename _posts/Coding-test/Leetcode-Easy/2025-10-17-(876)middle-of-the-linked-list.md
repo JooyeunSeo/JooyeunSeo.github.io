@@ -38,12 +38,6 @@ If there are two middle nodes, return **the second middle** node.
 - The number of nodes in the list is in the range `[1, 100]`.
 - 1 <= Node.val <= 100
 
-**Follow up:** 
-**Note:** This question is the same as 번호: <a href="" target="_blank"></a>
-
-💡 **Hint 1:**   
-<u><span style="color:#F5F5F5">hint</span></u>
-
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 
 ```python
