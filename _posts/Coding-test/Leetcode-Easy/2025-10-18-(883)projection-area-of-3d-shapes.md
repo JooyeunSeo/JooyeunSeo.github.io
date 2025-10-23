@@ -60,27 +60,23 @@ class Solution(object):
         :rtype: int
         """
         n = len(grid)
-        xy, zx, zy = 0, [], [0]*n
+        top, hor, ver = 0, 0, 0   # 윗면(xy), 옆면(zx), 앞면(zy)
 
         for i in range(n):
-            row = []                          # zx 면적을 구하기 위한 행
-            
+            row_max, col_max = 0, 0
             for j in range(n):
-                cubes = grid[i][j]
-                xy += 1 if cubes > 0 else 0   # 해당 셀의 큐브가 1개 이상이면 +1
-                row.append(cubes)
-                zy[j] = max(zy[j], cubes)     # zy 면적을 구하기 위한 열
+                top += 1 if grid[i][j] > 0 else 0     # 0보다 큰 셀의 개수
+                row_max = max(grid[i][j], row_max)    # 각 행의 최댓값들의 합
+                col_max = max(grid[j][i], col_max)    # 각 열의 최댓값들의 합
+            hor += row_max
+            ver += col_max
 
-            zx.append(max(row))
-
-        return xy + sum(zx) + sum(zy)
+        return top + hor + ver
 ```
-<i class="fa-solid fa-clock"></i> Runtime: **3** ms \| Beats **78.89%**    
-<i class="fa-solid fa-memory"></i> Memory: **12.63** MB \| Beats **5.56%**
+<i class="fa-solid fa-clock"></i> Runtime: **3** ms \| Beats **76.60%**    
+<i class="fa-solid fa-memory"></i> Memory: **12.44** MB \| Beats **67.02%**
 
-- xy(위에서 본 면적): 0보다 큰 셀의 개수
-- zx(옆에서 본 면적): 각 행의 최댓값들의 합
-- zy(앞에서 본 면적): 각 열의 최댓값들의 합
+행과 열의 길이가 똑같은 행렬이기 때문에 행과 열의 인덱스를 서로 바꿔주기만 하면 한 행이나 열에서 최댓값을 찾을 수 있다.
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 
@@ -103,4 +99,4 @@ class Solution(object):
 <i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛<sup>2</sup>)    
 <i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(1)           
 
-같은 원리이지만 좀 더 파이썬스럽게 작성된 코드를 참고했다. `zip(*grid)`에서 `*grid`는 리스트를 풀어서 인자로 전달하고, `zip()`은 각 열 단위를 튜플로 묶어준다.
+같은 원리이지만 좀 더 파이썬스럽게 작성된 코드를 참고했다. `zip(*grid)`에서 언패킹 연산자 \*가 들어간 `*grid`는 리스트를 풀어서 인자로 전달하고, `zip()`으로 각 열 단위를 튜플로 묶어준다.
