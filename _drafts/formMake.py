@@ -1,7 +1,7 @@
 import datetime as dt
 import os
 
-##########################  OS별 맞춤 적용 필요할 때  ##########################
+###################  💻 OS별 맞춤 적용 필요할 때  ###################
 def clear_screen(self):
     if os.name == 'nt':         # Windows
         os.system('cls')
@@ -9,9 +9,9 @@ def clear_screen(self):
         os.system('clear')
     else:
         pass                    # pass in different environments
-###########################################################################
+################################################################
 
-#############  블로그 포스트 작성할 때 필요한 양식  #############
+# -----------  🖋️ 블로그 포스트 양식 함수  # -----------
 def leetcode_post_title():
     now = dt.datetime.now()
     date = str(now).split(" ")[0]
@@ -37,8 +37,8 @@ def a_tag_new_window():
     print(f'<a href="{link}" target="_blank">{text}</a>')
 
 def highlight_tag():
-    highlight_text = input("highlight text: ")
-    print(f"<mark>{highlight_text}</mark>")
+    text = input("write the text: ")
+    print(f"<mark>{text}</mark>")
 
 def notice_box():
     color = input(
@@ -63,16 +63,24 @@ def notice_box():
     elif color == "6":
         box_name = "notice--danger"
     print(f'<div class="{box_name}" markdown="1"></div>')
-########################################################
 
-# ----------- 실행  -----------#
+def abbreviation_tag():
+    abbreviation = input("write the abbreviation: ")
+    full_word = input("write the full word: ")
+    print(f"*[{abbreviation}]: {full_word}")
+#################################################
+
+# ----------- 🖋️ 블로그 포스트 양식 실행  # -----------
 def run_file():
-    print("✅ 실행할 함수 선택\n" \
-          "1: 리트코드 포스팅 파일이름 형식\n" \
-          "2: 일반 포스팅 파일이름 형식\n" \
-          "3: 새 창으로 링크 열기\n" \
-          "4: 글자에 형광펜 칠하기\n" \
-          "5. 색깔 박스 만들기\n")
+    print(
+        "✅ 실행할 함수 선택\n" \
+        "1: 👾 리트코드 포스팅 파일이름 형식\n" \
+        "2: 📝 일반 포스팅 파일이름 형식\n" \
+        "3: 🔗 새 창으로 링크 열기\n" \
+        "4: 🌈 글자에 형광펜 칠하기\n" \
+        "5. 🟨 색깔 박스 만들기\n" \
+        "6. 📖 약어 태그 만들기\n"
+        )
     
     while True:
         select = input()
@@ -92,6 +100,10 @@ def run_file():
         elif select == "5":
             notice_box()
             break
+        elif select == "6":
+            abbreviation_tag()
+            break
         else:
-            print("1-5 숫자 중 하나 누르기.")
+            print("명시된 숫자 중 하나만 입력 가능")
 run_file()
+#################################################
