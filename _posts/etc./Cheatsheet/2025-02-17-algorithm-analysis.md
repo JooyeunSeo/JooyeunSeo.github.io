@@ -58,7 +58,7 @@ last_modified_at: 2025-02-17T12:30:30+09:00
 ### <font color="red">𝑂(Big-O) Notation</font>
 
 - 점근적 상한(Asymptotic Upper Bound) → 입력이 어떤 상태든 실행시간이 상한을 넘지 않음을 보장
-- 최악의 수행시간을 나타내기 때문에 **안전한 분석**을 위해 가장 많이 사용된다.
+- 최악의 수행시간을 나타내기 때문에 **안전한 분석**을 위해 가장 많이 사용되는 표기법
 
 #### Time complexity
 

@@ -1,5 +1,5 @@
 ---
-excerpt: "내용입력"
+excerpt: ""
 title: "\0"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"
@@ -37,14 +37,17 @@ tags:
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 
 ```python
-# 파이 튜터 등에서 테스트해보기#
+### 파이 튜터에서 시뮬레이션 ###
+class Solution(object):
+    def 📦(self, ):
+
 test = Solution()
-testcase = test.FUCTION()
+testcase = test.📦()
 print(testcase)
-#########################
+##########################
 ```
-<i class="fa-solid fa-clock"></i> Runtime: **** ms \| Beats ****    
-<i class="fa-solid fa-memory"></i> Memory: **** MB \| Beats ****
+<i class="fa-solid fa-clock"></i>
+<i class="fa-solid fa-memory"></i>
 
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
@@ -54,8 +57,8 @@ print(testcase)
 ```python
 
 ```
-<i class="fa-solid fa-clock"></i> **time complexity:**     
-<i class="fa-solid fa-memory"></i> **space complexity:**            
+<i class="fa-solid fa-clock"></i> 
+<i class="fa-solid fa-memory"></i>
 
 ### <a href="" target="_blank">2nd</a>
 

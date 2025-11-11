@@ -12,16 +12,18 @@ def clear_screen(self):
 ################################################################
 
 # -----------  🖋️ 블로그 포스트 양식 함수  # -----------
-def leetcode_post_title():
+def leetcode_post_title_and_bigOnotation():
     now = dt.datetime.now()
     date = str(now).split(" ")[0]
     title = input()
-    head, sub = title, title
-    head = "(" + head.replace(". ", ")")
-    head = head.replace(" ", "-").lower()
-    head = date + "-" + head
-    sub = sub.split(". ")[1]
-    print(f"{head}\n'LeetCode: {sub}' 풀이 정리")
+    runtime_ms = input("runtime(ms): ")
+    runtume_rate = input("runtime(%): ")
+    memory_mb = input("memory(mb): ")
+    memory_rate = input("memory(%): ")
+    number, name = title.split(". ")
+    filename = date + '-' + '(' + number + ')' + name.replace(' ', '-').lower()
+    print(f"{filename}\n'LeetCode: {name}' 풀이 정리")
+    print(f" Runtime: **{runtime_ms}** ms \| Beats **{runtume_rate}%**    \n Memory: **{memory_mb}** MB \| Beats **{memory_rate}%**    ")
 
 def post_title():
     now = dt.datetime.now()
@@ -74,7 +76,7 @@ def abbreviation_tag():
 def run_file():
     print(
         "✅ 실행할 함수 선택\n" \
-        "1: 👾 리트코드 포스팅 파일이름 형식\n" \
+        "1: 👾 리트코드 포스팅 파일이름 & bigO 시간 형식\n" \
         "2: 📝 일반 포스팅 파일이름 형식\n" \
         "3: 🔗 새 창으로 링크 열기\n" \
         "4: 🌈 글자에 형광펜 칠하기\n" \
@@ -86,7 +88,7 @@ def run_file():
         select = input()
 
         if select == "1":
-            leetcode_post_title()
+            leetcode_post_title_and_bigOnotation()
             break
         elif select == "2":
             post_title()
