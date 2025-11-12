@@ -86,6 +86,6 @@ class Solution:
         return res
 ```
 <i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑚\*𝑛)    
-<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑚\*𝑛)           
+<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑚\*𝑛)         
 
 미리 모든 위치를 만들어놓지 않고 한 행씩 완성해나가는 방법도 있다.
