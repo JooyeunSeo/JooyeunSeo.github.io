@@ -37,14 +37,14 @@ tags:
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 
 ```python
-### 파이 튜터에서 시뮬레이션 ###
+########################
 class Solution(object):
     def 📦(self, ):
-
+## 객체 생성 & 메소드 호출 ##
 test = Solution()
 testcase = test.📦()
 print(testcase)
-##########################
+########################
 ```
 <i class="fa-solid fa-clock"></i>
 <i class="fa-solid fa-memory"></i>
@@ -57,8 +57,8 @@ print(testcase)
 ```python
 
 ```
-<i class="fa-solid fa-clock"></i>      
-<i class="fa-solid fa-memory"></i>       
+<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂()    
+<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂()    
 
 ### <a href="" target="_blank">2nd</a>
 
@@ -75,7 +75,7 @@ print(testcase)
 
 {: style="color: green;"}
 
-𝑂(𝑛)
+𝑛
 𝑂(𝑛<sup>2</sup>)
 𝑂(log𝑛)
 𝑚

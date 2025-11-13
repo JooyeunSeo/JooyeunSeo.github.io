@@ -86,7 +86,7 @@ class Solution:
                 res.append(left)
         return [i - left for i in res]
 ```
-<i class="fa-solid fa-clock"></i> 𝑂(𝑛)      
-<i class="fa-solid fa-memory"></i> 𝑂(𝑛)     
+<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛)    
+<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛)   
 
 인접한 원소들끼리의 차이를 상대적인 높이값으로 나타내는 방법이다. 순회를 마친 뒤 left(최솟값)는 음수가 되기 때문에, 모든 값을 -left만큼 이동시켜서 최솟값이 0이 되도록 조정한다. 위의 코드와 출발점이 다르기 때문에 결과도 다른 패턴으로 나오지만 모두 정답으로 인정된다.
