@@ -61,7 +61,7 @@ class Solution:
 <i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100.00%**    
 <i class="fa-solid fa-memory"></i> Memory: **18.85** MB \| Beats **29.19%**    
 
-n번 반복되는 숫자 외에는 모두 1번씩만 등장하기 때문에 카운트한 값이 2가 되는 순간 바로 리턴하면 시간을 절약할 수 있다.
+n번 반복되는 숫자 외에는 모두 1번씩만 등장하기 때문에 카운트한 값이 2가 되는 순간 바로 리턴하면 된다.
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 
@@ -74,7 +74,7 @@ n번 반복되는 숫자 외에는 모두 1번씩만 등장하기 때문에 카�
 <i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛)    
 <i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛)    
 
-중복으로 인해 추가로 더해진 부분을 구한 뒤, `n - 1`번으로 나누면 반복되는 숫자가 어떤 것인지 알 수 있다.
+중복으로 인해 추가로 더해진 부분을 구한 뒤, `n - 1`번으로 나누면 반복되는 숫자를 구할 수 있다.
 
 ### <a href="https://leetcode.com/problems/n-repeated-element-in-size-2n-array/solutions/6730125/repeated-n-times-by-khakimov_m-smrw/" target="_blank">2nd</a>
 
