@@ -76,8 +76,8 @@ print(testcase)
 {: style="color: green;"}
 
 𝑛
-𝑂(𝑛<sup>2</sup>)
-𝑂(log𝑛)
+𝑛<sup>2</sup>
+log𝑛
 𝑚
 𝑘
 𝑥
