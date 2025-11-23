@@ -105,7 +105,7 @@ header:
 
 ### reference
 
-**닌텐도 코리아 eShop:** https://store.nintendo.co.kr/digital
+**닌텐도 코리아 eShop:** <https://store.nintendo.co.kr/digital>
 {: .small}
 
 <b>Posted on:</b> {{ page.date | date: "%B %d, %Y" }}

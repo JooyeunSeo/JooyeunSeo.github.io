@@ -9,7 +9,6 @@ tags:
   - Coding Test
   - Python
   - Stack
-  - Tree
   - Depth-First Search
   - Binary Search Tree
   - Binary Tree
