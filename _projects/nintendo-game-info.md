@@ -83,7 +83,7 @@ header:
 
 # Result
 
-<img src="/assets/images/personal-projects/nintendo-game-info.gif" width="40%">
+<img src="/assets/images/personal-projects/nintendo_game_info.gif" width="40%">
 <br><br><br>
 
 # Future Improvements
