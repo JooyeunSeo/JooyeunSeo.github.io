@@ -15,7 +15,7 @@ def clear_screen(self):
 def leetcode_post_title_and_bigOnotation():
     now = dt.datetime.now()
     date = str(now).split(" ")[0]
-    title = input()
+    title = input("제목: ")
     runtime_ms = input("runtime(ms): ")
     runtume_rate = input("runtime(%): ")
     memory_mb = input("memory(mb): ")
@@ -25,13 +25,15 @@ def leetcode_post_title_and_bigOnotation():
     print(f"{filename}\n'LeetCode: {name}' 풀이 정리")
     print(f" Runtime: **{runtime_ms}** ms \| Beats **{runtume_rate}%**    \n Memory: **{memory_mb}** MB \| Beats **{memory_rate}%**    ")
 
-def post_title():
+def post_title_and_last_modified_time():
     now = dt.datetime.now()
     date = str(now).split(" ")[0]
-    title = input()
+    title = input("제목: ")
     title = title.replace(" ", "-").lower()
-    title_form = date + "-" + title
-    print(title_form)
+    formatted = now.strftime("%Y-%m-%dT%H:%M:%S")
+    korean_utc = "+09:00"
+    print(date + "-" + title)
+    print(formatted + korean_utc)
 
 def a_tag_new_window():
     link = input("link: ")
@@ -77,7 +79,7 @@ def run_file():
     print(
         "✅ 실행할 함수 선택\n" \
         "1: 👾 리트코드 포스팅 파일이름 & bigO 시간 형식\n" \
-        "2: 📝 일반 포스팅 파일이름 형식\n" \
+        "2: 📝 일반 포스팅 파일이름 형식 및 시간 포맷\n" \
         "3: 🔗 새 창으로 링크 열기\n" \
         "4: 🌈 글자에 형광펜 칠하기\n" \
         "5. 🟨 색깔 박스 만들기\n" \
@@ -91,7 +93,7 @@ def run_file():
             leetcode_post_title_and_bigOnotation()
             break
         elif select == "2":
-            post_title()
+            post_title_and_last_modified_time()
             break
         elif select == "3":
             a_tag_new_window()
