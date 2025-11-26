@@ -10,10 +10,10 @@ tags:
 last_modified_at: 2025-11-25T19:43:27+09:00
 ---
 
-## slice (steps backwards)
+## slicing
 ```python
 txt = "Hello World"
-print(txt[::-1])
+print(txt[::-1])      # 오른쪽 끝에서 왼쪽 끝으로 한 칸씩 이동해서 새로운 문자열 생성
 ```
 <i class="fa-solid fa-right-from-bracket"></i> dlroW olleH
 
