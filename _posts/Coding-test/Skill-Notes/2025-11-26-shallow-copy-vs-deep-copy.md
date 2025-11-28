@@ -6,6 +6,7 @@ header:
 categories:
   - Skill-Notes
 tags:
+  - Python
 last_modified_at: 2025-11-26T19:52:38+09:00
 ---
 
