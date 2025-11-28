@@ -67,7 +67,7 @@ b[0].append(7)
 print(a)
 print(b)
 ```
-<i class="fa-solid fa-right-from-bracket"></i> 
+<i class="fa-solid fa-right-from-bracket"></i>      
 [[1, 2], [3, 4]]      
 [[1, 2, 7], [3, 4]]    
 
