@@ -37,12 +37,14 @@ tags:
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 
 ```python
-########################
-class Solution(object):
-    def 📦(self, ):
+#######################
+from typing import (Any, List, Dict, Set, Tuple, Optional, Union, Callable)
+#### 작성 코드 붙여넣기 ####
+
+
 ## 객체 생성 & 메소드 호출 ##
 test = Solution()
-testcase = test.📦()
+testcase = test.함수이름()
 print(testcase)
 ########################
 ```
