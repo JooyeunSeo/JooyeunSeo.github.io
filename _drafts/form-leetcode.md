@@ -37,8 +37,8 @@ tags:
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 
 ```python
-#######################
-from typing import (Any, List, Dict, Set, Tuple, Optional, Union, Callable)
+# Any, List, Dict, Set, Tuple, Optional, Union, Callable #
+from typing import (타입)
 #### 작성 코드 붙여넣기 ####
 
 
