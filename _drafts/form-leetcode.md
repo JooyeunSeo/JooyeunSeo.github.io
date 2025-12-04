@@ -38,7 +38,7 @@ tags:
 
 ```python
 # Any, List, Dict, Set, Tuple, Optional, Union, Callable #
-from typing import (타입)
+from typing import 타입
 #### 작성 코드 붙여넣기 ####
 
 

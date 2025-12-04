@@ -1,6 +1,6 @@
 ---
-excerpt: "1009. Complement of Base 10 Integer"
-title: "\0'LeetCode: Complement of Base 10 Integer' 풀이 정리"
+excerpt: "'LeetCode: Complement of Base 10 Integer' 풀이 정리"
+title: "\01009. Complement of Base 10 Integer"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"
 categories:
