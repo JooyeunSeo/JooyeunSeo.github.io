@@ -52,15 +52,6 @@ Return the *label of the town judge if the town judge exists and can be identifi
 - a<sub>i</sub> != b<sub>i</sub>
 - 1 <= a<sub>i</sub>, b<sub>i</sub> <= n
 
-
-
-
-**Follow up:** 
-**Note:** This question is the same as 번호: <a href="" target="_blank"></a>
-
-💡 **Hint 1:**   
-<u><span style="color:#F5F5F5">hint</span></u>
-
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 
 ```python

@@ -35,7 +35,7 @@ Given the `root` of a Binary Search Tree (BST), return *the minimum difference b
 - The number of nodes in the tree is in the range `[2, 100]`.
 - 0 <= Node.val <= 10<sup>5</sup>
 
-**Note:** This question is the same as 530: <a href="https://leetcode.com/problems/minimum-absolute-difference-in-bst/" target="_blank">https://leetcode.com/problems/minimum-absolute-difference-in-bst/</a>
+**Note:** This question is the same as 530: <a href="https://jooyeunseo.github.io/leetcode-easy/(530)minimum-absolute-difference-in-bst/" target="_blank">530. Minimum Absolute Difference in BST</a>
 
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 
@@ -70,7 +70,7 @@ class Solution(object):
 <i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100.00%**    
 <i class="fa-solid fa-memory"></i> Memory: **12.45** MB \| Beats **96.41%**
 
-<a href="https://jooyeunseo.github.io/leetcode-easy/(530)minimum-absolute-difference-in-bst/" target="_blank">530</a>번과 동일한 문제로, 중위 순회로 정렬된 결과에서 앞뒤 노드끼리의 차이를 비교한다.
+530번과 동일한 문제로, 중위 순회로 정렬된 결과에서 앞뒤 노드끼리의 차이를 비교한다.
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 

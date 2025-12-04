@@ -35,7 +35,7 @@ Given an integer `num`, return *its complement*.
 
 - 1 <= num < 2<sup>31</sup>
 
-**Note:** This question is the same as <a href="https://leetcode.com/problems/complement-of-base-10-integer/description/" target="_blank">1009: https://leetcode.com/problems/complement-of-base-10-integer/</a>
+**Note:** This question is the same as <a href="https://leetcode.com/problems/complement-of-base-10-integer/description/" target="_blank">1009. Complement of Base 10 Integer</a>
 
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 

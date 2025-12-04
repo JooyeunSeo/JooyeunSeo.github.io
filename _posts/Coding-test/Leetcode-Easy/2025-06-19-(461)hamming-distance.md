@@ -38,7 +38,7 @@ Given two integers `x` and `y`, return *the **Hamming distance** between them.*
 
 - 0 <= x, y <= 2<sup>31</sup> - 1
 
-**Note:** This question is the same as <a href="https://leetcode.com/problems/minimum-bit-flips-to-convert-number/description/" target="_blank">2220: Minimum Bit Flips to Convert Number.</a>
+**Note:** This question is the same as <a href="https://leetcode.com/problems/minimum-bit-flips-to-convert-number/description/" target="_blank">2220. Minimum Bit Flips to Convert Number.</a>
 
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 

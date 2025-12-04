@@ -90,4 +90,4 @@ class Solution:
 <i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛log𝑛)    
 <i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(1)    
 
-모든 음수를 가능한 만큼 양수로 변환 뒤, 추가 정렬 없이 `min()`으로 최솟값을 찾아도 된다. `(K - i) % 2`가 1이라면 `sum(A) - 2 * min(A)`이 되고, 이는 min(A)을 직접 뒤집은 후 전체 합을 구하는 것과 같은 결과다.
+sort한 뒤 모든 음수를 가능한 만큼 양수로 변환하는 것까지는 똑같지만, 이후 추가 정렬 없이 `min()`으로 최솟값을 찾아도 된다. `(K - i) % 2`가 1이라면 `sum(A) - 2 * min(A)`이 되고, 이는 min(A) 값을 직접 뒤집은 후 전체 합을 구하는 것과 같은 결과다.

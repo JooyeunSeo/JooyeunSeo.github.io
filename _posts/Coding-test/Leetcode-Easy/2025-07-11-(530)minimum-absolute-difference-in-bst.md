@@ -33,7 +33,7 @@ Given the `root` of a Binary Search Tree (BST), *return the minimum absolute dif
 - The number of nodes in the tree is in the range [2, 10<sup>4</sup>].
 - 0 <= Node.val <= 10<sup>5</sup>
 
-**Note:** This question is the same as 783: <a href="https://leetcode.com/problems/minimum-distance-between-bst-nodes/" target="_blank">https://leetcode.com/problems/minimum-distance-between-bst-nodes/</a>
+**Note:** This question is the same as <a href="https://jooyeunseo.github.io/leetcode-easy/(783)minimum-distance-between-bst-nodes/" target="_blank">783. Minimum Distance Between BST Nodes</a>
 
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 

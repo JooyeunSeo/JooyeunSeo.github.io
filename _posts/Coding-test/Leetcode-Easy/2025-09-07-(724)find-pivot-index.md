@@ -53,7 +53,7 @@ Right sum = nums[1] + nums[2] = 1 + -1 = 0
 - 1 <= nums.length <= 10<sup>4</sup>
 - -1000 <= nums[i] <= 1000
 
-**Note:** This question is the same as 1991: <a href="https://leetcode.com/problems/find-the-middle-index-in-array/" target="_blank">https://leetcode.com/problems/find-the-middle-index-in-array/</a>
+**Note:** This question is the same as <a href="https://leetcode.com/problems/find-the-middle-index-in-array/" target="_blank">1991. Find the Middle Index in Array</a>
 
 💡 **Hint 1:**   
 <u><span style="color:#F5F5F5">Create an array sumLeft where sumLeft[i] is the sum of all the numbers to the left of index i.</span></u>
