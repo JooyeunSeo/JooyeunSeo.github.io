@@ -27,7 +27,8 @@ Return *an array of booleans* `answer` *where* `answer[i]` *is* `true` *if* x<su
 
 - Input: nums = [0,1,1]
 - Output: [true,false,false]
-- Explanation: The input numbers in binary are 0, 01, 011; which are 0, 1, and 3 in base-10.
+- Explanation:    
+The input numbers in binary are 0, 01, 011; which are 0, 1, and 3 in base-10.    
 Only the first number is divisible by 5, so answer[0] is true.
 
 **Example 2:**
@@ -69,7 +70,7 @@ bit    remainder              new
 1      1  → (1 * 2 + 1) % 5 →  3     false
 </pre>
 
-[true,false,false]
+return [true,false,false]
 {: style="color: green;"}
 
 
