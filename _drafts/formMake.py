@@ -17,13 +17,15 @@ def leetcode_post_title_and_bigOnotation():
     date = str(now).split(" ")[0]
     title = input("제목: ")
     runtime_ms = input("runtime(ms): ")
-    runtume_rate = input("runtime(%): ")
+    runtime_rate = input("runtime(%): ")
+    if not runtime_ms: runtime_ms = "0"
+    if not runtime_rate: runtime_rate = "100.00"
     memory_mb = input("memory(mb): ")
     memory_rate = input("memory(%): ")
     number, name = title.split(". ")
     filename = date + '-' + '(' + number + ')' + name.replace(' ', '-').lower()
     print(f"{filename}\n'LeetCode: {name}' 풀이 정리")
-    print(f" Runtime: **{runtime_ms}** ms \| Beats **{runtume_rate}%**    \n Memory: **{memory_mb}** MB \| Beats **{memory_rate}%**    ")
+    print(f" Runtime: **{runtime_ms}** ms \| Beats **{runtime_rate}%**    \n Memory: **{memory_mb}** MB \| Beats **{memory_rate}%**    ")
 
 def post_title_and_last_modified_time():
     now = dt.datetime.now()

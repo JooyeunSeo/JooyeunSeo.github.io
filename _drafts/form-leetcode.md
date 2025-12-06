@@ -29,10 +29,10 @@ tags:
 <sup>4</sup>
 
 **Follow up:** 
-**Note:** This question is the same as <a href="" target="_blank">번호. </a>
+**Note:** This question is the same as <a href="" target="_blank">번호및제목</a>
 
 💡 **Hint 1:**   
-<u><span style="color:#F5F5F5">hint</span></u>
+<u><span style="color:#F5F5F5">힌트</span></u>
 
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 
