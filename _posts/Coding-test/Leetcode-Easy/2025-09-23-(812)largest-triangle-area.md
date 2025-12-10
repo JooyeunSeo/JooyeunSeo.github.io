@@ -12,6 +12,7 @@ tags:
   - Math
   - Geometry
   - Weekly Contest
+  - Shoelace formula
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
@@ -64,6 +65,8 @@ class Solution(object):
 <i class="fa-solid fa-memory"></i> Memory: **12.37** MB \| Beats **84.83%**
 
 브루트포스로 가능한 모든 세 점 조합을 뽑은 후, 각 조합에 아래의 **신발끈 공식(가우스의 면적 공식)**을 적용시켜 삼각형의 넓이를 구했다.
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Shoelace3.png/250px-Shoelace3.png)
 
 <figure>
   <a href="https://ko.wikipedia.org/wiki/%EC%8B%A0%EB%B0%9C%EB%81%88_%EA%B3%B5%EC%8B%9D" target="_blank" title="wikipedia">
