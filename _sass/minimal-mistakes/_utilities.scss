@@ -224,8 +224,10 @@ $text-alignments: left, right, start, end, center, justify;
     $xing-color: ".fa-xing, .fa-xing-square",
     $youtube-color: ".fa-youtube",
     /* Author 아이콘 색 추가 */
-    #26C18F: ".fa-pen",
     #CEB180: ".fa-envelope",
+    #26C18F: ".fa-newspaper",
+    #DF7F93: ".fa-window-restore"
+
   ) {
     #{$icons} {
       color: $color;

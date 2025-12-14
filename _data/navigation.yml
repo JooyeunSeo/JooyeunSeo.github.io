@@ -1,11 +1,16 @@
 main:
   # - title: "About"
   #   url: /about/
-  - title: "PROJECT"
-    url: /projects/
+
 
 # sidebar menu links
 docs:
+  - title: "Personal Projects"       # 개인 프로젝트 목록
+    children:
+      - title: "Python-Based"
+        url: /personal-projects-python/
+      - title: "Unity"
+        url: /personal-projects-unity/
   - title: "Coding Test"
     children:
       - title: "Skill Notes"          # 스킬 노트

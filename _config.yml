@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Jooyeun Seo"
   avatar           : "/assets/images/defaults/bio-photo.jpg"
-  bio              : "☕️"
+  bio              : "Some projects have live demos (may load slowly due to free hosting)."
   location         : "Republic of Korea"
   email            :
   links:
@@ -93,8 +93,11 @@ author:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/JooyeunSeo"
     - label: "Velog"
-      icon: "fas fa-fw fa-pen"
+      icon: "fa-regular fa-newspaper"
       url: "https://velog.io/@seojy"
+    - label: "Live Demo"
+      icon: "fa-regular fa-window-restore"
+      url: "https://dynamic-web-page-2bzr.onrender.com/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
@@ -115,8 +118,11 @@ footer:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/JooyeunSeo"
     - label: "Velog"
-      icon: "fas fa-fw fa-pen"
+      icon: "fa-regular fa-newspaper"
       url: "https://velog.io/@seojy"
+    - label: "Live Demo"
+      icon: "fa-regular fa-window-restore"
+      url: "https://dynamic-web-page-2bzr.onrender.com/"  
 
 
 # Reading Files
@@ -248,8 +254,12 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
-collections:  # 콜렉션 추가
-  projects:
+# 콜렉션 추가
+collections:
+  personal-projects-python:
+    output: true
+    permalink: /:collection/:path/
+  personal-projects-unity:
     output: true
     permalink: /:collection/:path/
 # https://github.com/jekyll/jekyll-archives

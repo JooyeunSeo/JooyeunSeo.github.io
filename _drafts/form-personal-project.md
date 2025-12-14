@@ -19,14 +19,24 @@ header:
 
 # Intro
 
+~습니다 체 (부드러운 설명, 독자 배려)
+
 <br><br><br>
 
 # Design
+~다 체 (명확하고 객관적인 문서 톤)
+### Overview 
+
+### Information Architecture
+
+### Data Model
+
+### UI 
 
 <br><br><br>
 
 # Implementation
-
+~다 체 (명확하고 객관적인 문서 톤)
 ### Tech Stack
 
 - **Programming Language:** Python
@@ -41,6 +51,10 @@ header:
 
 ### Coding
 
+1. ****
+2. ****
+3. ****
+4. ****
 <br><br><br>
 
 # Result
@@ -53,6 +67,7 @@ header:
 
 # Conclusion
 
+~습니다 체 (부드러운 설명, 독자 배려)
 <br>
 
 ### reference
