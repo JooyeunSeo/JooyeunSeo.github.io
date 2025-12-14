@@ -25,9 +25,7 @@ tags:
 
 **Constraints:**
 
-<sup>31</sup>
-<sup>4</sup>
-<sub>i</sub>
+
 
 **Follow up:** 
 **Note:** This question is the same as <a href="" target="_blank">번호및제목</a>

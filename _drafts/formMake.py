@@ -74,6 +74,28 @@ def abbreviation_tag():
     abbreviation = input("write the abbreviation: ")
     full_word = input("write the full word: ")
     print(f"*[{abbreviation}]: {full_word}")
+
+def sup_or_sub():
+    txt = input()
+    if txt[0] == 'i' and txt[1:].isalnum():
+        print(f"{txt[0]}<sup>{txt[1:]}</sup>")
+    elif txt[-1] == 'i':
+        print(f"{txt[0]}<sub>i</sub>")
+
+def underline():
+    is_list = input("리스트이면 입력, 단어나 문장이면 pass: ")
+    if is_list:
+        str_list = input("리스트 입력: ")
+        new_list = list(str_list[1:-1].split(','))
+        for i in range(len(new_list)):
+            is_underline = input(f"밑줄이면 입력, 아니면 pass(index {i}): ")
+            if is_underline:
+                new_list[i] = f"<u>{new_list[i]}</u>"
+        print(str(new_list).replace(' ', '').replace("'", ''))
+    else:
+        txt = input("단어나 문장 입력: ")
+        print(f"<u>{txt}</u>")
+
 #################################################
 
 # ----------- 🖋️ 블로그 포스트 양식 실행  # -----------
@@ -85,7 +107,9 @@ def run_file():
         "3: 🔗 새 창으로 링크 열기\n" \
         "4: 🌈 글자에 형광펜 칠하기\n" \
         "5. 🟨 색깔 박스 만들기\n" \
-        "6. 📖 약어 태그 만들기\n"
+        "6. 📖 약어 태그 만들기\n" \
+        "7. 🧮 위/아래 첨자 태그 붙이기\n" \
+        "8. ✏️ 리스트의 원소나 글자에 밑줄치기"
         )
     
     while True:
@@ -108,6 +132,12 @@ def run_file():
             break
         elif select == "6":
             abbreviation_tag()
+            break
+        elif select == "7":
+            sup_or_sub()
+            break
+        elif select == "8":
+            underline()
             break
         else:
             print("명시된 숫자 중 하나만 입력 가능")
