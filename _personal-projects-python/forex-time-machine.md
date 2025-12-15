@@ -132,7 +132,7 @@ Forex Time Machine은 과거 특정 시점과 현재의 환율을 빠르게 비�
 
 # Result
 
-<img src="/assets/images/personal-projects/forex_time_machine.gif">
+<img src="/assets/images/personal-projects/forex_time_machine_Result.gif">
 <br><br><br>
 
 # Future Improvements

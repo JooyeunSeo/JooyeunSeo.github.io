@@ -99,7 +99,7 @@ def actors_and_directors(actor_director: pd.DataFrame) -> pd.DataFrame:
 
 ### <a href="" target="_blank">2nd</a>
 
-```mysql
+```sql
 select actor_id,director_id
 from ActorDirector 
 group by actor_id,director_id
