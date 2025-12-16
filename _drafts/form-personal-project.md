@@ -18,12 +18,15 @@ header:
 ---
 
 # Intro
+<hr>
 
 ~습니다 체 (부드러운 설명, 독자 배려)
 
 <br><br><br>
 
 # Design
+<hr>
+
 ~다 체 (명확하고 객관적인 문서 톤)
 ### Overview 
 
@@ -36,6 +39,8 @@ header:
 <br><br><br>
 
 # Implementation
+<hr>
+
 ~다 체 (명확하고 객관적인 문서 톤)
 ### Tech Stack
 
@@ -57,20 +62,36 @@ header:
 4. ****
 <br><br><br>
 
+# Problem Solving Process
+<hr>
+
+~다 체 (명확하고 객관적인 문서 톤)
+### Problem
+
+### Analysis
+
+### Solution
+
+<br><br><br>
+
 # Result
+<hr>
 
 <br><br><br>
 
 # Future Improvements
+<hr>
 
 <br><br><br>
 
 # Conclusion
+<hr>
 
 ~습니다 체 (부드러운 설명, 독자 배려)
 <br>
 
 ### reference
+<hr>
 
 {: .small}
 

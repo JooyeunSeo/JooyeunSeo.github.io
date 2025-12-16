@@ -24,7 +24,7 @@ def leetcode_post_title_and_bigOnotation():
     memory_rate = input("memory(%): ")
     number, name = title.split(". ")
     filename = date + '-' + '(' + number + ')' + name.replace(' ', '-').lower()
-    print(f"\n{filename}\n{title}\n'LeetCode: {name}' 풀이 정리")
+    print(f"\n{filename}\n'LeetCode: {name}' 풀이 정리\n{title}")
     print(f" Runtime: **{runtime_ms}** ms \| Beats **{runtime_rate}%**    \n Memory: **{memory_mb}** MB \| Beats **{memory_rate}%**    ")
 
 def post_title_and_last_modified_time():
