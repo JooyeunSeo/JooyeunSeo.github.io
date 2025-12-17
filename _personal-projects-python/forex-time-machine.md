@@ -42,13 +42,15 @@ Forex Time Machine은 과거 특정 시점과 현재의 환율을 빠르게 비�
 
 ### Information Architecture
 
-![](/assets/images/personal-projects/forex_time_machine_IA.png)
-<a href="https://mermaid.live/edit#pako:eNp9UluPojAU_itNn9UdGAUkxmSDmDHZSQyuPOwwDxWO0gy0bltmdNT_vm1d1Dib7QNwznc5l3LAOS8Ah3hd8Y-8JEKhH0nGkD6yWW0E2ZYoqigwdU6aM38ZrcZzsgEUMyX2o2-r8esVXRp0KUGgGds26g6dGnQKUKxI_oaeQUrtYzijlRinpKIFUZQzFAvBxY0uMboEZFMplFL4aCVdFHH2DkIakWzqmuiGbP6JSsUFzUmFlABWIDvdX0sdZ-xuzAUIbXQtmZqSdgZ001hUQv52N9TEMCOSl_BPeHGFF7oluIMjA8c73R7TK02I0i6kypvKFmwHJawwL039aadJqWx0V58X0n8mi3cKBNOL-D6fXevGpq7OoAR-NyBVW2lCFEFrLhBngPZAxFfnOep2x2h5DpY2SFssNeFxxt7Nzo5oeks9Y-kZmbSKic2eF_RE1RFFX_PPVMojiq3Zwj6jVh7ZMMEdvBG0wOGaVBI6uAZRExPjg-FlWJVQQ4ZD_VnAmug_KcMZO2ndlrBfnNc4VKLRSsGbTXnxabb65mFCid5lfcmaOwAR8YYpHD4OPGuCwwPe4dBxeg--Nxj6zsDxHNftBx28x2Hg9Xw3GDp-P3Bd3wn6pw7-tGWdnuNqquf7j_7QewicwekPJl8WPA" target="_blank">Mermaid Live Editor</a>
-{: .small}
+<figure>
+  <a href="https://mermaid.live/edit#pako:eNqNUmtv4jAQ_CsrS5VaHe80ECLgVIWgItEeCpB7ADqZxEB0iYNsp6UF_vs5zgU4qqr1Byu7O7M7O_EOebFPkImWYfzsrTETMHBmFOS5uoL2_wesQd9-HF-m2-2MwJPFiuHNGqwwIFRkyfQMr6etRcemgjAY4hVplRed-c2pPlH1CZflPt0k4rLeU_UeIf4Ce3_ggXD-r0trwTouDgMfiyCmYDMWs3Omo5gO4UkowA3Ic04qghXTJ8J4SuNJFGH2kuXvAy5iFng4BMEI9UG5kjeViRl915-R7bi286E_I8Lk6JNKdydFqs3htEyq9HDCdFOMhb01AXsrJfKvFwBLebyVaumKgIMFAQuHXhIeu6X7fUkvCRyr1dyAJ3Lg6xEyP_UbTa-PE0fSEeX3zfwzNtg_xrbzeDf40Ah7K58ExeHvu2F_mgcggzMd9rT8ZjGJyBeqwk-CGXSxwOVPiesNvn1_T9gQisUOTNTt5j3cNNz36VP6a_bQyzDnNTerdHNGV2Uz6-4DsQfrbf4h4HwPtmo2UreV0y0VOqiAVizwkbnEIScFFBEW4TRGuxQ3Q2JNIjJDpvz0yRLLJz5DM3qQvA2mv-I4QqZgiWSyOFmtj32SjXxgpBtg-Q-iYzZ9D4RZcUIFMqvV24rqgswd2iKzWNdLzaahVeq1W6Oh17V6Ab0g09BKRq2pGw3tVq9oRqNxKKBXNbdaquq1mt6sSUpVa1QM_fAXm9hHCA" target="_blank" title="Mermaid Live Editor">
+    <img src="/assets/images/personal-projects/forex_time_machine_IA.png" alt="IA">
+  </a>
+</figure>
 
 사용자 요청부터 결과 표시까지의 데이터 흐름은 다음과 같다.
 
-1. 사용자가 통화(from/to), 금액, 과거 날짜(a_date), 최근 날짜(b_date)를 입력한다.
+1. 사용자가 통화(from/to), 환전할 금액, 과거 날짜, 최근 날짜를 입력한다.
 2. Flask 서버는 POST 요청을 수신하고 입력값을 파싱한다.
 3. 서버에서 날짜 유효성 검증을 수행한다.
    - 실패: 오류 메시지를 띄우고 그 전 입력값은 유지한 채 템플릿을 다시 렌더링한다.

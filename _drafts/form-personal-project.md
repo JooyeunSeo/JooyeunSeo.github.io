@@ -33,10 +33,11 @@ header:
 
 ### Information Architecture
 
-![](/assets/images/personal-projects/)
-<a href="에디터주소" target="_blank">Mermaid Live Editor</a>
-{: .small}
-
+<figure>
+  <a href="링크" target="_blank" title="Mermaid Live Editor">
+    <img src="/assets/images/personal-projects/" alt="IA">
+  </a>
+</figure>
 https://mermaid.live/에서 다이어그램 생성해서 넣기(server, client, 기타 DB/API 등으로 구분)
 
 ### Data Model
