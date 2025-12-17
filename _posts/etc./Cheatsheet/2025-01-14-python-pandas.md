@@ -535,7 +535,8 @@ Data Science에 활용할 수 있는 판다스 메소드 정리
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.mean.html" target="_blank">Series.mean()</a>
 
-- 평균값을 계산
+- 행 별로 groupby key 제외한 모든 **숫자**형 열의 평균값을 계산
+- 원하는 열의 값만 계산하려면 `['열이름'].mean()`으로 앞에 명시하는 것이 안전하다.
 - `.groupby()` 메소드의 뒤에 연결하면 특정 그룹의 평균값을 계산할 수 있다.
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.nunique.html" target="_blank">Series.nunique()</a>
