@@ -29,8 +29,15 @@ header:
 
 ~다 체 (명확하고 객관적인 문서 톤)
 ### Overview 
+간단 설명
 
 ### Information Architecture
+
+![](/assets/images/personal-projects/)
+<a href="에디터주소" target="_blank">Mermaid Live Editor</a>
+{: .small}
+
+https://mermaid.live/에서 다이어그램 생성해서 넣기(server, client, 기타 DB/API 등으로 구분)
 
 ### Data Model
 
@@ -67,11 +74,17 @@ header:
 
 ~다 체 (명확하고 객관적인 문서 톤)
 ### Problem
-
 ### Analysis
-
 ### Solution
+단일 문제해결 단계일때는 위, 복합 문제해결 단계일때는 아래
+### Problem
+### First Analysis & Attempted Solution
+### Second Analysis & Final Solution
 
+```markdown
+↓
+⚠️👎👍
+```
 <br><br><br>
 
 # Result
@@ -91,7 +104,6 @@ header:
 <br>
 
 ### reference
-<hr>
 
 {: .small}
 
