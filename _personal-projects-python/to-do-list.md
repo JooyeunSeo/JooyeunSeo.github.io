@@ -45,18 +45,18 @@ header:
 ### Information Architecture
 
 <figure>
-  <a href="https://mermaid.live/edit#pako:eNqNU-9P2zAQ_VcsS5NAokB-tE0i1ik03Sc2UEuZtBZNTuymFqmT2c4Ya_u_72K3KFBt4A9J7Hv37t27eI2zkjIc4UVRPmZLIjW6Gs_FXCBYHz6gj68Xmk5G48Njm6DqNJekWqKpYnLWPO5toFlT52h2kQ5GQjOJbkjOLs7Swf1xC-AawJiputDojrPHA4RnELdEPaDrikmieSlUg7pI5aCDYkrRGRpRruGVsIJphhqwjd6WeV4wlJWrqonYwzErJQVBGmBqX4sJ-l8PwIK7d7gwYfIX-GBfLScmzhq6iGu9ZELzzHSBhkuWPexb4QrV4B4qQDKjiItP21a625hwVRJqfDYdPpuQPpnMH5y2C3pNxrAgSvHF08uEDrqBdrnI7Wa4c4fa7TUopzVrc_kNV1xVhSUC4UTkzPC1YV0rMucCPP5Zcwl9fGFK7Qf_PqeT-Da-jCejN71OLmcJ0SQlqi02cWZHIGNnU1qY0sdtgGsAppEDwFviPl9df_uXsKmDOp0BjLrF0EwcpZKIbAl-2-OJwW1aPwOjGxjxi-jXUqPXiK7hn7ot_uZSwS9D6C7ZNZDEKknsbuId5hl7SGYu0069AW9MIDaBDVw-S-Cb0N5sNK0oKNoAPz7BueQURwtSKHaCV0yuSLPH64Z1jqGBFZvjCD4pWxC45XM8F1vIq4j4XpYrHGlZQ6Ys63z5zFObCgknMOnV86mE6TA5LGuhcdQPXUOCozX-jaOOE_ZPwzDwPb8feL1uz4fwE46C4DRww57rhT3fCULf2Z7gP6auc-p0Xbcbut55z_H650F3-xca13vm" target="_blank" title="Mermaid Live Editor">
+  <a href="https://mermaid.live/edit#pako:eNqNVGFv2jAQ_SuWpUqtBAWSQELUMVHCpEndWkFppZFqcuIjWA1JZifrGPDfd3GyLqXaVn-J7Xv3_O6dnR0NUw7Upas4fQrXTObkauYnfkJwnJyQd8eDLObT2evtKkEVQSRZtiYLBXLp00ksIMnJ6T0EZPHxzKcPFa4ci96ycxGMpkkOktywCC46wajTBBhLjM9AFXFO7gQ8lYBm3FyWgFumHsl1BpLlIk1UCboIZGfUJmPOSYdMucjx40EMOZASXYdv0yiKgYTpJitD9e4MUslRUY5A9VAfBwn_pydoyd0bXJmD_K59qSYv7Jj3dljMuMjX6JgIdTFksobw8bkioUiBvpIYhQMnInl_aORrt65SxrX5utA_ZgRbnfpV8OaRZpkyiZlSYrU9ymiTG6xaJFG9mtQ28Xp9jQXwApp0Vkk3zrK44kL1LIlAHbVt3td994TKYrYln0CpuvnIPMLaREIkfCuEBN55o__e-HZ8OZ5P_9sB7xLd91jOAqbghf9eb3mKsmrvglgrOmsCDA3Qlb0C_E_gh6vr-7-JW_RIuz3CC9BgKO8BCSRLwjW2oNqea9y-cUWA77HvL6Kf05wcI_qaf2E0-Mv3hveI8TrZ0BCvUuJVq7n5Ok_bw0L90mr1GrzXgbEO7PFlVgSWDv22mywyjor2yE9bNJKCU3fFYgUtugG5YeWa7kpWn2IBG-yPi1MOK4Z_AJ_6yQHzMpZ8SdMNdXNZYKZMi2j9zFPoEzzBsNub512J3QE5SYskp-7AMTUJdXf0B3Ut-9x27IFh2UPLsWxr0KJb6vaM4Xm_P7Cdbr9ndm3HcA4t-lMf2z0fmn3T6ZrDoWHYPcswD78Ae0OIFA" target="_blank" title="Mermaid Live Editor">
     <img src="/assets/images/personal-projects/to_do_list_IA.png" alt="IA">
   </a>
 </figure>
 
 위 플로우 차트는 사용자가 페이지에 접근한 이후 화면에 할 일이 표시되고 각 사용자 행동이 서버와 데이터베이스에 반영되는 전체 흐름을 나타낸다.
 
-- 사용자가 페이지에 접근하면 GET 요청을 통해 서버는 로그인 상태를 확인한다.
-- 인증된 사용자의 경우, 해당 사용자와 연결된 할 일만 조회하여 화면을 구성한다.
-- 화면에 표시된 각 할 일에 대해 사용자는 추가, 수정, 순서 변경, 삭제 등의 작업을 수행할 수 있다.
-- 모든 사용자 액션은 POST 요청을 통해 서버로 전달되며, 데이터베이스에 즉시 반영된다.
-- 변경된 데이터는 이후 페이지 재로딩 또는 재요청 시 다시 조회되어 화면에 반영된다.
+1. 사용자가 페이지에 접근하면 GET 요청을 통해 서버는 로그인 상태를 확인한다.
+2. 인증된 사용자의 경우, 해당 사용자와 연결된 할 일만 조회하여 화면을 구성한다.
+3. 화면에 표시된 각 할 일에 대해 사용자는 추가, 수정, 순서 변경, 삭제 등의 작업을 수행할 수 있다.
+4. 모든 사용자 액션은 POST 요청을 통해 서버로 전달되며, 데이터베이스에 즉시 반영된다.
+5. 변경된 데이터는 이후 페이지 재로딩 또는 재요청 시 다시 조회되어 화면에 반영된다.
 
 ### Data Model
 

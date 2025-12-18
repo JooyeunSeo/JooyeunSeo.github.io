@@ -43,7 +43,7 @@ Forex Time Machine은 과거 특정 시점과 현재의 환율을 빠르게 비�
 ### Information Architecture
 
 <figure>
-  <a href="https://mermaid.live/edit#pako:eNqNUmtv4jAQ_CsrS5VaHe80ECLgVIWgItEeCpB7ADqZxEB0iYNsp6UF_vs5zgU4qqr1Byu7O7M7O_EOebFPkImWYfzsrTETMHBmFOS5uoL2_wesQd9-HF-m2-2MwJPFiuHNGqwwIFRkyfQMr6etRcemgjAY4hVplRed-c2pPlH1CZflPt0k4rLeU_UeIf4Ce3_ggXD-r0trwTouDgMfiyCmYDMWs3Omo5gO4UkowA3Ic04qghXTJ8J4SuNJFGH2kuXvAy5iFng4BMEI9UG5kjeViRl915-R7bi286E_I8Lk6JNKdydFqs3htEyq9HDCdFOMhb01AXsrJfKvFwBLebyVaumKgIMFAQuHXhIeu6X7fUkvCRyr1dyAJ3Lg6xEyP_UbTa-PE0fSEeX3zfwzNtg_xrbzeDf40Ah7K58ExeHvu2F_mgcggzMd9rT8ZjGJyBeqwk-CGXSxwOVPiesNvn1_T9gQisUOTNTt5j3cNNz36VP6a_bQyzDnNTerdHNGV2Uz6-4DsQfrbf4h4HwPtmo2UreV0y0VOqiAVizwkbnEIScFFBEW4TRGuxQ3Q2JNIjJDpvz0yRLLJz5DM3qQvA2mv-I4QqZgiWSyOFmtj32SjXxgpBtg-Q-iYzZ9D4RZcUIFMqvV24rqgswd2iKzWNdLzaahVeq1W6Oh17V6Ab0g09BKRq2pGw3tVq9oRqNxKKBXNbdaquq1mt6sSUpVa1QM_fAXm9hHCA" target="_blank" title="Mermaid Live Editor">
+  <a href="https://mermaid.live/edit#pako:eNqNU39P4kAQ_SqTTbxoDsUW6ZVGuZhSIgkqKVAvR81loQts0u6S3VZB4Lvfdgs91Jy6f2x2frw3M6_TNZrwiCAHTWP-PJljkULXD1nIQJ2jI7h6fcDtdry7wVv31VUBkNl4JvBiDm5MCUtHISoecPxAxjDsnIToscjMT29UvRw3PZYSAT08I5fVcbN6EB-ORio-lCrcYYsszeOPB_G2xreoXMR4Be0YyzncEil3VJdjUW0-4ZhGOKWcARGCi0N-P6f3icziFAJKnkvQKbicPREhc5jMkgSL1S5wQ2XKBZ3gGFJBWARasx2psj-Qru_5ged_Kl2fCFVaSVc8XikWrFXHWgsIysHytrf_clp5josncwLeUnUrf75JcPOxvaVqnM0I-Dgl4OJ4ksUlm571u75V6kDPGVCZqZIvZdJBW_3RcVmzr-TR8p98SRTv18Dz7667n8riLdWaMBz_ue51lDh7E5T5SiLv_XQqpZxKSYaBT8GAFcHiSy22u_cP_2uvB6enTRjqO9hzBLm56TC9extoa_OWR3S6KhYZvoFPIr6B4SEgKNJbe5qW9haq3tB0A-57_y2VcgOert_Xt7uHu9r0C8P_oAdUQTNBI-RMcSxJBSVEJDi30ToHhyidk4SEyFHPiEyx-l1CFLKtwi0w-815gpxUZAopeDablzzZQolNWhSrD5iU3nyZiHB5xlLkmHZDkyBnjZbIscyzer1Wu7B-mJZhNex6Ba2QY9RrZ8a5YZo1FbMN27S3FfSiy56fNUzLss16w7io2WajZm3_AqzeaTE" target="_blank" title="Mermaid Live Editor">
     <img src="/assets/images/personal-projects/forex_time_machine_IA.png" alt="IA">
   </a>
 </figure>
@@ -89,11 +89,8 @@ Forex Time Machine은 과거 특정 시점과 현재의 환율을 빠르게 비�
 1. **API 호출**
    - `url`: "https://api.exchangerate.host/timeframe"
    - `params`
-      - `access_key`: 개인 API 키
-      - `source`: 기준 통화 (from currency)
-      - `currencies`: 대상 통화 (to currency)
-      - `start_date`: 오늘 기준 1년 전 날짜
-         - `end_date`: 오늘 날짜
+      - 'source'(from currency), 'currencies'(to currency), 'start_date', 'end_date'
+      - 개인 'access_key'는 하드코딩하지 않고 환경변수에서 불러온다.
    - API 응답 데이터 구조는 다음과 같다.
    ```json
    {
@@ -109,7 +106,7 @@ Forex Time Machine은 과거 특정 시점과 현재의 환율을 빠르게 비�
      }
    }
    ```
-   - 해당 데이터로 과거·현재 환율 계산과 그래프 생성을 처리한다.
+   - 해당 데이터를 이용하여 과거·현재 환율 계산과 그래프 생성을 처리한다.
 2. **캐싱 구현**
    - `Flask-Caching`과 `@cache.memoize`를 활용하여 통화쌍 기준 1년치 환율 데이터를 캐싱한다.     
    - TTL은 하루 단위(86400초)로 설정한다.

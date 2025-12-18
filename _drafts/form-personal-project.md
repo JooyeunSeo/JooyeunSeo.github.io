@@ -42,8 +42,7 @@ https://mermaid.live/에서 다이어그램 생성해서 넣기(server, client, 
 
 ### Data Model
 
-### UI 
-
+### UI
 <br><br><br>
 
 # Implementation

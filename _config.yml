@@ -301,7 +301,7 @@ defaults:
       toc_icon: "fas fa-fw fa-bars-staggered" # 목차 아이콘
       toc_sticky: true      # 목차 상단 고정
       sidebar:              # 왼쪽 사이드바 표시
-        title: "Posts"
+        # title: "Posts"    # 사이드바 제목 생략
         nav: "docs"
       header:               # 기본 헤더 이미지
         image: /assets/images/defaults/header-main.png
@@ -313,5 +313,5 @@ defaults:
       layout: single
       author_profile: true  # 유저 프로필 표시
       sidebar:              # 왼쪽 사이드바 표시
-        title: "Posts"
+        # title: "Posts"    # 사이드바 제목 생략
         nav: "docs"
