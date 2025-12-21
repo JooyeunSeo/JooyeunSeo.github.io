@@ -77,10 +77,10 @@ def abbreviation_tag():
 
 def sup_or_sub():
     txt = input()
-    if txt[0] == 'i' and txt[1:].isalnum():
-        print(f"{txt[0]}<sup>{txt[1:]}</sup>")
-    elif txt[-1] == 'i':
+    if txt[-1] == 'i':
         print(f"{txt[0]}<sub>i</sub>")
+    elif txt[1:].isalnum():
+        print(f"{txt[0]}<sup>{txt[1:]}</sup>")
 
 def underline():
     is_list = input("리스트이면 입력, 단어나 문장이면 pass: ")
