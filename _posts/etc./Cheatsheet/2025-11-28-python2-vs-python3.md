@@ -4,7 +4,7 @@ title: "Python2 vs Python3"
 header:
   teaser: "https://cdn.pixabay.com/photo/2018/02/21/17/36/programming-3170992_1280.png"
 categories:
-  - Skill-Notes
+  - Cheatsheet
 tags:
   - Python
 last_modified_at: 2025-11-28T19:37:34+09:00

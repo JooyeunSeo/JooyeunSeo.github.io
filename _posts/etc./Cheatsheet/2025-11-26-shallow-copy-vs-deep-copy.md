@@ -1,10 +1,10 @@
 ---
-excerpt: "얕은 복사와 깊은 복사의 차이"
+excerpt: "얕은 복사와 깊은 복사의 차이(파이썬)"
 title: "Shallow copy vs Deep copy"
 header:
   teaser: "https://cdn.pixabay.com/photo/2018/02/21/17/36/programming-3170992_1280.png"
 categories:
-  - Skill-Notes
+  - Cheatsheet
 tags:
   - Python
 last_modified_at: 2025-11-26T19:52:38+09:00
@@ -20,8 +20,10 @@ print(a)
 print(b)
 ```
 <i class="fa-solid fa-right-from-bracket"></i>    
+<pre>
 [1,2,3,4]    
 [1,2,3,4]
+</pre>
 
 - 객체 `a`에 `b`라는 변수 이름만 하나 더 할당해서 연결하는 동작이다.
 - 얕은 복사나 깊은 복사에 해당하지 않음
@@ -40,11 +42,14 @@ print(a)
 print(b)
 ```
 <i class="fa-solid fa-right-from-bracket"></i>    
+<pre>
 [[1, 2], [3, 4]]     
 [[1, 2], [3, 4], [5, 6]]    
 
 [[1, 2, 7], [3, 4]]    
 [[1, 2, 7], [3, 4], [5, 6]]
+</pre>
+<br>
 
 - `b`는 `a`의 바깥 컨테이너만 새로운 객체로 복사하고, 내부 객체는 원본을 참조한다.
     <pre>
@@ -69,7 +74,9 @@ print(a)
 print(b)
 ```
 <i class="fa-solid fa-right-from-bracket"></i>      
+<pre>
 [[1, 2], [3, 4]]      
 [[1, 2, 7], [3, 4]]    
+</pre>
 
 - `b`는 `a`의 모든 계층을 새로운 객체로 복사한다.

@@ -13,9 +13,6 @@ docs:
         url: /personal-projects-unity/
   - title: "Coding Test"
     children:
-      - title: "Skill Notes"          # 스킬 노트
-        url: /skill-notes/
-        category: "Skill-Notes"
       - title: "LeetCode-Easy"        # 리트코드 easy 문제풀이
         url: /leetcode-easy/
         category: "Leetcode-Easy"

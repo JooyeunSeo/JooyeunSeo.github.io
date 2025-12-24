@@ -1,10 +1,10 @@
 ---
-excerpt: "문자열을 반대로 뒤집는 다양한 방법"
+excerpt: "문자열을 반대로 뒤집는 다양한 방법(파이썬)"
 title: "Reverse String"
 header:
   teaser: "https://cdn.pixabay.com/photo/2018/02/21/17/36/programming-3170992_1280.png"
 categories:
-  - Skill-Notes
+  - Cheatsheet
 tags:
   - Python
   - String
@@ -15,7 +15,7 @@ last_modified_at: 2025-11-25T19:43:27+09:00
 ```python
 txt = "Hello World"     
 ```
-<i class="fa-solid fa-right-from-bracket"></i> dlroW olleH
+<i class="fa-solid fa-right-from-bracket"></i> <samp>dlroW olleH</samp>
 
 ## slicing
 ```python

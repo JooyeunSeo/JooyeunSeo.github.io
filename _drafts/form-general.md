@@ -11,8 +11,12 @@ last_modified_at: YYYY-MM-DDT00:30:30+09:00
 ```python
 
 ```
-<i class="fa-solid fa-right-from-bracket"></i> 
+<i class="fa-solid fa-right-from-bracket"></i> <samp></samp>
 
+```python
+
+```
+<i class="fa-solid fa-right-from-bracket"></i> <pre></pre>
 
 <br><br>
 <center>References</center>
