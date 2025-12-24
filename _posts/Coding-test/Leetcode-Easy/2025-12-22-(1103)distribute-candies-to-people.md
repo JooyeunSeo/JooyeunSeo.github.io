@@ -110,6 +110,7 @@ class Solution:
 ### <a href="https://leetcode.com/problems/distribute-candies-to-people/solutions/323364/javacpython-math-solution-and-simulation-r12t/" target="_blank">2nd</a>
 
 ```python
+class Solution:
     def distributeCandies(self, candies, n):
         x = int(math.sqrt(candies * 2 + 0.25) - 0.5)    # 전체 지급 가능한 횟수
         res = [0] * n

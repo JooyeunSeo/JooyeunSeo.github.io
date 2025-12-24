@@ -1,6 +1,10 @@
 main:
   # - title: "About"
   #   url: /about/
+  - title: "Tags"
+    url: /tags/
+  - title: "Search"
+    url: /search/
 
 
 # sidebar menu links
@@ -24,9 +28,3 @@ docs:
       - title: "Blog with Jekyll"     # Jekyll로 블로그 생성
         url: /jekyll/
         category: "Jekyll"
-  - title: 🔍
-    children:
-      - title: "Search"
-        url: /search/
-      - title: "Tags"
-        url: /tags/
