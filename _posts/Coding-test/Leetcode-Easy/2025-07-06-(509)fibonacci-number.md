@@ -9,10 +9,10 @@ tags:
   - Coding Test
   - Python
   - Math
-  - Fibonacci numbers
   - Dynamic Programming
   - Recursion
   - Memoization
+  - Fibonacci Numbers
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
