@@ -107,7 +107,7 @@ class Solution:
         
         return res
 ```
-<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛+/*𝑚𝑘)    
+<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛+𝑚\*𝑘)    
 <i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛)      
 
 chars의 각 문자 출현 빈도를 카운트한 딕셔너리를 매 단어마다 복사하는 방법이 사용됐다.

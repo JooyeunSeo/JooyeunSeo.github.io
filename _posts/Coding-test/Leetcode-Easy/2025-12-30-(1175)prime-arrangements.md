@@ -10,6 +10,7 @@ tags:
   - Python
   - Math
   - Weekly Contest
+  - Sieve of Eratosthenes
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
@@ -74,36 +75,20 @@ class Solution:
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 
-### <a href="" target="_blank">1st</a>
+### <a href="https://leetcode.com/problems/prime-arrangements/solutions/371862/javapython-3-two-codes-each-count-only-p-1tj1/" target="_blank">1st</a>
 
 ```python
-
+class Solution:
+    def numPrimeArrangements(self, n: int) -> int:
+        primes = [True] * (n + 1)
+        for prime in range(2, int(math.sqrt(n)) + 1):
+            if primes[prime]:
+                for composite in range(prime * prime, n + 1, prime):  # 소수의 배수들은 모두 소수
+                    primes[composite] = False
+        cnt = sum(primes[2:])                                         # 소수 개수 카운트
+        return math.factorial(cnt) * math.factorial(n - cnt) % (10**9 + 7)
 ```
-<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂()    
-<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂()    
+<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛\*log(log𝑛))    
+<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛)    
 
-### <a href="" target="_blank">2nd</a>
-
-```python
-
-```
-
-
-
-{: style="color: blue;"}
-<pre>
-
-</pre>
-
-{: style="color: green;"}
-
-𝑛
-𝑛<sup>2</sup>
-log𝑛
-𝑚
-𝑘
-𝑥
-ℎ
-𝑤
-𝑟
-𝑐
+`에라토스테네스의 체` 방법을 사용하면 소수를 훨씬 빠르게 찾을 수 있다.
