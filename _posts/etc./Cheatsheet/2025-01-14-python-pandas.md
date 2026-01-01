@@ -9,7 +9,7 @@ tags:
   - Python
   - Pandas
   - Data Science
-last_modified_at: 2025-08-06T14:30:30+09:00
+last_modified_at: 2026-01-01T20:03:47+09:00
 ---
 
 > **Pandas**    
@@ -298,12 +298,35 @@ Data Science에 활용할 수 있는 판다스 메소드 정리
    - `df.columns = ['열1', '열2', ...]`
    - 리스트의 길이와 실제 열 개수 일치시키기
 
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.reindex.html" target="_blank">DataFrame.reindex()</a>
+
+- 데이터프레임의 행 또는 열을 새로운 라벨 집합에 맞춰 재정렬
+- 기존에 존재하지 않는 라벨은 새로 생성되며 값은 `NaN`으로 채워짐
+- 파라미터
+   - **index:** 새로 맞출 행 라벨 리스트
+   - **columns:** 새로 맞출 열 라벨 리스트
+   - **fill_value:** 새로 생긴 NaN을 특정 값으로 채움
+
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.rename.html" target="_blank">DataFrame.rename()</a>
 
 - 데이터프레임의 열 또는 행의 이름 변경
 - 파라미터
-   - **axis:** `0` 또는 axis 대신 `'index'`는 **행** 이름 변경, `1` 또는 axis 대신`'columns'`는 **열** 이름 변경
+   - **axis:** `0` 또는 axis 대신 `'index'`는 **행** 이름 변경(기본값), `1` 또는 axis 대신`'columns'`는 **열** 이름 변경
    - **inplace:** `False`(기본값)는 원본 데이터를 유지, `True`는 정렬 결과를 원본 데이터에 반영
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.add_prefix.html" target="_blank">DataFrame.add_prefix()</a>
+
+- 데이터프레임의 모든 행 또는 열 이름 앞에 접두사를 일괄 추가(개별 선택 불가)
+- 파라미터
+   - **prefix:** 접두사로 사용할 문자열
+   - **axis:** `0` 또는 axis 대신 `'index'`는 **행** 이름에 추가, `1` 또는 axis 대신`'columns'`는 **열** 이름에 추가(기본값)
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.add_suffix.html" target="_blank">DataFrame.add_suffix()</a>
+
+- 데이터프레임의 모든 행 또는 열 이름 앞에 접미사를 일괄 추가(개별 선택 불가)
+- 파라미터
+   - **suffix:** 접미사로 사용할 문자열
+   - **axis:** `0` 또는 axis 대신 `'index'`는 **행** 이름에 추가, `1` 또는 axis 대신`'columns'`는 **열** 이름에 추가(기본값)
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html" target="_blank">DataFrame.describe()</a>
 
