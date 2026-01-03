@@ -70,7 +70,7 @@ class Solution:
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 
-### <a href="" target="_blank">1st</a>
+### <a href="https://leetcode.com/problems/distance-between-bus-stops/solutions/6814840/simple-python-solution-beats-100-by-user-286u/?envType=problem-list-v2&envId=2s2fta2m" target="_blank">1st</a>
 
 ```python
 class Solution:
