@@ -35,7 +35,7 @@ Given the `root` of a Binary Search Tree (BST), return *the minimum difference b
 - The number of nodes in the tree is in the range `[2, 100]`.
 - 0 <= Node.val <= 10<sup>5</sup>
 
-**Note:** This question is the same as 530: <a href="https://jooyeunseo.github.io/leetcode-easy/(530)minimum-absolute-difference-in-bst/" target="_blank">530. Minimum Absolute Difference in BST</a>
+**Note:** This question is the same as <a href="https://jooyeunseo.github.io/leetcode-easy/(530)minimum-absolute-difference-in-bst/" target="_blank">530. Minimum Absolute Difference in BST</a>
 
 ## <i class="fa-solid fa-cloud-arrow-up"></i> Submitted Code
 
