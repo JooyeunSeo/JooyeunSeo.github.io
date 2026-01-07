@@ -79,8 +79,10 @@ def sup_or_sub():
     txt = input()
     if txt[-1] == 'i':
         print(f"{txt[0]}<sub>i</sub>")
-    elif txt[1:].isalnum() or '^' in txt:
-        txt = txt.replace('^', '')
+    elif '^' in txt:
+        txts = txt.split('^')
+        print(f"{txts[0]}<sup>{txts[1]}</sup>")
+    elif txt[1:].isalnum():
         print(f"{txt[0]}<sup>{txt[1:]}</sup>")
 
 def underline():
