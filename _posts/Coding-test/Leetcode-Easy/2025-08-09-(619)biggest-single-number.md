@@ -9,7 +9,7 @@ tags:
   - Coding Test
   - Python
   - Pandas
-  - MySQL
+  - SQL
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
@@ -142,4 +142,4 @@ FROM (
     HAVING COUNT(num) = 1   -- 3. 그룹 크기가 1인 것만 남기기
 ) AS unique_numbers;        -- 5. 임시 테이블 unique_numbers 생성
 ```
-MySQL에서도 GROUP BY를 사용해서 풀 수 있다.
+SQL에서도 GROUP BY를 사용해서 풀 수 있다.

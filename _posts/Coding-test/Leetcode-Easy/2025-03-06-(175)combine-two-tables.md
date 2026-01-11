@@ -8,7 +8,7 @@ categories:
 tags:
   - Coding Test
   - Pandas
-  - MySQL
+  - SQL
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
@@ -155,6 +155,6 @@ SELECT P.firstName, P.lastName, A.city, A.state
 FROM Person P
 LEFT JOIN Address A USING (personId)
 ```
-MySQL로 푸는 것이 더 빠른 것 같아서 참고했다. Pandas의 merge에서 how 파라미터를 left로 설정한 것과 비슷하게 personId를 기준으로 `LEFT JOIN`하는 것이 포인트다.   
+SQL로 푸는 것이 더 빠른 것 같아서 참고했다. Pandas의 merge에서 how 파라미터를 left로 설정한 것과 비슷하게 personId를 기준으로 `LEFT JOIN`하는 것이 포인트다.   
 첫 번째 쿼리는 <mark>ON</mark> 조건을 사용하여 P.personId와 A.personId가 일치하는 경우에만 Address 테이블의 데이터를 가져오는 방식이다.   
 두 번째 쿼리는 <mark>USING</mark> 문법을 사용하여 personId(동일한 열 이름)를 기준으로 조인한다.

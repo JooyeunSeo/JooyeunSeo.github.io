@@ -10,7 +10,7 @@ tags:
   - Python
   - Database
   - Pandas
-  - MySQL
+  - SQL
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
@@ -121,4 +121,4 @@ LEFT JOIN Employee e
 ON p.employee_id = e.employee_id
 GROUP BY p.project_id
 ```
-MySQL에서도 employee_id를 기준으로 테이블을 JOIN해야 한다.
+SQL에서도 employee_id를 기준으로 테이블을 JOIN해야 한다.

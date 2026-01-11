@@ -9,7 +9,7 @@ tags:
   - Coding Test
   - Python
   - Pandas
-  - MySQL
+  - SQL
   - Math
 ---
 

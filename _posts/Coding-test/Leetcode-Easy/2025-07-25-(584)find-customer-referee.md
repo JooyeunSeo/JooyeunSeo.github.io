@@ -9,7 +9,7 @@ tags:
   - Coding Test
   - Python
   - Pandas
-  - MySQL
+  - SQL
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
@@ -104,4 +104,3 @@ def find_customer_referee(customer: pd.DataFrame) -> pd.DataFrame:
 select name from customer
 where referee_id != 2 or referee_id is null;
 ```
-MySQL 버전이다.

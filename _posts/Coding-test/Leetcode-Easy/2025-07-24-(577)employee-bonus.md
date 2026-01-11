@@ -9,7 +9,7 @@ tags:
   - Coding Test
   - Python
   - Pandas
-  - MySQL
+  - SQL
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
@@ -143,4 +143,4 @@ left join bonus b                     -- 2. employee에 bonus 테이블을 붙�
 on e.empId=b.empId                    --    (empId가 일치하는 값만, bonus에 empId가 없으면 NULL)
 where bonus<1000 or b.bonus is NULL   -- 3. 두 조건 중 하나에 일치하는 값만 선택
 ```
-MySQL의 `LEFT JOIN`이 Pandas의 merge에 대응된다.
+SQL의 `LEFT JOIN`이 Pandas의 merge에 대응된다.

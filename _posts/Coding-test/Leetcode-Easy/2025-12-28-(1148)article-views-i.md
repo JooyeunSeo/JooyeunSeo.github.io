@@ -10,7 +10,7 @@ tags:
   - Python
   - Database
   - Pandas
-  - MySQL
+  - SQL
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description

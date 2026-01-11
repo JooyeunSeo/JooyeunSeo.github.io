@@ -10,7 +10,7 @@ tags:
   - Python
   - Database
   - Pandas
-  - MySQL
+  - SQL
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
@@ -118,8 +118,6 @@ pandas에서 `add_suffix()`를 이용하여 '_Revenue'를 접미사로 붙이는
 ### <a href="https://leetcode.com/problems/reformat-department-table/solutions/7347946/very-simple-with-logic-explaination-by-v-8ul2/" target="_blank">2nd</a>
 
 ```sql
-# Write your MySQL query statement below
-
 SELECT id,
     MAX(CASE WHEN month ='Jan' THEN revenue END) AS Jan_Revenue,
     MAX(CASE WHEN month ='Feb' THEN revenue END) AS Feb_Revenue,

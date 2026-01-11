@@ -301,11 +301,14 @@ Data Science에 활용할 수 있는 판다스 메소드 정리
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.reindex.html" target="_blank">DataFrame.reindex()</a>
 
 - 데이터프레임의 행 또는 열을 새로운 라벨 집합에 맞춰 재정렬
+- 데이터 값을 변경하지 않고 인덱스(틀)를 재구성
 - 기존에 존재하지 않는 라벨은 새로 생성되며 값은 `NaN`으로 채워짐
+- `groupby`처럼 데이터를 줄이는 연산 이후 reindex를 사용하면 원래 기준 집합을 복원할 수 있음      
+(SQL의 LEFT JOIN과 동일한 효과)
 - 파라미터
    - **index:** 새로 맞출 행 라벨 리스트
    - **columns:** 새로 맞출 열 라벨 리스트
-   - **fill_value:** 새로 생긴 NaN을 특정 값으로 채움
+   - **fill_value:** 새로 생성된 NaN을 대신 채울 값
 
 ### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.rename.html" target="_blank">DataFrame.rename()</a>
 

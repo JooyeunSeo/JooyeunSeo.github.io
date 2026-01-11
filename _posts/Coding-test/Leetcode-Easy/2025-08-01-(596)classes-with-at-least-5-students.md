@@ -9,7 +9,7 @@ tags:
   - Coding Test
   - Python
   - Pandas
-  - MySQL 
+  - SQL 
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
@@ -113,4 +113,4 @@ FROM Courses
 GROUP BY class
 HAVING COUNT(student) >= 5;
 ```
-MySQL에서는 GROUP BY와 HAVING을 사용한다.
+SQL에서는 GROUP BY와 HAVING을 사용한다.
