@@ -78,7 +78,7 @@ def abbreviation_tag():
 def sup_or_sub():
     txt = input()
     if txt[-1] == 'i':
-        print(f"{txt[0]}<sub>i</sub>")
+        print(f"{txt[:-1]}<sub>i</sub>")
     elif '^' in txt:
         txts = txt.split('^')
         print(f"{txts[0]}<sup>{txts[1]}</sup>")
