@@ -9,7 +9,7 @@ tags:
   - Python
   - Pandas
   - Data Science
-last_modified_at: 2026-01-01T20:03:47+09:00
+last_modified_at: 2026-01-21T21:42:51+09:00
 ---
 
 > **Pandas**    
@@ -163,6 +163,12 @@ Carter
 기본키: Course ID(각 강의를 고유하게 식별)    
 외래키: Student ID(Students 데이터프레임의 기본키를 참조, 각 강의가 어떤 학생과 연결되는지 나타냄)
 </div>
+
+### <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.assign.html" target="_blank">DataFrame.assign()</a>
+
+- 데이터프레임에 컬럼을 새로 추가하거나 기존 컬럼을 대체
+- 원본 데이터프레임을 건드리지 않고 새 데이터프레임을 반환
+- `새 컬럼명=값`으로 설정하며, 값을 람다로 동적 계산하는 것도 가능
 
 ## ▥ Column
 

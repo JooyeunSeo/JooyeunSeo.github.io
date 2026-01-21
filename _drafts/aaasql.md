@@ -156,12 +156,12 @@ SET search_path TO academic, public;
 
 ## Data Definition
 
-### CREATE Table
+### CREATE table
 
 ```sql
 CREATE TABLE academic.학과 (
     학과번호 INT PRIMARY KEY,       -- 컬럼명 컬럼타입 나열
-    학과명 TEXT,
+    학과명 TEXT NOT NULL,
     학과사무실 TEXT,
     교수명 TEXT
 );
@@ -172,69 +172,152 @@ CREATE TABLE academic.수강생 (
     학과명 TEXT,
     평점 FLOAT,
     이수학점 INT,
-    자격증보유 BOOLEAN,
+    자격증보유 BOOLEAN DEFAULT FALSE,
     생년월일 TEXT,
     주소 TEXT,
     이메일 TEXT UNIQUE,
-    학과번호 INT,
     FOREIGN KEY (학과번호)          -- FOREIGN KEY
-        REFERENCES 학과(학과번호)
-        ON DELETE SET NULL
+        REFERENCES 학과(학과번호)    
+        ON DELETE CASCADE
+);
+
+CREATE TABLE academic.교수 (
+    교수번호 INT,
+    교수명 TEXT
 );
 ```
-- `SERIAL`은 내부적으로 INT + SEQUENCE 성질을 지니고 있어 자동으로 숫자가 증가
+- `SERIAL`은 내부적으로 **INT + SEQUENCE** 성질을 지니고 있어 자동으로 숫자가 증가
 - `UNIQUE`는 중복 데이터를 비허용하는 옵션
+- `NOT NULL`은 칸이 비어있는 NULL 상태를 비허용하는 옵션
+- `DEFAULT`는 아무 값도 넣지 않았을 때 NULL 대신 설정한 기본값으로 채움
 - `PRIMARY KEY` : 행을 유일하게 식별하는 키로, 중복 불가 + NULL 불가
 - `FOREIGN KEY` : 수강생 테이블의 **학과번호** 컬럼은 반드시 다른 테이블(학과)에 존재해야 외래키로 사용 가능
+   - `ON UPDATE` + `조건` : 부모 테이블의 데이터가 수정될 때 자식 테이블의 데이터 처리 방법
+   - `ON DELETE` + `조건` : 부모 테이블의 데이터가 삭제될 때 자식 테이블의 데이터 처리 방법
 
-### ALTER Table
+<div class="notice--success" markdown="1">
+✏️ 참조 무결성 제약 조건 5가지
 
-#### ADD Column
+**CASCADE**     
+부모 테이블의 데이터가 수정/삭제되면 이를 참조하는 자식 테이블의 데이터도 함께 수정/삭제
+
+**SET NULL**      
+부모 테이블의 데이터가 수정/삭제되면 자식 테이블의 해당 외래키 값을 NULL로 변경   
+(단, 외래키 컬럼이 NOT NULL이 아니어야 가능)
+
+**SET DEFAULT**      
+부모 테이블의 데이터가 수정/삭제되면 자식 테이블의 외래키 값을 미리 설정해둔 기본값으로 변경
+
+**RESTRICT**     
+자식 테이블에서 해당 데이터를 참조하고 있다면 부모 테이블의 데이터를 수정/삭제할 수 없도록 차단     
+(변경 시도 시 에러 발생)
+
+**NO ACTION**     
+RESTRICT과 유사하나 SQL 제약 조건 체크를 트랜잭션 끝으로 미룰 수 있음     
+(대부분의 DB에서 기본값으로 사용됨)
+</div>
+
+### ALTER table
+
+#### ADD column
 
 ```sql
 ALTER TABLE 수강생
-ADD COLUMN 성별 INT;             -- 남자는 1, 여자는 2로 저장되는 컬럼
+ADD COLUMN 성별 INT;           -- 남자는 1, 여자는 2로 저장되는 컬럼 추가
 ```
 
-#### DROP Column
+#### DROP column
 
 ```sql
 ALTER TABLE 수강생
 DROP COLUMN 학과명;
 ```
 
-#### change Column Type
+#### ADD/DROP constraint
+
+```sql
+-- ADD PRIMARY KEY 조건
+ALTER TABLE 교수
+ADD CONSTRAINT pk_교수_교수번호 PRIMARY KEY (교수번호);
+
+-- ADD FOREIGN KEY 조건
+ALTER TABLE 학생
+ADD CONSTRAINT fk_학생_학과번호
+FOREIGN KEY (학과번호)
+    REFERENCES 학과(학과번호)
+    ON DELETE SET NULL;     -- 새 조건
+
+-- ADD UNIQUE 조건
+ALTER TABLE 학생
+ADD CONSTRAINT uk_학생_이메일 UNIQUE (이메일);
+```
+- `DROP`도 가능
+
+#### SET/DROP column value
+
+```sql
+ALTER TABLE 수강생
+ALTER COLUMN 이수학점 SET DEFAULT 0;    -- DEFAULT 값 설정
+
+ALTER TABLE 수강생
+ALTER COLUMN 이수학점 DROP DEFAULT;     -- DEFAULT 값 삭제
+
+ALTER TABLE 수강생
+ALTER COLUMN 성명 SET NOT NULL         -- NOT NULL 조건 설정
+
+ALTER TABLE 수강생
+ALTER COLUMN 성명 DROP NOT NULL;       -- NOT NULL 조건 삭제 
+```
+
+#### change column type
+
+| 기능           | 표준 SQL / PostgreSQL 문법                                           | MySQL 전용 문법                       |
+|--------------|---------------------------------------------------------------------|--------------------------------------|
+| 타입 변경      | `ALTER` COLUMN 성별 `TYPE` TEXT                                      | `MODIFY` COLUMN 성별 VARCHAR(10)      |
+| 이름+타입 변경 | `RENAME` COLUMN 성별 `TO` gender<br>`ALTER` COLUMN gender `TYPE` TEXT | `CHANGE` COLUMN 성별 gender VARCHAR(10) |
 
 ```sql
 -- PostgreSQL 전용 문법 (:: 연산자 사용)
-ALTER TABLE 학생
+ALTER TABLE 수강생
 ALTER COLUMN 성별 TYPE TEXT     -- 기존 INT 타입 데이터를 TEXT 타입으로 변경
-USING 성별::TEXT;               -- 1, 2를 '1', '2'로 강제 형변환 (USING절 필요)
+USING 성별::TEXT;               -- USING으로 명시적 형변환
 
 -- 표준 SQL 문법 (CAST 함수 사용)
-ALTER TABLE 학생
+ALTER TABLE 수강생
 ALTER COLUMN 성별 TYPE TEXT
 USING CAST(성별 AS TEXT);
 ```
+- 형변환 명시 없이도 자동으로 변환되는 경우
+   - INT → BIGINT (작은 정수에서 큰 정수)
+   - INT → NUMERIC/FLOAT (정수에서 실수)
+   - CHAR → VARCHAR/TEXT (고정 길이에서 가변 길이)
+   - DATE → TIMESTAMP
+   - TIMESTAMP → TIMESTAMPTZ
+   - BOOLEAN/INT → TEXT
+- 명시적 형변환이 필수인 경우
+   - TEXT → INT, NUMERIC, DATE (문자열 안의 글자 처리)
+   - FLOAT → INT (소수점 아래 처리)
+- PostgreSQL 사용 시 DEFAULT 값이 설정됐을 경우 먼저 `DROP DEFAULT`로 해제하는 것이 안전
 
 ```sql
 ALTER TABLE 수강생
 ALTER COLUMN 성별 TYPE TEXT
-USING (CASE 성별                -- 데이터 재배치 (1 -> '남', 2 -> '여')
-           WHEN 1 THEN '남'
-           WHEN 2 THEN '여'
-           ELSE '미지정'
-       END);
+USING CASE 성별                -- 데이터 재배치 (1 -> '남', 2 -> '여')
+        WHEN 1 THEN '남'
+        WHEN 2 THEN '여'
+        ELSE '미지정'
+      END;
 ```
+- `CASE WHEN` 패턴 사용
 
-#### change Table Name
+#### change table name
 
 ```sql
 ALTER TABLE 수강생
 RENAME TO 학생;
 ```
 
-#### change Column Name
+#### change column name
 
 ```sql
 ALTER TABLE 학생
@@ -243,26 +326,34 @@ RENAME COLUMN 수강생번호 TO 학생번호;
 
 <br>
 
-| 기능           | 표준 SQL / PostgreSQL 문법                                           | MySQL 전용 문법                       |
-|--------------|---------------------------------------------------------------------|--------------------------------------|
-| 타입 변경      | `ALTER` COLUMN 성별 `TYPE` TEXT                                      | `MODIFY` COLUMN 성별 VARCHAR(10)      |
-| 이름+타입 변경 | `RENAME` COLUMN 성별 `TO` gender<br>`ALTER` COLUMN gender `TYPE` TEXT | `CHANGE` COLUMN 성별 gender VARCHAR(10) |
-
-<br>
-
 ## Data Manupulation
 
 ### INSERT (create)
-Single row
 
-Multiple rows
+```sql
+INSERT INTO 학과(학과번호, 학과명, 학과사무실, 교수명)
+VALUES (101, '컴퓨터공학과', '공학관 301호', '김철수');  -- 1개 행 삽입
 
-INSERT FROM SELECT
+INSERT INTO 학과(학과번호, 학과명, 학과사무실, 교수명)
+VALUES
+  (102, '전자공학과', '공학관 402호', '이영희'),
+  (103, '심리학과', '인문관 101호', '박민준'),
+  (104, '경영학과', '경상관 205호', '최지우');          -- 여러 행 삽입
+```
+- 컬럼과 값의 수는 반드시 동일하게 작성
+- 생략된 컬럼은 반드시 `DEFAULT` 값을 가지거나 `NULL` 값을 허용하도록 설정 필요
 
-이부분은 
-INSERT INTO hr.employees (name, position)
-VALUES ('Alice', 'Manager');
-이런식으로 예시가 필요
+```sql
+INSERT INTO 학과 (학과번호, 학과명, 학과사무실, 교수명)
+VALUES (
+  105, 
+  '데이터과학과', 
+  (SELECT 학과사무실 FROM 학과 WHERE 학과번호 = 101), -- 학과번호가 101인 학과와 같은 사무실 사용
+  '정우성'
+);
+```
+- 값을 하드코딩하는 대신 다른 행의 특정 값을 복사해올 수 있음
+- 괄호 안 서브쿼리는 반드시 단 하나의 값(1행1열)만 반환해야 함
 
 ### SELECT (read)
 
@@ -342,12 +433,18 @@ WHERE 학과번호 = 3493 OR 학과번호 = 4054 OR 학과번호 = 4237;  -- 위
 ```
 - 목록에 포함된 값들 중 하나라도 일치하는지 확인
 
-#### LIKE 
+#### LIKE (vs ILIKE)
+
+|               **LIKE**               |               **ILIKE**              |
+|:------------------------------------:|:------------------------------------:|
+| 대소문자를 구분해서 문자열 패턴 비교 | 대소문자를 무시하고 문자열 패턴 비교 |
+|                                      | `PostgreSQL` 전용 문법               |
 
 ```sql
+-- LIKE
 SELECT 학생번호, 주소
 FROM 학생
-WHERE 주소 LIKE '서울%';                -- '서울'로 시작하는 모든 주소
+WHERE 주소 LIKE '서울%';            -- '서울'로 시작하는 모든 주소
 
 SELECT 학생번호, 이메일
 FROM 학생
@@ -356,23 +453,16 @@ WHERE 이메일 LIKE '%@gmail.com';   -- gmail 도메인을 사용하는 모든 
 SELECT 학생번호, 생년월일
 FROM 학생
 WHERE 이메일 LIKE '__05%';         -- 3~4번째 글자가 '05'(5월생)인 모든 데이터
-```
-- 문자열 패턴 비교 (대소문자 구분)
-- 와일드카드:
-   - `%`: 글자 수 제한 없는 모든 문자
-   - `_`: 언더스코어 1개당 1글자
 
-#### ILIKE 
-
-```sql
+-- ILIKE
 SELECT 학생번호, 이메일
 FROM 학생
 WHERE 이메일 LIKE '%@GMAIL.COM';   -- 대소문자 상관없이 '@gmail.com' 검색
 ```
-- 문자열 패턴 비교 (대소문자 무시)
-- `PostgreSQL` 전용 문법
+- 와일드카드 `%`: 글자 수 제한 없는 모든 문자
+- 와일드카드 `_`: 언더스코어 1개당 1글자
 
-#### GROUP BY (+ Aggregation Function)
+#### GROUP BY
 
 ```sql
 SELECT 학과번호,                    
@@ -428,7 +518,7 @@ GROUP BY 학과번호
 HAVING AVG(평점) >= 4.0;       -- HAVING 절에 별칭 직접 사용 불가(MySQL에서는 허용)
 ```
 
-#### JOIN & UNION
+#### JOIN / UNION
 
 |                      **JOIN**                      |                  **UNION**                  |
 |:--------------------------------------------------:|:-------------------------------------------:|
@@ -485,22 +575,90 @@ SELECT 교수명 FROM 학과;
 - 중복 제거가 필요 없으면 성능이 좋은 `UNION ALL` 사용을 더 추천
 
 ### UPDATE
-UPDATE ... SET ... WHERE ...
 
-UPDATE with subquery
-
-UPDATE ... RETURNING
+```sql
+UPDATE 학생
+SET 평점 = 4.3,           -- 평점, 자격증보유 컬럼의 값 변경
+    자격증보유 = TRUE
+WHERE 학생번호 = 4762      -- 4762번 학생의 행에만 적용
+RETURNING *;
+```
+- 조건을 지정하지 않으면 모든 행에 적용되기 때문에 항상 WHERE을 함께 사용하기
+- `RETURNING`: PostgreSQL 전용 기능으로, 변경된 데이터를 즉시 SELECT한 것처럼 화면에 출력
 
 ### DELETE
-DELETE with condition
 
-DELETE with subquery
+> FOREIGN KEY 삭제 시 부모 테이블의 데이터가 사라져서 이를 참조하던 자식 테이블이 미아가 되는 상황을 방지하기 위해 ON DELETE 설정 필수
 
-TRUNCATE
+```sql
+DELETE FROM 학생
+WHERE 학생번호 = 3952      -- 3952번 학생의 행에만 적용
+RETURNING *;
+```
 
-DELETE ... RETURNING
+```sql
+DELETE FROM 학생;         -- WHERE 조건 미지정시 모든 행 삭제
+
+TRUNCATE TABLE 학생;      -- DELETE보다 빠르고 sequences(인덱스)까지 모두 삭제
+```
+- 모든 데이터를 지울 때는 2가지 방법 중 하나 선택
+
+## SubQuery
+
+```sql
+SELECT 학생번호, 성명, 평점
+FROM 학생
+WHERE 평점 > (              -- 전체 학생들의 평균 평점보다 높은 학생
+    SELECT AVG(평점)
+    FROM 학생
+);
+```
+- 서브쿼리 결과 -> 단일 값
+- 바깥 쿼리에서 비교 연산자로 비교 가능
+
+```sql
+SELECT 학생번호, 성명
+FROM 학생
+WHERE 학과번호 IN (         -- 학과번호 목록 중 하나라도 일치하는 학과 소속의 학생
+    SELECT 학과번호
+    FROM 학과
+);
+```
+- 서브쿼리 결과 -> 여러 행
+
+```sql
+SELECT d.학과번호, d.학과명
+FROM 학과 d
+WHERE EXISTS (      -- 학생이 1명이라도 존재하는 학과만 조회
+    SELECT 1    -- 더미 값(실제 컬럼 값이 필요 없음을 의미)
+    FROM 학생 s
+    WHERE s.학과번호 = d.학과번호
+);
+
+SELECT d.학과번호, d.학과명
+FROM 학과 d
+WHERE NOT EXISTS (  -- 반대로 학생이 1명도 없는 학과만 조회
+    SELECT 1
+    FROM 학생 s
+    WHERE s.학과번호 = d.학과번호
+);
+```
+- `EXISTS`는 값이 아니라 행이 하나라도 존재하는지만 검사    
+(만족하는 첫 행 발견 시 바로 TRUE 반환, 하나도 없을 경우 FALSE)
+
+```sql
 
 
+```
+- 서브쿼리 결과 ->
+
+```sql
+
+```
+- 서브쿼리 결과 ->
+
+
+## SQL functions
 
 
 ----
@@ -508,9 +666,3 @@ DELETE ... RETURNING
 
 ```
 ----
-
-
-
-<i class="fa-solid fa-right-from-bracket"></i> <pre></pre>
-
-<br><br>
