@@ -183,7 +183,8 @@ CREATE TABLE academic.수강생 (
 
 CREATE TABLE academic.교수 (
     교수번호 INT,
-    교수명 TEXT
+    교수_성 TEXT,
+    교수_이름 TEXT
 );
 ```
 - `SERIAL`은 내부적으로 **INT + SEQUENCE** 성질을 지니고 있어 자동으로 숫자가 증가
@@ -494,13 +495,12 @@ FROM 학생;                        -- 전체 학생(GROUP BY 생략) 중 최저
 ```
 - 특정 컬럼의 값이 같은 행들을 하나의 그룹으로 묶어주는 역할
 - `AS` 절로 ALIAS(별칭)을 지정하면 결과창에서 훨씬 보기 편하며, `ORDER BY` 절에서도 사용 가능
-- 자주 사용되는 집계 함수 (Aggregation Function)
+- 보통 집계 함수와 함께 사용됨(집계 함수들은 보통 NULL 값을 무시하고 계산하는 것 주의)
    - `COUNT()` : 조건에 맞는 행의 개수 계산 (`*`를 쓰면 모든 행의 개수)
    - `SUM()` : 숫자 컬럼의 모든 값의 합계를 계산
    - `AVG()` : 숫자 컬럼의 평균값을 계산
    - `MAX()` : 해당 컬럼의 값 중 최대값 반환 (문자열이나 날짜에도 사용 가능)
    - `MIN()` : 해당 컬럼의 값 중 최소값 반환
-- 집계 함수들은 보통 NULL 값을 무시하고 계산
 - GROUP BY 없이 집계 함수 사용 시 테이블 전체를 하나의 그룹으로 간주
 
 #### HAVING (vs WHERE)
@@ -608,23 +608,38 @@ TRUNCATE TABLE 학생;      -- DELETE보다 빠르고 sequences(인덱스)까지
 ```sql
 SELECT 학생번호, 성명, 평점
 FROM 학생
-WHERE 평점 > (              -- 전체 학생들의 평균 평점보다 높은 학생
+WHERE 평점 > (              -- 전체 학생들의 평균 평점보다 높은 학생만 조회
     SELECT AVG(평점)
     FROM 학생
 );
 ```
-- 서브쿼리 결과 -> 단일 값
+- 서브쿼리 결과 -> 단일 값(평균 평점)
 - 바깥 쿼리에서 비교 연산자로 비교 가능
 
 ```sql
 SELECT 학생번호, 성명
 FROM 학생
-WHERE 학과번호 IN (         -- 학과번호 목록 중 하나라도 일치하는 학과 소속의 학생
+WHERE 학과번호 IN (         -- 실제 존재하는 학과에 소속된 학생만 조회
     SELECT 학과번호
     FROM 학과
 );
 ```
 - 서브쿼리 결과 -> 여러 행
+
+```sql
+SELECT s.학생번호, s.성명, s.학과번호, s.평점, d.학과평균평점
+FROM 학생 s
+JOIN (
+    SELECT 학과번호,                -- 학과번호, 학과평균평점을 가진 임시 테이블
+           AVG(평점) AS 학과평균평점
+    FROM 학생
+    GROUP BY 학과번호
+) d ON s.학과번호 = d.학과번호
+WHERE s.평점 < d.학과평균평점;        -- 학과별 평균 평점보다 낮은 학생만 조회 
+
+```
+- 서브쿼리 결과 -> 임시 테이블
+- FROM 절에서 학생 테이블과 임시 테이블을 JOIN
 
 ```sql
 SELECT d.학과번호, d.학과명
@@ -646,19 +661,141 @@ WHERE NOT EXISTS (  -- 반대로 학생이 1명도 없는 학과만 조회
 - `EXISTS`는 값이 아니라 행이 하나라도 존재하는지만 검사    
 (만족하는 첫 행 발견 시 바로 TRUE 반환, 하나도 없을 경우 FALSE)
 
-```sql
+## SQL Functions
 
-
-```
-- 서브쿼리 결과 ->
+### string
 
 ```sql
+-- UPPER: 대문자로 통일 / LOWER: 소문자로 통일
+SELECT UPPER(교수_성), LOWER(교수_이름)
+FROM 교수;
+
+-- CONCAT: 문자열 합치기
+SELECT CONCAT(교수_성, ' ', 교수_이름) AS 교수_fullname
+FROM 교수;
+
+-- SUBSTRING: 문자열 일부 추출 (문자열 FROM 시작위치 FOR 길이)
+-- POSITION: 부문 문자열의 시작 위치 반환
+-- (⚠️ 둘 다 시작 인덱스가 1 !)
+SELECT SUBSTRING(이메일 FROM 1 FOR POSITION('@' IN 이메일) - 1) AS 이메일_ID
+FROM 학생;
+
+-- REPLACE: 문자열 대체
+SELECT REPLACE(이메일, '@univ.com', '@univ.org')
+FROM 학생;
+
+-- TRIM: 문자열 앞과 뒤의 공백 제거
+SELECT LOWER(TRIM(이메일)) AS 이메일_정규화
+FROM 학생;
+```
+
+### numeric
+
+```sql
+-- ROUND() — Round a number
+SELECT ROUND(rental_rate, 0)
+FROM film;
+
+-- CEIL() / FLOOR() — Next or lower integer
+SELECT CEIL(amount), FLOOR(amount)
+FROM payment
+LIMIT 5;
+
+-- ABS() — Absolute value
+SELECT ABS(-10);
+
+-- POWER()
+SELECT POWER(2, 3);  -- 2^3 = 8
+
+-- RANDOM()
+SELECT RANDOM();
+```
+
+### date/time
+
+```sql
+-- NOW() — Current timestamp
+SELECT NOW();
+
+-- CURRENT_DATE
+SELECT CURRENT_DATE;
+
+-- AGE() — Difference between two timestamps
+SELECT AGE(NOW(), rental_date)
+FROM rental
+LIMIT 5;
+
+-- DATE_TRUNC() — Truncate timestamps (very important)
+SELECT DATE_TRUNC('month', rental_date)
+FROM rental
+LIMIT 5;
+
+-- EXTRACT() — Pull out year, month, day
+SELECT EXTRACT(YEAR FROM rental_date) AS year
+FROM rental
+LIMIT 5;
+```
+
+### conditional
+
+```sql
+-- COALESCE() — Replace NULLs
+SELECT COALESCE(email, 'no email') AS email_info
+FROM customer;
+
+-- NULLIF() — Return NULL if values equal
+SELECT NULLIF(amount, 0)
+FROM payment;
+
+-- CASE WHEN — Conditional logic
+SELECT 
+    amount,
+    CASE 
+        WHEN amount > 5 THEN 'High'
+        ELSE 'Low'
+    END AS payment_size
+FROM payment;
 
 ```
-- 서브쿼리 결과 ->
 
+### aggregate
 
-## SQL functions
+[↑ **GROUP BY**에서 참고](#)
+
+### postgresql special
+
+```sql
+-- STRING_AGG() — combine values into one string
+SELECT STRING_AGG(first_name, ', ')
+FROM customer
+WHERE store_id = 1;
+
+-- GENERATE_SERIES() — create rows on the fly
+SELECT generate_series(1, 10);
+
+-- Generate one date per day for a month
+SELECT generate_series(
+    '2025-01-01'::date,
+    '2025-01-31'::date,
+    '1 day'::interval
+);
+
+-- Every hour today
+SELECT generate_series(
+    NOW()::date,
+    NOW()::date + 1,
+    '1 hour'
+);
+
+-- TO_CHAR() — Format numbers and dates
+SELECT TO_CHAR(payment_date, 'YYYY-MM-DD')
+FROM payment
+LIMIT 5;
+
+-- TO_DATE() — convert text to date
+SELECT TO_DATE('2025-02-01', 'YYYY-MM-DD');
+```
+
 
 
 ----
