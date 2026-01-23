@@ -1,13 +1,13 @@
 ---
 excerpt: "PostgreSQL 위주로 세팅 방법 및 Query문 정리"
-title: "SQL"
+title: "PostgreSQL"
 header:
   teaser: "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/SQL-Products-Option-Light_v1_RE4xfAg?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=610&qlt=100&fmt=png-alpha&fit=constrain"
 categories:
   - Cheatsheet
 tags:
   - SQL
-last_modified_at: YYYY-MM-DDT00:30:30+09:00
+last_modified_at: 2026-01-23T20:39:19+09:00
 ---
 
 <div class="notice--info" markdown="1">
@@ -434,7 +434,7 @@ WHERE 학과번호 = 3493 OR 학과번호 = 4054 OR 학과번호 = 4237;  -- 위
 ```
 - 목록에 포함된 값들 중 하나라도 일치하는지 확인
 
-#### LIKE (vs ILIKE)
+#### LIKE / ILIKE
 
 |               **LIKE**               |               **ILIKE**              |
 |:------------------------------------:|:------------------------------------:|
@@ -453,7 +453,7 @@ WHERE 이메일 LIKE '%@gmail.com';   -- gmail 도메인을 사용하는 모든 
 
 SELECT 학생번호, 생년월일
 FROM 학생
-WHERE 이메일 LIKE '__05%';         -- 3~4번째 글자가 '05'(5월생)인 모든 데이터
+WHERE 이메일 LIKE '____05%';         -- 5-6번째 글자가 '05'(5월생)인 모든 데이터
 
 -- ILIKE
 SELECT 학생번호, 이메일
@@ -588,13 +588,12 @@ RETURNING *;
 
 ### DELETE
 
-> FOREIGN KEY 삭제 시 부모 테이블의 데이터가 사라져서 이를 참조하던 자식 테이블이 미아가 되는 상황을 방지하기 위해 ON DELETE 설정 필수
-
 ```sql
 DELETE FROM 학생
 WHERE 학생번호 = 3952      -- 3952번 학생의 행에만 적용
 RETURNING *;
 ```
+- 데이터 삭제 시 FOREIGN KEY로 이를 참조하던 자식 테이블의 데이터가 미아가 되는 상황 주의
 
 ```sql
 DELETE FROM 학생;         -- WHERE 조건 미지정시 모든 행 삭제
@@ -661,6 +660,37 @@ WHERE NOT EXISTS (  -- 반대로 학생이 1명도 없는 학과만 조회
 - `EXISTS`는 값이 아니라 행이 하나라도 존재하는지만 검사    
 (만족하는 첫 행 발견 시 바로 TRUE 반환, 하나도 없을 경우 FALSE)
 
+## CTE
+
+Common Table Expression
+- WITH로 결과 집합에 이름을 붙여 해당 SQL문 실행 동안만 '임시 테이블'처럼 사용
+- 실제 테이블이나 VIEW가 아님
+- FROM 절에 쓰는 서브쿼리를 위로 끌어올린 개념
+- 가독성이 좋고, 한 번 정의하면 같은 SQL문에서 여러 번 재사용 가능
+- 복잡한 쿼리를 단계적으로 표현할 수 있음
+
+``` sql
+-- FROM 절 서브쿼리
+SELECT 학과번호, COUNT(*)
+FROM (
+    SELECT 학과번호
+    FROM 학생
+    WHERE 평점 >= 3.0
+) t
+GROUP BY 학과번호;
+
+-- CTE
+WITH 우수학생 AS (
+    SELECT 학과번호
+    FROM 학생
+    WHERE 평점 >= 3.0
+)
+SELECT 학과번호, COUNT(*)
+FROM 우수학생
+GROUP BY 학과번호;
+```
+평점 3.0 이상 학생들의 학과별 인원 수를 각각 서브쿼리와 CTE로 구한 예시
+
 ## SQL Functions
 
 ### string
@@ -692,114 +722,233 @@ FROM 학생;
 ### numeric
 
 ```sql
--- ROUND() — Round a number
-SELECT ROUND(rental_rate, 0)
-FROM film;
+-- ROUND: 소수점 n자리까지 반올림
+SELECT ROUND(평점, 1) AS 평점_반올림
+FROM 학생;
 
--- CEIL() / FLOOR() — Next or lower integer
-SELECT CEIL(amount), FLOOR(amount)
-FROM payment
+-- CEIL: 올림 / FLOOR: 내림
+SELECT CEIL(평점) AS 평점_올림,
+       FLOOR(평점) AS 평점_내림
+FROM 학생;
+
+-- ABS: 절대값
+SELECT ABS(평점 - 4.0) AS 기준평점과의차이
+FROM 학생;
+
+-- POWER: 거듭제곱
+SELECT POWER(이수학점, 2) AS 학점제곱
+FROM 학생;
+
+-- RANDOM: 난수 생성
+SELECT 학생번호, 성명
+FROM 학생
+ORDER BY RANDOM()
 LIMIT 5;
-
--- ABS() — Absolute value
-SELECT ABS(-10);
-
--- POWER()
-SELECT POWER(2, 3);  -- 2^3 = 8
-
--- RANDOM()
-SELECT RANDOM();
 ```
 
 ### date/time
 
 ```sql
--- NOW() — Current timestamp
+-- NOW: 현재 timestamp (date + time)
 SELECT NOW();
 
--- CURRENT_DATE
+-- CURRENT_DATE: 현재 date (날짜만)
 SELECT CURRENT_DATE;
 
--- AGE() — Difference between two timestamps
-SELECT AGE(NOW(), rental_date)
-FROM rental
-LIMIT 5;
+-- TO_DATE: 문자열 → DATE (PostgreSQL 전용 함수)
+CREATE OR REPLACE VIEW 학생_v AS   -- VIEW 생성
+SELECT
+    *,
+    TO_DATE(생년월일, 'YYYYMMDD') AS 생년월일_date
+FROM 학생;
 
--- DATE_TRUNC() — Truncate timestamps (very important)
-SELECT DATE_TRUNC('month', rental_date)
-FROM rental
-LIMIT 5;
+-- AGE: 두 timestamps의 차이 (나이 계산)
+SELECT AGE(CURRENT_DATE, 생년월일_date) AS 나이
+FROM 학생_v;
 
--- EXTRACT() — Pull out year, month, day
-SELECT EXTRACT(YEAR FROM rental_date) AS year
-FROM rental
-LIMIT 5;
+-- DATE_TRUNC: timestamp 분류 (연도별, 월별, 분기별로 가능)
+SELECT
+    DATE_TRUNC('year', 생년월일_date) AS 출생연도기준,
+    COUNT(*) AS 인원수
+FROM 학생_v
+GROUP BY 출생연도기준;
+
+-- EXTRACT: 연(year), 월(month), 일(day) 뽑기
+SELECT EXTRACT(YEAR  FROM 생년월일_date) AS 출생연도,
+       EXTRACT(MONTH FROM 생년월일_date) AS 출생월,
+       EXTRACT(DAY   FROM 생년월일_date) AS 출생일
+FROM 학생_v;
 ```
 
 ### conditional
 
 ```sql
--- COALESCE() — Replace NULLs
-SELECT COALESCE(email, 'no email') AS email_info
-FROM customer;
+-- COALESCE: NULL 값 대체
+SELECT COALESCE(이메일, '이메일 없음') AS 이메일정보
+FROM 학생;
 
--- NULLIF() — Return NULL if values equal
-SELECT NULLIF(amount, 0)
-FROM payment;
+-- NULLIF: 특정 값이면 NULL로 바꾸기
+SELECT NULLIF(이수학점, 0) AS 이수학점_정제
+FROM 학생;
 
--- CASE WHEN — Conditional logic
-SELECT 
-    amount,
-    CASE 
-        WHEN amount > 5 THEN 'High'
-        ELSE 'Low'
-    END AS payment_size
-FROM payment;
+-- CASE WHEN: 조건 분기
+SELECT
+    평점,
+    CASE
+        WHEN 평점 >= 4.0 THEN '우수'
+        WHEN 평점 >= 3.0 THEN '보통'
+        ELSE '미흡'
+    END AS 성적등급
+FROM 학생;
 
+SELECT
+    학과번호,
+    SUM(CASE WHEN 평점 >= 4.0 THEN 1 ELSE 0 END) AS 우수학생수,
+    SUM(CASE WHEN 평점 <  4.0 THEN 1 ELSE 0 END) AS 일반학생수
+FROM 학생
+GROUP BY 학과번호;
 ```
 
 ### aggregate
 
 [↑ **GROUP BY**에서 참고](#)
 
-### postgresql special
+### only postgresql
 
 ```sql
--- STRING_AGG() — combine values into one string
-SELECT STRING_AGG(first_name, ', ')
-FROM customer
-WHERE store_id = 1;
+-- STRING_AGG: 여러 행의 문자열을 하나의 문자열로 합치는 집계 함수
+-- (MySQL → GROUP_CONCAT)
+SELECT 학과번호,
+       STRING_AGG(성명, ', ') AS 학생목록
+FROM 학생
+GROUP BY 학과번호;
 
--- GENERATE_SERIES() — create rows on the fly
-SELECT generate_series(1, 10);
+-- GENERATE_SERIES: 테이블 없이 행 생성 
+SELECT generate_series(1, 10);  -- 1-10 숫자 목록
 
--- Generate one date per day for a month
-SELECT generate_series(
-    '2025-01-01'::date,
-    '2025-01-31'::date,
+SELECT generate_series(         -- 1월의 모든 날짜 목록
+    '2026-01-01'::date,
+    '2026-01-31'::date,
     '1 day'::interval
 );
 
--- Every hour today
-SELECT generate_series(
+SELECT generate_series(         -- 오늘 하루 동안 1시간 간격의 모든 시간대 목록
     NOW()::date,
     NOW()::date + 1,
     '1 hour'
 );
 
--- TO_CHAR() — Format numbers and dates
-SELECT TO_CHAR(payment_date, 'YYYY-MM-DD')
-FROM payment
-LIMIT 5;
+-- TO_CHAR: DATE → 출력용 문자열
+SELECT TO_CHAR(생년월일_date, 'YYYY년 MM월 DD일')
+FROM 학생_v;
 
--- TO_DATE() — convert text to date
-SELECT TO_DATE('2025-02-01', 'YYYY-MM-DD');
+-- TO_DATE: 문자열 → DATE
+SELECT TO_DATE('2026-01-01', 'YYYY-MM-DD');
 ```
 
+## Transaction
 
+- 여러 SQL 작업을 하나의 '묶음 작업'으로 처리하는 단위
+- 이 묶음은 전부 성공하거나, 전부 취소되거나 둘 중 하나만 가능
+- ACID를 보장
+   - `Atomicity` : 전부 or 전무
+   - `Consistency` : 규칙 유지
+   - `Isolation` : 다른 트랜잭션과 격리
+   - `Durability` : COMMIT 후 영구 저장
 
-----
 ```sql
+-- 트랜잭션 시작
+BEGIN;        
 
+-- 묶음 작업 1
+INSERT ...
+UPDATE ...
+
+-- 중간저장 지점 1
+SAVEPOINT sp1;
+
+-- 묶음 작업 2
+DELETE ...
+
+-- 중간저장 지점 2
+SAVEPOINT sp2;
 ```
-----
+작업 이후
+
+```sql
+-- BEGIN 이후 모든 작업 및 SAVEPOINT를 취소하고 트랜잭션 완전히 종료
+ROLLBACK;
+
+-- sp1 이후에 수행한 작업만 부분 취소 (sp2는 자동으로 삭제)
+ROLLBACK TO sp1;
+```
+- 트랜잭션 시작 이후 변경을 되돌림
+- 전체 취소 또는 부분 취소 가능
+
+또는
+
+```sql
+-- 확정 저장
+COMMIT;
+```
+- 지금까지 한 변경 사항을 DB에 영구 저장
+- COMMIT 이후에는 SAVEPOINT가 전부 사라지고 ROLLBACK 불가
+
+## Window Function
+
+집계는 하되, 행을 줄이지 않고 각 행의 정보를 유지하면서 계산하는 함수
+
+```sql
+-- GROUP BY (학과당 1행만 할당되고 학생 개별 정보 사라짐)
+SELECT 학과번호, AVG(평점)
+FROM 학생
+GROUP BY 학과번호;
+
+-- Window Function (학생 한 명당 1행 유지)
+SELECT
+    학생번호,
+    학과번호,
+    평점,
+    AVG(평점) OVER (
+        PARTITION BY 학과번호
+    ) AS 학과전체평균
+FROM 학생;
+```
+
+```sql
+SELECT
+    학생번호,
+    학과번호,
+    평점,
+    AVG(평점) OVER (
+        PARTITION BY 학과번호
+        ORDER BY 학생번호
+    ) AS 학과누적평균
+FROM 학생;
+
+SELECT
+    학생번호,
+    평점,
+    AVG(평점) OVER (
+        PARTITION BY 학과번호
+        ORDER BY 학생번호
+        ROWS BETWEEN 2 PRECEDING AND CURRENT ROW    -- 바로 앞 2명~현재 행 (3행)
+    ) AS 최근3명평균
+FROM 학생;
+
+SELECT
+    학생번호,
+    평점,
+    AVG(평점) OVER (
+        PARTITION BY 학과번호
+        ORDER BY 평점
+        RANGE BETWEEN 0.5 PRECEDING AND CURRENT ROW -- 현재 평점보다 0.5 낮은 값~현재 평점
+    ) AS 유사평점_평균
+FROM 학생;
+```
+- 집계 함수 + `OVER` 조합으로 window function 사용
+- `PARTITION BY`로 GROUP BY와 비슷하게 데이터를 그룹화하나, 행을 합치지 않고 유지
+- `ORDER BY`는 window 내에서 계산의 순서를 정의하며, 파티션의 첫 행부터 현재 행까지를 계산 범위로 지정        
+(이 범위는 ROWS 또는 RANGE로 변경 가능)
+- `ROWS`는 행 개수 기준의 window frame
+- `RANGE`는 값 범위 기준의 window frame
