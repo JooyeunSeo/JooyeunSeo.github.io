@@ -10,6 +10,7 @@ tags:
   - Python
   - String
   - Weekly Contest
+  - Regular Expression
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
@@ -82,4 +83,4 @@ class Solution:
 <i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛)    
 <i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛)    
 
-정규식 `\d\d#`은 '숫자 2개 + #'의 조합이고 `\d`는 숫자 1개를 의미한다. 두 자리 숫자# 이거나 한 자리 숫자를 <mark>findall</mark>으로 모두 찾을 수 있다. 정규식의 장점은 식의 왼쪽부터, 그리고 가능한 한 긴 패턴을 먼저 소비하기 때문에 OR에서 앞의 `\d\d#`의 성립 여부를 `\d`보다 먼저 체크한다는 것이다.
+정규식 `\d\d#`은 '숫자 2개 + #'의 조합이고 `\d`는 숫자 1개를 의미한다. 두 자리 숫자# 이거나 한 자리 숫자를 <mark>findall()</mark>으로 모두 찾을 수 있다. 정규식의 장점은 식의 왼쪽부터, 그리고 가능한 한 긴 패턴을 먼저 소비하기 때문에 OR에서 앞의 `\d\d#`의 성립 여부를 `\d`보다 먼저 체크한다는 것이다.
