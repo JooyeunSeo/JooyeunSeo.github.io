@@ -58,7 +58,7 @@ class Solution:
     def lastStoneWeight(self, stones: List[int]) -> int:
         heap = []
 
-        # 값에 -를 붙여서 최소힙으로 변경
+        # 값에 -를 붙여서 최대힙처럼 사용
         for s in stones:
             heapq.heappush(heap, -s)
 

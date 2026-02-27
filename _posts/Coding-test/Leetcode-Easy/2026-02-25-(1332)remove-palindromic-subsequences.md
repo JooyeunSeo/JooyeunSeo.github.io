@@ -10,7 +10,7 @@ tags:
   - Python
   - Two Pointers
   - String
-  - Weekly Contest 173
+  - Weekly Contest
   - Palindrome
 ---
 
