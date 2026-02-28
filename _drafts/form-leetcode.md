@@ -4,7 +4,7 @@ title: "\0"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"
 categories:
-  - Leetcode-Easy
+  - Leetcode-Easy/Medium
 tags:
   - Coding Test
   - Python

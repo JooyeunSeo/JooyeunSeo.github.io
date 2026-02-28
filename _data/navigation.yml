@@ -20,6 +20,9 @@ docs:
       - title: "LeetCode-Easy"        # 리트코드 easy 문제풀이
         url: /leetcode-easy/
         category: "Leetcode-Easy"
+      - title: "LeetCode-Medium"      # 리트코드 medium 문제풀이
+        url: /leetcode-medium/
+        category: "Leetcode-Medium"
   - title: "etc."              
     children:
       - title: "Cheatsheet"           # 치트시트
