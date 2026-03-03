@@ -4,7 +4,7 @@ title: "\03. Longest Substring Without Repeating Characters"
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"
 categories:
-  - Leetcode-Easy/Medium
+  - Leetcode-Medium
 tags:
   - Coding Test
   - Python
@@ -69,7 +69,7 @@ class Solution:
 <i class="fa-solid fa-clock"></i> Runtime: **11** ms \| Beats **78.99%**    
 <i class="fa-solid fa-memory"></i> Memory: **19.09** MB \| Beats **91.14%**    
 
-seen에서 중복이 없다면 오른쪽 포인터를 이동시키고 중복이 나올 때는 왼쪽 포인터를 이동시키는 방법이다.
+중복이 없다면 오른쪽 포인터를 이동시키고, 중복이 나올 때는 왼쪽 포인터를 이동시키는 방법이다. 문제에서 사용되는 문자의 최대 개수는 정해져 있기 때문에 set()을 사용할 경우 공간 복잡도가 𝑂(1)이 되는 것 같다.
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 
@@ -78,7 +78,6 @@ seen에서 중복이 없다면 오른쪽 포인터를 이동시키고 중복이 
 ```python
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-
         max_length = left = 0
         count = {}
 
@@ -94,3 +93,5 @@ class Solution:
 ```
 <i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛)    
 <i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(1)    
+
+set() 대신 해시 테이블을 사용한 방법도 있다.
