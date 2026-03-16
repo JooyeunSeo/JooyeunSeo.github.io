@@ -73,7 +73,7 @@ class Solution:
 <i class="fa-solid fa-clock"></i> Runtime: **0** ms \| Beats **100.00%**    
 <i class="fa-solid fa-memory"></i> Memory: **19.34** MB \| Beats **70.28%**    
 
-숫자 4자리까지만 적용 가능해서 확장성은 좀 떨어지는 방법이다.
+숫자 4자리까지만 적용 가능해서 확장성은 떨어지는 방법이다.
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 
