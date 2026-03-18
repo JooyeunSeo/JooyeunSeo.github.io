@@ -79,12 +79,12 @@ def sup_or_sub():
     txt = input()
     if txt[-1] == 'i':
         print(f"{txt[:-1]}<sub>i</sub>")
-    elif '^' in txt:
+    elif '^' in txt or ' ' in txt:
         txts = txt.split('^')
         print(f"{txts[0]}<sup>{txts[1]}</sup>")
-    elif ' ' in txt:
-        txts = txt.split(' ')
-        print(f"{txts[0]}<sup>{txts[1]}</sup>")
+    elif '_' in txt:
+        txts = txt.split('_')
+        print(f"{txts[0]}<sub>{txts[1]}</sub>")
 
 def underline():
     is_list = input("리스트이면 입력, 단어나 문장이면 pass: ")
