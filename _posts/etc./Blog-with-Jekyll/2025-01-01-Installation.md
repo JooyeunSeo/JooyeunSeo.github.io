@@ -41,30 +41,30 @@ last_modified_at: 2025-02-24T17:30:30+09:00
 ### 🛑 Ruby
 
 1. Homebrew로 최신 버전 설치
-    ```bash
-    brew install ruby
-    ```
+```bash
+brew install ruby
+```
 2. 설치한 최신 버전을 사용하도록 경로 추가 후 연결
-    ```bash
-    echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.zshrc
-    source ~/.zshrc
-    ```
+```bash
+echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
 3. 최신 버전이 출력되는지 확인
-   ```bash
-   ruby --version
-   ```
+```bash
+ruby --version
+```
 
 ### 🧪 Jekyll
 
-1. ruby의 패키지 관리 도구 RubyGems로 jekyll과 bundler 설치
-    ```bash
-    gem install jekyll bundler
-    ```
+1. ruby의 패키지 관리 도구 RubyGems로 bundler 설치(jekyll 포함됨)
+```bash
+gem install bundler
+```
 2. 버전 확인
-    ```bash
-    jekyll -v
-    bundler -v
-    ```
+```bash
+bundler -v
+jekyll -v
+```
 
 ## minimal-mistake Theme
 
@@ -112,7 +112,7 @@ source "https://rubygems.org"
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 
-# gem "github-pages", group: :jekyll_plugins
+# gem "github-pages", group: :jekyll_plugins ⚠️ Jekyll 3.9.x 이후 버전 사용시 삭제
 
 # To upgrade, run `bundle update`.
 
@@ -133,13 +133,13 @@ end
 ```
 
 1. `Gemfile` 파일의 원래 내용을 지우고 위의 양식 복사해서 붙여넣기
-2. `# gem "github-pages", group: :jekyll_plugins` 주석 해제
+2. `gem "jekyll", "~> 최신버전"` 추가
 3. `# The following plugins are automatically loaded by the theme-gem:` 밑 플러그인 5개 주석 해제 후   
 `group :jekyll_plugins do` - `end` 안으로 이동시키기
 4. 파일 저장 후 VS Code의 터미널에서 변화 적용
-    ```bash
-    bundle install
-    ```
+```bash
+bundle install
+```
 
 <div class="notice--warning" markdown="1">
 ⚠️ **bundle install**을 실행했을 때 아래와 같은 문구가 뜬다면    
@@ -161,7 +161,7 @@ bundle update --bundler
 ```bash
 bundle exec jekyll serve --livereload --drafts --future
 ```
-- Github에 Push하기 전 로컬 서버에서 돌릴 수 있음
+- Github에 Push하기 전 로컬 서버에서 구동
 - **로컬 서버 주소:** <http://localhost:4000/>
 - **서버 정지:** 터미널에서 `ctrl` + `c`
 - <mark>--livereload</mark>
@@ -181,26 +181,26 @@ base64 was loaded from the standard library, but will no longer be part of the d
 {: style="color: red;" .small}
 
 1. `Gemfile` 파일에 코드 추가 후 저장
-    ```
-    gem 'csv'
-    gem 'base64'
-    ```
+```
+gem 'csv'
+gem 'base64'
+```
 2. gem 설치
-    ```bash
-    bundle install
-    ```
+```bash
+bundle install
+```
 <br>
 
 cannot load such file -- webrick (LoadError)
 {: style="color: red;" .small}
 1. ruby 3.0.0 버전 이후부터 webrick 추가 필요
-    ```bash
-    bundle add webrick
-    ```
+```bash
+bundle add webrick
+```
 2. gem 설치
-    ```bash
-    bundle install
-    ```
+```bash
+bundle install
+```
 <br>
 
 ERROR '/favicon.ico' not found.
@@ -211,26 +211,44 @@ ERROR '/favicon.ico' not found.
    + <https://realfavicongenerator.net/>
 2. `/assets` 안에 파비콘 파일 넣기
 3. `/_iucludes` → `/head` → `custom.html`에 코드 추가
-    ```html
-    <link rel="icon" type="image/png" href="/assets/favicon.ico">
-    ```
+```html
+<link rel="icon" type="image/png" href="/assets/favicon.ico">
+```
 4. 웹 브라우저의 탭에서 사이트 제목 옆에 파비콘이 적용됐는지 확인하기
 
 ## git push
 
-변경사항을 모두 git에 add
+1. 변경사항을 모두 git에 add
 ```bash
 git add .
 ```
-<br>
-
-git에 커밋
+2. git에 커밋
 ```bash
 git commit -m 'your commit message'
 ```
-<br>
-
-Github Pages 레포지토리로 push
+3. Github Pages 레포지토리로 push
 ```bash
 git push
+```
+
+## Update Ruby version
+
+1. Ruby 새 버전으로 업데이트
+2. Bundler 재설치
+```bash
+gem install bundler
+```
+3. 프로젝트 의존성 재설치
+```bash
+bundle install
+```
+4. `Gemfile.lock` 갱신 (버전 불일치 해결)
+```bash
+bundle update
+```
+5. `Gemfile`에서 버전 수동으로 갱신
+6. (필요 시)예전 버전 Gem 삭제
+```bash
+gem cleanup
+bundle install
 ```
