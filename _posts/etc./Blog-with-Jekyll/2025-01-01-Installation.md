@@ -8,7 +8,7 @@ categories:
 tags:
   - Github Pages
   - Ruby
-last_modified_at: 2025-02-24T17:30:30+09:00
+last_modified_at: 2026-04-06T21:14:26+09:00
 ---
 
 **GitHub Pages**와 **Jekyll(지킬)**을 이용하여 무료로 블로그 호스팅하기!
@@ -231,7 +231,7 @@ git commit -m 'your commit message'
 git push
 ```
 
-## Update Ruby version
+## Update
 
 1. Ruby 새 버전으로 업데이트
 2. Bundler 재설치
