@@ -96,7 +96,7 @@ class Solution:
     def maxSubArray(self, nums):
         def maxSubArray(A, L, R):
             if L > R: return -inf
-            mid, left_sum, right_sum, cur_sum = (L + R)
+            mid, left_sum, right_sum, cur_sum = (L + R) // 2, 0, 0, 0
             for i in range(mid-1, L-1, -1):
                 left_sum = max(left_sum, cur_sum := cur_sum + A[i])
             cur_sum = 0
