@@ -49,9 +49,9 @@ class Solution:
         merged = [intervals[0]]                 # 결과 저장
 
         for pair in intervals[1:]:
-            if merged[-1][1] < pair[0]:         # 이전 구간의 끝과 이번 구간의 시작이 겹치는지 확인
+            if merged[-1][1] < pair[0]:         # 이전 구간의 끝과 이번 구간의 시작이 겹치지 않는 경우
                 merged.append(pair)
-            else:
+            else:                               # 겹칠 경우
                 merged[-1][1] = max(merged[-1][1], pair[1])
 
         return merged
@@ -59,6 +59,7 @@ class Solution:
 <i class="fa-solid fa-clock"></i> Runtime: **4** ms \| Beats **82.93%**    
 <i class="fa-solid fa-memory"></i> Memory: **22.58** MB \| Beats **63.51%**    
 
+정렬을 필수로 해야하는 문제로, 현재 구간과 이전 구간(마지막으로 merged에 저장된 구간)을 비교한다. 구간이 겹치는 경우 이전 구간의 끝부분만 갱신하면 된다.
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 
