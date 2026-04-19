@@ -1,5 +1,5 @@
 ---
-excerpt: "얕은 복사와 깊은 복사의 차이(파이썬)"
+excerpt: "얕은 복사와 깊은 복사의 차이(Python)"
 title: "Shallow copy vs Deep copy"
 header:
   teaser: "https://cdn.pixabay.com/photo/2018/02/21/17/36/programming-3170992_1280.png"

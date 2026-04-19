@@ -1,5 +1,5 @@
 ---
-excerpt: "문자열을 반대로 뒤집는 다양한 방법(파이썬)"
+excerpt: "문자열을 반대로 뒤집는 다양한 방법(Python)"
 title: "Reverse String"
 header:
   teaser: "https://cdn.pixabay.com/photo/2018/02/21/17/36/programming-3170992_1280.png"
