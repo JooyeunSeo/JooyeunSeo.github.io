@@ -76,6 +76,10 @@ print(testcase)
 
 {: style="color: green;"}
 
+2<sup>31</sup>
+10<sup>4</sup>
+10<sup>5</sup>
+10<sup>9</sup>
 𝑛
 𝑛<sup>2</sup>
 log𝑛
