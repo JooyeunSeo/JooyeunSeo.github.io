@@ -91,8 +91,8 @@ class Solution:
         
         return aboveRow[-1]
 ```
-<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂()    
-<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂()    
+<i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑚\*𝑛)    
+<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛)    
 
 Dynamic Programming으로 푸는 방법으로, 어떤 칸까지 오는 경우의 수는 `위에서 오는 경우 + 왼쪽에서 오는 경우`인 것을 이용했다.
 
