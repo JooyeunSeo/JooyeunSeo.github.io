@@ -14,71 +14,75 @@ header:
       url: "https://drive.google.com/uc?id=18_vMwhoYKfEibE8E3UUI9nFXpGd3sqk7&export=download" 
 ---
 **Note:** The file is large, so Google Drive may display a warning before download. This is normal.
+{: .small}
+<br>
 
----
+# Overview
+<hr>
 
-# Intro
-
-Speak PDF는 사용자가 선택한 PDF 파일의 텍스트를 음성으로 변환해주는 데스크탑 애플리케이션이다. 음성 변환에는 Google Cloud Text-to-Speech(TTS) API를 사용하며, 인터페이스는 Tkinter로 구성되어 있어 파일 선택, 페이지 미리보기, 음성 설정, 오디오 재생 등을 직관적으로 조작할 수 있다.
+Speak PDF는 사용자가 선택한 PDF 파일의 텍스트를 음성으로 변환해주는 데스크톱 애플리케이션입니다. Google Cloud Text-to-Speech(TTS) API를 활용하여 자연스러운 음성을 생성하며, Tkinter 기반의 직관적인 인터페이스를 통해 파일 선택부터 미리보기, 음성 설정, 오디오 저장까지 한 번에 처리할 수 있도록 개발했습니다.
 <br><br><br>
 
-# Design
+# System & Interface Design
+<hr>
 
-- **상단 제목 영역:** 프로그램의 제목과 부제목을 표시한다.
-- **PDF 업로드:** 사용자가 PDF 파일을 열 수 있는 버튼과, 선택된 파일명을 보여주는 라벨이 있는 영역이다.
-- **PDF 미리보기:** PDF의 각 페이지를 이미지로 변환하여 미리보기를 제공하며, 버튼으로 앞/뒤 페이지로 이동하며 확인할 수 있다.
-- **음성 설정 영역:**
-   1. 음성을 추출할 PDF 페이지 범위를 지정한다.
-      - `최소` : 페이지 1, `최대` : 마지막 페이지
-      - 최소 페이지 <= 최대 페이지
-   2. 원하는 음성을 선택한다(옵션: 영어 남성, 영어 여성, 한국어 남성, 한국어 여성).
-   3. 음성을 합성한 뒤 재생한다.
-   4. 재생되는 음성을 일시정지/재개할 수 있다.
-   5. 음성을 MP3 파일로 저장할 수 있다.
-- **텍스트 출력 박스:** 사용자가 PDF에서 추출한 텍스트를 보여주는 영역이다.
+### Class Diagram
+
+메인 App 클래스를 중심으로 기능별 프레임(Title, PDFUpload, PDFPreview, TTS)을 모듈화하여 설계했습니다.
+
+[![](https://mermaid.ink/img/pako:eNp9VE1v4jAQ_SuWT7ALCEhCQw6VVq1WWmkPlUovq0iRwYOxmtiW7bR0Ef99baeAA9rmkDjzZt68-UgOeCMp4AJvamLMIydMk6YUyF3Bgn4ohQ6dwV_fV9zWgKy_R9anx58vqpaEIkW3VRuOffhJwxuH94Cr7hyzrp6RtSayeIbKOQ8UsbthBxxLEUvrpMTifpM11MhKVdX-dIOspbWyicEryksdMe2z1VwwtOU1VF5OBG12UhqoPDQYRnYpvPjKUwH9ooaoM71CuLGIN4RB3JNfwqJNqzUI63QwuG5XFzDoHrEas5PvIWLA6T4G_CQ6ILYK2Nue9brxblq9_igu1nKPjCX6RtkJBEGvoZXLg6xP5hxiuQrIa3A2PV1uQyriaWryMfBxvRrJG1SkpVz2YyRjYWytG5MG0za3Vfkd_zYefy5UgR6ksIQL00cvu_GFx2mY_3PxrbvGuvuFfjK5D_4FWmnOGGiDzl_D8ELn3XoZXxQlFkxvb06OXd6Th28t0kQwwCPMNKe42JLawAg3oBvi33EYcIntDhooceGOFLakrW2JS3F0cYqIP1I2uLC6dZFatmx35mlDps__ydnqNpeCfpCtsLiYL-8CCS4OeI-LdJpMlmmWZtl8OsuTLBvhD1yMZ-kkyfJ8nqSpsyZJOj-O8N-QdzrJF8kiu5vNFnm-XGbJ4vgPGhhwjA?type=png)](https://mermaid.live/edit#pako:eNp9VE1v4jAQ_SuWT7ALCEhCQw6VVq1WWmkPlUovq0iRwYOxmtiW7bR0Ef99baeAA9rmkDjzZt68-UgOeCMp4AJvamLMIydMk6YUyF3Bgn4ohQ6dwV_fV9zWgKy_R9anx58vqpaEIkW3VRuOffhJwxuH94Cr7hyzrp6RtSayeIbKOQ8UsbthBxxLEUvrpMTifpM11MhKVdX-dIOspbWyicEryksdMe2z1VwwtOU1VF5OBG12UhqoPDQYRnYpvPjKUwH9ooaoM71CuLGIN4RB3JNfwqJNqzUI63QwuG5XFzDoHrEas5PvIWLA6T4G_CQ6ILYK2Nue9brxblq9_igu1nKPjCX6RtkJBEGvoZXLg6xP5hxiuQrIa3A2PV1uQyriaWryMfBxvRrJG1SkpVz2YyRjYWytG5MG0za3Vfkd_zYefy5UgR6ksIQL00cvu_GFx2mY_3PxrbvGuvuFfjK5D_4FWmnOGGiDzl_D8ELn3XoZXxQlFkxvb06OXd6Th28t0kQwwCPMNKe42JLawAg3oBvi33EYcIntDhooceGOFLakrW2JS3F0cYqIP1I2uLC6dZFatmx35mlDps__ydnqNpeCfpCtsLiYL-8CCS4OeI-LdJpMlmmWZtl8OsuTLBvhD1yMZ-kkyfJ8nqSpsyZJOj-O8N-QdzrJF8kiu5vNFnm-XGbJ4vgPGhhwjA)
+
+### Information Architecture
+
+사용자 경험(UX)을 고려하여 좌측에는 시각적 정보(PDF 미리보기)를, 우측에는 기능적 제어(TTS 설정 및 텍스트 확인)를 배치했습니다.
+
+[![](https://mermaid.ink/img/pako:eNp1U21P01AU_is395MmA8e64ugHEwNqSCRZ3PCD3UKu62UsrC_pWgQXEtRhFOZbHDpJtwwyEAyGIROXuF-0e_sfPG3HNkJs0ttz2-d5zjnPuS3ijK5QLOGsSYwllJxJaQiuhEVM64bsVkpsz-n96bD6EeLbTffL2_RNNDZ2B80beZ0ocnzmPnLLZV7rIl5quK9q6YAffPaRDyEAmA8FMfbZQaz1AfFam512-PcNxM433G_VPjFYC_bToJ55QyEWnZ9FMty91hnfbvSB3tWX9tPETbqSo89kvl_mnT0Jue-rkMLXP-2wwxN23u51Wsj95PBt5z8aj4iWpTLfbfkKyWRiVOVXhTsl6LLJGzt9PtWUlBaEPtUXSVAr0LnG9dpmP4756zLUc9WvS5KvMJ3PZZYTBiXLsr8Cv-RudZH7os0Of6YvUw5Mipt6hhYKSGatM29WtS7fbXs-860ma7yBaKTfobif696qZZKMJcfX5mywAQaE3M13QHS3OohfVPjFKLmP9pkPdD2bp2CSHESgrNuK79rd-Cxyq52r3AE-cIms0CRVDZnXSzAQpBrC4CA1Nnj9YIR5iQ3mnCdrUG2WqJQ7Xa9eXm2ySgVWxOsnfGDpyHA8TuCsrlmmni8GQMT_HkGbbK-5HuD6nwEKx7MLZcGoYX63AN5rOUF6YheobOlZ6GXB8DYLJi3YKk1fk7jSzqDpubggF-C5QGwlp0uI_3b4_iaC18PGA6lRsx_D0U7SVUseDoe1diDiXz_2x4TYyzbfPYadwxoHaRyCXzqnYGmR5As0hFVqqsTb46Inn8LWElVpCksQKnSR2HkrhVPaOvAMoj3RdRVLlmkD09Tt7NJAx_b_yJkcgbM3hIDZ1JzWbc3CUmRK8DWwVMSrWIqGhfGpqBgVxUh4IiaIYgivYWlsIjouiLFYRIhG4a0gRCPrIfzcTxsej00Kk-Lt8JQQmxCioiCu_wNzafHr?type=png)](https://mermaid.live/edit#pako:eNp1U21P01AU_is395MmA8e64ugHEwNqSCRZ3PCD3UKu62UsrC_pWgQXEtRhFOZbHDpJtwwyEAyGIROXuF-0e_sfPG3HNkJs0ttz2-d5zjnPuS3ijK5QLOGsSYwllJxJaQiuhEVM64bsVkpsz-n96bD6EeLbTffL2_RNNDZ2B80beZ0ocnzmPnLLZV7rIl5quK9q6YAffPaRDyEAmA8FMfbZQaz1AfFam512-PcNxM433G_VPjFYC_bToJ55QyEWnZ9FMty91hnfbvSB3tWX9tPETbqSo89kvl_mnT0Jue-rkMLXP-2wwxN23u51Wsj95PBt5z8aj4iWpTLfbfkKyWRiVOVXhTsl6LLJGzt9PtWUlBaEPtUXSVAr0LnG9dpmP4756zLUc9WvS5KvMJ3PZZYTBiXLsr8Cv-RudZH7os0Of6YvUw5Mipt6hhYKSGatM29WtS7fbXs-860ma7yBaKTfobif696qZZKMJcfX5mywAQaE3M13QHS3OohfVPjFKLmP9pkPdD2bp2CSHESgrNuK79rd-Cxyq52r3AE-cIms0CRVDZnXSzAQpBrC4CA1Nnj9YIR5iQ3mnCdrUG2WqJQ7Xa9eXm2ySgVWxOsnfGDpyHA8TuCsrlmmni8GQMT_HkGbbK-5HuD6nwEKx7MLZcGoYX63AN5rOUF6YheobOlZ6GXB8DYLJi3YKk1fk7jSzqDpubggF-C5QGwlp0uI_3b4_iaC18PGA6lRsx_D0U7SVUseDoe1diDiXz_2x4TYyzbfPYadwxoHaRyCXzqnYGmR5As0hFVqqsTb46Inn8LWElVpCksQKnSR2HkrhVPaOvAMoj3RdRVLlmkD09Tt7NJAx_b_yJkcgbM3hIDZ1JzWbc3CUmRK8DWwVMSrWIqGhfGpqBgVxUh4IiaIYgivYWlsIjouiLFYRIhG4a0gRCPrIfzcTxsej00Kk-Lt8JQQmxCioiCu_wNzafHr)
+
+- **PDF 업로드 및 미리보기:** `pdf2image`를 통해 PDF 페이지를 이미지로 렌더링하여 사용자에게 시각적 피드백을 제공합니다.
+- **음성 설정:** 페이지 범위 지정, 4가지 음성 옵션(한/영, 남/여) 선택, 재생 및 일시정지 기능을 제공합니다.
+- **텍스트 출력:** PDF에서 추출된 원문 텍스트를 실시간으로 확인할 수 있습니다.
 <br><br><br>
 
 # Implementation
+<hr>
 
 ### Tech Stack
 
-- **Programming Language:** Python
-- **GUI:** Tkinter
-- **PDF:** PyMuPDF(fitz) and pdf2image(텍스트, 이미지 추출)
-- **Audio Playback:** Pygame
-- **Multithreading:** threading
-- **TTS API:** Google Cloud Text-to-Speech
+**Language:** Python
+**GUI:** Tkinter
+**PDF Processing:** PyMuPDF(fitz), pdf2image
+**Audio:** Pygame
+**API:** Google Cloud TTS (Wavenet voice)
+**Concurrency:** Threading
 <br>
 
-### Coding
+### Key Implementation Details
 
--  API 연동
-   - `google-cloud-texttospeech` 클라이언트 라이브러리를 통해 Google Cloud의 TTS API를 사용한다.
-   - JSON 키 파일의 경로를 GOOGLE_APPLICATION_CREDENTIALS 환경 변수에 등록하는 방식으로 인증한다.   
-   (유료 API이기 때문에 첨부된 파일에는 키 파일이 제외됨)
-   - API 호출 시 요청(HTTP POST Request) 데이터의 구성은 다음과 같다.
-      - `SynthesisInput` : 음성으로 변환할 텍스트
-      - `VoiceSelectionParams` : 언어 및 목소리 종류(<a href="https://cloud.google.com/text-to-speech/docs/list-voices-and-types" target="_blank">Supported voices and languages</a>에서 모든 옵션 확인 가능)
-      - `AudioConfig` : 출력 포맷(MP3)
-   - 응답은 MP3 파일을 Base64로 인코딩한 문자열로 도착한다(웹을 통해 데이터를 주고받으려면 텍스트 형태가 안전하기 때문).
-   - 파이썬 클라이언트가 문자열을 디코딩해서 다시 바이너리 데이터로 변환한 뒤, MP3 파일로 저장한다.
-- 스레딩 (Threading)
-   - PDF에서 추출한 텍스트는 매우 길고 API 호출 및 파일 쓰기 작업도 느리기 때문에 모든 것을 메인 스레드에서 실행하면 오디오가 재생된 후 텍스트가 뜨는 현상이 생긴다.
-   - 문제를 해결하기 위해 Tkinter 위젯을 조작하는 부분은 메인 스레드에서 수행되고, 네트워크/API 호출과 오디오 재생은 별도의 백그라운드 스레드에서 안전하게 처리한다.
-- 오디오 재생
-   - Pygame의 mixer.music 모듈을 사용하여 MP3 파일을 재생한다.
-   - 일시정지와 재개는 pause()와 unpause() 메서드로 구현되어 있으며, 토글 버튼을 통해 재생 상태를 시각적으로 구분할 수 있다.
-- 에러 처리
-   - Google TTS API 초기화 실패 시(e.g. 인증 키 누락), 콘솔에 안내 메시지를 출력한다.
-   - 사용자가 잘못된 페이지 범위를 선택했을 경우(e.g. from *3* to *1*), 텍스트 출력 박스를 통해 오류 메시지를 제공한다.
+- Google TTS API 연동: SynthesisInput, VoiceSelectionParams를 설정하여 요청을 보내고, 응답으로 받은 바이너리 데이터를 MP3 파일로 저장하여 재생합니다.
+- 멀티스레딩(Multithreading): 네트워크 통신과 오디오 재생은 시간이 소요되는 작업입니다. 이를 메인 스레드에서 처리하면 UI가 멈추는(Freeze) 현상이 발생하므로, threading 모듈을 사용하여 백그라운드에서 처리하도록 구현했습니다.
+- 오디오 제어: `pygame.mixer`를 활용해 재생 상태를 추적하고, 하나의 버튼으로 일시정지(Pause)와 재개(Resume)를 전환하는 토글 로직을 구현했습니다.
+<br><br><br>
+
+# Problem Solving Process
+<hr>
+
+### Problem
+
+일부 PDF에서 텍스트를 추출하는 과정에서 단어 사이의 공백이 사라지고 "ThisIsExample"처럼 글자가 붙어서 추출되는 현상이 발생했습니다.
+
+### Solution
+
+PyPDF2 대신 PDF의 내부 레이아웃을 더 정교하게 분석하는 PyMuPDF(fitz)로 라이브러리를 교체했습니다. `page.get_text()` 메서드를 통해 줄바꿈과 공백이 보존된 고품질의 텍스트를 얻을 수 있었습니다.
 <br><br><br>
 
 # Result
+<hr>
 
 <div style="width: 90%;">{% include video id="1090098376" provider="vimeo" %}</div>
 <br><br><br>
 
 # Future Improvements
+<hr>
 
 - **GUI에서 오류 알림**   
 API 인증 오류가 발생 시 UI 상에서 메시지 띄우기
@@ -90,8 +94,9 @@ MP3 외에 WAV, 또는 자막을 입힌 영상(mp4) 저장 옵션 제공하기
 <br><br><br>
 
 # Conclusion
+<hr>
 
-이 프로그램을 개발하면서 Google Cloud TTS API를 연동해보며 클라우드 인증 과정에 대해 실습할 수 있었다. PDF에서 텍스트를 추출하기 위해 처음에는 PyPDF2 모듈을 사용했지만, 띄어쓰기가 무시되고 "thisisasentence"처럼 글자들이 붙어서 추출되는 문제가 있었다. 그래서 PDF 내부 구조를 더 정교하게 분석하는 PyMuPDF로 교체했더니 훨씬 원본에 가까운 텍스트를 얻을 수 있었다. 또한, 멀티스레딩을 적용해 음성 합성과 오디오 재생을 백그라운드에서 처리함으로써 프로그램의 안정성과 사용자 경험을 모두 향상시킬 수 있었다.
+이번 프로젝트를 통해 Google Cloud API의 인증 체계와 클라이언트-서버 간의 데이터 주고받는 과정을 깊이 있게 이해할 수 있었습니다. 특히 GUI 프로그램에서 사용자 경험을 결정짓는 핵심은 '응답성'이라는 것을 깨달았으며, 이를 위해 멀티스레딩을 적재적소에 활용하는 법을 익혔습니다. 앞으로는 더 복잡한 문서 구조(표, 이미지 내 텍스트 등)도 정확히 인식할 수 있도록 OCR 기능을 추가해보고 싶습니다.
 <br>
 
 ### reference

@@ -259,6 +259,9 @@ collections:
   personal-projects-python:
     output: true
     permalink: /:collection/:path/
+  personal-projects-nodejs:
+    output: true
+    permalink: /:collection/:path/
   personal-projects-unity:
     output: true
     permalink: /:collection/:path/

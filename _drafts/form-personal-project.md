@@ -14,22 +14,18 @@ header:
       url: "https://drive.google.com/uc?id={아이디}&export=download" 
 ---
 **Note:** The file is large, so Google Drive may display a warning before download. This is normal.
+{: .small}
+<br>
 
----
-
-# Intro
+# Overview
 <hr>
 
-~습니다 체 (부드러운 설명, 독자 배려)
+~습니다 체 (부드러운 설명, 독자 배려)로 작성
 
 <br><br><br>
 
-# Design
+# System & Interface Design
 <hr>
-
-~다 체 (명확하고 객관적인 문서 톤)
-### Overview 
-간단 설명
 
 ### Information Architecture
 
@@ -42,13 +38,12 @@ https://mermaid.live/에서 다이어그램 생성해서 넣기(server, client, 
 
 ### Data Model
 
-### UI
+### UI/UX
 <br><br><br>
 
 # Implementation
 <hr>
 
-~다 체 (명확하고 객관적인 문서 톤)
 ### Tech Stack
 
 - **Programming Language:** Python
@@ -61,7 +56,7 @@ https://mermaid.live/에서 다이어그램 생성해서 넣기(server, client, 
 - **Email:** smtplib, email.mime
 - **Security:** werkzeug.security
 
-### Coding
+### Key Implementation Details
 
 1. ****
 2. ****
@@ -72,15 +67,8 @@ https://mermaid.live/에서 다이어그램 생성해서 넣기(server, client, 
 # Problem Solving Process
 <hr>
 
-~다 체 (명확하고 객관적인 문서 톤)
 ### Problem
-### Analysis
 ### Solution
-단일 문제해결 단계일때는 위, 복합 문제해결 단계일때는 아래
-### Problem
-### First Analysis & Attempted Solution
-### Second Analysis & Final Solution
-
 ```markdown
 ↓
 ⚠️👎👍
@@ -100,10 +88,9 @@ https://mermaid.live/에서 다이어그램 생성해서 넣기(server, client, 
 # Conclusion
 <hr>
 
-~습니다 체 (부드러운 설명, 독자 배려)
 <br>
 
-### reference
+### reference or assets & resources
 
 {: .small}
 

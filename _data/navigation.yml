@@ -11,10 +11,12 @@ main:
 docs:
   - title: "Personal Projects"       # 개인 프로젝트 목록
     children:
-      - title: "Python-Based"
+      - title: "Python"
         url: /personal-projects-python/
-      - title: "Unity"
-        url: /personal-projects-unity/
+      - title: "Node.js"
+        url: /personal-projects-nodejs/
+      # - title: "Unity"
+      #   url: /personal-projects-unity/
   - title: "Coding Test"
     children:
       - title: "LeetCode-Easy"        # 리트코드 easy 문제풀이

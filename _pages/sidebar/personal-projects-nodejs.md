@@ -1,8 +1,8 @@
 ---
-title: Python Based Projects
+title: Node.js Based Projects
 layout: collection
-permalink: /personal-projects-python/
-collection: personal-projects-python
+permalink: /personal-projects-nodejs/
+collection: personal-projects-nodejs
 entries_layout: grid
 classes: wide
 header:
