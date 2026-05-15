@@ -8,16 +8,13 @@ header:
   overlay_color: "#000"
   overlay_filter: "0.3"
   overlay_image: /assets/images/personal-projects/battery_nayn_ex.gif
-  caption: "Photo credit: [**Unsplash**](#)"
   actions:
     - label: "Download Zip"
-      url: "https://drive.google.com/uc?id={아이디}&export=download" 
+      url: "https://drive.google.com/uc?id=1ZwwLJQaT9UyJ7IYTTXCMmJsdJxkrYpp8&export=download" 
 ---
-**Note:** The file is large, so Google Drive may display a warning before download. This is normal.
-{: .small}
-<br>
 
 # Overview
+<hr>
 
 데스크톱 환경에서 배터리 잔량을 확인하는 것은 어려운 일이 아닙니다. 화면 상단바를 슬쩍 보기만 해도 정확한 숫자를 알 수 있습니다. 하지만 숫자를 확인하지 않아도 현재 남은 배터리가 얼마 정도인지 직관적으로 알고 싶다는 생각에서 이 애플리케이션을 제작했습니다.
 
@@ -110,6 +107,7 @@ systeminformation 라이브러리를 통해 10초 주기로 배터리 level 값�
 # Result
 <hr>
 
+<div style="width: 90%;">{% include video id="1192492400" provider="vimeo" %}</div>
 <br><br><br>
 
 # Future Improvements
