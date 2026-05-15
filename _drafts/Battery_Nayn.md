@@ -1,21 +1,23 @@
 ---
-date: 2026-05-11
+date: 2026-05-15
 layout: splash
-excerpt: "설명"
+excerpt: "A cute desktop cat that reacts and moves based on your system's battery status."
 title: "Battery Nayn"
 header:
-  teaser: "/assets/images/sample-header-image.jpg"
+  teaser: "/assets/images/personal-projects/battery_nayn_ex.gif"
   overlay_color: "#000"
   overlay_filter: "0.3"
-  overlay_image: /assets/images/sample-header-image.jpg
+  overlay_image: /assets/images/personal-projects/battery_nayn_ex.gif
   caption: "Photo credit: [**Unsplash**](#)"
   actions:
     - label: "Download Zip"
       url: "https://drive.google.com/uc?id={아이디}&export=download" 
 ---
 **Note:** The file is large, so Google Drive may display a warning before download. This is normal.
+{: .small}
+<br>
 
----
+# Overview
 
 데스크톱 환경에서 배터리 잔량을 확인하는 것은 어려운 일이 아닙니다. 화면 상단바를 슬쩍 보기만 해도 정확한 숫자를 알 수 있습니다. 하지만 숫자를 확인하지 않아도 현재 남은 배터리가 얼마 정도인지 직관적으로 알고 싶다는 생각에서 이 애플리케이션을 제작했습니다.
 
