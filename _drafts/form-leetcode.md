@@ -82,6 +82,7 @@ print(testcase)
 10<sup>9</sup>
 𝑛
 𝑛<sup>2</sup>
+2<sup>𝑛</sup>
 log𝑛
 𝑚
 𝑘
