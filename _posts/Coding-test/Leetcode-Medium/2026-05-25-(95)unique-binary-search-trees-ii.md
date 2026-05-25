@@ -11,7 +11,7 @@ tags:
   - Dynamic Programming
   - Backtracking
   - Binary Search Tree
-  - Binary Tree
+  - Catalan number
 ---
 
 ## <i class="fa-solid fa-file-lines"></i> Description
