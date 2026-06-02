@@ -82,15 +82,15 @@ class Solution:
         def helper(node, lower, upper):
             
             if not node:
-				# empty node or empty tree
+                # empty node or empty tree
                 return True
             
             if lower < node.val < upper:
-				# check if all tree nodes follow BST rule
+                # check if all tree nodes follow BST rule
                 return helper(node.left, lower, node.val) and helper(node.right, node.val, upper)
             
             else:
-				# early reject when we find violation
+                # early reject when we find violation
                 return False
             
         # ----------------------------------
