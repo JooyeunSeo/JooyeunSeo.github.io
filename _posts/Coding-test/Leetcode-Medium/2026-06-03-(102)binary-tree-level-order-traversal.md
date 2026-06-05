@@ -95,6 +95,6 @@ class Solution:
         return ans
 ```
 <i class="fa-solid fa-clock"></i> **time complexity:** 𝑂(𝑛)    
-<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑛)    
+<i class="fa-solid fa-memory"></i> **space complexity:** 𝑂(𝑤)    
 
 큐 없이 리스트만으로 BFS를 구현한 방법이다.
