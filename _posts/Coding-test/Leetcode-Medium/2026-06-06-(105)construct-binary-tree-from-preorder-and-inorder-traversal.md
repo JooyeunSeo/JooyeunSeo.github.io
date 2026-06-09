@@ -74,7 +74,7 @@ class Solution:
 <i class="fa-solid fa-clock"></i> Runtime: **4** ms \| Beats **60.07%**    
 <i class="fa-solid fa-memory"></i> Memory: **21.40** MB \| Beats **48.79%**    
 
-전위 순회로는 어떤 값이 루트인지 알 수 있고, 중위 순회로는 왼쪽 서브트리와 오른쪽 서브트리의 경계를 알 수 있다.
+전위 순회로는 어떤 값이 루트인지 알 수 있고, 중위 순회로는 왼쪽 서브트리와 오른쪽 서브트리의 경계를 알 수 있다. 재귀 순서는 `루트 → 왼쪽 → 오른쪽`이다.
 
 ## <i class="fa-solid fa-flask"></i> Other Solutions
 

@@ -1,6 +1,6 @@
 ---
 excerpt: ""
-title: "\0"
+title: ""
 header:
   teaser: "https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"
 categories:
