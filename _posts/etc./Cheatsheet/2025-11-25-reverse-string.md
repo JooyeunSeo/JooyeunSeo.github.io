@@ -26,7 +26,7 @@ print(txt[::-1])      # 오른쪽 끝에서 왼쪽 끝으로 한 칸씩 이동�
 
 ```python
 txt_list = list(txt)      # 리스트 타입으로 변환 필수
-txt_list.reverse()        # 리스트 원본을 in-place로 뒤집는 함수
+txt_list.reverse()        # 리스트 원본을 in-place로 뒤집는 함수(주의: 자체 반환값은 None)
 print(''.join(txt_list))  # join으로 다시 합치기
 ```
 
