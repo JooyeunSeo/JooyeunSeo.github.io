@@ -76,10 +76,15 @@ print(testcase)
 
 {: style="color: green;"}
 
+
+<sub>i</sub>
+i<sup>th</sup>
+
 2<sup>31</sup>
 10<sup>4</sup>
 10<sup>5</sup>
 10<sup>9</sup>
+
 𝑛
 𝑛<sup>2</sup>
 2<sup>𝑛</sup>

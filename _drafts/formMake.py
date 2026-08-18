@@ -76,27 +76,13 @@ def abbreviation_tag():
     full_word = input("write the full word: ")
     print(f"*[{abbreviation}]: {full_word}")
 
-def sup_or_sub():
-    txt = input()
-    if txt[-1] == 'i':
-        print(f"{txt[:-1]}<sub>i</sub>")
-    elif '^' in txt:
-        txts = txt.split('^')
-        print(f"{txts[0]}<sup>{txts[1]}</sup>")
-    elif ' ' in txt:
-        txts = txt.split(' ')
-        print(f"{txts[0]}<sup>{txts[1]}</sup>")
-    elif '_' in txt:
-        txts = txt.split('_')
-        print(f"{txts[0]}<sub>{txts[1]}</sub>")
-
 def underline():
-    is_list = input("리스트이면 입력, 단어나 문장이면 pass: ")
+    is_list = input("리스트이면 아무거나 입력, 단어나 문장이면 pass: ")
     if is_list:
         str_list = input("리스트 입력: ")
         new_list = list(str_list[1:-1].split(','))
         for i in range(len(new_list)):
-            is_underline = input(f"밑줄이면 입력, 아니면 pass(index {i}): ")
+            is_underline = input(f"해당 순서가 밑줄이면 아무거나 입력, 아니면 pass(index {i}): ")
             if is_underline:
                 new_list[i] = f"<u>{new_list[i]}</u>"
         print(str(new_list).replace(' ', '').replace("'", ''))
@@ -116,8 +102,7 @@ def run_file():
         "4: 🌈 글자에 형광펜 칠하기\n" \
         "5. 🟨 색깔 박스 만들기\n" \
         "6. 📖 약어 태그 만들기\n" \
-        "7. 🧮 위/아래 첨자 태그 붙이기\n" \
-        "8. ✏️ 리스트의 원소나 글자에 밑줄치기"
+        "7. ✏️ 리스트의 원소나 글자에 밑줄치기"
         )
     
     while True:
@@ -142,9 +127,6 @@ def run_file():
             abbreviation_tag()
             break
         elif select == "7":
-            sup_or_sub()
-            break
-        elif select == "8":
             underline()
             break
         else:
